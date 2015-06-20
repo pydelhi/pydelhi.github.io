@@ -1,0 +1,39 @@
+/* Global
+* ============================================================================ */
+/* Layout
+* ------------------------------------- */
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.intro, .social-links {
+    text-align: center;
+}
+
+/* Typography
+* ------------------------------------- */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* UI/Forms
+* ------------------------------------- */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+a:hover, a:active {
+    border-bottom: 1px solid;
+}
+
+/* Homepage
+* ============================================================================ */
+.page-home .intro {
+    margin-top: 4em;
+    margin-top: 25vh;
+    font-size: 1.5em;
+}
