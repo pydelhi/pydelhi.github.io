@@ -5,11 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added 
 - More action items to invidiual social links
+- 404.html and robots.txt page
 
 ### Changed
 - Styling of the social links
 
-## 0.1.0 - 2015-06-21
+## [0.1.0] - 2015-06-21
 ### Added
 - This CHANGELOG file, based on the guidelines from http://keepachangelog.com/.
 - CNAME file to enable GitHub Pages custom domain

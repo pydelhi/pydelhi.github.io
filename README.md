@@ -15,7 +15,7 @@ There are multiple ways you can contibute to this website.
 - Report bugs.
 - Request/Ask/Submit new features.
 
-Use github's forking feature or issues[pydelhi-issues], or our [mailing-list], whichever works the best.
+Use github's pull-request/[issues][pydelhi-issues] feature, or our [mailing-list], whichever works the best.
 
 ## Hosting new things(sub-site) under banner of pydelhi.org:
 
