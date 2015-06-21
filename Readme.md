@@ -1,6 +1,6 @@
 # [pydelhi.org](https://pydelhi.org)
 
-Version 0.1.0-dev
+Version 0.1.0
 
 Official website of PyDelhi - Python Delhi User Group.
 
@@ -13,7 +13,7 @@ There are multiple ways you can contibute to this website.
 - Report bugs.
 - Request/Ask/Submit new features.
 
-Use github's forking feature or issues, or our [mailing-list], whichever works the best.
+Use github's forking feature or issues[pydelhi-issues], or our [mailing-list], whichever works the best.
 
 ## Hosting new things(sub-site) under banner of pydelhi.org:
 
