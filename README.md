@@ -29,3 +29,9 @@ The homepage or you can say root of the pydelhi.org is always going to be simple
 [pydelhi-issues]: https://github.com/pydelhi/pydelhi.github.io/issues
 [github-fork]: https://help.github.com/articles/fork-a-repo/
 [mailing-list]: http://bit.ly/pydelhi-mailinglist
+
+## Changelog
+
+See: [CHANGELOG.md], it follows the guidelines from http://keepachangelog.com/
+
+[CHANGELOG.md]: https://github.com/pydelhi/pydelhi.github.io/blob/master/CHANGELOG.md
