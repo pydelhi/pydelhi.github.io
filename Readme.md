@@ -1,8 +1,10 @@
 # [pydelhi.org](https://pydelhi.org)
 
-Version 0.1.0
+Version [0.2.0-dev][current-release]
 
 Official website of PyDelhi - Python Delhi User Group.
+
+[current-release]: https://github.com/pydelhi/pydelhi.github.io/issues/3
 
 ## Contributing
 

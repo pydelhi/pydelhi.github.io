@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased][unreleased]
+### Changed
+- ...
+
 ## 0.1.0 - 2015-06-21
 ### Added
 - This CHANGELOG file to hopefully serve as an evolving example of a standardized open source project CHANGELOG.
@@ -10,4 +14,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Guidelines for contributions and adding new things under pydelhi.org
 - Social links on Homepage
 
+[unreleased]: https://github.com/pydelhi/pydelhi.github.io/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/pydelhi/pydelhi.github.io/compare/v0.0.0...v0.1.0
