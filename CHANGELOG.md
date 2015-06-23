@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added 
+- call for volunteers link
 - More action items to invidiual social links
 - 404.html and robots.txt page
 

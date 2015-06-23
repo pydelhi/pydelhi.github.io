@@ -99,3 +99,15 @@ a:hover, a:active {
   opacity: 1;
   visibility: visible;
 }
+
+.page-home .call-for-volunteers {
+  margin-top: 3em;
+  text-align: center;
+}
+.page-home .call-for-volunteers a {
+  background-color: #f7fac2;
+  padding: 5px 10px;
+  border-radius: 5px;
+  max-width: 400px;
+  display: inline-block;
+}
