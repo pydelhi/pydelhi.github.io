@@ -4,6 +4,7 @@ Code Contributors
 Saurabh Kumar (gh: theskumar / @_theskumar)*
 Amit Kumar (gh: aktech / @iaktech)
 Vinay Dahiya (gh: vinaykrdahiya/ @01_vkd)
+Prabhat Puri (gh: Parbhat/ @parbhatpuri)
 
 * Possesses commit rights
 
