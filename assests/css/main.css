@@ -44,6 +44,7 @@ a:hover, a:active {
   display: inline;
   margin: 0;
   list-style: none;
+  padding-left: 0px;
 }
 .page-home .social-links li a {
   padding: 5px 10px;
