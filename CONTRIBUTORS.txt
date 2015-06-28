@@ -3,8 +3,8 @@ Code Contributors
 
 Saurabh Kumar (gh: theskumar / @_theskumar)*
 Amit Kumar (gh: aktech / @iaktech)
-Vinay Dahiya (gh: vinaykrdahiya/ @01_vkd)
-Prabhat Puri (gh: Parbhat/ @parbhatpuri)
+Vinay Dahiya (gh: vinaykrdahiya / @01_vkd)
+Prabhat Puri (gh: Parbhat / @parbhatpuri)
 
 * Possesses commit rights
 
@@ -13,4 +13,4 @@ Special Thanks
 
 The following haven't provided code directly, but have provided guidance and advice.
 
-...
+Satyakaam Goswami (gh: satyaakam / @satyaakam)
