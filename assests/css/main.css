@@ -18,6 +18,9 @@ body {
 body {
     font-family: 'Roboto', sans-serif;
 }
+li {
+    margin-bottom: 0.5em;
+}
 
 /* UI/Forms
 * ------------------------------------- */
@@ -60,6 +63,7 @@ a:hover, a:active {
 .page-home .social-links ul li {
   display: inline-block;
   margin-right: -4px;
+  margin-bottom: 0;
   position: relative;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
