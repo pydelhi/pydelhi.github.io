@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Styling of the social links
+- Use compressed version of "Fork me on Github"
 
 ## [0.1.0] - 2015-06-21
 ### Added
