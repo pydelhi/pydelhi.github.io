@@ -4,14 +4,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added 
+- next event section, based on next event available of meetup.com
 - link to mailing list guidelines
 - call for volunteers link
-- More action items to invidiual social links
+- more action items to invidiual social links
 - 404.html and robots.txt page
 
 ### Changed
 - Styling of the social links
 - Use compressed version of "Fork me on Github"
+
+### Removed
+- call for volunteers link
 
 ## [0.1.0] - 2015-06-21
 ### Added

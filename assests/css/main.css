@@ -2,6 +2,13 @@
 * ============================================================================ */
 /* Layout
 * ------------------------------------- */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 body {
     max-width: 1200px;
     margin: 0 auto;
@@ -104,14 +111,27 @@ a:hover, a:active {
   visibility: visible;
 }
 
-.page-home .call-for-volunteers {
-  margin-top: 3em;
+.page-home .section--next_event {
+  margin-top: 3.5em;
   text-align: center;
+  transition: all 0.5s ease;
+  opacity: 0;
 }
-.page-home .call-for-volunteers a {
-  background-color: #f7fac2;
-  padding: 5px 10px;
-  border-radius: 5px;
-  max-width: 400px;
+.page-home .section--next_event .caption {
   display: inline-block;
+  background-color: #11fac2;
+  background-color: ##eee;
+  padding: 10px;
+}
+.page-home .section--next_event a {
+  display: inline-block;
+  padding: 10px;
+  background-color: #fdf7d6;
+  border-bottom: none;
+}
+.page-home .section--next_event a:hover {
+  border-bottom: none;
+  background-color: #e4dfc0;
+  /*background-color: #eee;*/
+  color: #111;
 }
