@@ -15,6 +15,7 @@
         <p>Welcome to Python Delhi User Group</p>
         <h3>PyDelhi</h3>
     </section>
+
     <section class='social-links'>
       <ul>
         <li><a title='Join our mailing list'
@@ -62,13 +63,17 @@
       </ul>
     </section>
 
-    <div class="call-for-volunteers">
-      <a href="http://bit.ly/pydelhi-call-for-core-organisers"
-         target="_blank"> > Call for Core Volunteers</a>
-    </div>
+    <div class="section--next_event" data-meetup-url="pydelhi"></div>
 
     <a class='link--fork-on-github' href="https://github.com/pydelhi/pydelhi.github.io">
         <img style="position: absolute; top: 0; right: 0; border: 0;" src="/assests/images/btn--fork-on-github.png" alt="Fork me on GitHub">
     </a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assests/js/main.js"></script>
+    <script>
+    $(function(){
+      display_next_event('.section--next_event')
+    });
+    </script>
 </body>
 </html>
