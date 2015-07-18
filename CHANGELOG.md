@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added 
+- link to IRC logs
 - next event section, based on next event available of meetup.com
 - link to mailing list guidelines
 - call for volunteers link
