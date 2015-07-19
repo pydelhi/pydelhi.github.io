@@ -135,3 +135,11 @@ a:hover, a:active {
   /*background-color: #eee;*/
   color: #111;
 }
+@media only screen and (max-width: 736px) {
+    .page-home .social-links li a {
+      padding: 10px 20px;
+    }
+    .page-home .social-links ul li ul {
+      top: 38px;
+    }
+}
