@@ -18,7 +18,7 @@ function display_next_event(el) {
           var next_event = response.data.next_event
           // display only when there is an event.
           if (next_event){
-            var html = '<span class=caption>'+ caption +'</span><a target="_blank" href=http://www.meetup.com/'+meetup_group+'/events/' + next_event.id + ' >' + next_event.name + '</a>';
+            var html = '<div itemscope itemtype="http://schema.org/Event">' + '<span itemprop="name" class=caption>'+ caption +'</span><a target="_blank" itemprop="url" href=http://www.meetup.com/'+meetup_group+'/events/' + next_event.id + ' >' + next_event.name + '</a>' + '</div>';
             $(el).html(html).css({'opacity': 1});
           };
       }
