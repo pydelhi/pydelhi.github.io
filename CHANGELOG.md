@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added 
+- Add/update vidoes/youtube links section
 - favicon images for different devices
 - link to IRC logs
 - next event section, based on next event available of meetup.com
