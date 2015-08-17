@@ -6,6 +6,7 @@ Amit Kumar (gh: aktech / @iaktech)
 Vinay Dahiya (gh: vinaykrdahiya / @01_vkd)
 Prabhat Puri (gh: Parbhat / @parbhatpuri)
 Tavish Naruka (gh: ntavish / @ntavish)
+Rajat Goyal (gh: rajat404 / @rajat404)
 
 * Possesses commit rights
 
