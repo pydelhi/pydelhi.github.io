@@ -16,6 +16,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Styling of the social links
 - Use compressed version of "Fork me on Github"
+- Renamed 'assests' to 'assets'
 
 ### Removed
 - call for volunteers link
