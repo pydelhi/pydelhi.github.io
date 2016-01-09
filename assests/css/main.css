@@ -136,15 +136,20 @@ a:hover, a:active {
   color: #111;
 }
 .page-home .announcement {
-    margin-top: 2em;
-    margin-top: 5vh;
     font-size: 1.2em;
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-top: 1em;
+    background: #2ECC71;
+    border-radius: 45px;
 }
 .page-home .announcement a {
   display: inline-block;
   padding: 10px 6px;
-  background-color: #fdf7d6;
   border-bottom: none;
+  font-weight: bold;
 }
 
 
