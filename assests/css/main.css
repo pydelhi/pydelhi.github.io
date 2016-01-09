@@ -16,7 +16,7 @@ body {
     padding-right: 1em;
 }
 
-.intro, .social-links {
+.intro, .social-links, .announcement {
     text-align: center;
 }
 
@@ -30,7 +30,7 @@ li {
 }
 
 /* UI/Forms
-* ------------------------------------- */
+ ------------------------------------- */
 a {
     text-decoration: none;
     transition: all 0.3s ease;
@@ -135,6 +135,19 @@ a:hover, a:active {
   /*background-color: #eee;*/
   color: #111;
 }
+.page-home .announcement {
+    margin-top: 2em;
+    margin-top: 5vh;
+    font-size: 1.2em;
+}
+.page-home .announcement a {
+  display: inline-block;
+  padding: 10px 6px;
+  background-color: #fdf7d6;
+  border-bottom: none;
+}
+
+
 @media only screen and (max-width: 736px) {
     .page-home .social-links li a {
       padding: 10px 20px;
