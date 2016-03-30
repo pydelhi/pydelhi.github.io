@@ -151,6 +151,10 @@ a:hover, a:active {
   border-bottom: none;
   font-weight: bold;
 }
+.community-partners {
+  margin-top: 40px;
+  text-align: center
+}
 
 
 @media only screen and (max-width: 736px) {
