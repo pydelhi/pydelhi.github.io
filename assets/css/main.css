@@ -104,6 +104,9 @@ a:hover, a:active {
   color: #fff;
   text-shadow: 0 -1px 0 #000;
 }
+.page-home .social-links ul li ul li small {
+  font-size: 56%;
+}
 .page-home .social-links ul li ul li:hover a { background: #407eb5; }
 .page-home .social-links ul li:hover ul {
   display: block;
