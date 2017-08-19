@@ -173,3 +173,36 @@ a:hover, a:active {
       top: 38px;
     }
 }
+
+/* Code of Conduct
+* ============================================================================ */
+.page-home .intro-coc {
+    margin-top: 10vh;
+    font-size: 1.5em;
+}
+
+.intro-coc{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.intro-coc a{
+  font-size: 0.7em;
+}
+
+.intro-coc h3{
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.intro-coc p{
+  font-size: 0.8em;
+}
+
+.intro-coc li{
+  font-size: 0.8em;
+}
+
+.intro-coc span{
+  font-weight: 600;
+}
