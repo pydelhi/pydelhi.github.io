@@ -138,6 +138,22 @@ a:hover, a:active {
   /*background-color: #eee;*/
   color: #111;
 }
+.page-home .propose_talk {
+  width: 150px;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.page-home .propose_talk:hover {
+  background: #376fa0;
+}
+.page-home .propose_talk a {
+  border: None;
+}
+.page-home .propose_talk:hover a {
+  color: #fff;
+}
 .page-home .announcement {
     font-size: 1.2em;
     width: 400px;
