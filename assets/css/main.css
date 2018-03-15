@@ -94,7 +94,7 @@ a:hover, a:active {
   -moz-transition: opacity 0.2s;
   -ms-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
-  -transition: opacity 0.2s;
+  transition: opacity 0.2s;
   z-index: 1;
 }
 .page-home .social-links ul li ul li a{
@@ -123,7 +123,6 @@ a:hover, a:active {
 .page-home .section--next_event .caption {
   display: inline-block;
   background-color: #11fac2;
-  background-color: ##eee;
   padding: 10px;
 }
 .page-home .section--next_event a {
@@ -137,6 +136,22 @@ a:hover, a:active {
   background-color: #e4dfc0;
   /*background-color: #eee;*/
   color: #111;
+}
+.page-home .propose_talk {
+  width: 150px;
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.page-home .propose_talk:hover {
+  background: #376fa0;
+}
+.page-home .propose_talk a {
+  border: None;
+}
+.page-home .propose_talk:hover a {
+  color: #fff;
 }
 .page-home .announcement {
     font-size: 1.2em;
