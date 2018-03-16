@@ -45,7 +45,7 @@ a:hover, a:active {
 * ============================================================================ */
 .page-home .intro {
     margin-top: 4em;
-    margin-top: 25vh;
+    margin-top: 20vh;
     font-size: 1.5em;
 }
 
@@ -118,9 +118,9 @@ a:hover, a:active {
   margin-top: 3.5em;
   text-align: center;
   transition: all 0.5s ease;
-  opacity: 0;
+  /*opacity: 0;*/
 }
-.page-home .section--next_event .caption {
+.page-home .section--next_event .btn-cta {
   display: inline-block;
   background-color: #11fac2;
   padding: 10px;
@@ -134,25 +134,9 @@ a:hover, a:active {
 .page-home .section--next_event a:hover {
   border-bottom: none;
   background-color: #e4dfc0;
-  /*background-color: #eee;*/
   color: #111;
 }
-.page-home .propose_talk {
-  width: 150px;
-  padding: 10px;
-  margin: auto;
-  text-align: center;
-}
 
-.page-home .propose_talk:hover {
-  background: #376fa0;
-}
-.page-home .propose_talk a {
-  border: None;
-}
-.page-home .propose_talk:hover a {
-  color: #fff;
-}
 .page-home .announcement {
     font-size: 1.2em;
     width: 400px;
@@ -163,6 +147,7 @@ a:hover, a:active {
     background: #2ECC71;
     border-radius: 45px;
 }
+
 .page-home .announcement a {
   display: inline-block;
   padding: 10px 6px;
@@ -170,7 +155,7 @@ a:hover, a:active {
   font-weight: bold;
 }
 .community-partners {
-  margin-top: 40px;
+  margin-top: 3.5em;
   text-align: center
 }
 .community-partners a:hover {

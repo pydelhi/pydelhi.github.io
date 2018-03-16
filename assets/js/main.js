@@ -7,9 +7,11 @@ function display_next_event(el) {
     //
     // Call this function after the page has loaded.
     // <script> display_next_event('.section--next_event')</script>
-    var captions = ["Let's meetup at: ", "Next event:", "Upcoming:", "Next up: "]
-    var caption = captions[Math.floor(Math.random()*captions.length)],
-        meetup_group = $(el).attr('data-meetup-group');
+
+      var  meetup_group = $(el).attr('data-meetup-group'),
+           meetup_cta_url = $(el).attr('data-cta-url'),
+           meetup_cta_text = $(el).attr('data-cta-text');
+
     var timeConverter = function(UNIX_timestamp){
       var a = new Date(UNIX_timestamp);
       var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -30,8 +32,9 @@ function display_next_event(el) {
           if (next_event){
             var event_title = next_event.name + ' (' + timeConverter(next_event.time) + ')';
             var event_url = 'http://www.meetup.com/'+meetup_group+'/events/' + next_event.id;
-            var html = '<span class=caption>'+ caption +'</span><a target="_blank" href=' + event_url + '>' + event_title + '</a>';
-            $(el).html(html).css({'opacity': 1});
+            var html = '<a target="_blank" href=' + event_url + '>' + event_title + '</a>';
+            html += '<a class="btn-cta" href="'+ meetup_cta_url +'" target="_blank">' + meetup_cta_text + '</a>'
+            $(el).html(html);
           };
       }
     });
