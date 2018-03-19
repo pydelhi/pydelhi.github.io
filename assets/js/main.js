@@ -39,3 +39,55 @@ function display_next_event(el) {
       }
     });
 }
+
+function get_latest_blog_posts(latest_posts_lst) {
+  // Displays the latest blog posts on pydelhi.org/blog
+  // displays a short summary along with the post title and author
+  // the number of posts to show and the length of truncated description
+  // can be controlled through the below variables
+  
+  var FEED_URL = "https://pydelhi.org/blog/feeds/rss.xml";
+  var MAX_LATEST_POSTS = 3;
+  var MAX_DESCRIPTION_LEN = 180;
+
+  $.get(FEED_URL, function (data) {
+    // restrict latest posts to the above constant
+    $(data).find("item").slice(0, MAX_LATEST_POSTS).each(function () {
+        var el = $(this);
+
+        var title = el.find("title").text();
+        var author = el.find("dc\\:creator").text();
+        var link = el.find("link").text();
+
+        // description in this case is a string of html elements
+        // as in = "<p> something something </p>"
+        // to get the text, we create an html element using $()
+        // and then get its innertext
+        var description_html = $(el.find("description").text());
+        var description = description_html.text().substring(0, MAX_DESCRIPTION_LEN).trim(this) + "...";
+
+        var post = $("<li class='post'></li");
+
+        var domTitle = $("<a/>", {
+          "class": 'post--title',
+          "href": link,
+          "text": title
+        });
+
+        var domAuthor = $("<div/>", {
+          "class": 'post--author',
+          "text": "By " + author
+        });
+
+        var domDescription = $("<div/>", {
+          "class": 'post--description',
+          "text": description
+        });
+
+        post.append(domTitle).append(domAuthor).append(domDescription);
+
+        $(latest_posts_lst).append(post);
+    });
+  });
+}
+
