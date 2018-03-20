@@ -58,6 +58,7 @@ function display_blog_posts(el) {
             var item = $(this);
             var title = item.find("title").text();
             var author = item.find("dc\\:creator").text();
+            var link = item.find("link").text();
 
             var domBlogPostItem = $("<li class='blog-post__item'></li");
 
