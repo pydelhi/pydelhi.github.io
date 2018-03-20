@@ -40,54 +40,43 @@ function display_next_event(el) {
     });
 }
 
-function get_latest_blog_posts(latest_posts_lst) {
+function display_blog_posts(el) {
   // Displays the latest blog posts on pydelhi.org/blog
   // displays a short summary along with the post title and author
   // the number of posts to show and the length of truncated description
   // can be controlled through the below variables
   
-  var FEED_URL = "https://pydelhi.org/blog/feeds/rss.xml";
-  var MAX_LATEST_POSTS = 3;
-  var MAX_DESCRIPTION_LEN = 180;
+    var $el = $(el);
+    var FEED_URL = $el.attr('data-feed-url');
+    var MAX_LATEST_POSTS = $el.attr('data-max-items');
+    
+    var domBlogList = $('<ul />', {"class": "blog_post__list"});
 
-  $.get(FEED_URL, function (data) {
-    // restrict latest posts to the above constant
-    $(data).find("item").slice(0, MAX_LATEST_POSTS).each(function () {
-        var el = $(this);
+    $.get(FEED_URL, function (data) {
+        // restrict latest posts to the above constant
+        $(data).find("item").slice(0, MAX_LATEST_POSTS).each(function () {
+            var item = $(this);
+            var title = item.find("title").text();
+            var author = item.find("dc\\:creator").text();
 
-        var title = el.find("title").text();
-        var author = el.find("dc\\:creator").text();
-        var link = el.find("link").text();
+            var domBlogPostItem = $("<li class='blog_post__item'></li");
 
-        // description in this case is a string of html elements
-        // as in = "<p> something something </p>"
-        // to get the text, we create an html element using $()
-        // and then get its innertext
-        var description_html = $(el.find("description").text());
-        var description = description_html.text().substring(0, MAX_DESCRIPTION_LEN).trim(this) + "...";
+            var domTitle = $("<a/>", {
+                "class": 'blog_post__title',
+                "href": link,
+                "text": title
+            });
 
-        var post = $("<li class='post'></li");
+            var domAuthor = $("<div/>", {
+                "class": 'blog_post__author',
+                "text": "By " + author
+            });
 
-        var domTitle = $("<a/>", {
-          "class": 'post--title',
-          "href": link,
-          "text": title
+            domBlogPostItem.append(domTitle).append(domAuthor);
+            domBlogList.append(domBlogPostItem);
         });
-
-        var domAuthor = $("<div/>", {
-          "class": 'post--author',
-          "text": "By " + author
-        });
-
-        var domDescription = $("<div/>", {
-          "class": 'post--description',
-          "text": description
-        });
-
-        post.append(domTitle).append(domAuthor).append(domDescription);
-
-        $(latest_posts_lst).append(post);
+        
+        $el.append(domBlogList);
+    
     });
-  });
 }
-
