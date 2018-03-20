@@ -110,9 +110,11 @@
          data-cta-text="SUBMIT TALK"
          >––</div>
 
-    <div class="section--latest_blog_posts">
+    <div class="section--blog_posts js-show-blog-posts"
+         data-feed-url="https://pydelhi.org/blog/feeds/rss.xml"
+         data-max-item=3>
         <h3>Latest articles</h3>
-        <ul class="post-lst"></ul>
+        <!-- .blog_post__list populated by display_blog_posts() here -->
     </div>
 
     <div class="community-partners">
@@ -133,7 +135,7 @@
     <script>
     $(function(){
       display_next_event('.section--next_event');
-      get_latest_blog_posts('.section--latest_blog_posts .post-lst');
+      display_blog_posts('.js-show-blog-posts');
     });
     </script>
 
