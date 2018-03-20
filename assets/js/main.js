@@ -45,11 +45,11 @@ function display_blog_posts(el) {
   // displays a short summary along with the post title and author
   // the number of posts to show and the length of truncated description
   // can be controlled through the below variables
-  
+
     var $el = $(el);
     var FEED_URL = $el.attr('data-feed-url');
     var MAX_LATEST_POSTS = $el.attr('data-max-items');
-    
+
     var domBlogList = $('<ul />', {"class": "blog-post__list"});
 
     $.get(FEED_URL, function (data) {
@@ -76,8 +76,13 @@ function display_blog_posts(el) {
             domBlogPostItem.append(domTitle).append(domAuthor);
             domBlogList.append(domBlogPostItem);
         });
-        
-        $el.append(domBlogList);
-    
+
+        // add or replace the element.
+        var node = $el.find('.blog-post__list');
+        if(node.length){
+          node.replaceWith(domBlogList);
+        }else {
+          $el.append(domBlogList);
+        }
     });
 }
