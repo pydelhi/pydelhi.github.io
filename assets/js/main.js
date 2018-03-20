@@ -39,3 +39,45 @@ function display_next_event(el) {
       }
     });
 }
+
+function display_blog_posts(el) {
+  // Displays the latest blog posts on pydelhi.org/blog
+  // displays a short summary along with the post title and author
+  // the number of posts to show and the length of truncated description
+  // can be controlled through the below variables
+  
+    var $el = $(el);
+    var FEED_URL = $el.attr('data-feed-url');
+    var MAX_LATEST_POSTS = $el.attr('data-max-items');
+    
+    var domBlogList = $('<ul />', {"class": "blog-post__list"});
+
+    $.get(FEED_URL, function (data) {
+        // restrict latest posts to the above constant
+        $(data).find("item").slice(0, MAX_LATEST_POSTS).each(function () {
+            var item = $(this);
+            var title = item.find("title").text();
+            var author = item.find("dc\\:creator").text();
+            var link = item.find("link").text();
+
+            var domBlogPostItem = $("<li class='blog-post__item'></li");
+
+            var domTitle = $("<a/>", {
+                "class": 'blog-post__title',
+                "href": link,
+                "text": title
+            });
+
+            var domAuthor = $("<div/>", {
+                "class": 'blog-post__author',
+                "text": "By " + author
+            });
+
+            domBlogPostItem.append(domTitle).append(domAuthor);
+            domBlogList.append(domBlogPostItem);
+        });
+        
+        $el.append(domBlogList);
+    
+    });
+}

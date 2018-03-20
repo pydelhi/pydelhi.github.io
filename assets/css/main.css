@@ -165,6 +165,29 @@ a:hover, a:active {
 }
 
 
+/* Blog Post
+* ============================================================================ */  
+.section--blog_posts {
+    text-align: center;
+}
+.section--blog_posts .blog-post__list {
+    padding-left: 0;
+}
+.blog-post__item {
+  list-style: none;
+  padding: 0 1em;
+}
+.blog-post__title {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.blog-post__author {
+    margin-bottom: 1em;
+    color: #a5a4a4;
+    font-size: 0.9em;
+    font-weight: 100;
+}
+
 @media only screen and (max-width: 736px) {
     .page-home .social-links li a {
       padding: 10px 20px;
