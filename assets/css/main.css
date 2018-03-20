@@ -167,9 +167,11 @@ a:hover, a:active {
 
 /* Blog Post
 * ============================================================================ */  
+.section--blog-posts {
+    text-align: center;
+}
 .section--blog-posts .blog-post__list {
     padding-left: 0;
-    text-align: center;
 }
 .blog-post__item {
   list-style: none;
