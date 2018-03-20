@@ -50,7 +50,7 @@ function display_blog_posts(el) {
     var FEED_URL = $el.attr('data-feed-url');
     var MAX_LATEST_POSTS = $el.attr('data-max-items');
     
-    var domBlogList = $('<ul />', {"class": "blog_post__list"});
+    var domBlogList = $('<ul />', {"class": "blog-post__list"});
 
     $.get(FEED_URL, function (data) {
         // restrict latest posts to the above constant
@@ -59,16 +59,16 @@ function display_blog_posts(el) {
             var title = item.find("title").text();
             var author = item.find("dc\\:creator").text();
 
-            var domBlogPostItem = $("<li class='blog_post__item'></li");
+            var domBlogPostItem = $("<li class='blog-post__item'></li");
 
             var domTitle = $("<a/>", {
-                "class": 'blog_post__title',
+                "class": 'blog-post__title',
                 "href": link,
                 "text": title
             });
 
             var domAuthor = $("<div/>", {
-                "class": 'blog_post__author',
+                "class": 'blog-post__author',
                 "text": "By " + author
             });
 
