@@ -86,3 +86,72 @@ function display_blog_posts(el) {
         }
     });
 }
+
+function display_sponsors(el) {
+    // Displays the sponsors of pydelhi meetup group
+  
+    var $el = $(el);
+    var domSponsorList = $('<ul />', {"class": "sponsor__list"});
+
+    // meetup api requires all these fields in order for sig and sig_id to match
+    // this sig_id is valid for only this type of request
+    // i.e. getting the sponsors list for pydelhi meetup group
+    var requestParams = {
+        'offset': 0,
+        'format': 'json',
+        'group_urlname': 'pydelhi',
+        'only': 'sponsors',
+        'photo-host': 'public',
+        'page': 500,
+        'radius': '25.0',
+        'fields': 'sponsors',
+        'order': 'id',
+        'desc': 'false',
+        'sig_id': '203199327',
+        'sig': '772c5fcaa8c986cdfb75ada45f97c297f76e5cf6'
+    };
+
+    $.ajax({
+        url: 'https://api.meetup.com/2/groups?' + $.param(requestParams),
+        jsonp: 'callback',
+        dataType: 'jsonp',
+        success: function(response) {
+            var sponsors = response.results[0].sponsors;
+            
+            sponsors.forEach(function (sponsor) {
+                var title = sponsor.name;
+                var img_url = sponsor.image_url;
+                var link = sponsor.url;
+
+                var domSponsorItem = $("<li class='sponsor__item'></li");
+
+                var domImg = $("<img/>", {
+                    "class": 'sponsor__img',
+                    "src": img_url
+                });
+
+                var domLinkWrapper = $("<p/>", {
+                    "class": 'sponsor__title',
+                });
+
+                var domLink = $("<a/>", {
+                    "href": link,
+                    "text": title
+                })
+
+                domLinkWrapper.append(domLink);
+                domSponsorItem.append(domImg).append(domLinkWrapper);
+                domSponsorList.append(domSponsorItem);
+            });
+
+            // add or replace the element.
+            var node = $el.find('.sponsor__list');
+            if(node.length){
+              node.replaceWith(domSponsorList);
+            }else {
+              $el.append(domSponsorList);
+            }
+        }
+    });
+
+}
