@@ -167,10 +167,10 @@ a:hover, a:active {
 
 /* Blog Post
 * ============================================================================ */  
-.section--blog-posts {
+.section--blog_posts {
     text-align: center;
 }
-.section--blog-posts .blog-post__list {
+.section--blog_posts .blog-post__list {
     padding-left: 0;
 }
 .blog-post__item {
