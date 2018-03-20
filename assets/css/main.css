@@ -164,21 +164,26 @@ a:hover, a:active {
   opacity: 0.7;
 }
 
-.section--latest_blog_posts {
-  margin-top: 2.5em;
-  margin-bottom: 1.5em;
-}
 
-.section--latest_blog_posts h3 {
-  text-align: center;
+/* Blog Post
+* ============================================================================ */  
+.section--blog-post .blog-post__list {
+    padding-left: 0;
+    text-align: center;
 }
-
-.section--latest_blog_posts .post {
-  margin-bottom: 2em;
+.blog-post__item {
+  list-style: none;
+  padding: 0 1em;
 }
-
-.section--latest_blog_posts .post--author {
-  margin-bottom: 1em;
+.blog-post__title {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.blog-post__author {
+    margin-bottom: 1em;
+    color: #a5a4a4;
+    font-size: 0.9em;
+    font-weight: 100;
 }
 
 @media only screen and (max-width: 736px) {
