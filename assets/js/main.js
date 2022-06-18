@@ -23,7 +23,7 @@ function display_next_event(el) {
     }
 
     $.ajax({
-      url: 'https://api.meetup.com/'+meetup_group+'?photo-host=public&sig_id=44948372&only=next_event&sig=03b1cf02afd70a3ae78cc9c8cc83d514d6f37ecf',
+      url: 'https://api.meetup.com/'+meetup_group+'?photo-host=public&sig_id=44948372&only=next_event',
       jsonp: 'callback',
       dataType: 'jsonp',
       success: function( response ) {
