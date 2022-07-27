@@ -1,4 +1,4 @@
-# [pydelhi.org](https://pydelhi.org)
+# PyDelhi Website
 
 Version [0.2.0-dev][current-release]
 
