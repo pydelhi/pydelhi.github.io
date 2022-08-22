@@ -1,7 +1,5 @@
 # PyDelhi Website
 
-Version [0.2.0-dev][current-release]
-
 Official website of PyDelhi - Python Delhi User Group.
 
 [current-release]: https://github.com/pydelhi/pydelhi.github.io/issues/3
