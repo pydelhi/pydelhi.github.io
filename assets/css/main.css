@@ -31,13 +31,13 @@ li {
 
 /* UI/Forms
  ------------------------------------- */
-a {
+a:not(.banner-link) {
     text-decoration: none;
     transition: all 0.3s ease;
     border-bottom: 1px solid transparent;
     color: #376fa0;
 }
-a:hover, a:active {
+a:not(.banner-link):hover, a:not(.banner-link):active {
     border-bottom: 1px solid;
 }
 
@@ -256,4 +256,23 @@ a:hover, a:active {
 
 .intro-coc span{
   font-weight: 600;
+}
+
+/* PyDelhi Conference 2023 banner */
+
+#hero {
+  margin-top: 1em;
+  text-align: center;
+}
+
+#hero img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 768px){
+    .page-home .intro {
+      margin-top: 0;
+  }
 }
