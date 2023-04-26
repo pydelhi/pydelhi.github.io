@@ -266,13 +266,16 @@ a:not(.banner-link):hover, a:not(.banner-link):active {
 }
 
 #hero img{
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  max-inline-size: 100%;
+  block-size: auto;
 }
 
 @media screen and (max-width: 768px){
     .page-home .intro {
-      margin-top: 0;
+      margin-top: 3em;
+  }
+
+  #hero img {
+    margin-top: 5em;
   }
 }
