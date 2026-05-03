@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PyDelhi</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="https://raw.githubusercontent.com/pydelhi/resources/refs/heads/main/logos/pydelhi-transparent-extended-color.svg" alt="PyDelhi" style="height:48px;width:auto;display:block;">
+  </div>
+  <div class="nav-links">
+    <a href="#">Events</a>
+    <a href="#">Speak</a>
+    <a href="#">Sponsor</a>
+    <a href="#">Community</a>
+    <a href="#">About</a>
+    <a href="#">Blog</a>
+  </div>
+  <a href="#" class="nav-cta">
+    Join Community
+    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 10L10 2M10 2H4M10 2v6"/>
+    </svg>
+  </a>
+</nav>
+
+<div class="scroll-driver">
+  <div class="sticky-scene" id="scene">
+    <div class="hero-bg"></div>
+    <div class="ambient-orb ambient-orb-gold"></div>
+    <div class="ambient-orb ambient-orb-blue"></div>
+    <div id="photo-layer"></div>
+
+    <div class="hero-text" id="hero-text">
+      <div class="eyebrow">
+        Submit your talk for May Meetup →
+      </div>
+      <h1>Where Delhi's<br><em>Pythonistas</em><br><span class="light-text">come together.</span></h1>
+      <p class="hero-subtitle">Monthly meetups, workshops, and open source sprints — free, welcoming, powered by community.</p>
+      <div class="hero-actions">
+        <button class="btn-primary">Join Community →</button>
+        <button class="btn-ghost">Join WhatsApp</button>
+      </div>
+    </div>
+
+    <div id="grid-layer">
+      <div class="grid-card">
+        <div class="profile-row">
+          <img src="https://raw.githubusercontent.com/pydelhi/resources/refs/heads/main/logos/pydelhi-black.png" alt="PyDelhi" class="profile-avatar" style="object-fit:contain;background:transparent;">
+          <div><div class="profile-name">PyDelhi Community</div><div class="profile-bio">We write Python. We learn together. We have chai after. 🐍</div></div>
+          <button class="join-btn">+ Join community</button>
+        </div>
+        <div class="bento-grid">
+          <div class="bento-cell bento-cell-tall" id="bento-cell-0"><div class="ghost-placeholder" id="ghost-0"><div class="ghost-bar"></div></div></div>
+          <div class="bento-cell"                 id="bento-cell-1"><div class="ghost-placeholder" id="ghost-1"><div class="ghost-bar"></div></div></div>
+          <div class="bento-cell"                 id="bento-cell-2"><div class="ghost-placeholder" id="ghost-2"><div class="ghost-bar"></div></div></div>
+          <div class="bento-cell bento-cell-info">
+            <div class="info-card info-card-registration" id="meetup-card" style="grid-column: span 2; width: 100%; padding: 14px;">
+              <span class="info-chip info-chip-open" id="meetup-badge">Upcoming</span>
+              <div class="info-title">May Meetup</div>
+              <div class="info-body">Python talks, lightning sessions, and great conversations over chai. Everyone's welcome.</div>
+              <div class="meetup-meta">
+                <div class="meetup-meta-item">
+                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="12" rx="2"/><path d="M11 1v4M5 1v4M2 7h12"/></svg>
+                  <span>Sat, May 17</span>
+                </div>
+                <div class="meetup-meta-item">
+                  <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5A4.5 4.5 0 0 0 8 1.5z"/><circle cx="8" cy="6" r="1.5"/></svg>
+                  <span>IIT Delhi</span>
+                </div>
+              </div>
+              <div class="meetup-actions">
+                <a href="#" class="meetup-btn-primary" id="meetup-register">
+                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+                  Register now
+                </a>
+                <a href="#" class="meetup-btn-secondary" id="meetup-cfp">
+                  <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="1" width="5" height="9" rx="2.5"/><path d="M3 8a5 5 0 0 0 10 0M8 13v2"/></svg>
+                  Submit talk
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="bento-cell bento-cell-talk" id="bento-cell-3"><div class="ghost-placeholder" id="ghost-3"><div class="ghost-bar"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     STATS BAR
+═══════════════════════════════════════════ -->
+<section class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="stat-num">3,200+</span>
+      <span class="stat-label">Members</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <span class="stat-num">80+</span>
+      <span class="stat-label">Meetups Hosted</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      <span class="stat-num">200+</span>
+      <span class="stat-label">Speakers</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span class="stat-num">Since 2011</span>
+      <span class="stat-label">Running Strong</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT SNIPPET + FORMAT ROW
+═══════════════════════════════════════════ -->
+<section class="about-section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text-col">
+        <div class="section-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          About PyDelhi
+        </div>
+        <h2 class="section-heading">Delhi's home<br>for <em>Python</em> people.</h2>
+        <p class="about-body">PyDelhi is a volunteer-run community for Python enthusiasts across the Delhi-NCR region — from weekend hackers and data scientists to seasoned engineers and curious students. We gather every month to learn, share, and build together.</p>
+        <a href="#" class="about-link">
+          Learn about us
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+        </a>
+      </div>
+      <div class="about-formats-col">
+        <div class="section-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          What we do
+        </div>
+        <div class="format-cards">
+          <div class="format-card format-blue">
+            <div class="format-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <span class="format-name">Talks</span>
+            <span class="format-desc">Deep dives by community experts</span>
+          </div>
+          <div class="format-card format-yellow">
+            <div class="format-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <span class="format-name">Workshops</span>
+            <span class="format-desc">Hands-on, build-along sessions</span>
+          </div>
+          <div class="format-card format-green">
+            <div class="format-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="format-name">Birds of a Feather</span>
+            <span class="format-desc">Informal interest group huddles</span>
+          </div>
+          <div class="format-card format-navy">
+            <div class="format-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <span class="format-name">Lightning Talks</span>
+            <span class="format-desc">5-min punchy ideas, anyone welcome</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PHOTO CAROUSEL
+═══════════════════════════════════════════ -->
+<section class="carousel-section">
+  <div class="section-inner">
+    <div class="carousel-header">
+      <div class="section-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Community Photos
+      </div>
+      <h2 class="section-heading-sm">Real people, real meetups.</h2>
+    </div>
+  </div>
+  <div class="carousel-track-wrap">
+    <div class="carousel-track" id="carousel-track">
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=700&q=80" alt="PyDelhi Meetup" loading="lazy">
+        <div class="carousel-caption">PyCon Delhi 2024</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=700&q=80" alt="Workshop" loading="lazy">
+        <div class="carousel-caption">FastAPI Workshop</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80" alt="Community" loading="lazy">
+        <div class="carousel-caption">Meetup #62</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=700&q=80" alt="Meetup" loading="lazy">
+        <div class="carousel-caption">Community Meetup</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?auto=format&fit=crop&w=700&q=80" alt="Talks" loading="lazy">
+        <div class="carousel-caption">Open Source Sprint</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=700&q=80" alt="Speakers" loading="lazy">
+        <div class="carousel-caption">Annual Meetup</div>
+      </div>
+      <!-- Duplicate for infinite loop -->
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=700&q=80" alt="PyDelhi Meetup" loading="lazy">
+        <div class="carousel-caption">PyCon Delhi 2024</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=700&q=80" alt="Workshop" loading="lazy">
+        <div class="carousel-caption">FastAPI Workshop</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80" alt="Community" loading="lazy">
+        <div class="carousel-caption">Meetup #62</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LOGOS — SPEAKERS + SPONSORS
+═══════════════════════════════════════════ -->
+<section class="logos-section">
+  <div class="section-inner">
+    <div class="logos-block">
+      <div class="logos-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Our Speakers Have Come From
+      </div>
+      <div class="logo-row">
+        <div class="logo-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          Google
+        </div>
+        <div class="logo-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Microsoft
+        </div>
+        <div class="logo-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Zerodha
+        </div>
+        <div class="logo-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          Razorpay
+        </div>
+        <div class="logo-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Red Hat
+        </div>
+        <div class="logo-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.93 3.5 2 2 0 0 1 3.9 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Twilio
+        </div>
+        <div class="logo-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          Hasura
+        </div>
+        <div class="logo-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Canonical
+        </div>
+      </div>
+    </div>
+
+    <div class="logos-divider"></div>
+
+    <div class="logos-block">
+      <div class="logos-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Past Sponsors &amp; Venues
+      </div>
+      <div class="logo-row">
+        <div class="logo-pill logo-pill-sponsor">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          IIT Delhi
+        </div>
+        <div class="logo-pill logo-pill-sponsor">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          IIIT Delhi
+        </div>
+        <div class="logo-pill logo-pill-sponsor">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          Thoughtworks
+        </div>
+        <div class="logo-pill logo-pill-sponsor">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          DigitalOcean
+        </div>
+        <div class="logo-pill logo-pill-sponsor">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          JetBrains
+        </div>
+        <div class="logo-pill logo-pill-sponsor">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          Python Software Foundation
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EVENTS
+═══════════════════════════════════════════ -->
+<section class="events-section">
+  <div class="section-inner">
+    <div class="events-header">
+      <div>
+        <div class="section-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Events
+        </div>
+        <h2 class="section-heading-sm">What's on.</h2>
+      </div>
+      <a href="/events" class="view-all-link">
+        View all events
+        <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+      </a>
+    </div>
+
+    <div class="events-grid">
+      <!-- UPCOMING (featured) -->
+      <div class="event-card event-upcoming">
+        <div class="event-card-top">
+          <span class="event-status-badge event-status-upcoming">
+            <span class="event-status-dot"></span>
+            Upcoming
+          </span>
+          <div class="event-card-date-block">
+            <span class="event-big-month">May</span>
+            <span class="event-big-day">17</span>
+          </div>
+          <h3 class="event-card-title">PyDelhi May Meetup</h3>
+          <div class="event-card-meta">
+            <span class="event-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              IIT Delhi, Hauz Khas
+            </span>
+            <span class="event-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              10:00 AM – 1:00 PM
+            </span>
+          </div>
+          <p class="event-card-desc">Python talks, lightning sessions, and great conversations over chai. All levels welcome — from curious beginners to seasoned engineers.</p>
+        </div>
+        <div class="event-card-speakers">
+          <span class="event-speakers-label">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Speakers TBA
+          </span>
+        </div>
+        <a href="https://www.commudle.com/communities/pydelhi" class="event-rsvp-btn" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          RSVP on Commudle
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+        </a>
+      </div>
+
+      <!-- PAST EVENTS -->
+      <div class="past-events-col">
+        <div class="past-events-header">Past events</div>
+        <div class="past-event-card">
+          <div class="past-event-date-badge">Apr 19</div>
+          <div class="past-event-info">
+            <div class="past-event-title">PyDelhi April Meetup</div>
+            <div class="past-event-speakers">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Aditya Kumar · Priya Sharma · Rohan Verma
+            </div>
+            <div class="past-event-location">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              IIIT Delhi
+            </div>
+          </div>
+          <a href="#" class="past-event-link">
+            <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+          </a>
+        </div>
+        <div class="past-event-card">
+          <div class="past-event-date-badge">Mar 15</div>
+          <div class="past-event-info">
+            <div class="past-event-title">PyDelhi March Meetup</div>
+            <div class="past-event-speakers">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Neha Gupta · Karan Mehta
+            </div>
+            <div class="past-event-location">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              IIT Delhi
+            </div>
+          </div>
+          <a href="#" class="past-event-link">
+            <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+          </a>
+        </div>
+        <div class="past-event-card">
+          <div class="past-event-date-badge">Feb 22</div>
+          <div class="past-event-info">
+            <div class="past-event-title">PyDelhi February Meetup</div>
+            <div class="past-event-speakers">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Vikram Singh · Ananya Joshi · Dev Patel
+            </div>
+            <div class="past-event-location">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Thoughtworks, Gurugram
+            </div>
+          </div>
+          <a href="#" class="past-event-link">
+            <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+          </a>
+        </div>
+        <a href="/events" class="view-all-link view-all-link-inline">
+          View all events
+          <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SPEAK AT PYDELHI
+═══════════════════════════════════════════ -->
+<section class="speak-section">
+  <div class="section-inner">
+    <div class="speak-card">
+      <div class="speak-bg-accent"></div>
+      <div class="speak-content">
+        <div class="section-label section-label-light">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          Speak at PyDelhi
+        </div>
+        <h2 class="speak-heading">Got something<br>to share?</h2>
+        <p class="speak-body">We welcome talks on anything Python — web frameworks, data science, ML/AI, DevOps, open source projects, beginner tutorials, or just a cool thing you built over the weekend. Lightning talks (5 min), full talks (20–30 min), and workshops all welcome.</p>
+        <div class="speak-types">
+          <div class="speak-type">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Lightning Talk · 5 min
+          </div>
+          <div class="speak-type">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Full Talk · 20–30 min
+          </div>
+          <div class="speak-type">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Workshop · 60–90 min
+          </div>
+        </div>
+        <a href="/speak" class="speak-cta">
+          Submit a Talk
+          <svg width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+        </a>
+      </div>
+      <div class="speak-visual">
+        <div class="speak-card-stack">
+          <div class="speak-mini-card speak-mini-card-1">
+            <div class="speak-mini-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Lightning Talk
+            </div>
+            <div class="speak-mini-title">5 Things I Wish I Knew About asyncio</div>
+            <div class="speak-mini-speaker">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Rahul M.
+            </div>
+          </div>
+          <div class="speak-mini-card speak-mini-card-2">
+            <div class="speak-mini-tag speak-mini-tag-gold">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Talk
+            </div>
+            <div class="speak-mini-title">Building Production RAG Pipelines with LangChain</div>
+            <div class="speak-mini-speaker">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Priya S.
+            </div>
+          </div>
+          <div class="speak-mini-card speak-mini-card-3">
+            <div class="speak-mini-tag speak-mini-tag-green">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Workshop
+            </div>
+            <div class="speak-mini-title">FastAPI from Zero to Deploy</div>
+            <div class="speak-mini-speaker">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Aditya K.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SPONSOR / COLLABORATE
+═══════════════════════════════════════════ -->
+<section class="sponsor-section">
+  <div class="section-inner">
+    <div class="sponsor-header">
+      <div class="section-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Partner with Us
+      </div>
+      <h2 class="section-heading-sm">Help us keep<br>Python free &amp; open.</h2>
+      <p class="sponsor-intro">PyDelhi is 100% community-run. We don't charge for events — sponsors and venue partners make that possible.</p>
+    </div>
+    <div class="sponsor-tracks">
+      <div class="sponsor-track sponsor-track-blue">
+        <div class="sponsor-track-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3 class="sponsor-track-title">Sponsor Us</h3>
+        <p class="sponsor-track-body">Support the community with a venue, food &amp; beverages, or monetary contributions. Great for brand visibility among Delhi's top engineers and tech talent.</p>
+        <ul class="sponsor-perks">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Venue hosting
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            Food &amp; refreshments
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Monetary support
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Logo on website &amp; socials
+          </li>
+        </ul>
+      </div>
+      <div class="sponsor-track sponsor-track-green">
+        <div class="sponsor-track-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="sponsor-track-title">Collaborate</h3>
+        <p class="sponsor-track-body">Run co-branded events, cross-promote your community, or partner on hackathons and sprints. We love connecting with like-minded orgs.</p>
+        <ul class="sponsor-perks">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Co-hosted events
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.93 3.5 2 2 0 0 1 3.9 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Community partnerships
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Hackathons &amp; sprints
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Newsletter shoutouts
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="sponsor-cta-row">
+      <a href="/sponsor" class="sponsor-cta-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Get in touch
+        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
+      </a>
+      <span class="sponsor-cta-note">We respond within 48 hours, usually much faster.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://raw.githubusercontent.com/pydelhi/resources/refs/heads/main/logos/pydelhi-transparent-extended-color.svg" alt="PyDelhi" style="height:40px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.85;">
+        <p class="footer-tagline">Delhi's Python community,<br>running since 2011.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="#" class="footer-social" aria-label="Twitter / X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a href="#" class="footer-social" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="footer-social" aria-label="Telegram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-link-group">
+          <div class="footer-link-heading">Community</div>
+          <a href="#">Events</a>
+          <a href="#">Speak</a>
+          <a href="#">Blog</a>
+          <a href="#">About</a>
+        </div>
+        <div class="footer-link-group">
+          <div class="footer-link-heading">Get Involved</div>
+          <a href="#">Sponsor</a>
+          <a href="#">Collaborate</a>
+          <a href="#">Volunteer</a>
+          <a href="#">Submit a Talk</a>
+        </div>
+        <div class="footer-link-group">
+          <div class="footer-link-heading">Resources</div>
+          <a href="#">Code of Conduct</a>
+          <a href="#">Recordings</a>
+          <a href="#">Slides</a>
+          <a href="https://www.commudle.com/communities/pydelhi" target="_blank" rel="noopener">Commudle</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2011–2026 PyDelhi. Volunteer-run, community-powered.</span>
+      <span class="footer-bottom-right">
+        Made with
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        in Delhi
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
