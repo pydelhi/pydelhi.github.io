@@ -1,13 +1,13 @@
 let REGISTRATION_OPEN = true;
 let CFP_OPEN = true;
 
-const PHOTOS = [
-  { cid:'bento-cell-0', gid:'ghost-0', img:'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80', lb:"PyCon Delhi '24",   spct:.04,  srpct:null, sy:.20, sw:150, sh:185, rot:-7 },
-  { cid:'bento-cell-1', gid:'ghost-1', img:'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80', lb:'Workshop · FastAPI', spct:.10,  srpct:null, sy:.55, sw:210, sh:150, rot: 6 },
-  { cid:'bento-cell-2', gid:'ghost-2', img:'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80', lb:'Meetup #62',          spct:null, srpct:.04,  sy:.15, sw:158, sh:195, rot: 9 },
-  { cid:'bento-cell-3', gid:'ghost-3', img:'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80', lb:'Community Meetup', spct:null, srpct:.08,  sy:.55, sw:290, sh:210, rot:-6 },
-];
 
+const PHOTOS = [
+  { cid:'bento-cell-0', gid:'ghost-0', img:'./assets/DSC_0873.JPG', lb:"Talks",   spct:.04,  srpct:null, sy:.20, sw:150, sh:185, rot:-7 },
+  { cid:'bento-cell-1', gid:'ghost-1', img:'./assets/grouppic.jpeg', lb:'Meetups', spct:.10,  srpct:null, sy:.55, sw:210, sh:150, rot: 6 },
+  { cid:'bento-cell-2', gid:'ghost-2', img:'./assets/IWD.jpeg', lb:'Workshops', spct:null, srpct:.04,  sy:.15, sw:158, sh:195, rot: 9 },
+  { cid:'bento-cell-3', gid:'ghost-3', img:'./assets/bof.jpg', lb:'Birds of a Feather', spct:null, srpct:.08,  sy:.55, sw:290, sh:210, rot:-6 },
+];
 
 function updateMeetupCard() {
   const badge = document.getElementById('meetup-badge');

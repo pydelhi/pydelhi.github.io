@@ -69,7 +69,7 @@ nav{
 .nav-cta svg{width:12px;height:12px;flex-shrink:0}
 
 /* SCROLL DRIVER */
-.scroll-driver{height:200vh;position:relative}
+.scroll-driver{height:140vh;position:relative}
 .sticky-scene{position:sticky;top:0;height:100vh}
 
 /* HERO BACKGROUND */
