@@ -12,7 +12,7 @@ Hand this file to any new Claude Code session working on this repo. It captures 
 
 | Token | Value | Use |
 |---|---|---|
-| Navy | `#00296B` | Primary text, headings, primary buttons, dark blocks (speak section, ticket, footer) |
+| Navy | `#00296B` | Primary text, headings, primary buttons, dark blocks (footer) |
 | Gold | `#F29800` | Accent. Only on navy or as fills/underlines. **Never gold text on the light background**: contrast is too low and the owner rejected it |
 | Pastel blue | `#D5DEEF` | Tints, "Talks", Sponsor pane |
 | Pastel yellow | `#F7E4BF` | Tints, "Workshop" |
@@ -55,7 +55,7 @@ Hand this file to any new Claude Code session working on this repo. It captures 
 ## Things the owner liked / chose
 
 - Hero: scroll-driven animation where scattered photos fly into the bento grid. It was "clunky" before; now one smoothed timeline (see the Technical notes section below).
-- "Got five minutes? Or ninety?" talk-length ruler (on navy so the gold reads).
+- "Got five minutes? Or ninety?" talk-length ruler, now on a rounded pastel blue panel with navy and white bars. The earlier navy band with gold bars was "very bright/contrasty".
 - Stats as a **GitHub-style contribution graph**: years left to right, Jan to Dec top to bottom, coloured by meetup type, custom hover tooltip, "2011 … Today" end labels only.
 - Sponsor / Collaborate as a **pill toggle** switching two panes (photo + list with icons in soft white squares).
 - Format list (Talks / Workshops / BoF / Lightning) with pastel row highlight + photo preview on hover.
@@ -77,24 +77,28 @@ Hand this file to any new Claude Code session working on this repo. It captures 
 4. Our speakers have come from (marquee) + Past sponsors & venues (reverse marquee)
 5. About: "One Saturday a month, many ways in." + format hover list
 6. Photo strip "Saturdays look like this." (drag/swipe + arrows)
-7. Events: navy ticket for the upcoming meetup + past-event cards with group photos
-8. Speak: navy section, talk-length ruler, "Submit a Talk"
-9. Sponsor / Collaborate toggle + "Get in touch"
-10. Join CTA (white) with tilted photos
-11. Footer: Community / Resources / Organization columns
+7. Events: white ticket with a pastel green date stub (dark green date) and notches on every width (the owner found the all-navy, gold-heavy version too much) + past-event cards with group photos
+8. Sponsor / Collaborate toggle + "Get in touch" (moved above Speak: the owner ranks it as more important)
+9. Speak: pastel blue rounded panel (content width, not full bleed), talk-length ruler, navy "Submit a Talk"
+10. Volunteer: "Help us run the room." Photo on the left, role pills on the right (centred and stacked on phones), navy button to the Google Form
+11. Join CTA (white) with tilted photos
+12. Footer: Community / Resources / Organization columns
 
 ## Placeholders still to replace (all marked `TODO` in code)
 
-- Stats numbers (350+, 12k+) and `MEETUP_HISTORY` in `script.js` (one 12-char string per year: `t` talks, `w` workshop, `b` BoF, `.` none). The headline total is computed from it.
-- `SPEAKER_COMPANIES` and `SPONSORS` in `script.js` (Simple Icons slugs; no slug renders a text wordmark).
+- Stats numbers (350+, 12k+) and `MEETUP_HISTORY` in `script.js` (one 12-char string per year: `t` talks, `w` workshop, `b` BoF, `.` none). The headline total (140+) is set by hand in `index.html`, not computed from it.
 - Past events (titles, dates, links) in `index.html`.
-- Links: WhatsApp, Telegram, Mailing List, Intro Slides (`#`); the collaboration-proposal GitHub link (currently the org page). The X/LinkedIn/Instagram/YouTube URLs are guesses.
+- Links: WhatsApp, Telegram, Mailing List, Intro Slides (`#`); the collaboration-proposal GitHub link (currently the org page); the volunteer Google Form link and a real volunteer photo. The X/LinkedIn/Instagram/YouTube URLs are guesses.
 - Hero meetup card still says "May Meetup, Saturday May 23".
 
 ## Technical notes (hard-won)
 
+- Logo marquees: `SPEAKER_COMPANIES` and `SPONSORS` in `script.js` are real, sourced lists (speaker employers from delivered talks in github.com/pydelhi/talks; venues and sponsors from meetup.com/pydelhi, Commudle and the blog recaps). Files live in `assets/logos/` and are drawn navy through a CSS mask, so any colour or format works as long as the background is transparent. Use the brand's full official logo; add `text` (the name beside it) only when the file is a bare symbol, e.g. GitHub's Invertocat. The owner rejected "Zomato logo + the word Zomato" duplication.
+
 - `html, body { overflow-x: clip }`. **Never `hidden`**: it makes body a scroll container and silently breaks `position: sticky` (which the hero depends on).
 - Hero animation is modelled on portrait.so. **Nothing is pinned**: the headline and bento are normal page flow and scroll natively. Each photo sits in its bento cell and only carries a transform (translate, uniform scale, rotate) that throws it out to its scattered start; the offset shrinks linearly with scroll through a critically damped spring and hits zero early, like Portrait: when the bento's top is 26% down the screen on desktop and 22% on phones, even if its bottom is still below the fold. No `filter: blur()` on big hero layers (the old glow orbs had it and made large screens feel heavy); draw soft glows as wide radial gradients instead. The owner rejected the earlier sticky/pinned version as "frictiony" and "heavy", so don't reintroduce pinning, scroll hijacking or per-frame width/height/box-shadow/backdrop-filter changes.
 - The animation runs on phones too (start positions in `PHOTOS[].m`, cards bleeding off the screen edges). Only `prefers-reduced-motion` skips it, by clearing the transforms.
+- Scroll reveals: `[data-reveal]` (CSS transition) for the ticket, past cards, graph and ruler; everything else is listed in `REVEALS` in `script.js` and animated once with the Web Animations API (rise, fade, slide, pop, photo, underline), so nothing lingers to fight hover transitions. Stat numbers count up on first view.
+- Mascot snake (`#9BB693`): one stroked body path drawn to a length, with the head, eye and tongue from the owner's mascot SVG riding its tip (`makeSnake` in `script.js`). The loop snake lies on the bottom edge of the volunteer section as a divider and follows the scroll; a thin straight one sits flush on the bottom of the footer and runs once on a timer. Both run to the right screen edge, and the tongue flicks once they arrive.
 - Icons: Phosphor web font (`ph ph-*`) from unpkg.
 - Local preview: `python3 -m http.server 5173` from the repo root (the desktop app's preview launcher can't read `~/Documents`). Browsers cache aggressively, so fetch files with `cache:'reload'` before reloading.

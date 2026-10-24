@@ -102,7 +102,8 @@
   <!-- STATS: meetup history as a contribution graph. Data lives in MEETUP_HISTORY in script.js -->
   <section class="stats" aria-labelledby="stats-title">
     <div class="wrap">
-      <h2 class="h2" id="stats-title"><span id="meetup-total">120</span>+ meetups since 2011.</h2>
+      <h2 class="h2" id="stats-title"><!-- TODO confirm: set by hand, the graph below is still placeholder data -->
+      <span id="meetup-total">140</span>+ meetups since 2011.</h2>
       <div class="graph-card" data-reveal>
         <div class="graph-main">
           <div class="graph-wrap">
@@ -204,7 +205,9 @@
       <h2 class="h2" id="events-title">Next up, and what you missed.</h2>
       <div class="events-grid">
 
-        <article class="ticket" data-reveal>
+        <!-- the ticket's notches are a mask, so its outline and shadow live on this wrapper -->
+        <div class="ticket-wrap" data-reveal>
+        <article class="ticket">
           <div class="ticket-main">
             <span class="ticket-status">RSVP open</span>
             <h3 class="ticket-title">PyDelhi May Meetup</h3>
@@ -213,7 +216,7 @@
               <li><i class="ph ph-map-pin"></i>Appinventiv, Noida Sector 137</li>
               <li><i class="ph ph-ticket"></i>Free, registration on Commudle</li>
             </ul>
-            <a href="https://www.commudle.com/communities/pydelhi" class="btn-gold" target="_blank" rel="noopener">RSVP on Commudle <i class="ph ph-arrow-up-right"></i></a>
+            <a href="https://www.commudle.com/communities/pydelhi" class="btn-navy" target="_blank" rel="noopener">RSVP on Commudle <i class="ph ph-arrow-up-right"></i></a>
           </div>
           <div class="ticket-stub" aria-label="Saturday 23 May">
             <span>SAT</span>
@@ -221,6 +224,7 @@
             <span>MAY</span>
           </div>
         </article>
+        </div>
 
         <div class="past">
           <!-- TODO placeholder past events: swap in real titles, dates and photos -->
@@ -242,43 +246,6 @@
           </a>
           <a href="/events" class="text-link">View all events <i class="ph ph-arrow-right"></i></a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPEAK -->
-  <section class="speak" aria-labelledby="speak-title">
-    <div class="wrap">
-      <div class="speak-head">
-        <h2 class="h2" id="speak-title">Got five minutes? <em>Or ninety?</em></h2>
-        <p class="lede">First-time speakers, students and seasoned engineers all share the same stage. Pick the length that fits your idea. Talks may be recorded for our YouTube channel.</p>
-      </div>
-
-      <div class="ruler" id="ruler" data-reveal>
-        <div class="ruler-scale" aria-hidden="true">
-          <span style="--at:0">0</span><span style="--at:15">15</span><span style="--at:30">30</span><span style="--at:45">45</span><span style="--at:60">60</span><span style="--at:75">75</span><span style="--at:90">90 min</span>
-        </div>
-        <div class="ruler-row">
-          <span class="ruler-name"><i class="ph ph-lightning"></i>Lightning talk</span>
-          <span class="ruler-bar" style="--from:0;--to:5"><span>5 min</span></span>
-        </div>
-        <div class="ruler-row">
-          <span class="ruler-name"><i class="ph ph-presentation-chart"></i>Full talk</span>
-          <span class="ruler-bar" style="--from:0;--to:30"><span>20 to 30 min</span></span>
-        </div>
-        <div class="ruler-row">
-          <span class="ruler-name"><i class="ph ph-laptop"></i>Workshop</span>
-          <span class="ruler-bar ruler-bar-navy" style="--from:0;--to:90"><span>60 to 90 min, hands-on</span></span>
-        </div>
-        <div class="ruler-row">
-          <span class="ruler-name"><i class="ph ph-chats-circle"></i>Birds of a Feather</span>
-          <span class="ruler-bar ruler-bar-open" style="--from:0;--to:60"><span>open-ended</span></span>
-        </div>
-      </div>
-
-      <div class="speak-foot">
-        <p>Topics we love: web, data, ML, tooling, testing, packaging, Python internals and the odd side project that got out of hand.</p>
-        <a href="/speak" class="btn-gold">Submit a Talk <i class="ph ph-arrow-right"></i></a>
       </div>
     </div>
   </section>
@@ -323,6 +290,71 @@
         <a href="/sponsor" class="btn-navy">Get in touch <i class="ph ph-arrow-right"></i></a>
       </div>
     </div>
+  </section>
+
+  <!-- SPEAK -->
+  <section class="speak" aria-labelledby="speak-title">
+    <div class="wrap">
+      <div class="speak-panel">
+      <div class="speak-head">
+        <h2 class="h2" id="speak-title">Got five minutes? <em>Or ninety?</em></h2>
+        <p class="lede">First-time speakers, students and seasoned engineers all share the same stage. Pick the length that fits your idea. Talks may be recorded for our YouTube channel.</p>
+      </div>
+
+      <div class="ruler" id="ruler" data-reveal>
+        <div class="ruler-scale" aria-hidden="true">
+          <span style="--at:0">0</span><span style="--at:15">15</span><span style="--at:30">30</span><span style="--at:45">45</span><span style="--at:60">60</span><span style="--at:75">75</span><span style="--at:90">90 min</span>
+        </div>
+        <div class="ruler-row">
+          <span class="ruler-name"><i class="ph ph-lightning"></i>Lightning talk</span>
+          <span class="ruler-bar" style="--from:0;--to:5"><span>5 min</span></span>
+        </div>
+        <div class="ruler-row">
+          <span class="ruler-name"><i class="ph ph-presentation-chart"></i>Full talk</span>
+          <span class="ruler-bar" style="--from:0;--to:30"><span>20 to 30 min</span></span>
+        </div>
+        <div class="ruler-row">
+          <span class="ruler-name"><i class="ph ph-laptop"></i>Workshop</span>
+          <span class="ruler-bar ruler-bar-long" style="--from:0;--to:90"><span>60 to 90 min, hands-on</span></span>
+        </div>
+        <div class="ruler-row">
+          <span class="ruler-name"><i class="ph ph-chats-circle"></i>Birds of a Feather</span>
+          <span class="ruler-bar ruler-bar-open" style="--from:0;--to:60"><span>open-ended</span></span>
+        </div>
+      </div>
+
+      <div class="speak-foot">
+        <p>Topics we love: web, data, ML, tooling, testing, packaging, Python internals and the odd side project that got out of hand.</p>
+        <a href="/speak" class="btn-navy">Submit a Talk <i class="ph ph-arrow-right"></i></a>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEER -->
+  <section class="volunteer" aria-labelledby="volunteer-title">
+    <div class="wrap vol">
+      <!-- TODO: swap for a photo of volunteers at work -->
+      <img class="vol-img" src="./assets/WhatsApp Image 2026-05-03 at 11.30.09.jpeg" alt="PyDelhi volunteers and attendees at a meetup" loading="lazy">
+      <div class="vol-body">
+        <h2 class="h2" id="volunteer-title">Help us run the room.</h2>
+        <p class="lede">Every meetup is put together by volunteers. Pick what you're good at, or tell us something new.</p>
+        <ul class="vol-roles">
+          <li><i class="ph ph-palette" aria-hidden="true"></i>Graphic design</li>
+          <li><i class="ph ph-browser" aria-hidden="true"></i>Web design</li>
+          <li><i class="ph ph-instagram-logo" aria-hidden="true"></i>Social media</li>
+          <li><i class="ph ph-pencil-simple" aria-hidden="true"></i>Content writing</li>
+          <li><i class="ph ph-check-square-offset" aria-hidden="true"></i>CFP review</li>
+          <li><i class="ph ph-briefcase" aria-hidden="true"></i>Marketing</li>
+          <li><i class="ph ph-clipboard-text" aria-hidden="true"></i>On-ground: logistics, registrations</li>
+          <li><i class="ph ph-dots-three" aria-hidden="true"></i>Something else</li>
+        </ul>
+        <!-- TODO: Google Form link for volunteer sign-ups -->
+        <a href="#" class="btn-navy" target="_blank" rel="noopener">Volunteer with us <i class="ph ph-arrow-up-right"></i></a>
+      </div>
+    </div>
+    <!-- MASCOT: drawn by script.js, lies on the section's bottom edge and slithers in as you scroll -->
+    <svg class="snake snake-divider" id="snake-loop" aria-hidden="true"></svg>
   </section>
 
   <!-- JOIN -->
@@ -387,9 +419,10 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 PyDelhi. Run by volunteers.</span>
-      <a href="/coc">Code of Conduct</a>
+      <span>Made with <span class="heart" aria-label="love">♥</span> by <a href="https://daksh.design" target="_blank" rel="noopener">daksh.design</a></span>
     </div>
   </div>
+  <svg class="snake snake-footer" id="snake-footer" aria-hidden="true"></svg>
 </footer>
 
 <script src="script.js"></script>
