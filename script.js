@@ -321,6 +321,51 @@ formatList.querySelectorAll('.format').forEach(li => {
 formatList.addEventListener('pointerleave', () => setActiveFormat(null));
 
 
+/* ─── PAST EVENTS ─── */
+
+// Titles, dates and links come from Commudle; it has no event photos, so they live here.
+// Key = the event's slug, the last part of its Commudle URL. Drop the photo in assets/events/.
+// An event without an entry (or with a missing file) gets a generated cover instead.
+const EVENT_PHOTOS = {
+  // 'software-internals-meetup-1-redis-kubernetes': { img:'./assets/events/software-internals-1.jpg', alt:'Group photo from Software Internals Meetup #1' },
+  // 'pydelhi-3-15-the-next-python': { img:'./assets/events/pydelhi-3-15.jpg', alt:'Group photo from PyDelhi 3.15: The Next Python' },
+};
+
+const COMMUDLE_PAST = 'https://json.commudle.com/api/v2/events/public/index_by_community?when=past&community_id=8&page=1&count=2';
+
+function generatedCover(box) {
+  box.className = 'past-img past-gen';
+  box.innerHTML = '<span class="past-gen-logo"></span>';
+}
+
+// Fills the cards already in the page, so if Commudle is down they keep their static content
+fetch(COMMUDLE_PAST)
+  .then(r => r.json())
+  .then(({ data }) => {
+    const cards = document.querySelectorAll('.past-card');
+    data.values.slice(0, cards.length).forEach((ev, i) => {
+      const card = cards[i];
+      const box = card.querySelector('.past-img');
+      const img = box.querySelector('img');
+      const photo = EVENT_PHOTOS[ev.slug];
+      card.href = `https://www.commudle.com/communities/${ev.kommunity_slug}/events/${ev.slug}`;
+      card.target = '_blank';
+      card.rel = 'noopener';
+      if (photo) {
+        img.onerror = () => generatedCover(box);
+        img.src = photo.img;
+        img.alt = photo.alt;
+      } else {
+        generatedCover(box);
+      }
+      card.querySelector('.past-date').textContent =
+        new Date(ev.start_time).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+      card.querySelector('.past-body strong').textContent = ev.name;
+    });
+  })
+  .catch(() => {});
+
+
 /* ─── REVEALS ─── */
 
 const io = new IntersectionObserver(entries => {

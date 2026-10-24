@@ -6,7 +6,6 @@ Hand this file to any new Claude Code session working on this repo. It captures 
 
 - Static site, no build step: `index.html`, `styles.css`, `script.js`, photos in `assets/`.
 - Only the home page (`/`) exists so far. Planned routes: `/events`, `/speak`, `/sponsor`, `/community`, `/about`, `/blog`, `/blog/[meetup-edition]`, `/volunteers`, `/coc`. Nav and footer already link to them.
-- `index copy.html` and `pydelhi (1).html` are the owner's older drafts. Don't edit or delete them.
 
 ## Brand tokens (only use these)
 
