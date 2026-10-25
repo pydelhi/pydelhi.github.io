@@ -4,8 +4,10 @@ Hand this file to any new Claude Code session working on this repo. It captures 
 
 ## The project
 
-- Static site, no build step: `index.html`, `styles.css`, `script.js`, photos in `assets/`.
-- Only the home page (`/`) exists so far. Planned routes: `/events`, `/speak`, `/sponsor`, `/community`, `/about`, `/blog`, `/blog/[meetup-edition]`, `/volunteers`, `/coc`. Nav and footer already link to them.
+- Built with **Eleventy** (11ty) and deployed to GitHub Pages at pydelhi.org by `.github/workflows/deploy.yml` (on push to `main`, daily at 08:00 IST, and by hand). No client framework: the HTML, CSS and JS are still hand-written.
+- Source lives in `src/`: `_includes/layouts/base.njk` (head, nav, footer), `index.njk` (home), `events.njk` (`/events`), `_includes/ticket.njk` and `past-card.njk` (shared pieces), `styles.css`, `script.js`. Photos in `src/assets/photos/`, logos in `src/assets/logos/`.
+- Pages built so far: `/` and `/events`. Planned: `/speak`, `/sponsor`, `/community`, `/about`, `/blog`, `/blog/[meetup-edition]`, `/volunteers`, `/coc`. Nav and footer already link to them.
+- Links and asset paths are root-absolute (`/assets/...`, `/events`) so they work from any page.
 
 ## Brand tokens (only use these)
 
@@ -55,7 +57,7 @@ Hand this file to any new Claude Code session working on this repo. It captures 
 
 - Hero: scroll-driven animation where scattered photos fly into the bento grid. It was "clunky" before; now one smoothed timeline (see the Technical notes section below).
 - "Got five minutes? Or ninety?" talk-length ruler, now on a rounded pastel blue panel with navy and white bars. The earlier navy band with gold bars was "very bright/contrasty".
-- Stats as a **GitHub-style contribution graph**: years left to right, Jan to Dec top to bottom, coloured by meetup type, custom hover tooltip, "2011 … Today" end labels only.
+- Stats as a **GitHub-style contribution graph**: years left to right, Jan to Dec top to bottom, one pastel blue square per month with a meetup (no talk/workshop/BoF types: the owner doesn't want event types anywhere), custom hover tooltip, "2011 … Today" end labels only.
 - Sponsor / Collaborate as a **pill toggle** switching two panes (photo + list with icons in soft white squares).
 - Format list (Talks / Workshops / BoF / Lightning) with pastel row highlight + photo preview on hover.
 - Closing "Save yourself a seat at the next one." section with tilted photo cards echoing the hero.
@@ -85,14 +87,12 @@ Hand this file to any new Claude Code session working on this repo. It captures 
 
 ## Placeholders still to replace (all marked `TODO` in code)
 
-- Stats numbers (350+, 12k+) and `MEETUP_HISTORY` in `script.js` (one 12-char string per year: `t` talks, `w` workshop, `b` BoF, `.` none). The headline total (140+) is set by hand in `index.html`, not computed from it.
-- Past events (titles, dates, links) in `index.html`.
+- Stats numbers (350+, 12k+) in `src/index.njk`, and the pre-2025 part of the graph in `src/_data/meetupHistory.js` (`BEFORE_COMMUDLE`, one 12-char string per year, `x` met, `.` none, plus `MEETUPS_BEFORE_COMMUDLE`). From 2025 on, the graph and the headline total fill in from Commudle.
 - Links: WhatsApp, Telegram, Mailing List, Intro Slides (`#`); the collaboration-proposal GitHub link (currently the org page); the volunteer Google Form link and a real volunteer photo. The X/LinkedIn/Instagram/YouTube URLs are guesses.
-- Hero meetup card still says "May Meetup, Saturday May 23".
 
 ## Technical notes (hard-won)
 
-- Logo marquees: `SPEAKER_COMPANIES` and `SPONSORS` in `script.js` are real, sourced lists (speaker employers from delivered talks in github.com/pydelhi/talks; venues and sponsors from meetup.com/pydelhi, Commudle and the blog recaps). Files live in `assets/logos/` and are drawn navy through a CSS mask, so any colour or format works as long as the background is transparent. Use the brand's full official logo; add `text` (the name beside it) only when the file is a bare symbol, e.g. GitHub's Invertocat. The owner rejected "Zomato logo + the word Zomato" duplication.
+- Logo marquees: `SPEAKER_COMPANIES` and `SPONSORS` in `script.js` are real, sourced lists (speaker employers from delivered talks in github.com/pydelhi/talks; venues and sponsors from meetup.com/pydelhi, Commudle and the blog recaps). Files live in `src/assets/logos/` and are drawn navy through a CSS mask, so any colour or format works as long as the background is transparent. Use the brand's full official logo; add `text` (the name beside it) only when the file is a bare symbol, e.g. GitHub's Invertocat. The owner rejected "Zomato logo + the word Zomato" duplication.
 
 - `html, body { overflow-x: clip }`. **Never `hidden`**: it makes body a scroll container and silently breaks `position: sticky` (which the hero depends on).
 - Hero animation is modelled on portrait.so. **Nothing is pinned**: the headline and bento are normal page flow and scroll natively. Each photo sits in its bento cell and only carries a transform (translate, uniform scale, rotate) that throws it out to its scattered start; the offset shrinks linearly with scroll through a critically damped spring and hits zero early, like Portrait: when the bento's top is 26% down the screen on desktop and 22% on phones, even if its bottom is still below the fold. No `filter: blur()` on big hero layers (the old glow orbs had it and made large screens feel heavy); draw soft glows as wide radial gradients instead. The owner rejected the earlier sticky/pinned version as "frictiony" and "heavy", so don't reintroduce pinning, scroll hijacking or per-frame width/height/box-shadow/backdrop-filter changes.
@@ -100,4 +100,8 @@ Hand this file to any new Claude Code session working on this repo. It captures 
 - Scroll reveals: `[data-reveal]` (CSS transition) for the ticket, past cards, graph and ruler; everything else is listed in `REVEALS` in `script.js` and animated once with the Web Animations API (rise, fade, slide, pop, photo, underline), so nothing lingers to fight hover transitions. Stat numbers count up on first view.
 - Mascot snake (`#9BB693`): one stroked body path drawn to a length, with the head, eye and tongue from the owner's mascot SVG riding its tip (`makeSnake` in `script.js`). The loop snake lies on the bottom edge of the volunteer section as a divider and follows the scroll; a thin straight one sits flush on the bottom of the footer and runs once on a timer. Both run to the right screen edge, and the tongue flicks once they arrive.
 - Icons: Phosphor web font (`ph ph-*`) from unpkg.
-- Local preview: `python3 -m http.server 5173` from the repo root (the desktop app's preview launcher can't read `~/Documents`). Browsers cache aggressively, so fetch files with `cache:'reload'` before reloading.
+- Events come from Commudle at build time (`lib/commudle.js`, public API, community id 8). The hero meetup card, the ticket, the past-event cards, the graph and `/events` all render from it. When nothing is upcoming, the card and ticket say "coming soon" with a "Get notified" button to Commudle (the owner's choice). If Commudle can't be reached, the build uses `lib/commudle-fallback.json`, which every successful build rewrites; commit it when it changes.
+- Event photos: drop them in `src/assets/events/<commudle-slug>/` (`cover.*`, or else the first file, is the card photo). Alt text and blog recap links go in `src/_data/eventExtras.json`. No photo means the generated cover: pastel blue with the navy PyDelhi wordmark, no event-type label.
+- Photos go through eleventy-img (`{% photo %}` shortcode in `eleventy.config.js`): WebP + JPEG at 320/640/1280, wrapped in `<picture>`. `picture{display:contents}` and `picture source{display:none}` keep every existing `img` rule and grid layout working as before. Width/height attributes are stripped because they would override the CSS aspect-ratios. The hero photos are built into a `<template>` in each bento cell and cloned by `script.js`, so the fly-in is unchanged.
+- `script.js` is shared by every page, so home-only parts check their element exists first.
+- Local preview: `npm install` once, then `npm start` (Eleventy dev server on http://localhost:8080, rebuilds on save). `npm run build` writes `_site/`. Browsers cache aggressively, so fetch files with `cache:'reload'` before reloading.

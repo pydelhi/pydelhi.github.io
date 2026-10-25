@@ -1,0 +1,17 @@
+{
+  "name": "pydelhi-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7",
+    "@11ty/eleventy-fetch": "^6.0.1",
+    "@11ty/eleventy-img": "^7.1.1"
+  }
+}

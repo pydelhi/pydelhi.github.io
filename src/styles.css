@@ -6,6 +6,9 @@
 }
 /* clip, not hidden: overflow:hidden on body makes it a scroll container and breaks position:sticky */
 html,body{overflow-x:clip}
+/* the build wraps photos in <picture> for WebP; it draws no box, so img rules apply as before */
+picture{display:contents}
+picture source{display:none}
 body{
   font-family:'Outfit',sans-serif;letter-spacing:.01em;
   background:#f7f6f3;
@@ -247,9 +250,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 /* GitHub-style: months flow down 7-tall columns, oldest on the left */
 .graph{display:grid;grid-template-rows:repeat(7,auto);grid-auto-flow:column;grid-auto-columns:1fr;gap:4px}
 .cell{aspect-ratio:1;border-radius:4px;background:#efede8;box-shadow:inset 0 0 0 1px rgba(0,0,0,.03)}
-.cell.talk{background:#D5DEEF;box-shadow:inset 0 0 0 1px #b8c7e4}
-.cell.workshop{background:#F7E4BF;box-shadow:inset 0 0 0 1px #ecd09a}
-.cell.bof{background:#D0DED2;box-shadow:inset 0 0 0 1px #aec6b2}
+.cell.met{background:#D5DEEF;box-shadow:inset 0 0 0 1px #b8c7e4}
 .cell.future{background:none;box-shadow:inset 0 0 0 1px dashed;outline:1.5px dashed #ddd9cf;outline-offset:-2px}
 .cell.now{box-shadow:inset 0 0 0 2px var(--navy)}
 /* reveal: one soft mask sweeps the whole graph left to right, oldest year first.
@@ -270,9 +271,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .graph-legend{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--ink-soft)}
 .graph-legend li{display:flex;align-items:center;gap:8px}
 .sw{width:14px;height:14px;border-radius:4px;display:inline-block}
-.sw-talk{background:#D5DEEF;box-shadow:inset 0 0 0 1px #b8c7e4}
-.sw-workshop{background:#F7E4BF;box-shadow:inset 0 0 0 1px #ecd09a}
-.sw-bof{background:#D0DED2;box-shadow:inset 0 0 0 1px #aec6b2}
+.sw-met{background:#D5DEEF;box-shadow:inset 0 0 0 1px #b8c7e4}
 .sw-none{background:#efede8}
 .stat-pair{display:flex;gap:48px}
 .stat-pair div{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:4px}
@@ -375,6 +374,8 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
   font-size:14px;font-weight:600;letter-spacing:calc(.12em + .01em);color:#2c5a3f;
 }
 .ticket-stub strong{font-size:68px;font-weight:800;letter-spacing:calc(-.04em + .01em);line-height:1;color:#1f4a31}
+/* no date announced yet: a calendar stands in for the day */
+.ticket-stub i{font-size:58px;line-height:1;color:#1f4a31;margin:4px 0}
 .past{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
 .past-card{display:grid;grid-template-columns:168px 1fr 24px;gap:20px;align-items:center;width:100%;padding:10px;border-radius:20px;background:#fff;border:1px solid var(--line);text-decoration:none;color:inherit;transition:border-color .2s,transform .3s var(--ease),box-shadow .3s}
 .past-card:hover{border-color:#b8c7e4;transform:translateY(-2px);box-shadow:0 14px 34px -18px rgba(0,41,107,.35)}
@@ -479,7 +480,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .footer-brand p{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.6);max-width:30ch}
 .footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .footer-cols>div{display:flex;flex-direction:column;align-items:flex-start;gap:11px}
-.footer h4{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:6px}
+.footer h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px}
 .footer-cols a{font-size:14.5px;color:rgba(255,255,255,.7);text-decoration:none;transition:color .15s}
 .footer-cols a:hover{color:#fff}
 .footer-socials{display:flex;gap:8px;margin-top:4px}
@@ -553,6 +554,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
   .ticket{--stub:100px;--notch:12px}
   .ticket-main{padding:26px 22px 28px}
   .ticket-stub strong{font-size:44px}
+  .ticket-stub i{font-size:38px}
 
   .speak{padding:24px 0 88px}
   .speak-panel{padding:48px 20px 36px;border-radius:22px}
@@ -738,3 +740,16 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
   .snake.arrived .snake-tongue{transform-box:fill-box;transform-origin:right center;animation:tongue 5s ease-in-out infinite}
 }
 @keyframes tongue{0%,72%,100%{transform:none}76%,84%{transform:scaleX(.15)}80%,88%{transform:none}}
+
+/* ─── /events page: the home page's ticket and past cards, laid out as a full list ─── */
+.events-page .events{padding:136px 0 64px}
+.events-page .events.events-past{padding:24px 0 120px}
+.events-page h1.h2{animation:none}
+.events-page .ticket-wrap{max-width:640px;margin:0 auto}
+.events-sub{font-size:22px;font-weight:700;letter-spacing:calc(-.02em + .01em);color:var(--navy);text-align:center;margin:56px 0 20px}
+.past-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:860px){
+  .events-page .events{padding:112px 0 48px}
+  .events-page .events.events-past{padding:16px 0 88px}
+  .past-grid{grid-template-columns:minmax(0,1fr)}
+}

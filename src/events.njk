@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+title: Events | PyDelhi
+description: Upcoming and past PyDelhi meetups in Delhi NCR. Free talks, workshops and Birds of a Feather sessions every month.
+permalink: /events/
+---
+<main class="events-page">
+
+  <section class="events" aria-labelledby="events-title">
+    <div class="wrap">
+      <h1 class="h2" id="events-title">Next up.</h1>
+      {% include "ticket.njk" %}
+      {%- if events.upcoming.length > 1 %}
+      <h2 class="events-sub">Also coming up</h2>
+      <div class="past-grid">
+        {%- for ev in events.upcoming.slice(1) %}
+        {% include "past-card.njk" %}
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+  </section>
+
+  <section class="events events-past" aria-labelledby="past-title">
+    <div class="wrap">
+      <h2 class="h2" id="past-title">What you missed.</h2>
+      <div class="past-grid">
+        {%- for ev in events.past %}
+        {% include "past-card.njk" %}
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  {%- if events.archive.length %}
+  <section class="events events-past" aria-labelledby="archive-title">
+    <div class="wrap">
+      <h2 class="h2" id="archive-title">From before Commudle.</h2>
+      <div class="past-grid">
+        {%- for ev in events.archive %}
+        {% include "past-card.njk" %}
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+  {%- endif %}
+
+</main>

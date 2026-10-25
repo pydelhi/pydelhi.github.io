@@ -1,0 +1,1350 @@
+{
+  "past": [
+    {
+      "id": 2270,
+      "name": "Software Internals Meetup #1 - Redis & Kubernetes",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWs1Q0E9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--4af81fb0e31ad018ff4c5a8f34e2325a7c5be089/com_597ec1f92d458c52_20260925115336.png",
+      "header_image": {
+        "id": 539052,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWs1Q0E9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--4af81fb0e31ad018ff4c5a8f34e2325a7c5be089/com_597ec1f92d458c52_20260925115336.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWs1Q0E9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--4af81fb0e31ad018ff4c5a8f34e2325a7c5be089/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/com_597ec1f92d458c52_20260925115336.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWs1Q0E9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--4af81fb0e31ad018ff4c5a8f34e2325a7c5be089/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/com_597ec1f92d458c52_20260925115336.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWs1Q0E9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--4af81fb0e31ad018ff4c5a8f34e2325a7c5be089/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/com_597ec1f92d458c52_20260925115336.png"
+      },
+      "start_time": "2026-10-03T12:00:00.000+05:30",
+      "end_time": "2026-10-03T15:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "software-internals-meetup-1-redis-kubernetes",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 103,
+      "event_locations": [
+        {
+          "name": "Essentia.dev",
+          "address": "Third Floor, C56/A28, C Block, Phase 2, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309",
+          "map_link": "https://maps.app.goo.gl/HMn87ym9LgHBfWML7"
+        }
+      ],
+      "description": "<h1>PyDelhi Software Internals Meetup #1</h1>\n<p>A new PyDelhi format for going deeper into how the systems we work with actually work under the hood.</p>\n<p>This is not a beginner-friendly talk meetup. We&rsquo;re keeping the group intentionally small and the discussions intentionally technical: <strong>15 seats only</strong>, for software professionals with <strong>1+ year of industry experience</strong>.</p>\n<p>Expect detailed walkthroughs, internals, implementation decisions, and discussion around how these systems work beyond their public APIs.</p>\n<h2>Talks</h2>\n<h3>The Redis Core: TCP, RESP &amp; Event-Driven I/O</h3>\n<p><strong>Sagar Deep &mdash; SDE 1, Essentia.dev</strong></p>\n<p>Redis is often treated as a black box: send a command, get a response. In this session, Sagar will go deeper into what actually happens inside Redis.</p>\n<p>We&rsquo;ll look at the foundations of Redis, including:</p>\n<ul>\n<li>\n<p>How Redis communicates over TCP</p>\n</li>\n<li>\n<p>How the RESP protocol works</p>\n</li>\n<li>\n<p>How Redis handles connections and requests</p>\n</li>\n<li>\n<p>Event-driven I/O and the event loop</p>\n</li>\n<li>\n<p>How these pieces come together to power Redis' performance</p>\n</li>\n</ul>\n<h3>From <code>kubectl apply</code> to Reconciliation: Inside the Kubernetes API Machinery</h3>\n<p><strong>Ghanatava &mdash; Freelance DevOps Engineer</strong></p>\n<p>What actually happens after you run <code>kubectl apply</code>?</p>\n<p>This session will trace the request through Kubernetes' API machinery and into the reconciliation model that drives the cluster.</p>\n<p>We&rsquo;ll dig into:</p>\n<ul>\n<li>\n<p>What happens inside the Kubernetes API server</p>\n</li>\n<li>\n<p>How API requests are processed</p>\n</li>\n<li>\n<p>Object storage and the path to etcd</p>\n</li>\n<li>\n<p>Watches, controllers, and reconciliation</p>\n</li>\n<li>\n<p>How Kubernetes turns a declarative request into actual cluster state</p>\n</li>\n</ul>\n<h2>Format</h2>\n<p>This will be a <strong>deep-study and discussion-style meetup</strong>, rather than a typical conference-style event.</p>\n<p>There will be time to pause, ask questions, discuss implementation details, and explore the parts of the systems that usually get abstracted away.</p>\n<p><strong>15 seats only.</strong></p>\n<p><strong>Eligibility: 1+ years of professional software engineering experience.</strong></p>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 261,
+          "name": "programming",
+          "tag_category_maps_count": 1
+        },
+        {
+          "id": 425,
+          "name": "system design",
+          "tag_category_maps_count": 2
+        },
+        {
+          "id": 452,
+          "name": "software engineering",
+          "tag_category_maps_count": 2
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 2211,
+      "name": "Python 3.15: The Next Python",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMWlxQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--bb7ddc77503ef01f87e7f5c255100150805cf5c1/com_c788c4ff53c27192_20260818073813.png",
+      "header_image": {
+        "id": 502268,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMWlxQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--bb7ddc77503ef01f87e7f5c255100150805cf5c1/com_c788c4ff53c27192_20260818073813.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMWlxQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--bb7ddc77503ef01f87e7f5c255100150805cf5c1/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/com_c788c4ff53c27192_20260818073813.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMWlxQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--bb7ddc77503ef01f87e7f5c255100150805cf5c1/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/com_c788c4ff53c27192_20260818073813.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMWlxQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--bb7ddc77503ef01f87e7f5c255100150805cf5c1/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/com_c788c4ff53c27192_20260818073813.png"
+      },
+      "start_time": "2026-09-19T11:00:00.000+05:30",
+      "end_time": "2026-09-19T16:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "pydelhi-3-15-the-next-python",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 440,
+      "event_locations": [
+        {
+          "name": "Essentia Office",
+          "address": "Third Floor, C56/A28, C Block, Phase 2, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309",
+          "map_link": "https://maps.app.goo.gl/x1XQAQKJ668bzhJf9"
+        }
+      ],
+      "description": "<h2>Python 3.15: The Next Python</h2>\n<p>Python 3.15 is on its way, and we're getting together to explore what's new, what's changing, and what the next chapter of Python looks like.</p>\n<p>From new language features and performance improvements to internals, tooling, libraries, and the things you probably haven't noticed yet, this meetup is all about Python 3.15 and the ecosystem around it.</p>\n<hr>\n<h2>📣 Call for Speakers is OPEN</h2>\n<p><strong>Want to be on stage?</strong>&nbsp;We're looking for speakers to share talks, demos, deep dives, experiments, war stories, and anything interesting around Python 3.15 or the wider Python ecosystem.</p>\n<p><a href=\"https://github.com/pydelhi/talks/issues/new?template=talk-proposal.yaml\"><strong>&rarr; Submit your talk proposal</strong></a></p>\n<p>You don't need to be a Python expert or a seasoned speaker. If you've built something interesting, learned something the community might find useful, or have a perspective worth sharing, we'd love to hear from you.</p>\n<p><strong>CFP is open now. Submit your proposal and help us shape the meetup.</strong></p>\n<hr>\n<p>Whether you're a long-time Pythonista, just getting started, or simply curious about where Python is headed, come hang out with the PyDelhi community.</p>\n<p><strong>More details about the venue and schedule will be announced soon.</strong></p>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 293,
+          "name": "tech",
+          "tag_category_maps_count": 1
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 2154,
+      "name": "PyDelhi Security BOF",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeVJUQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--cce812db7837a9b2d00f4101322fb6c6964f484f/com_f0e487d54d8eaa0a_20260714100814.png",
+      "header_image": {
+        "id": 479914,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeVJUQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--cce812db7837a9b2d00f4101322fb6c6964f484f/com_f0e487d54d8eaa0a_20260714100814.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeVJUQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--cce812db7837a9b2d00f4101322fb6c6964f484f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/com_f0e487d54d8eaa0a_20260714100814.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeVJUQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--cce812db7837a9b2d00f4101322fb6c6964f484f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/com_f0e487d54d8eaa0a_20260714100814.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeVJUQnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--cce812db7837a9b2d00f4101322fb6c6964f484f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/com_f0e487d54d8eaa0a_20260714100814.png"
+      },
+      "start_time": "2026-07-18T12:00:00.000+05:30",
+      "end_time": "2026-07-18T16:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "pydelhi-security-bof",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 236,
+      "event_locations": [
+        {
+          "name": "CSDS",
+          "address": "29, Rajpur Rd, Ludlow Castle, Civil Lines, Delhi, 110054",
+          "map_link": "https://maps.app.goo.gl/mpu8iNjFNReDRFqe9"
+        }
+      ],
+      "description": "<h2>PyDelhi Security BOF (Birds of a Feather)</h2>\n<p>Join the PyDelhi community for an open, informal gathering focused on Python security &mdash; one of the most critical and fast-evolving areas in software development today.</p>\n<p>A Birds of a Feather (BOF) session is an informal, discussion-driven meetup where participants with shared interests come together to exchange ideas, experiences, and knowledge. There are no keynotes or rigid agendas &mdash; just passionate people talking about what they know and care about.</p>\n<h3>What to Expect</h3>\n<p>This session will bring together developers, security researchers, ethical hackers, and Python enthusiasts to discuss topics such as:</p>\n<ul>\n<li>Secure coding practices in Python</li>\n<li>Common vulnerabilities in Python applications (OWASP Top 10 and beyond)</li>\n<li>Tools for static analysis, fuzzing, and penetration testing (e.g., Bandit, PyRDP, Scapy)</li>\n<li>Dependency security and supply chain risks</li>\n<li>CTF challenges and war stories from the field</li>\n<li>Building security-aware Python communities</li>\n</ul>\n<h3>Who Should Attend</h3>\n<p>This meetup is open to everyone &mdash; whether you are a seasoned security professional, a developer curious about hardening your Python code, or a student just getting started with application security. All skill levels are welcome.</p>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 905,
+          "name": "security",
+          "tag_category_maps_count": 1
+        },
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 70030,
+          "name": "bof",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 7272,
+          "name": "meetup",
+          "tag_category_maps_count": 0
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 2099,
+      "name": "DevConnect ",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMVF0Qnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--353ad83ad48354056a417fa94773a60f65393093/com_39e4f6d21bc29f0b_20260626030911.png",
+      "header_image": {
+        "id": 470231,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMVF0Qnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--353ad83ad48354056a417fa94773a60f65393093/com_39e4f6d21bc29f0b_20260626030911.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMVF0Qnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--353ad83ad48354056a417fa94773a60f65393093/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/com_39e4f6d21bc29f0b_20260626030911.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMVF0Qnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--353ad83ad48354056a417fa94773a60f65393093/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/com_39e4f6d21bc29f0b_20260626030911.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMVF0Qnc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--353ad83ad48354056a417fa94773a60f65393093/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/com_39e4f6d21bc29f0b_20260626030911.png"
+      },
+      "start_time": "2026-07-04T10:00:00.000+05:30",
+      "end_time": "2026-07-04T15:00:00.000+05:30",
+      "kommunity_id": 242,
+      "slug": "devconnect",
+      "timezone": "Asia/Kolkata",
+      "kommunity_slug": "codewithtechno",
+      "event_type": "offline",
+      "interested_members_count": 119,
+      "event_locations": [
+        {
+          "name": "ThoughtWorks, Gurugram",
+          "address": "ThoughtWorks Technologies, International Tech Park, Sector 59, Gurugram, Haryana 122011, India",
+          "map_link": "https://maps.google.com/?cid=12525763693432728901"
+        }
+      ],
+      "description": "<p><strong>DevConnect</strong> is an offline developer meetup by <strong>CodeWithTechno</strong> focused on bringing together developers, builders, students, and tech enthusiasts to explore the future of development, AI, and modern technology.</p>\n<p><br>This is not just another seminar or classroom-style session. DevConnect is designed as a space where people can connect with like-minded developers, gain real industry insights, discuss emerging technologies, and become part of a growing tech community.</p>\n<p><br>The event will feature speaker sessions, networking opportunities, community discussions, and conversations around AI, development, innovation, and the future of technology.</p>\n<p><br>Whether you&rsquo;re a beginner starting your journey or someone already building in tech, DevConnect is a place to learn, connect, and grow with the community.</p>\n<p><br><strong>Theme:</strong><br><em>Future of Development &amp; AI</em></p>\n<p><br><strong>What to Expect:</strong><br>&bull; Industry Speaker Sessions<br>&bull; AI &amp; Development Discussions<br>&bull; Networking Opportunities<br>&bull; Community Interactions<br>&bull; Future Tech Insights</p>\n<p><br><em>THE NEXT BUILD STARTS HERE.</em></p>",
+      "kommunity": {
+        "id": "codewithtechno",
+        "name": "CodeWithTechno",
+        "logo_image_path": {
+          "id": 159550,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeFJ4QWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a80a9744ec87cc5af99f510e3bd20e10029aa73c/1.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeFJ4QWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a80a9744ec87cc5af99f510e3bd20e10029aa73c/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/1.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeFJ4QWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a80a9744ec87cc5af99f510e3bd20e10029aa73c/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/1.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeFJ4QWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a80a9744ec87cc5af99f510e3bd20e10029aa73c/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/1.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 532,
+          "name": "developer",
+          "tag_category_maps_count": 3
+        },
+        {
+          "id": 1061,
+          "name": "full stack developer",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 3674,
+          "name": "ai engineer",
+          "tag_category_maps_count": 0
+        }
+      ],
+      "collaboration_communities": [
+        {
+          "id": 8,
+          "name": "PyDelhi",
+          "logo_path": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/pydelhi-color.png",
+          "slug": "pydelhi",
+          "mini_description": "A volunteer-driven organization comprising of Pythonistas, entrepreneurs, researchers, and students with a primary interest in the Python programming language",
+          "members_count": 3612,
+          "location": "New Delhi, Delhi, India",
+          "has_upcoming_events": false,
+          "logo_image": {
+            "name": "logo_image",
+            "record": null
+          },
+          "logo_image_path": {
+            "id": 415376,
+            "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+            "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+            "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+            "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+          },
+          "completed_events_count": 16,
+          "banner_image": {
+            "id": 415377,
+            "file": {
+              "name": "banner_image",
+              "record": null
+            },
+            "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/pydelhi-color.png",
+            "i32": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVNWcEpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--3ddca6f6c247c2a968f56480e328f90094ff9d95/pydelhi-color.png",
+            "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+            "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+            "i160": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFHZ2FRR2dPZ3RzYjJGa1pYSjdCam9KY0dGblpUQT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--8a1146f3e200ad1ceaece3c8cae47822b6884206/pydelhi-color.png",
+            "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+          }
+        },
+        {
+          "id": 474,
+          "name": "Microsoft Fabric User Group: Uttar Pradesh Power BI Club",
+          "logo_path": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMlNJQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d93b9d45228cbac14a20360303eb8bc3212802d2/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--2ea5894379cef1f134502efb0a2ea7b204cf1492/LOGO%20CLUB.jpg",
+          "slug": "microsoft-fabric-user-group-up-power-bi-club",
+          "mini_description": "Welcome to the Uttar Pradesh Power BI Club! We're a community focused on advancing skills in data analytics and intelligence including Power BI, Microsoft Fabric, Azure Data Factory & Databases.",
+          "members_count": 1933,
+          "location": "Uttar Pradesh, India",
+          "has_upcoming_events": false,
+          "logo_image": {
+            "name": "logo_image",
+            "record": null
+          },
+          "logo_image_path": {
+            "id": 296618,
+            "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMlNJQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d93b9d45228cbac14a20360303eb8bc3212802d2/LOGO%20CLUB.jpg",
+            "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMlNJQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d93b9d45228cbac14a20360303eb8bc3212802d2/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--d98d8d7f00147e4586d1b19b8f18ed1c04902eb8/LOGO%20CLUB.jpg",
+            "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMlNJQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d93b9d45228cbac14a20360303eb8bc3212802d2/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e91c4dd6f400c8b9bf0bc900ffc9d3abb1e1f9f6/LOGO%20CLUB.jpg",
+            "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMlNJQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d93b9d45228cbac14a20360303eb8bc3212802d2/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--91e4551d31ff606793933361a5c07668b5f784c2/LOGO%20CLUB.jpg"
+          },
+          "completed_events_count": 17,
+          "banner_image": {
+            "id": 376992,
+            "file": {
+              "name": "banner_image",
+              "record": null
+            },
+            "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBLy9CQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a21191e3ae27a730ce368a76f3554a9bdb47673b/Microsoft%20Fabric%20User%20Group%20(9).png",
+            "i32": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBLy9CQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a21191e3ae27a730ce368a76f3554a9bdb47673b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVNWcEpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--3ddca6f6c247c2a968f56480e328f90094ff9d95/Microsoft%20Fabric%20User%20Group%20(9).png",
+            "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBLy9CQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a21191e3ae27a730ce368a76f3554a9bdb47673b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/Microsoft%20Fabric%20User%20Group%20(9).png",
+            "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBLy9CQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a21191e3ae27a730ce368a76f3554a9bdb47673b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/Microsoft%20Fabric%20User%20Group%20(9).png",
+            "i160": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBLy9CQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a21191e3ae27a730ce368a76f3554a9bdb47673b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFHZ2FRR2dPZ3RzYjJGa1pYSjdCam9KY0dGblpUQT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--8a1146f3e200ad1ceaece3c8cae47822b6884206/Microsoft%20Fabric%20User%20Group%20(9).png",
+            "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBLy9CQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--a21191e3ae27a730ce368a76f3554a9bdb47673b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/Microsoft%20Fabric%20User%20Group%20(9).png"
+          }
+        },
+        {
+          "id": 433,
+          "name": "Tech4hack",
+          "logo_path": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNHNaQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3170ca762b0abd83cbcd3993db282c9cf64ed06d/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/TECH4HACK%20logo%20-%20Copy.png",
+          "slug": "tech4hack",
+          "mini_description": "Tech4Hack is a dynamic community of coders, developers, and innovators passionate about technology and problem-solving.",
+          "members_count": 1204,
+          "location": "Delhi, India",
+          "has_upcoming_events": true,
+          "logo_image": {
+            "name": "logo_image",
+            "record": null
+          },
+          "logo_image_path": {
+            "id": 333833,
+            "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNHNaQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3170ca762b0abd83cbcd3993db282c9cf64ed06d/TECH4HACK%20logo%20-%20Copy.png",
+            "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNHNaQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3170ca762b0abd83cbcd3993db282c9cf64ed06d/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/TECH4HACK%20logo%20-%20Copy.png",
+            "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNHNaQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3170ca762b0abd83cbcd3993db282c9cf64ed06d/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/TECH4HACK%20logo%20-%20Copy.png",
+            "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNHNaQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3170ca762b0abd83cbcd3993db282c9cf64ed06d/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/TECH4HACK%20logo%20-%20Copy.png"
+          },
+          "completed_events_count": 9,
+          "banner_image": {
+            "id": 333847,
+            "file": {
+              "name": "banner_image",
+              "record": null
+            },
+            "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWtaQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1a2377628e1823b88225f477f2b44757c8d67e3b/Blue%20And%20White%20Gradient%20Welcome%20Landscape%20Banner%20%20(1).png",
+            "i32": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWtaQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1a2377628e1823b88225f477f2b44757c8d67e3b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVNWcEpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--3ddca6f6c247c2a968f56480e328f90094ff9d95/Blue%20And%20White%20Gradient%20Welcome%20Landscape%20Banner%20%20(1).png",
+            "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWtaQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1a2377628e1823b88225f477f2b44757c8d67e3b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/Blue%20And%20White%20Gradient%20Welcome%20Landscape%20Banner%20%20(1).png",
+            "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWtaQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1a2377628e1823b88225f477f2b44757c8d67e3b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/Blue%20And%20White%20Gradient%20Welcome%20Landscape%20Banner%20%20(1).png",
+            "i160": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWtaQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1a2377628e1823b88225f477f2b44757c8d67e3b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFHZ2FRR2dPZ3RzYjJGa1pYSjdCam9KY0dGblpUQT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--8a1146f3e200ad1ceaece3c8cae47822b6884206/Blue%20And%20White%20Gradient%20Welcome%20Landscape%20Banner%20%20(1).png",
+            "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNWtaQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1a2377628e1823b88225f477f2b44757c8d67e3b/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/Blue%20And%20White%20Gradient%20Welcome%20Landscape%20Banner%20%20(1).png"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2078,
+      "name": "PyDelhi May Meetup – The Unseen in Python and AI",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNm5VQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--da6cc9542b75cb8ca08a93bcdaf8b651ff1d50ed/com_3f63dc88349fb452_20260503094239.png",
+      "header_image": {
+        "id": 447460,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNm5VQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--da6cc9542b75cb8ca08a93bcdaf8b651ff1d50ed/com_3f63dc88349fb452_20260503094239.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNm5VQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--da6cc9542b75cb8ca08a93bcdaf8b651ff1d50ed/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/com_3f63dc88349fb452_20260503094239.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNm5VQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--da6cc9542b75cb8ca08a93bcdaf8b651ff1d50ed/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/com_3f63dc88349fb452_20260503094239.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNm5VQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--da6cc9542b75cb8ca08a93bcdaf8b651ff1d50ed/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/com_3f63dc88349fb452_20260503094239.png"
+      },
+      "start_time": "2026-05-23T12:00:00.000+05:30",
+      "end_time": "2026-05-23T17:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "pydelhi-may-meetup-the-unseen-in-python-and-ai",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 451,
+      "event_locations": [
+        {
+          "name": "Appinventiv, Noida",
+          "address": "Appinventiv, Plot No. 3, Sector 135, Noida, Uttar Pradesh 201304",
+          "map_link": "https://maps.app.goo.gl/xWuA8b7T3RuB5dk1A"
+        }
+      ],
+      "description": "<h1>PyDelhi May Meetup &mdash; The Unseen in AI &amp; Python()</h1>\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\">AI isn't just models. Python isn't just syntax. This meetup we're exploring what's hidden, niche, and underrated in the AI and Python ecosystem.</p>\n<hr class=\"border-border-200 border-t-0.5 my-3 mx-1.5\">\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\"><strong>About the Event</strong></p>\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\">Most tech talks cover the same ground. This one won't. We're diving into the parts of Python and AI that rarely get the spotlight &mdash; the fundamentals people skip, the tools nobody talks about, and the ideas that don't fit neatly into a tutorial. Expect honest, curious conversations from people who've gone a little deeper than the docs.</p>\n<hr class=\"border-border-200 border-t-0.5 my-3 mx-1.5\">\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\"><strong>What We're Looking For (CFP Open!)</strong></p>\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\">We want talks that go off the beaten path. Some themes we'd love to see:</p>\n<ul class=\"[li_&amp;]:mb-0 [li_&amp;]:mt-1 [li_&amp;]:gap-1 [&amp;:not(:last-child)_ul]:pb-1 [&amp;:not(:last-child)_ol]:pb-1 list-disc flex flex-col gap-1 pl-8 mb-3\">\n<li class=\"whitespace-normal break-words pl-2\">Uncharted AI: the hidden and accessible side of deep learning and GenAI</li>\n<li class=\"whitespace-normal break-words pl-2\">Core Python internals, quirks, and fundamentals that matter more than you think</li>\n<li class=\"whitespace-normal break-words pl-2\">Niche libraries, patterns, or tools you've found genuinely useful</li>\n<li class=\"whitespace-normal break-words pl-2\">Lessons from real projects, not polished conference-style demos</li>\n</ul>\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\">If you've explored something interesting and want to share it with a curious, technical audience, this is your stage.</p>\n<p class=\"font-claude-response-body break-words whitespace-normal leading-[1.7]\">Submit a talk proposal: <a class=\"underline underline underline-offset-2 decoration-1 decoration-current/40 hover:decoration-current focus:decoration-current\" href=\"https://github.com/pydelhi/talks/issues/new?template=talk-proposal.yaml\">https://github.com/pydelhi/talks/issues/new?template=talk-proposal.yaml</a></p>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 611,
+          "name": "ai",
+          "tag_category_maps_count": 3
+        },
+        {
+          "id": 3612,
+          "name": "delhi",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 70032,
+          "name": "pydelhi",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 7237,
+          "name": "new delhi",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 10221,
+          "name": "ncr",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 291,
+          "name": "artificial intelligence",
+          "tag_category_maps_count": 2
+        },
+        {
+          "id": 1068,
+          "name": "python programming",
+          "tag_category_maps_count": 1
+        },
+        {
+          "id": 7272,
+          "name": "meetup",
+          "tag_category_maps_count": 0
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 2059,
+      "name": "PyDelhi April Meetup – Birds of a Feather (BoF)",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL2E0Qmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--c789dccffd9cfecac23f9753ad8ae8f8fffbd18a/com_e8948a329765400d_20260416171757.png",
+      "header_image": {
+        "id": 440365,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL2E0Qmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--c789dccffd9cfecac23f9753ad8ae8f8fffbd18a/com_e8948a329765400d_20260416171757.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL2E0Qmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--c789dccffd9cfecac23f9753ad8ae8f8fffbd18a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/com_e8948a329765400d_20260416171757.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL2E0Qmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--c789dccffd9cfecac23f9753ad8ae8f8fffbd18a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/com_e8948a329765400d_20260416171757.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL2E0Qmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--c789dccffd9cfecac23f9753ad8ae8f8fffbd18a/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/com_e8948a329765400d_20260416171757.png"
+      },
+      "start_time": "2026-04-25T12:00:00.000+05:30",
+      "end_time": "2026-04-25T16:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "pydelhi-april-meetup",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 137,
+      "event_locations": [
+        {
+          "name": "Webshot Noida",
+          "address": "C24, 7th floor, Platina Heights, C Block, Phase 2, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309",
+          "map_link": "https://maps.app.goo.gl/5UcJqiQL5MqQ6QYBA"
+        }
+      ],
+      "description": "<p data-start=\"122\" data-end=\"192\"><strong data-start=\"122\" data-end=\"190\">Join us for the upcoming PyDelhi April BoF Meetup on April 25th!</strong></p>\n<p data-start=\"122\" data-end=\"192\"><strong data-start=\"122\" data-end=\"190\">Venue:&nbsp;<a class=\"ng-star-inserted\" href=\"https://maps.app.goo.gl/5UcJqiQL5MqQ6QYBA\" target=\"_blank\" rel=\"noopener\">WebShot Noida, C24, 7th floor, Platina Heights, C Block, Phase 2, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309</a>&nbsp;</strong></p>\n<p data-start=\"122\" data-end=\"192\">&nbsp;</p>\n<p data-start=\"194\" data-end=\"468\">This month, we&rsquo;re hosting a <strong data-start=\"222\" data-end=\"250\">Birds of a Feather (BoF)</strong> gathering. A BoF is an informal, participant-driven meetup where participants drive the conversation. Whether you're deep into Python, exploring open source, or just curious, this is a space to connect, share, and learn together. For reference, you may find our previous BoF event in October 2025 here: <a href=\"https://www.commudle.com/communities/pydelhi/events/pydelhi-october-bof\">https://www.commudle.com/communities/pydelhi/events/pydelhi-october-bof</a></p>\n<hr data-start=\"470\" data-end=\"473\">\n<h3 data-section-id=\"e99vme\" data-start=\"475\" data-end=\"496\">What to expect</h3>\n<ul data-start=\"498\" data-end=\"761\">\n<li data-section-id=\"h7dcx4\" data-start=\"498\" data-end=\"560\">Open discussions on Python, open source, and anything tech</li>\n<li data-section-id=\"9e5et9\" data-start=\"561\" data-end=\"641\">Participant-led conversations: bring your ideas, questions, and experiences</li>\n<li data-section-id=\"d82ff0\" data-start=\"642\" data-end=\"711\">Networking with developers, engineers, contributors, and learners</li>\n<li data-section-id=\"k3fnjx\" data-start=\"712\" data-end=\"761\">Good food and a relaxed, welcoming atmosphere</li>\n</ul>\n<hr data-start=\"763\" data-end=\"766\">\n<h3 data-section-id=\"1yrh0c6\" data-start=\"768\" data-end=\"791\">Who is this for?</h3>\n<p data-start=\"793\" data-end=\"979\">Anyone interested in Python and technology!&nbsp;Whether you're a professional, student, hobbyist, or just getting started, if you enjoy thoughtful tech conversations, this BoF is for you.</p>\n<hr data-start=\"981\" data-end=\"984\">\n<h3 data-section-id=\"4hum2t\" data-start=\"986\" data-end=\"1018\">🗣️ Call for Proposals (CFP)</h3>\n<p data-start=\"1020\" data-end=\"1251\">Even though this is a BoF-style meetup, we&rsquo;re still inviting short, informal session ideas to help spark discussions in advance, to help us prepare our community space. If you have something to share, such as a project, a question, a concept, or an experience, we&rsquo;d love to hear from you.</p>\n<p data-start=\"366\" data-end=\"431\"><strong data-start=\"366\" data-end=\"431\">We&rsquo;re especially interested in Python-focused topics such as:</strong></p>\n<ul data-start=\"433\" data-end=\"1115\">\n<li data-section-id=\"1g3b8pg\" data-start=\"433\" data-end=\"488\">Core Python concepts and advanced language features</li>\n<li data-section-id=\"c5wk8p\" data-start=\"489\" data-end=\"539\">CPython internals and performance optimisation</li>\n<li data-section-id=\"16hqlox\" data-start=\"540\" data-end=\"593\">Python for data science, AI, and machine learning</li>\n<li data-section-id=\"s7y7xk\" data-start=\"594\" data-end=\"640\">Async Python, concurrency, and parallelism</li>\n<li data-section-id=\"16g8ary\" data-start=\"641\" data-end=\"688\">Building CLIs and developer tools in Python</li>\n<li data-section-id=\"1hge4ly\" data-start=\"689\" data-end=\"748\">Testing, debugging, and code quality in Python projects</li>\n<li data-section-id=\"imkage\" data-start=\"749\" data-end=\"823\">Packaging, dependency management, and distribution (pip, wheels, etc.)</li>\n<li data-section-id=\"tl1jzc\" data-start=\"824\" data-end=\"891\">Python in production: infrastructure, DevOps, and observability</li>\n<li data-section-id=\"sudk9t\" data-start=\"892\" data-end=\"965\">Web development with Python frameworks (Django, Flask, FastAPI, etc.)</li>\n<li data-section-id=\"1kcwcgz\" data-start=\"966\" data-end=\"1019\">Automation, scripting, and productivity workflows</li>\n<li data-section-id=\"14htuek\" data-start=\"1020\" data-end=\"1065\">Security practices in Python applications</li>\n<li data-section-id=\"1iy2x4w\" data-start=\"1066\" data-end=\"1115\">Open source Python projects and contributions</li>\n</ul>\n<p>You can also propose your own topic! See below:</p>\n<hr data-start=\"1449\" data-end=\"1452\">\n<h3 data-section-id=\"2it3ex\" data-start=\"1454\" data-end=\"1486\">Submit a BoF proposal</h3>\n<p>Please use our submission form and fill the questionnaire at <a href=\"https://github.com/pydelhi/talks/issues/new?template=talk-proposal.yaml\">https://github.com/pydelhi/talks/issues/new?template=talk-proposal.yaml</a> --&gt; please choose \"BoF\" for the \"What format do you have in mind?\" question.</p>\n<hr data-start=\"1522\" data-end=\"1525\">\n<p data-start=\"1527\" data-end=\"1625\" data-is-last-node=\"\" data-is-only-node=\"\">Come join us to share ideas, exchange knowledge, and be part of a vibrant and welcoming Python community in New Delhi!</p>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 7237,
+          "name": "new delhi",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 3612,
+          "name": "delhi",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 660,
+          "name": "open source",
+          "tag_category_maps_count": 2
+        },
+        {
+          "id": 70032,
+          "name": "pydelhi",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 7272,
+          "name": "meetup",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 70030,
+          "name": "bof",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 73953,
+          "name": "birds-of-a-feather",
+          "tag_category_maps_count": 0
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 2003,
+      "name": "ObservaPy: PyDelhi x Grafana and Friends Delhi x Django India",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK0NEQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d15ddbbd61c0b2989c841cabe8d2cb68521a4d52/Header.png",
+      "header_image": {
+        "id": 426764,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK0NEQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d15ddbbd61c0b2989c841cabe8d2cb68521a4d52/Header.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK0NEQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d15ddbbd61c0b2989c841cabe8d2cb68521a4d52/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/Header.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK0NEQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d15ddbbd61c0b2989c841cabe8d2cb68521a4d52/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/Header.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK0NEQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d15ddbbd61c0b2989c841cabe8d2cb68521a4d52/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/Header.png"
+      },
+      "start_time": "2026-03-28T10:30:00.000+05:30",
+      "end_time": "2026-03-28T16:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "observapy-pydelhi-x-grafana-and-friends-delhi-x-django-india",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 343,
+      "event_locations": [
+        {
+          "name": "Unstop Office",
+          "address": "Unstop, 3rd & 4th Floor, Khasra No. 275, Building 618, Westend Marg, behind Saket Metro Station, Saidulajab, Saiyad Ul Ajaib Extension, Sainik Farm, New Delhi, Delhi 110030, India",
+          "map_link": "https://maps.google.com/?cid=3150512605589961645"
+        }
+      ],
+      "description": "<h1>ObservaPy</h1>\n<p>The Observability &amp; Python Meetup</p>\n<p>A joint meetup brought together by&nbsp;<strong>PyDelhi</strong>,&nbsp;<a href=\"https://meetup.com/grafana-friends-delhi/\"><strong>Grafana &amp; Friends Delhi</strong></a>, and&nbsp;<a href=\"https://www.djangoindia.org/home\"><strong>Django India</strong></a> &mdash; three communities coming together for a day of talks at the intersection of Python and observability.</p>\n<h4>Topics we are going to talk about:</h4>\n<ul>\n<li>Observability, monitoring, alerting and incident response</li>\n<li>Grafana, Prometheus, Loki, OpenTelemetry and the broader CNCF ecosystem</li>\n<li>Python internals, performance and profiling</li>\n<li>Django, FastAPI, Flask and building web services</li>\n<li>Debugging war stories and lessons learned in production</li>\n<li>Anything at the crossover of Python and infrastructure</li>\n</ul>\n<hr>\n<h3>Who is this for?</h3>\n<p>Anyone who writes Python, runs systems, cares about what happens in production, or just wants to spend a Saturday with a good crowd talking about technology. No matter if you are a student, a professional, or someone hacking on side projects.</p>\n<hr>\n<h3>Join the Communities</h3>\n<ul>\n<li>Grafana and Friends Delhi: <a href=\"https://meetup.com/grafana-friends-delhi/\">https://meetup.com/grafana-friends-delhi/</a><br><br></li>\n<li>Django India: <a href=\"https://www.djangoindia.org/home\">https://www.djangoindia.org/home</a></li>\n</ul>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 6528,
+          "name": "grafana",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 2269,
+          "name": "observability",
+          "tag_category_maps_count": 0
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 1926,
+      "name": "PyConf Hyderabad 2026",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNGNsQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--52635e8f31cc48a0cf5c95a6a119c37ba052f6a9/highres_531720640.png",
+      "header_image": {
+        "id": 402511,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNGNsQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--52635e8f31cc48a0cf5c95a6a119c37ba052f6a9/highres_531720640.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNGNsQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--52635e8f31cc48a0cf5c95a6a119c37ba052f6a9/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/highres_531720640.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNGNsQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--52635e8f31cc48a0cf5c95a6a119c37ba052f6a9/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/highres_531720640.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNGNsQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--52635e8f31cc48a0cf5c95a6a119c37ba052f6a9/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/highres_531720640.png"
+      },
+      "start_time": "2026-03-14T09:00:00.000+05:30",
+      "end_time": "2026-03-15T18:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "pyconf-hyderabad-2026",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 0,
+      "event_locations": [],
+      "description": "<p><span class=\"lt-line-clamp__raw-line\">PyDelhi is proud to be a community partner of the PyConf Hyderabad 2026 conference, organised by HydPy (Hyderabad Python Users Group)! Please read on for more details about their event below. <strong>Registrations, call for speakers, and all other event specifics are managed by the PyConf Hyderabad 2026 team: https://2026.pyconfhyd.org/</strong><br><br>---<br><br>PyConf Hyderabad is the premier regional gathering for the Python community, bringing together those who use and develop the open-source Python programming language. Organized by the Hyderabad Python User Group (HydPy), this conference fosters knowledge sharing, collaboration, and the exchange of ideas, strengthening connections between developers and users through meaningful interactions.<br><br>--<br><br>Call for proposals:<br><br>Want to speak at PyConf? Have an idea you'd like to share with the community? You may submit your proposal here: https://www.papercall.io/pyconfhyd2026<br><br>--<br><br>Key locations:<br><br>Workshop: 14 March<br>Venue: TBD<br>Conference: 15 March<br>Venue: Engineering Staff College of India<br>ESCI Road, Lake, beside Khajaguda, Gachibowli, Hyderabad, Telangana 500032<br>https://maps.app.goo.gl/a4PmQZD6rMdp9qB86<br><br>--<br><br>Sponsorships:<br><br>PyConf Hyderabad is made possible by the generous support of sponsors. By sponsoring the conference, you help sustain and grow the event as well as the community. Your sponsorship contributes to making the conference affordable and maintaining essential resources. If you&rsquo;re interested, please share your details by filling out this form: https://docs.google.com/forms/d/e/1FAIpQLSepZ_MMyVtllXMVjy8OKdrkmfGj2rFOf7IyzZxQQ0aXqHSrgw/viewform<br><br>--<br><br>Quick links for PyConf Hyderabad 2026:<br><br>Website: https://2026.pyconfhyd.org/<br>LinkedIn: https://www.linkedin.com/company/pyconf-hyderabad/<br>Twitter: https://x.com/pyconfhyd<br>Instagram: https://www.instagram.com/pyconfhyd<br>Discord: https://discord.com/invite/C3pnRHMyWJ<br><br>Stay connected with the Organizing Team:<br><br>Website: hydpy.org<br>Twitter: @hydPython<br>Meetup: bit.ly/hydpy-meetup<br>Telegram: https://t.me/HydPy<br>LinkedIn: https://www.linkedin.com/company/hydpy/</span>&nbsp;</p>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 5896,
+          "name": "conference",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 10064,
+          "name": "hyderabad",
+          "tag_category_maps_count": 0
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 1957,
+      "name": "Women in Python - Celebrating International Women's Day!",
+      "header_image_path": null,
+      "header_image": null,
+      "start_time": "2026-02-28T10:30:00.000+05:30",
+      "end_time": "2026-02-28T15:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "women-in-python-celebrating-international-women-s-day",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 182,
+      "event_locations": [
+        {
+          "name": "EPAM Systems",
+          "address": "Epam systems India Private Limited, 1st (First) floor of Block 2, DLF Downtown, Commercial Site Block - V, DLF City, Ambience Island, Phase - I, Sector 25A, Gurugram, Haryana 122010, India",
+          "map_link": "https://maps.google.com/?cid=8707530806033533520"
+        }
+      ],
+      "description": "<p>Join&nbsp;<strong>PyDelhi</strong>&nbsp;as we celebrate&nbsp;<strong>International Women&rsquo;s Day</strong>&nbsp;with a special meetup focused on&nbsp;<strong>women in Python and technology</strong>.</p>\n<p>This event is about learning, sharing stories, and building connections. We&rsquo;ll hear from women practitioners across different stages of their journey &mdash; developers, engineers, leaders, and community builders &mdash; who are shaping the Python ecosystem through their work and experiences.</p>\n<p>Whether you&rsquo;re just starting out, deep into your career, or simply curious about Python and tech, this meetup is a welcoming space to learn, ask questions, and feel inspired.&nbsp;<strong>Allies are welcome as attendees</strong>&nbsp;&mdash; this is a celebration of inclusion, growth, and community.</p>\n<p>✨ Expect insightful talks, honest conversations, and meaningful networking.<br>✨ Open to all skill levels.<br>✨ Safe, inclusive, and beginner-friendly.</p>\n<p>Let&rsquo;s come together to celebrate women, code, and community. 💐</p>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 8477,
+          "name": "iwd",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 293,
+          "name": "tech",
+          "tag_category_maps_count": 1
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 1918,
+      "name": "PyDelhi January Meetup",
+      "header_image_path": null,
+      "header_image": null,
+      "start_time": "2026-01-24T13:00:00.000+05:30",
+      "end_time": "2026-01-24T17:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "pydelhi-january-meetup",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 280,
+      "event_locations": [
+        {
+          "name": "Essentia.dev",
+          "address": "Third Floor, C56/A28, C Block, Phase 2, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309",
+          "map_link": "https://maps.app.goo.gl/SdNkJ1yXRt9wzXGG9"
+        }
+      ],
+      "description": "<h2>PyDelhi January Meetup</h2>\n<p>Join us for the upcoming&nbsp;<strong>PyDelhi January Meetup</strong>, an event bringing together Python developers, data enthusiasts, and computing nerds.&nbsp;</p>\n<h3>What to Expect</h3>\n<ul>\n<li><strong>Talks</strong> on Python, open source, data systems, backend engineering, and performance optimization.</li>\n<li><strong>Networking</strong>&nbsp;with professionals, open-source contributors, and learners.</li>\n</ul>\n<h3>🗣️ Call for Proposals (CFP)</h3>\n<p>We&rsquo;re inviting speakers to submit session ideas related to Python, databases, data engineering, AI/ML, and system performance.</p>\n<p><strong><em><a href=\"https://github.com/pydelhi/talks/issues/new?template=talk-proposal.yaml\" target=\"_blank\" rel=\"noopener\">Submit Your Talk Proposal</a></em></strong></p>\n<p>Come share your knowledge, learn from peers, and be part of an active and welcoming tech community!</p>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 50,
+          "name": "django",
+          "tag_category_maps_count": 1
+        },
+        {
+          "id": 261,
+          "name": "programming",
+          "tag_category_maps_count": 1
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 1811,
+      "name": "SingleStore x PyDelhi Meetup",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNmgwQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--66bff51513c51d3de4e912c3a69ef14efddeb658/Community%20Meetup.png",
+      "header_image": {
+        "id": 357161,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNmgwQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--66bff51513c51d3de4e912c3a69ef14efddeb658/Community%20Meetup.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNmgwQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--66bff51513c51d3de4e912c3a69ef14efddeb658/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/Community%20Meetup.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNmgwQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--66bff51513c51d3de4e912c3a69ef14efddeb658/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/Community%20Meetup.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNmgwQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--66bff51513c51d3de4e912c3a69ef14efddeb658/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/Community%20Meetup.png"
+      },
+      "start_time": "2025-11-08T12:00:00.000+05:30",
+      "end_time": "2025-11-08T17:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "singlestore-x-pydelhi-meetup",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 428,
+      "event_locations": [
+        {
+          "name": "NCUI Auditorium",
+          "address": "NCUI Auditorium & Convention Centre, 3, August Kranti Marg, Siri Institutional Area, Block A, Nipccd Campus, Hauz Khas, New Delhi, Delhi 110016, India",
+          "map_link": "https://maps.google.com/?cid=6769434145452466989"
+        }
+      ],
+      "description": "<h2>PyDelhi &times; SingleStore Meetup</h2>\n<p>Join us for the upcoming&nbsp;<strong>PyDelhi &times; SingleStore Meetup</strong>, an event bringing together Python developers, data enthusiasts, and computing nerds. This collaboration between the&nbsp;<em>PyDelhi community</em>&nbsp;and&nbsp;<em>SingleStore</em>&nbsp;focuses on knowledge sharing and hands-on learning.</p>\n<h3>What to Expect</h3>\n<ul>\n<li><strong>Talks</strong> on Python, data systems, backend engineering, and performance optimization.</li>\n<li><strong>Workshops</strong> to get practical, hands-on experience (bring your laptops please!)</li>\n<li><strong>Networking</strong>&nbsp;with professionals, open-source contributors, and learners.</li>\n</ul>\n<h3>🗣️ Call for Proposals (CFP)</h3>\n<p>We&rsquo;re inviting speakers to submit session ideas related to Python, databases, data engineering, AI/ML, and system performance.</p>\n<p><strong><em><a href=\"https://github.com/pydelhi/talks/issues/new?template=talk-proposal.yaml\" target=\"_blank\" rel=\"noopener\">Submit Your Talk Proposal</a></em></strong></p>\n<p>Come share your knowledge, learn from peers, and be part of an active and welcoming tech community!</p>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 50,
+          "name": "django",
+          "tag_category_maps_count": 1
+        },
+        {
+          "id": 261,
+          "name": "programming",
+          "tag_category_maps_count": 1
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 1796,
+      "name": "PyDelhi October BoF",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL3RTQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--992de86f6374e23bf5c9a4b917102f2e7c917ac5/PyDelhi%20October%20Meetup.png",
+      "header_image": {
+        "id": 348538,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL3RTQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--992de86f6374e23bf5c9a4b917102f2e7c917ac5/PyDelhi%20October%20Meetup.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL3RTQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--992de86f6374e23bf5c9a4b917102f2e7c917ac5/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/PyDelhi%20October%20Meetup.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL3RTQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--992de86f6374e23bf5c9a4b917102f2e7c917ac5/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/PyDelhi%20October%20Meetup.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL3RTQlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--992de86f6374e23bf5c9a4b917102f2e7c917ac5/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/PyDelhi%20October%20Meetup.png"
+      },
+      "start_time": "2025-10-11T13:00:00.000+05:30",
+      "end_time": "2025-10-11T17:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "pydelhi-october-bof",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 163,
+      "event_locations": [
+        {
+          "name": "Ionic Wealth's Office (Collative Coworking Space)",
+          "address": "Collative - Coworking Space in South Delhi, Global Foyer GF, FF, NBCC Tower, White House, Sector 5, Pushp Vihar, New Delhi, Delhi 110017, India",
+          "map_link": "https://maps.app.goo.gl/HKjrmesFBbH1TpAa6"
+        }
+      ],
+      "description": "<h2>🐍 PyDelhi October Meetup &mdash; Birds of a Feather (BoF)</h2>\n<p><strong><em>For working professionals only</em></strong></p>\n<p>What happens when you bring a group of Pythonistas together on a Saturday afternoon?<br>You get a lively nest of opinionated ideas that fuel freely-flowing (almost slithering) conversations.<br><br>PyDelhi and PyData Delhi is back with the October edition of our monthly meetups, this time in a&nbsp;<strong>Birds of a Feather (BoF)</strong>&nbsp;format!<br><br></p>\n<h3>🤔 What&rsquo;s a BoF?</h3>\n<p>While there&rsquo;s no formal definition (and strangely no Wikipedia page), a loose one would be:</p>\n<blockquote>\"It is an informal gathering where people come to discuss pre-decided (and sometimes on-the-spot) topics and talk about their experiences, stories and learnings with said topic.\"</blockquote>\n<p>We&rsquo;ll have multiple topics running in parallel for the BoFs.<br><br></p>\n<h3>📌 Who should join?</h3>\n<p>This edition is&nbsp;<strong>exclusively for working professionals</strong> with significant experience in Python, engineering and/or open source.</p>\n<p>If that&rsquo;s you, feel free to suggest a topic of your choice or lead one of the sessions listed below:</p>\n<ul>\n<li><strong>Python in Production</strong>&nbsp;&mdash; scaling from prototype to prod, debugging, deployment hacks</li>\n<li><strong>Async &amp; Concurrency</strong>&nbsp;&mdash; real-world wins and gotchas with asyncio, Trio, async frameworks</li>\n<li><strong>Scaling APIs &amp; Services</strong>&nbsp;&mdash; FastAPI/Django/Flask in high-traffic, perf tricks, cloud-native issues</li>\n<li><strong>Tooling &amp; Best Practices</strong>&nbsp;&mdash; mypy, pyright, pytest, packaging pains, productivity hacks</li>\n<li><strong>Data &amp; ML in Python</strong>&nbsp;&mdash; running ML pipelines, MLOps tooling, going beyond notebooks</li>\n<li><strong>Python + Rust/C Extensions</strong>&nbsp;&mdash; mixing langs for performance, PyO3, Cython, Numba lessons</li>\n<li><strong>Testing at Scale</strong>&nbsp;&mdash; contract testing, property-based, pytest tricks in big teams</li>\n<li><strong>Engineering Culture</strong>&nbsp;&mdash; mentoring, reviews, Python team culture, career growth</li>\n<li><strong>Security &amp; Supply Chain</strong>&nbsp;&mdash; PyPI issues, vendoring, SBOMs, reproducible builds, dependency hell</li>\n<li><strong>Open Source in the Enterprise</strong> &mdash; adopting OSS tools internally, leadership buy-in, migrations</li>\n</ul>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 7272,
+          "name": "meetup",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 70029,
+          "name": "pydata",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 70030,
+          "name": "bof",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 70031,
+          "name": "birds of a feather",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 70032,
+          "name": "pydelhi",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 3612,
+          "name": "delhi",
+          "tag_category_maps_count": 0
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 1732,
+      "name": "Django Bash - Django India x PyDelhi",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK3ZXQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--11d00a0b1bf35ec1015420ba8dfd8fa517d46643/Frame%2040.png",
+      "header_image": {
+        "id": 316776,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK3ZXQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--11d00a0b1bf35ec1015420ba8dfd8fa517d46643/Frame%2040.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK3ZXQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--11d00a0b1bf35ec1015420ba8dfd8fa517d46643/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/Frame%2040.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK3ZXQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--11d00a0b1bf35ec1015420ba8dfd8fa517d46643/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/Frame%2040.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK3ZXQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--11d00a0b1bf35ec1015420ba8dfd8fa517d46643/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/Frame%2040.png"
+      },
+      "start_time": "2025-08-30T12:00:00.000+05:30",
+      "end_time": "2025-08-30T17:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "django-bash-django-x-pydelhi",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 562,
+      "event_locations": [
+        {
+          "name": "NCUI Auditorium",
+          "address": "NCUI Auditorium & Convention Centre, 3, August Kranti Marg, Siri Institutional Area, Block A, Nipccd Campus, Hauz Khas, New Delhi, Delhi 110016, India",
+          "map_link": "https://maps.google.com/?cid=6769434145452466989"
+        }
+      ],
+      "description": "<h2>🎂 Django&rsquo;s 20th Birthday &mdash; PyDelhi &times; Django India</h2>\n<p>PyDelhi and Django India are here to celebrate the 20th birthday of the Django framework!</p>\n<p>Join us for a day of talks, networking, and celebrating the Django framework and the wider Python ecosystem.</p>\n<ul>\n<li><strong>Format:</strong>&nbsp;Lightning talks, feature deep-dives, and community stories</li>\n<li><strong>Great for:</strong>&nbsp;Beginners, practitioners, and maintainers</li>\n<li><strong>Networking:</strong> Meet contributors, users, and local community organizers</li>\n</ul>\n<p>&nbsp;</p>\n<hr>\n<h3>📣 Call for Speakers</h3>\n<p>Have a Django or Python story, demo, or lightning talk to share? We&rsquo;d love to hear from you.</p>\n<p><a href=\"https://github.com/pydelhi/talks/issues/new?template=talk-proposal.yaml\" target=\"_blank\" rel=\"noopener\">Submit your talk proposal here</a>.</p>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 50,
+          "name": "django",
+          "tag_category_maps_count": 1
+        },
+        {
+          "id": 261,
+          "name": "programming",
+          "tag_category_maps_count": 1
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 1700,
+      "name": "PyDelhi July 2025 Meetup",
+      "header_image_path": null,
+      "header_image": null,
+      "start_time": "2025-07-19T13:00:00.000+05:30",
+      "end_time": "2025-07-19T17:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "pydelhi-july-2025-meetup",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 82,
+      "event_locations": [
+        {
+          "name": "CSDS Civil Lines",
+          "address": "29, Rajpur Rd, Ludlow Castle, Civil Lines, Delhi, 110054",
+          "map_link": "https://maps.app.goo.gl/WpbJN35wivbjt54r6"
+        },
+        {
+          "name": "CSDS",
+          "address": "29, Rajpur Rd, Ludlow Castle, Civil Lines, Delhi, 110054",
+          "map_link": "https://maps.app.goo.gl/WpbJN35wivbjt54r6"
+        }
+      ],
+      "description": "<div class=\"break-words\">\n<p class=\"mb-4\">Hey Fellow Pythonistas,</p>\n<p class=\"mb-4\">PyDelhi is back with the July edition of our Monthly Meetups 🐍.</p>\n<p class=\"mb-4\"><em><strong>Please cancel your RSVP if you're not attending the Meetup.</strong></em></p>\n<p class=\"mb-4\">The venue for this meetup is <a href=\"https://maps.app.goo.gl/WpbJN35wivbjt54r6\">CSDS</a>, Civil Lines<br>Nearest Delhi Metro Station is Civil Lines (Yellow Line). E-rickshaws are generally available.</p>\n<p class=\"mb-4\">Google Maps Link: <a href=\"https://maps.app.goo.gl/WpbJN35wivbjt54r6\">https://maps.app.goo.gl/WpbJN35wivbjt54r6</a></p>\n<p class=\"mb-4\">If you have any questions please send us a message on <a class=\"!text-viridian\" href=\"https://chat.whatsapp.com/LwIHShwtZtB2rgK2x66AsI\" target=\"_blank\" rel=\"nofollow noopener ugc\">WhatsApp Group</a>, <a class=\"!text-viridian\" href=\"https://t.me/PyDelhi_official\" target=\"_blank\" rel=\"nofollow noopener ugc\">Telegram Group</a> or please DM us on <a class=\"!text-viridian\" href=\"https://x.com/PyDelhi\" target=\"_blank\" rel=\"nofollow noopener ugc\">Twitter</a></p>\n<p class=\"mb-4\">Cheers,<br>PyDelhi!</p>\n<p class=\"mb-4\">&nbsp;</p>\n<p class=\"mb-4\">---</p>\n<h2 class=\"mb-4\">Agenda</h2>\n<p>The PyDelhi team may choose to end the meetup earlier than planned, as per the circumstances of the meetup.</p>\n<ul>\n<li><strong>[13:00&ndash;13:30]</strong> Introduction and welcome to PyDelhi</li>\n<li><strong>[13:30&ndash;14:00]</strong> <em>Optimizing Large-Scale Data Processing: A Deep Dive into FireDucks vs. Pandas</em> by Vaibhav Sirohi</li>\n<li><strong>[14:00&ndash;14:30]</strong> Lunch break</li>\n<li><strong>[14:30&ndash;15:00]</strong> <em>The mystery of the remnant symbol: software, society, and our digital heritage</em> by Agriya Khetarpal</li>\n<li><strong>[15:00&ndash;16:30]</strong> Ad-hoc lightning talks, open-ended sessions and discussions</li>\n<li><strong>[16:30&ndash;17:00]</strong> Hiring and pitching session + group photo</li>\n</ul>\n</div>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 7272,
+          "name": "meetup",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 3612,
+          "name": "delhi",
+          "tag_category_maps_count": 0
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 1625,
+      "name": "The Python Collective: PyDelhi x PyData Delhi ",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBekFVQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6d46d1f66b1f632489779047fc30cb1ac53a9bac/Frame%204.png",
+      "header_image": {
+        "id": 266864,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBekFVQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6d46d1f66b1f632489779047fc30cb1ac53a9bac/Frame%204.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBekFVQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6d46d1f66b1f632489779047fc30cb1ac53a9bac/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/Frame%204.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBekFVQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6d46d1f66b1f632489779047fc30cb1ac53a9bac/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/Frame%204.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBekFVQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--6d46d1f66b1f632489779047fc30cb1ac53a9bac/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/Frame%204.png"
+      },
+      "start_time": "2025-05-17T13:00:00.000+05:30",
+      "end_time": "2025-05-17T17:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "the-python-collective-pydelhi-x-pydata-delhi",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 253,
+      "event_locations": [
+        {
+          "name": "Coredge",
+          "address": "Coredge, Office No. 2, 6th Floor, Tower-B Embassy, GALAXY BUSINESS PARK, A-44 &45, Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309, India",
+          "map_link": "https://maps.google.com/?cid=15379516037432889657"
+        }
+      ],
+      "description": "<div id=\"model-response-message-contentr_40a861bb674a017a\" dir=\"ltr\">\n<h2 data-sourcepos=\"1:1-1:77\"><strong>The Python Collective Meetup: A Collaboration by PyDelhi and PyData Delhi</strong></h2>\n<p data-sourcepos=\"3:1-3:138\">Join PyDelhi and PyData Delhi for The Python Collective meetup, a day dedicated to exploring the world of Python, data, and community.</p>\n<p data-sourcepos=\"5:1-5:222\"><strong>Date: </strong>Saturday, 17th May<br><strong>Time: </strong>1:00 PM to 5:00 PM<br><strong>Venue:</strong> Coredge, Noida Sector 62. The venue is conveniently located within walking distance of the Noida Electronic City metro station. (maps link <a href=\"https://maps.app.goo.gl/AAGh8rCqZBKAcKiD7\" target=\"_blank\" rel=\"noopener\">here</a>)<!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></p>\n<p data-sourcepos=\"9:1-9:133\">Come and connect with fellow Python enthusiasts, data scientists, and developers for an afternoon of insightful talks and networking.</p>\n</div>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 243,
+          "name": "data",
+          "tag_category_maps_count": 2
+        },
+        {
+          "id": 611,
+          "name": "ai",
+          "tag_category_maps_count": 3
+        },
+        {
+          "id": 855,
+          "name": "ml",
+          "tag_category_maps_count": 1
+        },
+        {
+          "id": 373,
+          "name": "data science",
+          "tag_category_maps_count": 2
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 1593,
+      "name": "PyDelhi April 2025 Meetup",
+      "header_image_path": null,
+      "header_image": null,
+      "start_time": "2025-04-26T13:00:00.000+05:30",
+      "end_time": "2025-04-26T17:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "pydelhi-april-2025-meetup",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 84,
+      "event_locations": [
+        {
+          "name": "CSDS Civil Lines",
+          "address": "29, Rajpur Rd, Ludlow Castle, Civil Lines, Delhi, 110054",
+          "map_link": "https://maps.app.goo.gl/WpbJN35wivbjt54r6"
+        }
+      ],
+      "description": "<div class=\"break-words\">\n<p class=\"mb-4\">Hey Fellow Pythonistas,</p>\n<p class=\"mb-4\">PyDelhi is back with the end of the year April edition of our Monthly Meetups 🐍.</p>\n<p class=\"mb-4\"><em><strong>Please cancel your RSVP if you're not attending the Meetup.</strong></em></p>\n<p class=\"mb-4\">The venue for this meetup is <a href=\"https://webshot.in/\" target=\"_blank\" rel=\"noopener\">Webshot</a>, Noida Sector 62<br>Nearest Delhi Metro Station is Sector 62 Noida (Blue Line). E-rickshaws are generally available.</p>\n<p class=\"mb-4\">Google Maps Link: <a href=\"https://maps.app.goo.gl/Rnd373ZGvoPa7Req9\" target=\"_blank\" rel=\"noopener\">https://maps.app.goo.gl/Rnd373ZGvoPa7Req9</a></p>\n<p class=\"mb-4\">If you have any questions please send us a message on <a class=\"!text-viridian\" href=\"https://chat.whatsapp.com/LwIHShwtZtB2rgK2x66AsI\" target=\"_blank\" rel=\"nofollow noopener ugc\">WhatsApp Group</a>, <a class=\"!text-viridian\" href=\"https://t.me/PyDelhi_official\" target=\"_blank\" rel=\"nofollow noopener ugc\">Telegram Group</a> or please DM us on <a class=\"!text-viridian\" href=\"https://x.com/PyDelhi\" target=\"_blank\" rel=\"nofollow noopener ugc\">Twitter</a></p>\n<p class=\"mb-4\">Cheers,<br>PyDelhi!</p>\n</div>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 7272,
+          "name": "meetup",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 3612,
+          "name": "delhi",
+          "tag_category_maps_count": 0
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 1547,
+      "name": "PyDelhi March 2025 Meetup",
+      "header_image_path": null,
+      "header_image": null,
+      "start_time": "2025-03-29T13:00:00.000+05:30",
+      "end_time": "2025-03-29T17:00:00.000+05:30",
+      "kommunity_id": 8,
+      "slug": "pydelhi-march-meetup",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "pydelhi",
+      "event_type": "offline",
+      "interested_members_count": 146,
+      "event_locations": [
+        {
+          "name": "CSDS Civil Lines",
+          "address": "29, Rajpur Rd, Ludlow Castle, Civil Lines, Delhi, 110054",
+          "map_link": "https://maps.app.goo.gl/WpbJN35wivbjt54r6"
+        }
+      ],
+      "description": "<div class=\"break-words\">\n<p class=\"mb-4\">Hey Fellow Pythonistas,</p>\n<p class=\"mb-4\">PyDelhi is back with the end of the year March edition of our Monthly Meetups 🐍.</p>\n<p class=\"mb-4\"><em><strong>Please cancel your RSVP if you're not attending the Meetup.</strong></em></p>\n<p class=\"mb-4\">The venue for this meetup is <a class=\"!text-viridian\" href=\"http://Essentia.dev\" target=\"_blank\" rel=\"nofollow noopener ugc\">Essentia.dev</a>, Noida Sector 62<br>Nearest Delhi Metro Station is Sector 62 Noida (Blue Line). E-rickshaws are generally available.</p>\n<p class=\"mb-4\">Google Maps Link: <a class=\"!text-viridian\" href=\"https://maps.app.goo.gl/gvB4tDRA34dT296g7\" target=\"_blank\" rel=\"nofollow noopener ugc\">https://maps.app.goo.gl/gvB4tDRA34dT296g7</a></p>\n<p class=\"mb-4\">If you have any questions please send us a message on <a class=\"!text-viridian\" href=\"https://chat.whatsapp.com/LwIHShwtZtB2rgK2x66AsI\" target=\"_blank\" rel=\"nofollow noopener ugc\">WhatsApp Group</a>, <a class=\"!text-viridian\" href=\"https://t.me/PyDelhi_official\" target=\"_blank\" rel=\"nofollow noopener ugc\">Telegram Group</a> or please DM us on <a class=\"!text-viridian\" href=\"https://x.com/PyDelhi\" target=\"_blank\" rel=\"nofollow noopener ugc\">Twitter</a></p>\n<p class=\"mb-4\">Cheers,<br>PyDelhi!</p>\n</div>",
+      "kommunity": {
+        "id": "pydelhi",
+        "name": "PyDelhi",
+        "logo_image_path": {
+          "id": 415376,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        },
+        {
+          "id": 7272,
+          "name": "meetup",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 3612,
+          "name": "delhi",
+          "tag_category_maps_count": 0
+        }
+      ],
+      "collaboration_communities": []
+    },
+    {
+      "id": 1480,
+      "name": "ML Saturday",
+      "header_image_path": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOUNvQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--205f7c4e9d3ff396cabfbe5c10b4e1027ee22f36/1000211824.png",
+      "header_image": {
+        "id": 239373,
+        "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOUNvQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--205f7c4e9d3ff396cabfbe5c10b4e1027ee22f36/1000211824.png",
+        "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOUNvQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--205f7c4e9d3ff396cabfbe5c10b4e1027ee22f36/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/1000211824.png",
+        "i350": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOUNvQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--205f7c4e9d3ff396cabfbe5c10b4e1027ee22f36/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/1000211824.png",
+        "i500": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOUNvQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--205f7c4e9d3ff396cabfbe5c10b4e1027ee22f36/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFMMEFXa0M5QUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--fbc44ed63568f33c97d1afe9909160954c7047a3/1000211824.png"
+      },
+      "start_time": "2025-02-15T12:00:00.000+05:30",
+      "end_time": "2025-02-15T17:00:00.000+05:30",
+      "kommunity_id": 192,
+      "slug": "ml-sunday-fuel-your-weekend-with-ai",
+      "timezone": "Asia/Calcutta",
+      "kommunity_slug": "tensorflow-user-group-ghaziabad",
+      "event_type": "offline",
+      "interested_members_count": 454,
+      "event_locations": [
+        {
+          "name": "LambdaTest",
+          "address": "2nd Floor, KLJ, TOWER-A, Noida One, Rasoolpur Nawada, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309",
+          "map_link": "https://maps.app.goo.gl/GmhNeMXt7QhUd2uG9"
+        }
+      ],
+      "description": "<p><strong>🚀 ML Saturday &ndash; A Celebration of AI &amp; Community!</strong></p>\n<p>We are thrilled to announce <strong>ML Saturday</strong>, an exclusive, free event for AI and ML enthusiasts, in collaboration with <strong>PyDelhi</strong>! 🎉</p>\n<p>Get ready for a power-packed day of insightful discussions, hands-on learning, and networking with&nbsp;<strong>Experts, industry leaders, ML researchers, and fellow professionals</strong>. Whether you're an experienced practitioner or just starting your ML journey, this event is designed to fuel your curiosity and spark new ideas.</p>\n<p>Expect engaging <strong>tech talks, interactive sessions, and deep dives into the latest advancements and real-world applications of Machine Learning</strong>. Plus, no great weekend event is complete without <strong>pizza, collaboration, and debugging ideas together! 🍕✨</strong></p>\n<p>📅 <strong>Event Date:</strong> 15th Feb, 2025<br>📍&nbsp;<strong>Venue:</strong> LambdaTest, Noida Sector 62</p>\n<p>Join us for a <strong>Saturday full of learning, ML, and community&mdash;because weekends are better with a slice of machine-learning magic!</strong> 🚀</p>\n<p>&nbsp;</p>\n<p>Join PyDelhi here: https://www.commudle.com/communities/pydelhi</p>",
+      "kommunity": {
+        "id": "tensorflow-user-group-ghaziabad",
+        "name": "TensorFlow User Group Ghaziabad",
+        "logo_image_path": {
+          "id": 149246,
+          "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOVZJQWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1f0f05b470fed4b10ba42e64011e9a66fce848d0/Commudle%20LOGO.jpg",
+          "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOVZJQWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1f0f05b470fed4b10ba42e64011e9a66fce848d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--d98d8d7f00147e4586d1b19b8f18ed1c04902eb8/Commudle%20LOGO.jpg",
+          "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOVZJQWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1f0f05b470fed4b10ba42e64011e9a66fce848d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--e91c4dd6f400c8b9bf0bc900ffc9d3abb1e1f9f6/Commudle%20LOGO.jpg",
+          "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOVZJQWc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--1f0f05b470fed4b10ba42e64011e9a66fce848d0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--91e4551d31ff606793933361a5c07668b5f784c2/Commudle%20LOGO.jpg"
+        }
+      },
+      "custom_agenda": true,
+      "event_status": {
+        "id": 5,
+        "name": "completed",
+        "description": "Displays the resources used by the speakers on the event page"
+      },
+      "tags": [
+        {
+          "id": 749,
+          "name": "machine learning",
+          "tag_category_maps_count": 3
+        },
+        {
+          "id": 611,
+          "name": "ai",
+          "tag_category_maps_count": 3
+        },
+        {
+          "id": 6252,
+          "name": "llms",
+          "tag_category_maps_count": 0
+        },
+        {
+          "id": 855,
+          "name": "ml",
+          "tag_category_maps_count": 1
+        },
+        {
+          "id": 49,
+          "name": "python",
+          "tag_category_maps_count": 4
+        }
+      ],
+      "collaboration_communities": [
+        {
+          "id": 8,
+          "name": "PyDelhi",
+          "logo_path": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKZUFXa0NYZ0U2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--1b54362eb80bd09837e5bde550bb5151f95283d3/pydelhi-color.png",
+          "slug": "pydelhi",
+          "mini_description": "A volunteer-driven organization comprising of Pythonistas, entrepreneurs, researchers, and students with a primary interest in the Python programming language",
+          "members_count": 3612,
+          "location": "New Delhi, Delhi, India",
+          "has_upcoming_events": false,
+          "logo_image": {
+            "name": "logo_image",
+            "record": null
+          },
+          "logo_image_path": {
+            "id": 415376,
+            "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/pydelhi-color.png",
+            "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+            "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+            "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMjlYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e253b87e3f9e8d668e1ad976146b36f303410175/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+          },
+          "completed_events_count": 16,
+          "banner_image": {
+            "id": 415377,
+            "file": {
+              "name": "banner_image",
+              "record": null
+            },
+            "url": "https://json.commudle.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/pydelhi-color.png",
+            "i32": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVNWcEpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--3ddca6f6c247c2a968f56480e328f90094ff9d95/pydelhi-color.png",
+            "i64": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVVWcFJUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--2435c0338fa7cddd280234f2da44100890e88310/pydelhi-color.png",
+            "i96": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdWcFpUb0xiRzloWkdWeWV3WTZDWEJoWjJVdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6be450d265d243ffa3ec7412795d5842428bd1d5/pydelhi-color.png",
+            "i160": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFHZ2FRR2dPZ3RzYjJGa1pYSjdCam9KY0dGblpUQT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--8a1146f3e200ad1ceaece3c8cae47822b6884206/pydelhi-color.png",
+            "i320": "https://json.commudle.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBM0JYQmc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d64fcc0ac81e9babdef3cdc57e34a61eb6c374e0/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/pydelhi-color.png"
+          }
+        }
+      ]
+    }
+  ],
+  "future": []
+}

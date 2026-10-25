@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title or "PyDelhi" }}</title>
+<meta name="description" content="{{ description or "PyDelhi is Delhi NCR's Python community. Free monthly meetups, talks, workshops and lightning talks." }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<nav id="site-nav">
+  <a href="/" class="nav-logo">
+    <img src="https://raw.githubusercontent.com/pydelhi/resources/refs/heads/main/logos/pydelhi-transparent-extended-color.svg" alt="PyDelhi" style="height:48px;width:auto;display:block;">
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="/events">Events</a>
+    <a href="/speak">Speak</a>
+    <a href="/sponsor">Sponsor</a>
+    <a href="/community">Community</a>
+    <a href="/about">About</a>
+    <a href="/blog">Blog</a>
+  </div>
+  <a href="https://www.commudle.com/communities/pydelhi" class="nav-cta" target="_blank" rel="noopener">
+    Join Community
+    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 10L10 2M10 2H4M10 2v6"/>
+    </svg>
+  </a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <i class="ph ph-list"></i>
+  </button>
+</nav>
+
+{{ content | safe }}
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://raw.githubusercontent.com/pydelhi/resources/refs/heads/main/logos/pydelhi-transparent-extended-color.svg" alt="PyDelhi" class="footer-logo">
+        <p>Delhi NCR's Python community. Free, volunteer-run, open to everyone.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>Community</h4>
+          <a href="https://www.commudle.com/communities/pydelhi" target="_blank" rel="noopener">Join on Commudle</a>
+          <a href="#">Join WhatsApp</a>
+          <a href="#">Telegram</a>
+          <a href="#">Mailing List</a>
+          <span class="footer-socials">
+            <a href="https://x.com/pydelhi" aria-label="PyDelhi on X" target="_blank" rel="noopener"><i class="ph ph-x-logo"></i></a>
+            <a href="https://www.linkedin.com/company/pydelhi" aria-label="PyDelhi on LinkedIn" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="https://www.instagram.com/pydelhi" aria-label="PyDelhi on Instagram" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i></a>
+          </span>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://www.youtube.com/@pydelhi" target="_blank" rel="noopener">YouTube / Talk Recordings</a>
+          <a href="#">Intro Slides</a>
+          <a href="/blog">Blog / Recaps</a>
+          <a href="https://github.com/pydelhi" target="_blank" rel="noopener">GitHub</a>
+          <a href="/speak#past-speakers">Past Speakers</a>
+        </div>
+        <div>
+          <h4>Organization</h4>
+          <a href="/about">About</a>
+          <a href="/volunteers">Volunteers</a>
+          <a href="/coc">Code of Conduct</a>
+          <a href="/sponsor">Sponsor Us</a>
+          <a href="/speak">Submit a Talk</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PyDelhi. Run by volunteers.</span>
+      <span>Made with <span class="heart" aria-label="love">♥</span> by <a href="https://daksh.design" target="_blank" rel="noopener">daksh.design</a></span>
+    </div>
+  </div>
+  <svg class="snake snake-footer" id="snake-footer" aria-hidden="true"></svg>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

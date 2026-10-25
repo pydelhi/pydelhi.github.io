@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PyDelhi</title>
-<meta name="description" content="PyDelhi is Delhi NCR's Python community. Free monthly meetups, talks, workshops and lightning talks.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<nav id="site-nav">
-  <a href="/" class="nav-logo">
-    <img src="https://raw.githubusercontent.com/pydelhi/resources/refs/heads/main/logos/pydelhi-transparent-extended-color.svg" alt="PyDelhi" style="height:48px;width:auto;display:block;">
-  </a>
-  <div class="nav-links" id="nav-links">
-    <a href="/events">Events</a>
-    <a href="/speak">Speak</a>
-    <a href="/sponsor">Sponsor</a>
-    <a href="/community">Community</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
-  </div>
-  <a href="https://www.commudle.com/communities/pydelhi" class="nav-cta" target="_blank" rel="noopener">
-    Join Community
-    <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M2 10L10 2M10 2H4M10 2v6"/>
-    </svg>
-  </a>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-    <i class="ph ph-list"></i>
-  </button>
-</nav>
-
+---
+layout: layouts/base.njk
+---
 <div class="scroll-driver" id="scroll-driver">
   <div class="sticky-scene" id="scene">
     <div class="hero-bg"></div>
@@ -60,37 +25,38 @@
           <a href="https://www.commudle.com/communities/pydelhi" class="join-btn" target="_blank" rel="noopener">+ Join community</a>
         </div>
         <div class="bento-grid">
-          <div class="bento-cell bento-cell-tall" id="bento-cell-0"><div class="ghost-placeholder" id="ghost-0"><div class="ghost-bar"></div></div></div>
-          <div class="bento-cell"                 id="bento-cell-1"><div class="ghost-placeholder" id="ghost-1"><div class="ghost-bar"></div></div></div>
-          <div class="bento-cell"                 id="bento-cell-2"><div class="ghost-placeholder" id="ghost-2"><div class="ghost-bar"></div></div></div>
+          <div class="bento-cell bento-cell-tall" id="bento-cell-0"><div class="ghost-placeholder" id="ghost-0"><div class="ghost-bar"></div></div><template>{% photo "photos/speaker-on-stage.jpg", "Talks", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
+          <div class="bento-cell"                 id="bento-cell-1"><div class="ghost-placeholder" id="ghost-1"><div class="ghost-bar"></div></div><template>{% photo "photos/full-house-group.jpeg", "Meetups", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
+          <div class="bento-cell"                 id="bento-cell-2"><div class="ghost-placeholder" id="ghost-2"><div class="ghost-bar"></div></div><template>{% photo "photos/iwd-meetup.jpeg", "Workshops", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
           <div class="bento-cell bento-cell-info">
+            {%- set next = events.next %}
             <div class="info-card info-card-registration" id="meetup-card" style="grid-column: span 2; width: 100%; padding: 14px;">
-              <span class="info-chip info-chip-open" id="meetup-badge">Upcoming</span>
-              <div class="info-title">May Meetup</div>
-              <div class="info-body">Python talks, lightning sessions, and great conversations over chai. Everyone's welcome.</div>
+              <span class="info-chip info-chip-open">{{ "Upcoming" if next else "Coming soon" }}</span>
+              <div class="info-title">{{ next.name if next else "Next Meetup" }}</div>
+              <div class="info-body">{{ "Python talks, lightning sessions, and great conversations over chai. Everyone's welcome." if next else "Date and venue coming soon. Join PyDelhi on Commudle to hear first." }}</div>
               <div class="meetup-meta">
                 <div class="meetup-meta-item">
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="12" rx="2"/><path d="M11 1v4M5 1v4M2 7h12"/></svg>
-                  <span>Saturday, May 23</span>
+                  <span>{{ next.dayLong if next else "Date coming soon" }}</span>
                 </div>
                 <div class="meetup-meta-item">
                   <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5A4.5 4.5 0 0 0 8 1.5z"/><circle cx="8" cy="6" r="1.5"/></svg>
-                  <span>Appinventiv, Noida Sector 137</span>
+                  <span>{{ (next.venue or "Delhi NCR") if next else "Delhi NCR" }}</span>
                 </div>
               </div>
               <div class="meetup-actions">
-                <a href="#" class="meetup-btn-primary" id="meetup-register">
+                <a href="{{ next.url if next else "https://www.commudle.com/communities/pydelhi" }}" class="meetup-btn-primary" target="_blank" rel="noopener">
                   <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
-                  Register now
+                  {{ "Register now" if next else "Get notified" }}
                 </a>
-                <a href="#" class="meetup-btn-secondary" id="meetup-cfp">
+                <a href="/speak" class="meetup-btn-secondary">
                   <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="1" width="5" height="9" rx="2.5"/><path d="M3 8a5 5 0 0 0 10 0M8 13v2"/></svg>
                   Submit talk
                 </a>
               </div>
             </div>
           </div>
-          <div class="bento-cell bento-cell-talk" id="bento-cell-3"><div class="ghost-placeholder" id="ghost-3"><div class="ghost-bar"></div></div></div>
+          <div class="bento-cell bento-cell-talk" id="bento-cell-3"><div class="ghost-placeholder" id="ghost-3"><div class="ghost-bar"></div></div><template>{% photo "photos/bof.jpg", "Birds of a Feather", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
         </div>
       </div>
     </div>
@@ -99,22 +65,21 @@
 
 <main>
 
-  <!-- STATS: meetup history as a contribution graph. Data lives in MEETUP_HISTORY in script.js -->
+  <!-- STATS: meetup history as a contribution graph. Data: src/_data/meetupHistory.js (Commudle from 2025) -->
   <section class="stats" aria-labelledby="stats-title">
     <div class="wrap">
-      <h2 class="h2" id="stats-title"><!-- TODO confirm: set by hand, the graph below is still placeholder data -->
-      <span id="meetup-total">140</span>+ meetups since 2011.</h2>
+      <h2 class="h2" id="stats-title"><span id="meetup-total">{{ meetupHistory.total }}</span>+ meetups since 2011.</h2>
       <div class="graph-card" data-reveal>
         <div class="graph-main">
           <div class="graph-wrap">
-            <div class="graph" id="graph" role="img" aria-label="Grid of every month since 2011, coloured by the kind of meetup held"></div>
+            <div class="graph" id="graph" role="img" aria-label="Grid of every month since 2011, filled for each month PyDelhi met">
+              {%- for c in meetupHistory.cells %}<span class="cell {{ c.cls }}" data-label="{{ c.label }}"></span>{% endfor -%}
+            </div>
             <div class="graph-ends" aria-hidden="true"><span>2011</span><span>Today</span></div>
             <div class="graph-tip" id="graph-tip" aria-hidden="true"></div>
           </div>
           <ul class="graph-legend">
-            <li><span class="sw sw-talk"></span>Talks</li>
-            <li><span class="sw sw-workshop"></span>Workshop</li>
-            <li><span class="sw sw-bof"></span>Birds of a Feather</li>
+            <li><span class="sw sw-met"></span>Meetup</li>
             <li><span class="sw sw-none"></span>No meetup</li>
           </ul>
         </div>
@@ -129,7 +94,7 @@
     </div>
   </section>
 
-  <!-- SPEAKER COMPANIES: TODO replace placeholder list in script.js -->
+  <!-- SPEAKER COMPANIES: lists live in script.js -->
   <section class="speakers-from" aria-label="Speaker companies, past sponsors and venues">
     <div class="wrap">
       <h2 class="speakers-from-title" id="speakers-from-title">Our speakers have come from</h2>
@@ -153,23 +118,23 @@
       </div>
 
       <ul class="formats" id="formats">
-        <li class="format" tabindex="0" data-img="./assets/DSC_0873.JPG">
-          <img class="format-thumb" src="./assets/DSC_0873.JPG" alt="" loading="lazy">
+        <li class="format" tabindex="0" data-img="{% photoUrl "photos/speaker-on-stage.jpg", 640 %}">
+          {% photo "photos/speaker-on-stage.jpg", "", "120px", { class: "format-thumb", loading: "lazy" } %}
           <span class="format-name">Talks</span>
           <span class="format-desc">20 to 30 minutes on something you built, broke or learned.</span>
         </li>
-        <li class="format" tabindex="0" data-img="./assets/IWD.jpeg">
-          <img class="format-thumb" src="./assets/IWD.jpeg" alt="" loading="lazy">
+        <li class="format" tabindex="0" data-img="{% photoUrl "photos/iwd-meetup.jpeg", 640 %}">
+          {% photo "photos/iwd-meetup.jpeg", "", "120px", { class: "format-thumb", loading: "lazy" } %}
           <span class="format-name">Workshops</span>
           <span class="format-desc">Laptops open, code along, leave with something working.</span>
         </li>
-        <li class="format" tabindex="0" data-img="./assets/bof.jpg">
-          <img class="format-thumb" src="./assets/bof.jpg" alt="" loading="lazy">
+        <li class="format" tabindex="0" data-img="{% photoUrl "photos/bof.jpg", 640 %}">
+          {% photo "photos/bof.jpg", "", "120px", { class: "format-thumb", loading: "lazy" } %}
           <span class="format-name">Birds of a Feather</span>
           <span class="format-desc">Small circles around one topic. Everyone gets a turn.</span>
         </li>
-        <li class="format" tabindex="0" data-img="./assets/WhatsApp Image 2026-05-03 at 11.30.08.jpeg">
-          <img class="format-thumb" src="./assets/WhatsApp Image 2026-05-03 at 11.30.08.jpeg" alt="" loading="lazy">
+        <li class="format" tabindex="0" data-img="{% photoUrl "photos/speaker-qr-slide.jpeg", 640 %}">
+          {% photo "photos/speaker-qr-slide.jpeg", "", "120px", { class: "format-thumb", loading: "lazy" } %}
           <span class="format-name">Lightning Talks</span>
           <span class="format-desc">Five minutes, one idea, slides optional.</span>
         </li>
@@ -189,13 +154,13 @@
       </div>
     </div>
     <div class="strip" id="strip" tabindex="0" aria-label="Photos from past meetups">
-      <figure class="shot shot-wide"><img src="./assets/WhatsApp Image 2026-05-03 at 11.30.09.jpeg" alt="Group photo of attendees at a PyDelhi meetup" loading="lazy" draggable="false"></figure>
-      <figure class="shot"><img src="./assets/WhatsApp Image 2026-05-03 at 12.20.33.jpeg" alt="Speaker presenting a talk on installing aiohttp" loading="lazy" draggable="false"></figure>
-      <figure class="shot shot-land"><img src="./assets/bof.jpg" alt="Attendees in a Birds of a Feather discussion circle" loading="lazy" draggable="false"></figure>
-      <figure class="shot"><img src="./assets/WhatsApp Image 2026-05-03 at 11.30.08.jpeg" alt="Speaker sharing a QR code slide with the audience" loading="lazy" draggable="false"></figure>
-      <figure class="shot shot-pano"><img src="./assets/grouppic.jpeg" alt="Large group photo from a full-house PyDelhi meetup" loading="lazy" draggable="false"></figure>
-      <figure class="shot shot-land"><img src="./assets/IWD.jpeg" alt="PyDelhi International Women's Day meetup" loading="lazy" draggable="false"></figure>
-      <figure class="shot shot-sq"><img src="./assets/DSC_0873.JPG" alt="A speaker on stage at PyDelhi" loading="lazy" draggable="false"></figure>
+      <figure class="shot shot-wide">{% photo "photos/meetup-group-photo.jpeg", "Group photo of attendees at a PyDelhi meetup", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot">{% photo "photos/aiohttp-talk.jpeg", "Speaker presenting a talk on installing aiohttp", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-land">{% photo "photos/bof.jpg", "Attendees in a Birds of a Feather discussion circle", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot">{% photo "photos/speaker-qr-slide.jpeg", "Speaker sharing a QR code slide with the audience", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-pano">{% photo "photos/full-house-group.jpeg", "Large group photo from a full-house PyDelhi meetup", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-land">{% photo "photos/iwd-meetup.jpeg", "PyDelhi International Women's Day meetup", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-sq">{% photo "photos/speaker-on-stage.jpg", "A speaker on stage at PyDelhi", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
     </div>
   </section>
 
@@ -206,44 +171,12 @@
       <div class="events-grid">
 
         <!-- the ticket's notches are a mask, so its outline and shadow live on this wrapper -->
-        <div class="ticket-wrap" data-reveal>
-        <article class="ticket">
-          <div class="ticket-main">
-            <span class="ticket-status">RSVP open</span>
-            <h3 class="ticket-title">PyDelhi May Meetup</h3>
-            <p class="ticket-desc">Python talks, lightning sessions and long conversations over chai. Beginners very welcome.</p>
-            <ul class="ticket-meta">
-              <li><i class="ph ph-map-pin"></i>Appinventiv, Noida Sector 137</li>
-              <li><i class="ph ph-ticket"></i>Free, registration on Commudle</li>
-            </ul>
-            <a href="https://www.commudle.com/communities/pydelhi" class="btn-navy" target="_blank" rel="noopener">RSVP on Commudle <i class="ph ph-arrow-up-right"></i></a>
-          </div>
-          <div class="ticket-stub" aria-label="Saturday 23 May">
-            <span>SAT</span>
-            <strong>23</strong>
-            <span>MAY</span>
-          </div>
-        </article>
-        </div>
+        {% include "ticket.njk" %}
 
         <div class="past">
-          <!-- Fallback content: script.js fills these from Commudle, photos from EVENT_PHOTOS -->
-          <a href="/blog/april-2026" class="past-card" data-reveal>
-            <span class="past-img"><img src="./assets/WhatsApp Image 2026-05-03 at 11.30.09.jpeg" alt="Group photo from the PyDelhi April meetup" loading="lazy"></span>
-            <span class="past-body">
-              <span class="past-date">April 2026</span>
-              <strong>April Meetup</strong>
-            </span>
-            <i class="ph ph-arrow-up-right past-arrow"></i>
-          </a>
-          <a href="/blog/iwd-2026" class="past-card" data-reveal>
-            <span class="past-img"><img src="./assets/grouppic.jpeg" alt="Group photo from PyDelhi x International Women's Day" loading="lazy"></span>
-            <span class="past-body">
-              <span class="past-date">March 2026</span>
-              <strong>PyDelhi x International Women's Day</strong>
-            </span>
-            <i class="ph ph-arrow-up-right past-arrow"></i>
-          </a>
+          {%- for ev in events.past.slice(0, 2) %}
+          {% include "past-card.njk" %}
+          {%- endfor %}
           <a href="/events" class="text-link">View all events <i class="ph ph-arrow-right"></i></a>
         </div>
       </div>
@@ -260,7 +193,7 @@
       </div>
 
       <div class="partner-pane pane-sponsor" id="pane-sponsor" role="tabpanel" aria-labelledby="tab-sponsor">
-        <img class="pane-img" src="./assets/IWD.jpeg" alt="A full room of attendees at a PyDelhi meetup" loading="lazy">
+        {% photo "photos/iwd-meetup.jpeg", "A full room of attendees at a PyDelhi meetup", "(max-width: 860px) 100vw, 520px", { class: "pane-img", loading: "lazy" } %}
         <div class="pane-body">
           <p class="pane-intro">Every meetup is free for attendees. Sponsors make that possible, and meet the people who use their tools.</p>
           <dl class="pane-list">
@@ -273,7 +206,7 @@
       </div>
 
       <div class="partner-pane pane-collab" id="pane-collab" role="tabpanel" aria-labelledby="tab-collab" hidden>
-        <img class="pane-img" src="./assets/WhatsApp Image 2026-05-03 at 11.30.08.jpeg" alt="A speaker presenting to a PyDelhi audience" loading="lazy">
+        {% photo "photos/speaker-qr-slide.jpeg", "A speaker presenting to a PyDelhi audience", "(max-width: 860px) 100vw, 520px", { class: "pane-img", loading: "lazy" } %}
         <div class="pane-body">
           <p class="pane-intro">Run something together with another community, college or company.</p>
           <dl class="pane-list">
@@ -335,7 +268,7 @@
   <section class="volunteer" aria-labelledby="volunteer-title">
     <div class="wrap vol">
       <!-- TODO: swap for a photo of volunteers at work -->
-      <img class="vol-img" src="./assets/WhatsApp Image 2026-05-03 at 11.30.09.jpeg" alt="PyDelhi volunteers and attendees at a meetup" loading="lazy">
+      {% photo "photos/meetup-group-photo.jpeg", "PyDelhi volunteers and attendees at a meetup", "(max-width: 860px) 100vw, 560px", { class: "vol-img", loading: "lazy" } %}
       <div class="vol-body">
         <h2 class="h2" id="volunteer-title">Help us run the room.</h2>
         <p class="lede">Every meetup is put together by volunteers. Pick what you're good at, or tell us something new.</p>
@@ -360,11 +293,11 @@
   <!-- JOIN -->
   <section class="join" id="join" aria-labelledby="join-title">
     <div class="join-photos" aria-hidden="true">
-      <span class="join-photo jp-1" data-drift="-60"><img src="./assets/DSC_0873.JPG" alt=""></span>
-      <span class="join-photo jp-2" data-drift="40"><img src="./assets/WhatsApp Image 2026-05-03 at 11.30.09.jpeg" alt=""></span>
-      <span class="join-photo jp-3" data-drift="-30"><img src="./assets/bof.jpg" alt=""></span>
-      <span class="join-photo jp-4" data-drift="70"><img src="./assets/WhatsApp Image 2026-05-03 at 12.20.33.jpeg" alt=""></span>
-      <span class="join-photo jp-5" data-drift="-50"><img src="./assets/IWD.jpeg" alt=""></span>
+      <span class="join-photo jp-1" data-drift="-60">{% photo "photos/speaker-on-stage.jpg", "", "260px" %}</span>
+      <span class="join-photo jp-2" data-drift="40">{% photo "photos/meetup-group-photo.jpeg", "", "260px" %}</span>
+      <span class="join-photo jp-3" data-drift="-30">{% photo "photos/bof.jpg", "", "260px" %}</span>
+      <span class="join-photo jp-4" data-drift="70">{% photo "photos/aiohttp-talk.jpeg", "", "260px" %}</span>
+      <span class="join-photo jp-5" data-drift="-50">{% photo "photos/iwd-meetup.jpeg", "", "260px" %}</span>
     </div>
     <div class="join-inner">
       <h2 class="join-title" id="join-title">Save yourself a seat <em>at the next one.</em></h2>
@@ -378,53 +311,3 @@
   </section>
 
 </main>
-
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="https://raw.githubusercontent.com/pydelhi/resources/refs/heads/main/logos/pydelhi-transparent-extended-color.svg" alt="PyDelhi" class="footer-logo">
-        <p>Delhi NCR's Python community. Free, volunteer-run, open to everyone.</p>
-      </div>
-      <div class="footer-cols">
-        <div>
-          <h4>Community</h4>
-          <a href="https://www.commudle.com/communities/pydelhi" target="_blank" rel="noopener">Join on Commudle</a>
-          <a href="#">Join WhatsApp</a>
-          <a href="#">Telegram</a>
-          <a href="#">Mailing List</a>
-          <span class="footer-socials">
-            <a href="https://x.com/pydelhi" aria-label="PyDelhi on X" target="_blank" rel="noopener"><i class="ph ph-x-logo"></i></a>
-            <a href="https://www.linkedin.com/company/pydelhi" aria-label="PyDelhi on LinkedIn" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a>
-            <a href="https://www.instagram.com/pydelhi" aria-label="PyDelhi on Instagram" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i></a>
-          </span>
-        </div>
-        <div>
-          <h4>Resources</h4>
-          <a href="https://www.youtube.com/@pydelhi" target="_blank" rel="noopener">YouTube / Talk Recordings</a>
-          <a href="#">Intro Slides</a>
-          <a href="/blog">Blog / Recaps</a>
-          <a href="https://github.com/pydelhi" target="_blank" rel="noopener">GitHub</a>
-          <a href="/speak#past-speakers">Past Speakers</a>
-        </div>
-        <div>
-          <h4>Organization</h4>
-          <a href="/about">About</a>
-          <a href="/volunteers">Volunteers</a>
-          <a href="/coc">Code of Conduct</a>
-          <a href="/sponsor">Sponsor Us</a>
-          <a href="/speak">Submit a Talk</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 PyDelhi. Run by volunteers.</span>
-      <span>Made with <span class="heart" aria-label="love">♥</span> by <a href="https://daksh.design" target="_blank" rel="noopener">daksh.design</a></span>
-    </div>
-  </div>
-  <svg class="snake snake-footer" id="snake-footer" aria-hidden="true"></svg>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>

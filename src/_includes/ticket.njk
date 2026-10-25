@@ -1,0 +1,34 @@
+{#- The next meetup from Commudle, or a "coming soon" ticket when nothing is announced -#}
+{%- set next = events.next -%}
+<!-- the ticket's notches are a mask, so its outline and shadow live on this wrapper -->
+        <div class="ticket-wrap" data-reveal>
+        <article class="ticket">
+          <div class="ticket-main">
+            <span class="ticket-status">{{ "RSVP open" if next else "Coming soon" }}</span>
+            <h3 class="ticket-title">{{ next.name if next else "The next PyDelhi Meetup" }}</h3>
+            <p class="ticket-desc">{{ "Python talks, lightning sessions and long conversations over chai. Beginners very welcome." if next else "Date and venue coming soon. Join PyDelhi on Commudle and you'll hear the moment RSVPs open." }}</p>
+            <ul class="ticket-meta">
+              <li><i class="ph ph-map-pin"></i>{{ (next.venue or "Delhi NCR") if next else "Somewhere in Delhi NCR" }}</li>
+              <li><i class="ph ph-ticket"></i>Free, registration on Commudle</li>
+            </ul>
+            {%- if next %}
+            <a href="{{ next.url }}" class="btn-navy" target="_blank" rel="noopener">RSVP on Commudle <i class="ph ph-arrow-up-right"></i></a>
+            {%- else %}
+            <a href="https://www.commudle.com/communities/pydelhi" class="btn-navy" target="_blank" rel="noopener">Get notified <i class="ph ph-arrow-up-right"></i></a>
+            {%- endif %}
+          </div>
+          {%- if next %}
+          <div class="ticket-stub" aria-label="{{ next.stub.label }}">
+            <span>{{ next.stub.dow }}</span>
+            <strong>{{ next.stub.day }}</strong>
+            <span>{{ next.stub.mon }}</span>
+          </div>
+          {%- else %}
+          <div class="ticket-stub" aria-label="Date coming soon">
+            <span>DATE</span>
+            <i class="ph ph-calendar-dots" aria-hidden="true"></i>
+            <span>SOON</span>
+          </div>
+          {%- endif %}
+        </article>
+        </div>

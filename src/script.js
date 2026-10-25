@@ -1,16 +1,13 @@
-let REGISTRATION_OPEN = true;
-let CFP_OPEN = true;
-
-
+// each photo's <img> is built into a <template> in its bento cell, so it gets a resized srcset
 // m = start position on phones: x/y as a fraction of the screen, x may be negative so the card bleeds off the edge
 const PHOTOS = [
-  { cid:'bento-cell-0', img:'./assets/DSC_0873.JPG', lb:"Talks",   spct:.04,  srpct:null, sy:.20, sw:150, sh:185, rot:-7, m:{ x:-.1,  y:.15, w:112, h:140 } },
-  { cid:'bento-cell-1', img:'./assets/grouppic.jpeg', lb:'Meetups', spct:.10,  srpct:null, sy:.55, sw:210, sh:150, rot: 6, m:{ x:.74,  y:.1,  w:130, h:96  } },
-  { cid:'bento-cell-2', img:'./assets/IWD.jpeg', lb:'Workshops', spct:null, srpct:.04,  sy:.15, sw:158, sh:195, rot: 9, m:{ x:-.14, y:.52, w:108, h:146 } },
-  { cid:'bento-cell-3', img:'./assets/bof.jpg', lb:'Birds of a Feather', spct:null, srpct:.08,  sy:.55, sw:290, sh:210, rot:-6, m:{ x:.66,  y:.8,  w:156, h:112 } },
+  { cid:'bento-cell-0', lb:"Talks",   spct:.04,  srpct:null, sy:.20, sw:150, sh:185, rot:-7, m:{ x:-.1,  y:.15, w:112, h:140 } },
+  { cid:'bento-cell-1', lb:'Meetups', spct:.10,  srpct:null, sy:.55, sw:210, sh:150, rot: 6, m:{ x:.74,  y:.1,  w:130, h:96  } },
+  { cid:'bento-cell-2', lb:'Workshops', spct:null, srpct:.04,  sy:.15, sw:158, sh:195, rot: 9, m:{ x:-.14, y:.52, w:108, h:146 } },
+  { cid:'bento-cell-3', lb:'Birds of a Feather', spct:null, srpct:.08,  sy:.55, sw:290, sh:210, rot:-6, m:{ x:.66,  y:.8,  w:156, h:112 } },
 ];
 
-// Logos live in assets/logos and are drawn in navy through a CSS mask, so any colour file works.
+// Logos live in src/assets/logos and are drawn in navy through a CSS mask, so any colour file works.
 // `r` is the file's width / height, used to size every logo to a similar visual weight.
 // Most files are the full official logo (symbol + wordmark), so no extra text is added;
 // `text` is only for a bare symbol that needs the name beside it.
@@ -67,34 +64,6 @@ const SPONSORS = [
   { name:'E2E Networks', file:'e2e.png', r:1.47, text:'E2E Networks' },
 ];
 
-function updateMeetupCard() {
-  const badge = document.getElementById('meetup-badge');
-  const regBtn = document.getElementById('meetup-register');
-  const cfpBtn = document.getElementById('meetup-cfp');
-
-  if (REGISTRATION_OPEN) {
-    badge.textContent = 'Upcoming';
-    badge.className = 'info-chip info-chip-open';
-    regBtn.className = 'meetup-btn-primary';
-    regBtn.href = '#';
-  } else {
-    badge.textContent = 'Registration closed';
-    badge.className = 'info-chip info-chip-closed';
-    regBtn.className = 'meetup-btn-primary meetup-btn-disabled';
-    regBtn.removeAttribute('href');
-  }
-
-  if (CFP_OPEN) {
-    cfpBtn.className = 'meetup-btn-secondary';
-    cfpBtn.href = '#';
-  } else {
-    cfpBtn.className = 'meetup-btn-secondary meetup-btn-disabled';
-    cfpBtn.removeAttribute('href');
-  }
-}
-
-updateMeetupCard();
-
 function clamp(v,a,b){ return Math.max(a,Math.min(b,v)) }
 function lerp(a,b,t){ return a+(b-a)*t }
 
@@ -116,19 +85,21 @@ const gridLayer = document.getElementById('grid-layer');
 
 const GRID_FINAL_TOP = 92;
 
-const photoEls = PHOTOS.map(p => {
+// only the home page has the hero
+const photoEls = gridLayer ? PHOTOS.map(p => {
+  const cell = document.getElementById(p.cid);
   const el = document.createElement('div');
   el.className = 'cell-photo';
-  el.innerHTML = `<img src="${p.img}" alt="${p.lb}" draggable="false"><div class="photo-card-label">${p.lb}</div>`;
-  document.getElementById(p.cid).appendChild(el);
+  el.innerHTML = `${cell.querySelector('template').innerHTML}<div class="photo-card-label">${p.lb}</div>`;
+  cell.appendChild(el);
   return el;
-});
+}) : [];
 
 let L = null;
 
 function measureHero() {
   photoEls.forEach(el => { el.style.transform = ''; el.style.removeProperty('--f'); });
-  if (reduceMotion.matches) { L = null; return; }
+  if (!gridLayer || reduceMotion.matches) { L = null; return; }
 
   const compact = compactView.matches;
   const vw = document.documentElement.clientWidth, vh = innerHeight;
@@ -175,9 +146,10 @@ function renderHero(p) {
 /* ─── JOIN: photos drift at different speeds as the section passes ─── */
 
 const joinSection = document.getElementById('join');
-const joinPhotos = [...joinSection.querySelectorAll('[data-drift]')];
+const joinPhotos = joinSection ? [...joinSection.querySelectorAll('[data-drift]')] : [];
 
 function renderJoin() {
+  if (!joinSection) return;
   const r = joinSection.getBoundingClientRect();
   if (r.bottom < 0 || r.top > innerHeight) return;
   // -1 when the section enters at the bottom, 1 when it leaves at the top
@@ -258,7 +230,7 @@ navToggle.addEventListener('click', () => {
 function logoEl({ name, file, r, text }) {
   // wide logos get shorter and tall ones taller, so they all read at about the same size
   const h = text ? 26 : Math.round(clamp(28 * Math.pow(4 / r, .45), 18, 38));
-  const mark = `<span class="logo-img" style="--src:url('assets/logos/${file}');width:${Math.round(h * r)}px;height:${h}px"></span>`;
+  const mark = `<span class="logo-img" style="--src:url('/assets/logos/${file}');width:${Math.round(h * r)}px;height:${h}px"></span>`;
   return text
     ? `<span class="logo" role="img" aria-label="${name}">${mark}<span aria-hidden="true">${text}</span></span>`
     : `<span class="logo" role="img" aria-label="${name}">${mark}</span>`;
@@ -267,6 +239,7 @@ function logoEl({ name, file, r, text }) {
 function fillMarquee(id, list) {
   const row = list.map(logoEl).join('');
   const track = document.getElementById(id);
+  if (!track) return;
   // track holds the list twice so the loop is seamless; the copy is hidden from screen readers
   track.innerHTML = row + row.replace(/<span class="logo" role="img" aria-label="[^"]*"/g, '<span class="logo" aria-hidden="true"');
   // keep the same scroll speed however many logos there are
@@ -280,7 +253,7 @@ fillMarquee('sponsor-logos', SPONSORS);
 
 const formatList = document.getElementById('formats');
 const preview = document.getElementById('format-preview');
-const previewImgs = [...formatList.querySelectorAll('.format')].map(li => {
+const previewImgs = [...(formatList?.querySelectorAll('.format') ?? [])].map(li => {
   const img = document.createElement('img');
   img.src = li.dataset.img;
   img.alt = '';
@@ -313,57 +286,12 @@ function placePreview(li) {
   preview.style.setProperty('--r', (i % 2 ? 4 : -4) + 'deg');
 }
 
-formatList.querySelectorAll('.format').forEach(li => {
+formatList?.querySelectorAll('.format').forEach(li => {
   li.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { placePreview(li); setActiveFormat(li); } });
   li.addEventListener('focus', () => { placePreview(li); setActiveFormat(li); });
   li.addEventListener('blur', () => setActiveFormat(null));
 });
-formatList.addEventListener('pointerleave', () => setActiveFormat(null));
-
-
-/* ─── PAST EVENTS ─── */
-
-// Titles, dates and links come from Commudle; it has no event photos, so they live here.
-// Key = the event's slug, the last part of its Commudle URL. Drop the photo in assets/events/.
-// An event without an entry (or with a missing file) gets a generated cover instead.
-const EVENT_PHOTOS = {
-  // 'software-internals-meetup-1-redis-kubernetes': { img:'./assets/events/software-internals-1.jpg', alt:'Group photo from Software Internals Meetup #1' },
-  // 'pydelhi-3-15-the-next-python': { img:'./assets/events/pydelhi-3-15.jpg', alt:'Group photo from PyDelhi 3.15: The Next Python' },
-};
-
-const COMMUDLE_PAST = 'https://json.commudle.com/api/v2/events/public/index_by_community?when=past&community_id=8&page=1&count=2';
-
-function generatedCover(box) {
-  box.className = 'past-img past-gen';
-  box.innerHTML = '<span class="past-gen-logo"></span>';
-}
-
-// Fills the cards already in the page, so if Commudle is down they keep their static content
-fetch(COMMUDLE_PAST)
-  .then(r => r.json())
-  .then(({ data }) => {
-    const cards = document.querySelectorAll('.past-card');
-    data.values.slice(0, cards.length).forEach((ev, i) => {
-      const card = cards[i];
-      const box = card.querySelector('.past-img');
-      const img = box.querySelector('img');
-      const photo = EVENT_PHOTOS[ev.slug];
-      card.href = `https://www.commudle.com/communities/${ev.kommunity_slug}/events/${ev.slug}`;
-      card.target = '_blank';
-      card.rel = 'noopener';
-      if (photo) {
-        img.onerror = () => generatedCover(box);
-        img.src = photo.img;
-        img.alt = photo.alt;
-      } else {
-        generatedCover(box);
-      }
-      card.querySelector('.past-date').textContent =
-        new Date(ev.start_time).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
-      card.querySelector('.past-body strong').textContent = ev.name;
-    });
-  })
-  .catch(() => {});
+formatList?.addEventListener('pointerleave', () => setActiveFormat(null));
 
 
 /* ─── REVEALS ─── */
@@ -475,44 +403,11 @@ document.querySelectorAll('#meetup-total, .stat-pair dd').forEach(el => countIO.
 
 
 /* ─── STATS: meetup history graph ───
-   TODO: placeholder history. One string per year, one character per month (Jan..Dec):
-   t = talks night, w = workshop, b = Birds of a Feather, . = no meetup */
+   The cells are built into the page (src/_data/meetupHistory.js); this adds the sweep and tooltip */
 
-const MEETUP_HISTORY = {
-  2011: '.......t..t.',
-  2012: 't..t.t..t.tt',
-  2013: '....t.t.tt.t',
-  2014: 't.tt.tw.tt.t',
-  2015: 'tt.twt.tt.wt',
-  2016: 'ttwt.tbtt.tt',
-  2017: 'tw.ttbt.twtt',
-  2018: 'ttwtbt.ttwbt',
-  2019: 'tbttwt.tbttw',
-  2020: 'ttt..t..t..t',
-  2021: '..t..t..t.tt',
-  2022: 't.tt.tw.tbtt',
-  2023: 'tbtwt.ttbtwt',
-  2024: 'ttbtwttbt.tw',
-  2025: 'tbtwttb.twtb',
-  2026: 'twtbtwt.tb..',
-};
-const KIND = { t:['talk','Talks'], w:['workshop','Workshop'], b:['bof','Birds of a Feather'] };
-const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
-(function buildGraph() {
+(function graphHover() {
   const graph = document.getElementById('graph');
-  const now = new Date();
-  let html = '';
-  for (const [year, months] of Object.entries(MEETUP_HISTORY)) {
-    [...months].forEach((c, m) => {
-      const future = +year > now.getFullYear() || (+year === now.getFullYear() && m > now.getMonth());
-      const kind = !future && KIND[c];
-      const cls = future ? 'future' : kind ? kind[0] : '';
-      const label = `${MONTHS[m]} ${year}: ${future ? 'coming up' : kind ? kind[1] : 'no meetup'}`;
-      html += `<span class="cell ${cls}" data-label="${label}"></span>`;
-    });
-  }
-  graph.innerHTML = html;
+  if (!graph) return;
   graph.addEventListener('transitionend', e => {
     if (e.target === graph) graph.closest('.graph-card').classList.add('swept');
   });
@@ -566,12 +461,12 @@ document.querySelectorAll('[data-strip]').forEach(btn => {
 });
 
 let drag = null;
-strip.addEventListener('pointerdown', e => {
+strip?.addEventListener('pointerdown', e => {
   if (e.pointerType !== 'mouse') return;
   drag = { x: e.clientX, left: strip.scrollLeft, moved: false };
   strip.setPointerCapture(e.pointerId);
 });
-strip.addEventListener('pointermove', e => {
+strip?.addEventListener('pointermove', e => {
   if (!drag) return;
   const dx = e.clientX - drag.x;
   if (Math.abs(dx) > 4) { drag.moved = true; strip.classList.add('dragging'); }
@@ -582,8 +477,8 @@ const endDrag = () => {
   drag = null;
   strip.classList.remove('dragging');
 };
-strip.addEventListener('pointerup', endDrag);
-strip.addEventListener('pointercancel', endDrag);
+strip?.addEventListener('pointerup', endDrag);
+strip?.addEventListener('pointercancel', endDrag);
 
 
 /* ─── MASCOT SNAKE ───
@@ -636,7 +531,8 @@ function makeSnake(svg, shape) {
 }
 
 // comes in from the left edge, throws one loop, then runs straight on to the right edge
-const loopSnake = makeSnake(document.getElementById('snake-loop'), W => {
+const loopSvg = document.getElementById('snake-loop');
+const loopSnake = loopSvg && makeSnake(loopSvg, W => {
   const small = W < 700;
   const t = small ? 16 : 24, R = small ? 30 : 50;
   const y = 2.2 * R + t, s = t / SNAKE_UNITS;
@@ -662,6 +558,7 @@ const footerSnake = makeSnake(document.getElementById('snake-footer'), W => {
 // comes up from the bottom of the screen and arrives a little above the middle, gliding behind the scroll
 let loopTarget = 0;
 function renderSnake(dt) {
+  if (!loopSnake) return;
   if (reduceMotion.matches) { loopSnake.draw(1); return; }
   const r = loopSnake.svg.getBoundingClientRect();
   if (r.top > innerHeight && loopSnake.p === 0) return;
@@ -689,7 +586,7 @@ let snakeW = innerWidth;
 addEventListener('resize', () => {
   if (innerWidth === snakeW) return;
   snakeW = innerWidth;
-  loopSnake.layout();
+  loopSnake?.layout();
   footerSnake.layout();
 });
-addEventListener('load', () => { loopSnake.layout(); footerSnake.layout(); });
+addEventListener('load', () => { loopSnake?.layout(); footerSnake.layout(); });
