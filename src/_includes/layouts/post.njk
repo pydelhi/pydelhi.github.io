@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+---
+<main class="page post">
+  <header class="post-head">
+    <div class="wrap">
+      <span class="past-date">{{ dateLabel }}</span>
+      <h1 class="post-title">{{ title }}</h1>
+      <p class="post-by">By {{ author }}</p>
+    </div>
+  </header>
+  <section class="post-body">
+    <div class="wrap"><div class="prose">{{ content | safe }}</div></div>
+  </section>
+  <div class="post-back"><a href="/blog/" class="text-link"><i class="ph ph-arrow-left"></i> All posts</a></div>
+</main>

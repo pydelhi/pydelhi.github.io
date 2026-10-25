@@ -1,0 +1,22 @@
+---
+# Old pydelhi.org URLs that other sites still link to, sent to their new homes
+pagination:
+  data: redirects
+  size: 1
+  alias: r
+permalink: "{{ r.from }}"
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Moved | PyDelhi</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{ site.url }}{{ r.to }}">
+<meta http-equiv="refresh" content="0; url={{ r.to }}">
+</head>
+<body>
+<p>This page has moved to <a href="{{ r.to }}">{{ site.url }}{{ r.to }}</a>.</p>
+</body>
+</html>

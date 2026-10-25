@@ -1,0 +1,42 @@
+{#- No blank lines in here: Markdown pages include it, and a blank line followed by indented HTML would turn into a code block -#}
+  <!-- SPONSOR / COLLABORATE -->
+  <section class="partner" aria-labelledby="partner-title">
+    <div class="wrap">
+      <h2 class="h2" id="partner-title">{{ partnerTitle or "Help a room full of developers show up." }}</h2>
+      <div class="switch" role="tablist" aria-label="Ways to support PyDelhi">
+        <button class="switch-btn" role="tab" id="tab-sponsor" aria-controls="pane-sponsor" aria-selected="true">Sponsor</button>
+        <button class="switch-btn" role="tab" id="tab-collab" aria-controls="pane-collab" aria-selected="false" tabindex="-1">Collaborate</button>
+      </div>
+      <div class="partner-pane pane-sponsor" id="pane-sponsor" role="tabpanel" aria-labelledby="tab-sponsor">
+        {% photo "photos/iwd-meetup.jpeg", "A full room of attendees at a PyDelhi meetup", "(max-width: 860px) 100vw, 520px", { class: "pane-img", loading: "lazy" } %}
+        <div class="pane-body">
+          <p class="pane-intro">Every meetup is free for attendees. Sponsors make that possible, and meet the people who use their tools.</p>
+          <dl class="pane-list">
+            <div><i class="ph ph-buildings" aria-hidden="true"></i><dt>Venue</dt><dd>Host us for a Saturday afternoon.</dd></div>
+            <div><i class="ph ph-coffee" aria-hidden="true"></i><dt>Food &amp; chai</dt><dd>Keep the conversations going after the talks.</dd></div>
+            <div><i class="ph ph-hand-coins" aria-hidden="true"></i><dt>Monetary</dt><dd>Fund recordings, swag and travel for speakers.</dd></div>
+          </dl>
+          <p class="pane-note">Sponsors get logo placement, a shoutout on stage and in our recap posts.</p>
+        </div>
+      </div>
+      <div class="partner-pane pane-collab" id="pane-collab" role="tabpanel" aria-labelledby="tab-collab" hidden>
+        {% photo "photos/speaker-qr-slide.jpeg", "A speaker presenting to a PyDelhi audience", "(max-width: 860px) 100vw, 520px", { class: "pane-img", loading: "lazy" } %}
+        <div class="pane-body">
+          <p class="pane-intro">Run something together with another community, college or company.</p>
+          <dl class="pane-list">
+            <div><i class="ph ph-users-three" aria-hidden="true"></i><dt>Collab events</dt><dd>Joint meetups and workshops.</dd></div>
+            <div><i class="ph ph-handshake" aria-hidden="true"></i><dt>Community partnerships</dt><dd>Long-term, shared calendars and speakers.</dd></div>
+            <div><i class="ph ph-megaphone" aria-hidden="true"></i><dt>Cross-promotion</dt><dd>We share your events, you share ours.</dd></div>
+          </dl>
+          <p class="pane-note">Have a proposal for collaboration already? <a href="{{ site.discussions }}" target="_blank" rel="noopener">Post it on our forum <i class="ph ph-github-logo"></i></a></p>
+        </div>
+      </div>
+      <div class="partner-cta">
+        {%- if page.url == "/sponsor/" %}
+        <a href="{{ site.discussions }}" class="btn-navy" target="_blank" rel="noopener">Get in touch <i class="ph ph-arrow-up-right"></i></a>
+        {%- else %}
+        <a href="/sponsor/" class="btn-navy">Get in touch <i class="ph ph-arrow-right"></i></a>
+        {%- endif %}
+      </div>
+    </div>
+  </section>

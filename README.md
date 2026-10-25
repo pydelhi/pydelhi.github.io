@@ -58,11 +58,84 @@ Commudle only has events from 2025 on. Add older ones to `archive` in `src/_data
 
 Their photos go in `src/assets/events/<slug>/` the same way.
 
+## Writing a blog recap
+
+Add a Markdown file to `src/blog/posts/`. The file name becomes the URL (`src/blog/posts/pydelhi-october-2026.md` → `/blog/pydelhi-october-2026/`).
+
+```markdown
+---
+title: "PyDelhi October Meetup at Essentia"
+date: 2026-10-03
+author: "Your Name"
+summary: "Redis and Kubernetes internals, and a full room."
+cover: blog/october-2026-group.jpg
+---
+
+Write the recap in plain Markdown.
+
+{% photo "blog/october-2026-talk.jpg", "A speaker explaining Redis persistence", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
+```
+
+Put photos in `src/assets/blog/`; `cover` is the card image on `/blog`. To point the meetup's card on the home page and `/events` at the recap, add `"recap": "/blog/pydelhi-october-2026/"` for its Commudle slug in `src/_data/eventExtras.json`.
+
+## Writing a page
+
+Pages like `/about` and `/speak` are Markdown files in `src/` (`src/about.md`). Copy one to start. The front matter sets the top of the page:
+
+```markdown
+---
+layout: layouts/page.njk
+title: About | PyDelhi            # browser tab
+description: One sentence for search results.
+permalink: /about/
+heading: Delhi's Python community, <em>since 2011.</em>   # words in <em> get the gold underline
+lede: The paragraph under the title.
+actions:                          # optional buttons under the lede
+  - { label: "Join on Commudle", url: "https://www.commudle.com/communities/pydelhi", icon: "arrow-up-right" }
+  - { label: "Read the Code of Conduct", url: "/coc/", class: "btn-line" }
+join: true                        # optional "Save yourself a seat" section at the end
+---
+```
+
+The body is Markdown plus these blocks, so every page gets the site's design without writing HTML:
+
+```markdown
+{% section "What we <em>do.</em>", "Optional lede under the heading", "optional-anchor-id" %}
+
+  {% tiles %}                     {# {% tiles 2 %} for two columns #}
+  {% tile "calendar-dots", "Monthly meetups" %}
+  Text in **Markdown**, with [links](/events/).
+  {% endtile %}
+  {% tile "github-logo", "GitHub", "https://github.com/pydelhi", "Footnote" %}
+  A tile with a link becomes one big link (so links inside its text are dropped).
+  {% endtile %}
+  {% endtiles %}
+
+{% endsection %}
+
+{% steps %}{% step "Open a proposal" %}Text{% endstep %} ... {% endsteps %}
+{% timeline %}{% moment "2016", "PyDelhi Conf" %}Text{% endmoment %} ... {% endtimeline %}
+{% panel "green", "A title", "A lede" %} anything {% endpanel %}     {# "blue" or "green" #}
+{% prose %} long-form text, like the Code of Conduct {% endprose %}
+{% chips %}
+- PyData Delhi
+- Django India
+{% endchips %}
+{% buttons %}{% button "Propose a talk", "https://...", "arrow-up-right", "line" %}{% endbuttons %}
+```
+
+Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. Ready-made pieces can be dropped in with `{% include "stats.njk" %}` (meetup numbers), `talk-list.njk` (recent talks from GitHub), `logos.njk` (speaker and sponsor marquees), `partner.njk`, `ruler.njk` and `volunteer-teams.njk`. Links used across the site (WhatsApp, Telegram, YouTube...) live in `src/_data/site.js`; use them as `{{ site.whatsapp }}`.
+
 ## Where things live
 
 | Path | What |
 |---|---|
-| `src/index.njk`, `src/events.njk` | Pages |
+| `src/index.njk`, `src/events.njk`, `src/*.md` | Pages |
+| `src/blog/posts/` | Blog recaps |
+| `lib/shortcodes.js` | The designed blocks used in Markdown pages |
+| `src/_data/site.js` | Shared links and the hand-set stats |
+| `src/_data/talks.js` | Delivered talks from github.com/pydelhi/talks (snapshot in `lib/talks-fallback.json`) |
+| `src/_data/volunteerTeams.json` | Volunteer teams on `/volunteers` |
 | `src/_includes/` | Layout, ticket and event card |
 | `src/styles.css`, `src/script.js` | All styles and behaviour |
 | `src/assets/photos/` | Photos used around the home page |

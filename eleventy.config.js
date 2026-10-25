@@ -1,5 +1,6 @@
 import path from 'node:path';
 import Image from '@11ty/eleventy-img';
+import shortcodes from './lib/shortcodes.js';
 
 // Photos are resized at build time into _site/img/ as WebP + JPEG at a few widths.
 // `src` is relative to src/assets/ ("photos/bof.jpg") or a full "src/..." path from the event data.
@@ -13,6 +14,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/styles.css');
   eleventyConfig.addPassthroughCopy('src/script.js');
   eleventyConfig.addWatchTarget('src/assets/');
+  eleventyConfig.addWatchTarget('lib/');
+  eleventyConfig.addPlugin(shortcodes);
 
   eleventyConfig.addShortcode('photo', async (src, alt, sizes = '100vw', attrs = {}) => {
     const meta = await image(src);

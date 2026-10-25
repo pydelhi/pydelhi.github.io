@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+---
+{#- Inner pages: a centred title and lede, then the page's own sections. Front matter: heading (HTML), lede, actions, join -#}
+<main class="page{% if pageClass %} {{ pageClass }}{% endif %}">
+
+  <header class="page-head">
+    <div class="wrap">
+      <h1 class="page-title">{{ heading | safe }}</h1>
+      {%- if lede %}
+      <p class="lede">{{ lede | safe }}</p>
+      {%- endif %}
+      {%- if actions %}
+      <div class="page-actions">
+        {%- for a in actions %}
+        <a href="{{ a.url }}" class="{{ a.class or 'btn-navy' }}"{% if a.url.startsWith('http') %} target="_blank" rel="noopener"{% endif %}>{{ a.label }}{% if a.icon %} <i class="ph ph-{{ a.icon }}"></i>{% endif %}</a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+  </header>
+
+{{ content | safe }}
+
+  {%- if join %}
+{% include "join.njk" %}
+  {%- endif %}
+</main>

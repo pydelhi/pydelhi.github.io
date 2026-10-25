@@ -1,0 +1,20 @@
+---
+layout: layouts/page.njk
+title: Blog | PyDelhi
+heading: Recaps, <em>straight from the room.</em>
+lede: What happened at PyDelhi meetups, sprints and workshops, written up by the people who were there.
+permalink: /blog/
+---
+<section class="page-section"><div class="wrap"><div class="post-grid">
+{%- for post in collections.post | reverse %}
+  <a href="{{ post.url }}" class="post-card" data-reveal>
+    {% if post.data.cover %}<span class="past-img">{% photo post.data.cover, "", "(max-width: 860px) 100vw, 360px", { loading: "lazy" } %}</span>
+    {% else %}<span class="past-img past-gen"><span class="past-gen-logo"></span></span>{% endif %}
+    <span class="post-card-body">
+      <span class="past-date">{{ post.data.monthLabel }}</span>
+      <strong>{{ post.data.title }}</strong>
+      <span class="post-card-by">By {{ post.data.author }}</span>
+    </span>
+  </a>
+{%- endfor %}
+</div></div></section>

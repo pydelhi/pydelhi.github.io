@@ -1,0 +1,11 @@
+{
+  "source": "https://github.com/pydelhi/volunteers",
+  "teams": [
+    { "name": "Administration", "icon": "clipboard-text", "about": "Plans each meetup, keeps the calendar and makes sure the day runs.", "people": ["Akkshay Arora", "Animesh Ghosh", "Satyakam Goswami", "Saurabh Kumar", "Ishaan Arora"] },
+    { "name": "Location", "icon": "map-pin", "about": "Finds venues and works with hosts on the room, the screen and the Wi-Fi.", "people": ["Akkshay Arora", "Satyakam Goswami"] },
+    { "name": "Speaker affairs", "icon": "microphone-stage", "about": "Reviews talk proposals and helps speakers get their talk ready.", "people": ["Animesh Ghosh", "Anuvrat Parashar", "Ishaan Arora"] },
+    { "name": "Sponsors", "icon": "hand-coins", "about": "Talks to companies about venues, food and funding.", "people": ["Satyakam Goswami"] },
+    { "name": "Marketing", "icon": "megaphone", "about": "Announces meetups and posts recaps across our channels.", "people": ["Animesh Ghosh", "Daksh Jain", "Ishaan Arora"] },
+    { "name": "Design", "icon": "palette", "about": "Posters, slides, social graphics and this website.", "people": ["Daksh Jain", "Ishaan Arora"] }
+  ]
+}

@@ -11,9 +11,8 @@ layout: layouts/base.njk
       <h1>Where Delhi's<br><em>Pythonistas</em><br><span class="light-text">come together.</span></h1>
       <p class="hero-subtitle">Monthly meetups, workshops, and open source sprints. Free, welcoming, powered by community.</p>
       <div class="hero-actions">
-        <a href="https://www.commudle.com/communities/pydelhi" class="btn-primary" target="_blank" rel="noopener">Join on Commudle →</a>
-        <!-- TODO: WhatsApp community invite link -->
-        <a href="#" class="btn-ghost">Join WhatsApp Community</a>
+        <a href="{{ site.commudle }}" class="btn-primary" target="_blank" rel="noopener">Join on Commudle →</a>
+        <a href="{{ site.whatsapp }}" class="btn-ghost" target="_blank" rel="noopener">Join WhatsApp Community</a>
       </div>
     </div>
 
@@ -22,7 +21,7 @@ layout: layouts/base.njk
         <div class="profile-row">
           <img src="https://raw.githubusercontent.com/pydelhi/resources/refs/heads/main/logos/pydelhi-black.png" alt="PyDelhi" class="profile-avatar" style="object-fit:contain;background:transparent;">
           <div><div class="profile-name">PyDelhi Community</div><div class="profile-bio">We write Python. We learn together. We have chai after.</div></div>
-          <a href="https://www.commudle.com/communities/pydelhi" class="join-btn" target="_blank" rel="noopener">+ Join community</a>
+          <a href="{{ site.commudle }}" class="join-btn" target="_blank" rel="noopener">+ Join community</a>
         </div>
         <div class="bento-grid">
           <div class="bento-cell bento-cell-tall" id="bento-cell-0"><div class="ghost-placeholder" id="ghost-0"><div class="ghost-bar"></div></div><template>{% photo "photos/speaker-on-stage.jpg", "Talks", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
@@ -49,7 +48,7 @@ layout: layouts/base.njk
                   <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
                   {{ "Register now" if next else "Get notified" }}
                 </a>
-                <a href="/speak" class="meetup-btn-secondary">
+                <a href="/speak/" class="meetup-btn-secondary">
                   <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="1" width="5" height="9" rx="2.5"/><path d="M3 8a5 5 0 0 0 10 0M8 13v2"/></svg>
                   Submit talk
                 </a>
@@ -84,10 +83,9 @@ layout: layouts/base.njk
           </ul>
         </div>
         <div class="graph-side">
-          <!-- TODO confirm these numbers -->
           <dl class="stat-pair">
-            <div><dt>Speakers on stage</dt><dd>350+</dd></div>
-            <div><dt>Community members</dt><dd>12k+</dd></div>
+            <div><dt>Speakers on stage</dt><dd>{{ site.stats.speakers }}</dd></div>
+            <div><dt>Community members</dt><dd>{{ site.stats.members }}</dd></div>
           </dl>
         </div>
       </div>
@@ -140,7 +138,7 @@ layout: layouts/base.njk
         </li>
       </ul>
       <div class="format-preview" id="format-preview" aria-hidden="true"></div>
-      <a href="/about" class="text-link">and more, read about PyDelhi <i class="ph ph-arrow-right"></i></a>
+      <a href="/about/" class="text-link">and more, read about PyDelhi <i class="ph ph-arrow-right"></i></a>
     </div>
   </section>
 
@@ -177,53 +175,13 @@ layout: layouts/base.njk
           {%- for ev in events.past.slice(0, 2) %}
           {% include "past-card.njk" %}
           {%- endfor %}
-          <a href="/events" class="text-link">View all events <i class="ph ph-arrow-right"></i></a>
+          <a href="/events/" class="text-link">View all events <i class="ph ph-arrow-right"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SPONSOR / COLLABORATE -->
-  <section class="partner" aria-labelledby="partner-title">
-    <div class="wrap">
-      <h2 class="h2" id="partner-title">Help a room full of developers show up.</h2>
-      <div class="switch" role="tablist" aria-label="Ways to support PyDelhi">
-        <button class="switch-btn" role="tab" id="tab-sponsor" aria-controls="pane-sponsor" aria-selected="true">Sponsor</button>
-        <button class="switch-btn" role="tab" id="tab-collab" aria-controls="pane-collab" aria-selected="false" tabindex="-1">Collaborate</button>
-      </div>
-
-      <div class="partner-pane pane-sponsor" id="pane-sponsor" role="tabpanel" aria-labelledby="tab-sponsor">
-        {% photo "photos/iwd-meetup.jpeg", "A full room of attendees at a PyDelhi meetup", "(max-width: 860px) 100vw, 520px", { class: "pane-img", loading: "lazy" } %}
-        <div class="pane-body">
-          <p class="pane-intro">Every meetup is free for attendees. Sponsors make that possible, and meet the people who use their tools.</p>
-          <dl class="pane-list">
-            <div><i class="ph ph-buildings" aria-hidden="true"></i><dt>Venue</dt><dd>Host us for a Saturday afternoon.</dd></div>
-            <div><i class="ph ph-coffee" aria-hidden="true"></i><dt>Food &amp; chai</dt><dd>Keep the conversations going after the talks.</dd></div>
-            <div><i class="ph ph-hand-coins" aria-hidden="true"></i><dt>Monetary</dt><dd>Fund recordings, swag and travel for speakers.</dd></div>
-          </dl>
-          <p class="pane-note">Sponsors get logo placement, a shoutout on stage and in our recap posts.</p>
-        </div>
-      </div>
-
-      <div class="partner-pane pane-collab" id="pane-collab" role="tabpanel" aria-labelledby="tab-collab" hidden>
-        {% photo "photos/speaker-qr-slide.jpeg", "A speaker presenting to a PyDelhi audience", "(max-width: 860px) 100vw, 520px", { class: "pane-img", loading: "lazy" } %}
-        <div class="pane-body">
-          <p class="pane-intro">Run something together with another community, college or company.</p>
-          <dl class="pane-list">
-            <div><i class="ph ph-users-three" aria-hidden="true"></i><dt>Collab events</dt><dd>Joint meetups and workshops.</dd></div>
-            <div><i class="ph ph-handshake" aria-hidden="true"></i><dt>Community partnerships</dt><dd>Long-term, shared calendars and speakers.</dd></div>
-            <div><i class="ph ph-megaphone" aria-hidden="true"></i><dt>Cross-promotion</dt><dd>We share your events, you share ours.</dd></div>
-          </dl>
-          <!-- TODO: point this at the collaboration proposals repo/issue form -->
-          <p class="pane-note">Have a proposal for collaboration already? <a href="https://github.com/pydelhi" target="_blank" rel="noopener">Submit it here <i class="ph ph-github-logo"></i></a></p>
-        </div>
-      </div>
-
-      <div class="partner-cta">
-        <a href="/sponsor" class="btn-navy">Get in touch <i class="ph ph-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
+{% include "partner.njk" %}
 
   <!-- SPEAK -->
   <section class="speak" aria-labelledby="speak-title">
@@ -234,31 +192,11 @@ layout: layouts/base.njk
         <p class="lede">First-time speakers, students and seasoned engineers all share the same stage. Pick the length that fits your idea. Talks may be recorded for our YouTube channel.</p>
       </div>
 
-      <div class="ruler" id="ruler" data-reveal>
-        <div class="ruler-scale" aria-hidden="true">
-          <span style="--at:0">0</span><span style="--at:15">15</span><span style="--at:30">30</span><span style="--at:45">45</span><span style="--at:60">60</span><span style="--at:75">75</span><span style="--at:90">90 min</span>
-        </div>
-        <div class="ruler-row">
-          <span class="ruler-name"><i class="ph ph-lightning"></i>Lightning talk</span>
-          <span class="ruler-bar" style="--from:0;--to:5"><span>5 min</span></span>
-        </div>
-        <div class="ruler-row">
-          <span class="ruler-name"><i class="ph ph-presentation-chart"></i>Full talk</span>
-          <span class="ruler-bar" style="--from:0;--to:30"><span>20 to 30 min</span></span>
-        </div>
-        <div class="ruler-row">
-          <span class="ruler-name"><i class="ph ph-laptop"></i>Workshop</span>
-          <span class="ruler-bar ruler-bar-long" style="--from:0;--to:90"><span>60 to 90 min, hands-on</span></span>
-        </div>
-        <div class="ruler-row">
-          <span class="ruler-name"><i class="ph ph-chats-circle"></i>Birds of a Feather</span>
-          <span class="ruler-bar ruler-bar-open" style="--from:0;--to:60"><span>open-ended</span></span>
-        </div>
-      </div>
+      {% include "ruler.njk" %}
 
       <div class="speak-foot">
         <p>Topics we love: web, data, ML, tooling, testing, packaging, Python internals and the odd side project that got out of hand.</p>
-        <a href="/speak" class="btn-navy">Submit a Talk <i class="ph ph-arrow-right"></i></a>
+        <a href="/speak/" class="btn-navy">Submit a Talk <i class="ph ph-arrow-right"></i></a>
       </div>
       </div>
     </div>
@@ -282,32 +220,13 @@ layout: layouts/base.njk
           <li><i class="ph ph-clipboard-text" aria-hidden="true"></i>On-ground: logistics, registrations</li>
           <li><i class="ph ph-dots-three" aria-hidden="true"></i>Something else</li>
         </ul>
-        <!-- TODO: Google Form link for volunteer sign-ups -->
-        <a href="#" class="btn-navy" target="_blank" rel="noopener">Volunteer with us <i class="ph ph-arrow-up-right"></i></a>
+        <a href="/volunteers/" class="btn-navy">Volunteer with us <i class="ph ph-arrow-right"></i></a>
       </div>
     </div>
     <!-- MASCOT: drawn by script.js, lies on the section's bottom edge and slithers in as you scroll -->
     <svg class="snake snake-divider" id="snake-loop" aria-hidden="true"></svg>
   </section>
 
-  <!-- JOIN -->
-  <section class="join" id="join" aria-labelledby="join-title">
-    <div class="join-photos" aria-hidden="true">
-      <span class="join-photo jp-1" data-drift="-60">{% photo "photos/speaker-on-stage.jpg", "", "260px" %}</span>
-      <span class="join-photo jp-2" data-drift="40">{% photo "photos/meetup-group-photo.jpeg", "", "260px" %}</span>
-      <span class="join-photo jp-3" data-drift="-30">{% photo "photos/bof.jpg", "", "260px" %}</span>
-      <span class="join-photo jp-4" data-drift="70">{% photo "photos/aiohttp-talk.jpeg", "", "260px" %}</span>
-      <span class="join-photo jp-5" data-drift="-50">{% photo "photos/iwd-meetup.jpeg", "", "260px" %}</span>
-    </div>
-    <div class="join-inner">
-      <h2 class="join-title" id="join-title">Save yourself a seat <em>at the next one.</em></h2>
-      <p class="lede">Free, every month, somewhere in Delhi NCR. Join to hear about it first.</p>
-      <div class="hero-actions">
-        <a href="https://www.commudle.com/communities/pydelhi" class="btn-primary" target="_blank" rel="noopener">Join on Commudle →</a>
-        <!-- TODO: WhatsApp community invite link -->
-        <a href="#" class="btn-ghost">Join WhatsApp Community</a>
-      </div>
-    </div>
-  </section>
+{% include "join.njk" %}
 
 </main>

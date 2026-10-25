@@ -6,7 +6,10 @@ Hand this file to any new Claude Code session working on this repo. It captures 
 
 - Built with **Eleventy** (11ty) and deployed to GitHub Pages at pydelhi.org by `.github/workflows/deploy.yml` (on push to `main`, daily at 08:00 IST, and by hand). No client framework: the HTML, CSS and JS are still hand-written.
 - Source lives in `src/`: `_includes/layouts/base.njk` (head, nav, footer), `index.njk` (home), `events.njk` (`/events`), `_includes/ticket.njk` and `past-card.njk` (shared pieces), `styles.css`, `script.js`. Photos in `src/assets/photos/`, logos in `src/assets/logos/`.
-- Pages built so far: `/` and `/events`. Planned: `/speak`, `/sponsor`, `/community`, `/about`, `/blog`, `/blog/[meetup-edition]`, `/volunteers`, `/coc`. Nav and footer already link to them.
+- Pages: `/`, `/events`, `/about`, `/speak`, `/sponsor`, `/community`, `/volunteers`, `/coc`, `/blog` and `/blog/<slug>/`. Old pydelhi.org URLs (`/coc.html`, `/talks/`, old blog posts) redirect to their new pages (`src/_data/redirects.js`).
+- Inner pages are Markdown files (`src/about.md` etc.) on `layouts/page.njk`: front matter sets `heading` (HTML, put the emphasised words in `<em>`), `lede`, `actions` (buttons) and `join: true` for the closing "Save yourself a seat" section. The designed blocks are shortcodes from `lib/shortcodes.js` (section, tiles/tile, steps/step, timeline/moment, panel, prose, chips, buttons/button); the README shows how to use them. Reusable HTML pieces are includes: `stats.njk`, `talk-list.njk`, `logos.njk`, `partner.njk`, `ruler.njk`, `join.njk`, `volunteer-teams.njk`, `ticket.njk`, `past-card.njk`.
+- Includes used inside Markdown must not contain blank lines: a blank line followed by indented HTML turns into a code block.
+- Inner-page look: centred page title with a gold underline under the `<em>` words (no eyebrow pill), white tiles with icons in soft pastel squares cycling blue, yellow, green, numbered steps with navy circles, pastel blue or green panels inside the content width, and a big-year timeline with hairlines.
 - Links and asset paths are root-absolute (`/assets/...`, `/events`) so they work from any page.
 
 ## Brand tokens (only use these)
@@ -87,8 +90,9 @@ Hand this file to any new Claude Code session working on this repo. It captures 
 
 ## Placeholders still to replace (all marked `TODO` in code)
 
-- Stats numbers (350+, 12k+) in `src/index.njk`, and the pre-2025 part of the graph in `src/_data/meetupHistory.js` (`BEFORE_COMMUDLE`, one 12-char string per year, `x` met, `.` none, plus `MEETUPS_BEFORE_COMMUDLE`). From 2025 on, the graph and the headline total fill in from Commudle.
-- Links: WhatsApp, Telegram, Mailing List, Intro Slides (`#`); the collaboration-proposal GitHub link (currently the org page); the volunteer Google Form link and a real volunteer photo. The X/LinkedIn/Instagram/YouTube URLs are guesses.
+- Stats numbers (350+, 12k+) in `src/_data/site.js` (meetup.com shows ~14.7k members), and the pre-2025 part of the graph in `src/_data/meetupHistory.js` (`BEFORE_COMMUDLE`, one 12-char string per year, `x` met, `.` none, plus `MEETUPS_BEFORE_COMMUDLE`). From 2025 on, the graph and the headline total fill in from Commudle.
+- Links live in `src/_data/site.js`, sourced from meetup.com/pydelhi and the pydelhi/talks issue templates. WhatsApp uses the meetup.com Community invite (owner's choice). Still to confirm: a Google Form for volunteers (an issue on pydelhi/talks for now), a real volunteer photo, and the Instagram URL (a guess). There's no contact email anywhere, so "Get in touch" goes to the GitHub discussion forum.
+- `/sponsor` venue needs (seats, timings) are inferred, and the volunteer team descriptions are written from the team names in github.com/pydelhi/volunteers.
 
 ## Technical notes (hard-won)
 
