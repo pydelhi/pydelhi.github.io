@@ -11,11 +11,14 @@
               <li><i class="ph ph-map-pin"></i>{{ (next.venue or "Delhi NCR") if next else "Somewhere in Delhi NCR" }}</li>
               <li><i class="ph ph-ticket"></i>Free, registration on Commudle</li>
             </ul>
-            {%- if next %}
-            <a href="{{ next.url }}" class="btn-navy" target="_blank" rel="noopener">RSVP on Commudle <i class="ph ph-arrow-up-right"></i></a>
-            {%- else %}
-            <a href="https://www.commudle.com/communities/pydelhi" class="btn-navy" target="_blank" rel="noopener">Get notified <i class="ph ph-arrow-up-right"></i></a>
-            {%- endif %}
+            <div class="ticket-actions">
+              {%- if next %}
+              <a href="{{ next.url }}" class="btn-navy" target="_blank" rel="noopener">RSVP on Commudle <i class="ph ph-arrow-up-right"></i></a>
+              {%- else %}
+              <a href="{{ site.commudle }}" class="btn-navy" target="_blank" rel="noopener">Get notified <i class="ph ph-arrow-up-right"></i></a>
+              {%- endif %}
+              <a href="{{ site.proposeTalk }}" class="btn-line" target="_blank" rel="noopener">Submit a talk</a>
+            </div>
           </div>
           {%- if next %}
           <div class="ticket-stub" aria-label="{{ next.stub.label }}">

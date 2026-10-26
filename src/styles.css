@@ -371,6 +371,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .ticket-title{font-size:clamp(26px,2.6vw,34px);font-weight:800;letter-spacing:calc(-.03em + .01em);line-height:1.05;margin-bottom:12px}
 .ticket-desc{font-size:15px;line-height:1.6;color:var(--ink-soft);max-width:40ch;margin-bottom:22px}
 .ticket-meta{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:30px}
+.ticket-actions{display:flex;flex-wrap:wrap;gap:10px}
 .ticket-meta li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--navy)}
 .ticket-meta i{font-size:17px;color:var(--navy);opacity:.6}
 .ticket-stub{
