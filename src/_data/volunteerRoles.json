@@ -9,7 +9,7 @@
     {"name": "CFP review", "icon": "check-square-offset", "when": "before", "about": "Read talk proposals and help speakers shape them."},
     {"name": "Marketing", "icon": "briefcase", "when": "before", "about": "Find venues, sponsors and communities to team up with."},
     {"name": "On-ground", "icon": "clipboard-text", "when": "day", "about": "Registrations at the door, setup, chai and keeping time."},
-    {"name": "Social media", "icon": "instagram-logo", "when": "day", "about": "Announce the meetup, then post live from the room."},
+    {"name": "Social media", "icon": "instagram-logo", "when": "any", "about": "Announce the meetup, then post live from the room."},
     {"name": "Content writing", "icon": "pencil-simple", "when": "any", "about": "Event pages, blog recaps and the odd newsletter."},
     {"name": "Web design", "icon": "browser", "when": "any", "about": "This website, built in the open on GitHub."}
   ]

@@ -67,7 +67,7 @@ lede: The paragraph under the title.
 actions:                          # optional buttons under the lede
   - { label: "Join on Commudle", url: "https://www.commudle.com/communities/pydelhi", icon: "arrow-up-right" }
   - { label: "Read the Code of Conduct", url: "/coc/", class: "btn-line" }
-join: true                        # optional "Save yourself a seat" section at the end
+join: true                        # optional "Save yourself a seat" section at the end (no inner page uses it now)
 ---
 ```
 

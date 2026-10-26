@@ -5,19 +5,19 @@ description: PyDelhi is run entirely by volunteers. Meet the core team and the v
 permalink: /volunteer/
 heading: Help us run <em>the room.</em>
 lede: Every PyDelhi meetup is put together by volunteers, most of whom came to one as an attendee first. Pick what you're good at, or tell us something new.
+# TODO: same placeholder as volunteerForm in src/_data/site.js (front matter cannot read site data); update both
 actions:
-  - { label: "Volunteer with us", url: "https://github.com/pydelhi/talks/issues/new?title=Interested%20in%20volunteering", icon: "arrow-up-right" }
-join: true
+  - { label: "Volunteer with us", url: "https://forms.gle/TODO", icon: "arrow-up-right" }
 ---
 
-{% section "Where you <em>fit in.</em>", "Pick one, or a few. Every card opens a short GitHub issue so we can say hello." %}
+{% section "Where you <em>fit in.</em>", "Pick one, or a few. Every card opens the same short Google Form so we can say hello." %}
 {% include "volunteer-roles.njk" %}
 {% endsection %}
 
 {% section "How to start" %}
 {% steps %}
 {% step "Say hello" %}
-[Open an issue]({{ site.volunteerForm }}) saying what you'd like to help with, or tell any volunteer at a meetup.
+[Fill the volunteer form]({{ site.volunteerForm }}), [message any admin on WhatsApp]({{ site.whatsapp }}), or tell any volunteer at a meetup what you'd like to help with.
 {% endstep %}
 {% step "Join the group" %}
 We'll add you to the volunteers' chat, where meetups get planned.

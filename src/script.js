@@ -573,7 +573,10 @@ const footerSnake = makeSnake(document.getElementById('snake-footer'), W => {
 
 // the loop snake follows the scroll (in the main frame loop): nose enters as the band
 // comes up from the bottom of the screen and arrives a little above the middle, gliding behind the scroll
-let loopTarget = 0;
+// A snake can only slither so fast: its speed follows the scroll but is capped, and eases in and out, so a
+// flick of the wheel no longer whips the loop round in a blink. Slow scrolling still tracks it exactly.
+const LOOP_MAX_SPEED = .9; // of the whole snake per second
+let loopTarget = 0, loopVel = 0;
 function renderSnake(dt) {
   renderRails(dt);
   if (!loopSnake) return;
@@ -581,8 +584,10 @@ function renderSnake(dt) {
   const r = loopSnake.svg.getBoundingClientRect();
   if (r.top > innerHeight && loopSnake.p === 0) return;
   loopTarget = clamp((innerHeight - r.top) / (innerHeight * .6), 0, 1);
-  loopSnake.p += (loopTarget - loopSnake.p) * Math.min(1, dt * 4);
-  if (Math.abs(loopTarget - loopSnake.p) < .001) loopSnake.p = loopTarget;
+  const want = clamp((loopTarget - loopSnake.p) * 4, -LOOP_MAX_SPEED, LOOP_MAX_SPEED);
+  loopVel += (want - loopVel) * Math.min(1, dt * 8);
+  loopSnake.p = clamp(loopSnake.p + loopVel * dt, 0, 1);
+  if (Math.abs(loopTarget - loopSnake.p) < .001 && Math.abs(loopVel) < .01) { loopSnake.p = loopTarget; loopVel = 0; }
   loopSnake.draw(loopSnake.p);
 }
 
@@ -683,6 +688,7 @@ if (titleSvg) {
   // grow: drawn in on load (0 to 1); away: slid out by scrolling (0 to 1)
   let grow = 0, away = 0;
   const pose = () => {
+    if (!titleSnake.total) return; // hidden under 700px, so there's no path to measure
     const rest = titleSnake.total - titleSnake.ext;
     titleSnake.tail = away * titleSnake.ext;
     titleSnake.p = (grow * rest + away * titleSnake.ext) / titleSnake.total;
@@ -816,7 +822,7 @@ document.querySelectorAll('path[data-snake]').forEach(pathSnake);
 
 /* Sponsor doors: the snake weaves through the three cards, under the first, over the middle one and under
    the last; left to right on desktop, downwards on phones. Two copies share one pose: one runs behind
-   the cards, and the other runs in front, clipped to the middle card's photo so it never crosses text. */
+   the cards, and the other runs in front, clipped to the middle card, and its pose keeps it on the photo, clear of the text. */
 const doors = document.querySelector('[data-doors]');
 if (doors) {
   const under = doors.querySelector('.doors-snake');
@@ -825,17 +831,26 @@ if (doors) {
   over.classList.add('doors-over');
   doors.appendChild(over);
   const cards = [...doors.querySelectorAll('.door')];
+  // Where a card and its photo rest, relative to the snake's svg. Offsets ignore transforms, so this is right
+  // even while the cards are still rising in on reveal; measuring them mid-rise and again once they'd settled
+  // made the whole snake jump up just as its head passed the middle photo.
+  const offsetIn = el => {
+    let x = 0, y = 0;
+    for (let n = el; n && n !== doors; n = n.offsetParent) { x += n.offsetLeft; y += n.offsetTop; }
+    return { x, y };
+  };
+  const rest = c => {
+    const dx = doors.getBoundingClientRect().left - under.getBoundingClientRect().left;
+    const box = el => { const o = offsetIn(el); return { left: dx + o.x, right: dx + o.x + el.offsetWidth, top: o.y, bottom: o.y + el.offsetHeight }; };
+    return { ...box(c), photo: box(c.querySelector('img')) };
+  };
   const shape = W => {
     const small = W < 700, t = small ? 10 : 14, s = t / SNAKE_UNITS;
-    const f = under.getBoundingClientRect();
-    const boxes = cards.map(c => {
-      const r = c.getBoundingClientRect(), img = c.querySelector('img').getBoundingClientRect();
-      return { left: r.left - f.left, right: r.right - f.left, top: r.top - f.top, bottom: r.bottom - f.top, photo: img.bottom - f.top };
-    });
+    const boxes = cards.map(rest);
     const h = doors.clientHeight;
     if (!compactView.matches) {
       // across the lower part of the photos, dipping and rising between the cards
-      const amp = 34, y = boxes[0].photo - 34;
+      const amp = 34, y = boxes[0].photo.bottom - 34;
       const pts = boxes.map((b, i) => ({ x: (b.left + b.right) / 2, y: y + (i % 2 ? -amp : amp) }));
       pts.push({ x: noseEnd(W) - SNOUT * s, y });
       let d = `M${-SNOUT * s - t} ${y}`, p = { x: -SNOUT * s - t, y };
@@ -859,9 +874,12 @@ if (doors) {
     return { d, h, t };
   };
   const a = makeSnake(under, shape), b = makeSnake(over, shape);
+  // desktop clips to the whole middle card, not just its photo: the snake dips a little below the photo's bottom
+  // edge, and a photo-sized clip cut it off flat there; the pose stays above the card's text. On phones the
+  // snake runs down through the card, so there it stays clipped to the photo.
   const clip = () => {
-    const f = over.getBoundingClientRect(), r = cards[1].querySelector('img').getBoundingClientRect();
-    over.style.clipPath = `inset(${r.top - f.top}px ${f.right - r.right}px ${f.bottom - r.bottom}px ${r.left - f.left}px round 18px)`;
+    const photoOnly = compactView.matches, box = rest(cards[1]), r = photoOnly ? box.photo : box;
+    over.style.clipPath = `inset(${r.top}px ${over.clientWidth - r.right}px ${over.clientHeight - r.bottom}px ${r.left}px round ${photoOnly ? 18 : 28}px)`;
   };
   const both = { layout() { a.layout(); b.layout(); clip(); }, draw(p) { a.p = b.p = p; a.draw(p); b.draw(p); } };
   pageSnakes.push(both);
@@ -872,8 +890,6 @@ if (doors) {
     obs.disconnect();
     both.layout();
     growSnake(both, 2200, 150);
-    // the cards rise into place as they're revealed, so measure again once they've settled
-    setTimeout(() => both.layout(), 1000);
   }, { threshold: .3 }).observe(doors);
 }
 

@@ -481,18 +481,18 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 
 /* ─── FOOTER ─── */
 .footer{background:var(--navy);color:#fff;padding:80px 0 0}
-.footer-top{display:grid;grid-template-columns:260px 1fr;gap:72px;padding-bottom:60px}
+.footer-top{display:grid;grid-template-columns:240px 1fr;gap:56px;padding-bottom:60px}
 .footer-logo{height:52px;width:auto;filter:brightness(0) invert(1);align-self:flex-start}
 .footer-brand{display:flex;flex-direction:column;gap:18px}
 .footer-brand p{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.6);max-width:30ch}
-.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.footer-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
 .footer-cols>div{display:flex;flex-direction:column;align-items:flex-start;gap:11px}
 .footer h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px}
 .footer-cols a{font-size:14.5px;color:rgba(255,255,255,.7);text-decoration:none;transition:color .15s}
 .footer-cols a:hover{color:#fff}
 .footer-socials{display:flex;gap:8px;margin-top:4px}
-.footer-socials a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;font-size:17px;transition:background .15s,border-color .15s}
-.footer-socials a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4)}
+.footer-socials a{color:rgba(255,255,255,.7);text-decoration:none;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;font-size:17px;transition:background .15s,border-color .15s}
+.footer-socials a:hover{color:#fff;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4)}
 .footer-bottom{display:flex;justify-content:space-between;gap:16px;padding:22px 0 28px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:rgba(255,255,255,.5)}
 .footer-bottom a{color:inherit;text-decoration:none}
 .footer-bottom a:hover{color:#fff}
@@ -686,8 +686,8 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 }
 
 /* collaborate: link to proposals */
-.pane-note a{color:inherit;font-weight:600;text-underline-offset:3px;display:inline-flex;align-items:center;gap:5px}
-.pane-note a i{font-size:17px}
+.pane-note a{color:inherit;font-weight:600;text-underline-offset:3px}
+.pane-note a i{font-size:17px;vertical-align:-3px;margin-left:5px;display:inline-block;text-decoration:none}
 .pane-collab .pane-note{color:#2c5a3f}
 @media (min-width:861px){
   .graph-card{grid-template-columns:auto auto;justify-content:space-evenly;gap:64px}

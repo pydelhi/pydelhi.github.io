@@ -5,7 +5,6 @@ description: Where to find PyDelhi between meetups, on WhatsApp, Telegram, the m
 permalink: /community/
 heading: Find us <em>between meetups.</em>
 lede: The meetup is one Saturday a month. The conversation carries on every day, in chats, on the mailing list and in the open on GitHub.
-join: true
 ---
 
 {% section "Pick your <em>channel.</em>", "Every meetup starts on Commudle. Everything in between happens here." %}
@@ -19,10 +18,13 @@ join: true
 - Grafana and Friends Delhi
 - ILUG-D
 - TensorFlow User Group Ghaziabad
-- BlockchainDevs
+- Rust Delhi
+- Elixir Delhi
+- PyLadies
 {% endchips %}
 {% buttons %}
-{% button "Propose a collaboration", site.discussions, "arrow-up-right", "line" %}
+{% button "Propose a collaborative meetup", site.collaborativeMeetups, "arrow-up-right" %}
+{% button "Email us", "mailto:" + site.email, "envelope-simple", "line" %}
 {% endbuttons %}
 {% endsection %}
 

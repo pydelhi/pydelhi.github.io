@@ -41,35 +41,41 @@
       <div class="footer-brand">
         <img src="https://raw.githubusercontent.com/pydelhi/resources/refs/heads/main/logos/pydelhi-transparent-extended-color.svg" alt="PyDelhi" class="footer-logo">
         <p>Delhi NCR's Python community. Free, volunteer-run, open to everyone.</p>
+        <span class="footer-socials">
+          <a href="{{ site.github }}" aria-label="PyDelhi on GitHub" target="_blank" rel="noopener"><i class="ph ph-github-logo"></i></a>
+          <a href="{{ site.x }}" aria-label="PyDelhi on X" target="_blank" rel="noopener"><i class="ph ph-x-logo"></i></a>
+          <a href="{{ site.linkedin }}" aria-label="PyDelhi on LinkedIn" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a>
+          <a href="https://www.instagram.com/pydelhi" aria-label="PyDelhi on Instagram" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i></a>
+        </span>
       </div>
+      {#- one column per kind of visitor: coming to a meetup, taking part, catching up, and organisations #}
       <div class="footer-cols">
         <div>
-          <h4>Community</h4>
-          <a href="https://www.commudle.com/communities/pydelhi" target="_blank" rel="noopener">Join on Commudle</a>
-          <a href="{{ site.whatsapp }}" target="_blank" rel="noopener">Join WhatsApp</a>
+          <h4>Come to a meetup</h4>
+          <a href="{{ site.commudle }}" target="_blank" rel="noopener">Next meetup on Commudle</a>
+          <a href="{{ site.whatsapp }}" target="_blank" rel="noopener">WhatsApp</a>
           <a href="{{ site.telegram }}" target="_blank" rel="noopener">Telegram</a>
-          <a href="{{ site.mailingList }}" target="_blank" rel="noopener">Mailing List</a>
-          <span class="footer-socials">
-            <a href="{{ site.x }}" aria-label="PyDelhi on X" target="_blank" rel="noopener"><i class="ph ph-x-logo"></i></a>
-            <a href="{{ site.linkedin }}" aria-label="PyDelhi on LinkedIn" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a>
-            <a href="https://www.instagram.com/pydelhi" aria-label="PyDelhi on Instagram" target="_blank" rel="noopener"><i class="ph ph-instagram-logo"></i></a>
-          </span>
-        </div>
-        <div>
-          <h4>Resources</h4>
-          <a href="{{ site.youtube }}" target="_blank" rel="noopener">YouTube / Talk Recordings</a>
-          <a href="{{ site.speakingGuidelines }}" target="_blank" rel="noopener">Speaker Guidelines</a>
-          <a href="/blog/">Blog / Recaps</a>
-          <a href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a>
-          <a href="/speak/#past-talks">Past Talks</a>
-        </div>
-        <div>
-          <h4>Organization</h4>
-          <a href="/about/">About</a>
-          <a href="/volunteer/">Volunteer</a>
+          <a href="{{ site.mailingList }}" target="_blank" rel="noopener">Mailing list</a>
           <a href="/coc/">Code of Conduct</a>
-          <a href="/sponsor/">Sponsor Us</a>
-          <a href="/speak/">Submit a Talk</a>
+        </div>
+        <div>
+          <h4>Take part</h4>
+          <a href="/speak/">Give a talk</a>
+          <a href="{{ site.speakingGuidelines }}" target="_blank" rel="noopener">Speaker guidelines</a>
+          <a href="/volunteer/">Volunteer</a>
+          <a href="/about/">About PyDelhi</a>
+        </div>
+        <div>
+          <h4>Catch up</h4>
+          <a href="{{ site.youtube }}" target="_blank" rel="noopener">Talk recordings</a>
+          <a href="{{ site.pastTalks }}" target="_blank" rel="noopener">Past talks</a>
+          <a href="/blog/">Meetup recaps</a>
+        </div>
+        <div>
+          <h4>Work with us</h4>
+          <a href="/sponsor/">Sponsor or host</a>
+          <a href="{{ site.communityPartnership }}" target="_blank" rel="noopener">Community partnership</a>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
         </div>
       </div>
     </div>

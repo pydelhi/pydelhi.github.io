@@ -8,7 +8,6 @@ lede: PyDelhi is a volunteer collective of students, professionals, teachers and
 actions:
   - { label: "Join on Commudle", url: "https://www.commudle.com/communities/pydelhi", icon: "arrow-up-right" }
   - { label: "Read the Code of Conduct", url: "/coc/", class: "btn-line" }
-join: true
 ---
 
 {% section "Fifteen years of <em>Saturdays.</em>", "From a handful of developers in a room to conferences, sprints and a meetup almost every month." %}

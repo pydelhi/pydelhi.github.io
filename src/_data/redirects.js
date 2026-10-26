@@ -11,7 +11,7 @@ export default function () {
   });
   return [
     { from: '/coc.html', to: '/coc/' },
-    { from: '/talks/index.html', to: '/speak/#past-talks' },
+    { from: '/talks/index.html', to: '/speak/' },
     { from: '/pydelhi-intro/index.html', to: '/about/' },
     { from: '/mailing-list-guidelines/index.html', to: '/community/' },
     ...posts,
