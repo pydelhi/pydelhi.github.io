@@ -114,7 +114,11 @@ The body is Markdown plus these blocks, so every page gets the site's design wit
 {% endsection %}
 
 {% steps %}{% step "Open a proposal" %}Text{% endstep %} ... {% endsteps %}
-{% timeline %}{% moment "2016", "PyDelhi Conf" %}Text{% endmoment %} ... {% endtimeline %}
+{% timeline %}{% moment "2016", "PyDelhi Conf", "blog/photo.jpg", "Photo alt" %}Text{% endmoment %} ... {% endtimeline %}   {# the snake winds through the years #}
+{% points %}{% point "Free, always" %}Text{% endpoint %} ... {% endpoints %}   {# a row of short principles #}
+{% checklist %}
+- **Bold first line.** Then the detail.
+{% endchecklist %}
 {% panel "green", "A title", "A lede" %} anything {% endpanel %}     {# "blue" or "green" #}
 {% prose %} long-form text, like the Code of Conduct {% endprose %}
 {% chips %}
@@ -124,7 +128,7 @@ The body is Markdown plus these blocks, so every page gets the site's design wit
 {% buttons %}{% button "Propose a talk", "https://...", "arrow-up-right", "line" %}{% endbuttons %}
 ```
 
-Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. Ready-made pieces can be dropped in with `{% include "stats.njk" %}` (meetup numbers), `talk-list.njk` (recent talks from GitHub), `logos.njk` (speaker and sponsor marquees), `partner.njk`, `ruler.njk` and `volunteer-teams.njk`. Links used across the site (WhatsApp, Telegram, YouTube...) live in `src/_data/site.js`; use them as `{{ site.whatsapp }}`.
+Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. Each page also has its own centrepiece, as an include: `proposal-board.njk` (Speak), `sponsor-doors.njk`, `sponsor-slide.njk` and `sponsor-pass.njk` (Sponsor), `metro-map.njk` (Community, from `src/_data/metro.js`), `run-of-show.njk` (Volunteers, from `src/_data/runOfShow.json`), `volunteer-teams.njk`, `coc-summary.njk` and `coc-report.njk`. Smaller pieces: `stats.njk` (meetup numbers), `talk-list.njk` (recent talks), `logos.njk` (logo marquees), `partner.njk` and `ruler.njk`. Links used across the site (WhatsApp, Telegram, YouTube...) live in `src/_data/site.js`; use them as `{{ site.whatsapp }}`.
 
 ## Where things live
 
@@ -136,6 +140,8 @@ Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. 
 | `src/_data/site.js` | Shared links and the hand-set stats |
 | `src/_data/talks.js` | Delivered talks from github.com/pydelhi/talks (snapshot in `lib/talks-fallback.json`) |
 | `src/_data/volunteerTeams.json` | Volunteer teams on `/volunteers` |
+| `src/_data/metro.js`, `src/_data/runOfShow.json` | The Community map and the Volunteers run of show |
+| `lib/image.js` | The photo resizing used by `{% photo %}` |
 | `src/_includes/` | Layout, ticket and event card |
 | `src/styles.css`, `src/script.js` | All styles and behaviour |
 | `src/assets/photos/` | Photos used around the home page |

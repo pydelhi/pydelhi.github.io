@@ -1,13 +1,10 @@
-{#- Teams and people from _data/volunteerTeams.json (copied from github.com/pydelhi/volunteers) -#}
-<div class="tiles">
+{#- Volunteers page: the teams as closing credits, from _data/volunteerTeams.json (copied from github.com/pydelhi/volunteers).
+    No blank lines: Markdown includes this -#}
+<dl class="credits">
   {%- for team in volunteerTeams.teams %}
-  <div class="tile" data-reveal>
-    <span class="tile-icon"><i class="ph ph-{{ team.icon }}" aria-hidden="true"></i></span>
-    <h3>{{ team.name }}</h3>
-    <p>{{ team.about }}</p>
-    <ul class="team-people">
-      {%- for person in team.people %}<li>{{ person }}</li>{% endfor -%}
-    </ul>
+  <div data-reveal>
+    <dt>{{ team.name }}<span>{{ team.about }}</span></dt>
+    <dd>{% for person in team.people %}<span>{{ person }}</span>{% endfor %}</dd>
   </div>
   {%- endfor %}
-</div>
+</dl>

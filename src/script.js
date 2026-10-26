@@ -501,11 +501,13 @@ function makeSnake(svg, shape) {
       <path class="snake-tongue" d="${SNAKE_TONGUE}"/><path d="${SNAKE_HEAD}"/>
       <circle cx="46.3" cy="190.6" r="4.4" fill="#1b1b1b"/>
     </g></g>`;
-  const s = { svg, shape, body: svg.firstElementChild, head: svg.lastElementChild, p: 0, shown: -1 };
+  // tail: how much of the body's start is already gone, for a snake that slides on along its path
+  const s = { svg, shape, body: svg.firstElementChild, head: svg.lastElementChild, p: 0, shown: -1, tail: 0, ext: 0 };
   s.layout = () => {
     const W = svg.clientWidth;
     if (!W) return;
-    const { d, h, t } = shape(W);
+    const { d, h, t, ext = 0 } = shape(W);
+    s.ext = ext;
     svg.setAttribute('viewBox', `0 0 ${W} ${h}`);
     svg.setAttribute('height', h);
     s.body.setAttribute('d', d);
@@ -518,13 +520,15 @@ function makeSnake(svg, shape) {
   s.draw = p => {
     if (!s.total || p === s.shown) return;
     s.shown = p;
-    const len = p * s.total;
-    s.body.setAttribute('stroke-dasharray', `${len} ${s.total + 1}`);
+    const len = p * s.total, tail = Math.min(s.tail, len);
+    s.body.setAttribute('stroke-dasharray', `${len - tail} ${s.total + 1}`);
+    s.body.setAttribute('stroke-dashoffset', -tail);
     const a = s.body.getPointAtLength(Math.max(0, len - 1)), b = s.body.getPointAtLength(Math.min(s.total, len + 1));
     const tip = s.body.getPointAtLength(len);
     const deg = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
     s.head.setAttribute('transform', `translate(${tip.x} ${tip.y}) rotate(${deg}) scale(${s.scale})`);
     svg.classList.toggle('arrived', p >= 1);
+    s.onDraw?.(len, tip);
   };
   s.layout();
   return s;
@@ -558,6 +562,7 @@ const footerSnake = makeSnake(document.getElementById('snake-footer'), W => {
 // comes up from the bottom of the screen and arrives a little above the middle, gliding behind the scroll
 let loopTarget = 0;
 function renderSnake(dt) {
+  renderRails(dt);
   if (!loopSnake) return;
   if (reduceMotion.matches) { loopSnake.draw(1); return; }
   const r = loopSnake.svg.getBoundingClientRect();
@@ -590,3 +595,291 @@ addEventListener('resize', () => {
   footerSnake.layout();
 });
 addEventListener('load', () => { loopSnake?.layout(); footerSnake.layout(); });
+
+
+/* ─── PAGE SNAKES: the same mascot, posed per page ───
+   The title snake drops in from the top of the screen, rounds an inner page's title, lede and
+   buttons in a soft notch and rests heading up beside the title; scrolling slides it on, up and out.
+   Its sides sit on the content edges, so the notch is the same width on every page; its depth comes
+   from the header's actual text and buttons. Hidden on phones (no room beside the text). */
+
+// an element's rendered text lines as boxes relative to `frame`, top to bottom, plus their union
+function textLines(el, frame) {
+  const range = document.createRange();
+  range.selectNodeContents(el);
+  const f = frame.getBoundingClientRect();
+  const lines = [];
+  for (const r of range.getClientRects()) {
+    if (r.width < 2) continue;
+    const box = { left: r.left - f.left, right: r.right - f.left, top: r.top - f.top, bottom: r.bottom - f.top };
+    const line = lines.find(l => Math.abs(l.top - box.top) < 8);
+    if (line) { line.left = Math.min(line.left, box.left); line.right = Math.max(line.right, box.right); line.bottom = Math.max(line.bottom, box.bottom); }
+    else lines.push(box);
+  }
+  lines.sort((a, b) => a.top - b.top);
+  const all = {
+    left: Math.min(...lines.map(l => l.left)), right: Math.max(...lines.map(l => l.right)),
+    top: lines[0].top, bottom: lines.at(-1).bottom,
+  };
+  return { lines, all };
+}
+
+// grows a snake from nothing to full length once, easing out
+function growSnake(snake, ms, delay = 0) {
+  if (reduceMotion.matches) { snake.p = 1; snake.draw(1); return; }
+  setTimeout(() => {
+    const t0 = performance.now();
+    (function tick(now) {
+      const t = Math.min(1, (now - t0) / ms);
+      snake.p = 1 - Math.pow(1 - t, 3);
+      snake.draw(snake.p);
+      if (t < 1) requestAnimationFrame(tick);
+    })(t0);
+  }, delay);
+}
+
+const pageSnakes = [];
+
+const titleSvg = document.getElementById('snake-title');
+if (titleSvg) {
+  const head = titleSvg.parentElement;
+  const title = head.querySelector('.page-title');
+  const lede = head.querySelector('.lede');
+  const actions = head.querySelector('.page-actions');
+  const titleSnake = makeSnake(titleSvg, W => {
+    const t = 14;
+    const f = head.getBoundingClientRect();
+    const top = textLines(title, head).all;
+    const bottoms = [top.bottom];
+    if (lede) bottoms.push(textLines(lede, head).all.bottom);
+    if (actions) bottoms.push(actions.getBoundingClientRect().bottom - f.top);
+    // the content width every section uses, min(1120px, 100vw - 32px)
+    const xl = (W - Math.min(1120, W - 32)) / 2 + t / 2, xr = W - xl;
+    const yb = Math.max(...bottoms) + 40;
+    const R = Math.min(96, (yb - top.top) / 2);
+    const rest = top.top + 12;
+    // after resting, a straight run up past the top: long enough for the whole body to leave
+    const ext = rest + (yb - rest) * 2 + (xr - xl) + 2 * t;
+    const d = `M${xl} ${-t}L${xl} ${yb - R}`
+      + `C${xl} ${yb - R * .45} ${xl + R * .45} ${yb} ${xl + R} ${yb}`
+      + `L${xr - R} ${yb}`
+      + `C${xr - R * .45} ${yb} ${xr} ${yb - R * .45} ${xr} ${yb - R}`
+      + `L${xr} ${rest}L${xr} ${rest - ext}`;
+    return { d, h: head.clientHeight, t, ext };
+  });
+  // grow: drawn in on load (0 to 1); away: slid out by scrolling (0 to 1)
+  let grow = 0, away = 0;
+  const pose = () => {
+    const rest = titleSnake.total - titleSnake.ext;
+    titleSnake.tail = away * titleSnake.ext;
+    titleSnake.p = (grow * rest + away * titleSnake.ext) / titleSnake.total;
+    titleSnake.draw(titleSnake.p);
+  };
+  const leave = () => {
+    if (reduceMotion.matches) return;
+    away = clamp((scrollY - 24) / (head.offsetHeight * .6), 0, 1);
+    pose();
+  };
+  addEventListener('scroll', leave, { passive: true });
+  pageSnakes.push({ layout() { titleSnake.layout(); pose(); } });
+  (document.fonts?.ready || Promise.resolve()).then(() => {
+    titleSnake.layout();
+    leave();
+    growSnake({ draw: p => { grow = p; pose(); } }, 1600, 250);
+  });
+}
+
+let pageSnakeW = innerWidth;
+addEventListener('resize', () => {
+  if (innerWidth === pageSnakeW) return;
+  pageSnakeW = innerWidth;
+  pageSnakes.forEach(s => s.layout());
+});
+
+
+/* Rail snakes thread through a list of stops ([data-rail-stop]) inside a [data-rail] block and grow
+   as you scroll, lighting each stop as the head passes it. data-rail="x" runs them left to right on
+   desktop (the Speak board, the run of show); otherwise, and on every phone, they run downwards. */
+function railSnake(box) {
+  const svg = box.querySelector('.rail-snake');
+  const stops = [...box.querySelectorAll('[data-rail-stop]')];
+  const rider = box.querySelector('[data-rail-rider]');
+  const rail = { box, stops, at: [], horizontal: false };
+  rail.snake = makeSnake(svg, W => {
+    const small = W < 700, t = small ? 10 : 14, s = t / SNAKE_UNITS;
+    const b = box.getBoundingClientRect();
+    const pts = stops.map(el => {
+      const r = el.getBoundingClientRect();
+      return { x: r.left + r.width / 2 - b.left, y: r.top + r.height / 2 - b.top };
+    });
+    rail.horizontal = box.dataset.rail === 'x' && !compactView.matches;
+    const amp = small ? 10 : 26;
+    const segs = [];
+    if (rail.horizontal) {
+      segs.push(`M${-SNOUT * s - t} ${pts[0].y}L${pts[0].x} ${pts[0].y}`);
+      pts.slice(1).forEach((q, i) => {
+        const p = pts[i], dx = (q.x - p.x) / 2, k = i % 2 ? amp : -amp;
+        segs.push(`C${p.x + dx} ${p.y + k} ${q.x - dx} ${q.y + k} ${q.x} ${q.y}`);
+      });
+      const last = pts.at(-1);
+      segs.push(`L${Math.min(W - SNOUT * s - 8, last.x + 70)} ${last.y}`);
+    } else {
+      segs.push(`M${pts[0].x} ${Math.max(t, pts[0].y - 70)}L${pts[0].x} ${pts[0].y}`);
+      pts.slice(1).forEach((q, i) => {
+        const p = pts[i], dy = (q.y - p.y) / 2, k = i % 2 ? amp : -amp;
+        segs.push(`C${p.x + k} ${p.y + dy} ${q.x + k} ${q.y - dy} ${q.x} ${q.y}`);
+      });
+      const last = pts.at(-1);
+      segs.push(`L${last.x} ${last.y + 56}`);
+    }
+    // how far along the body each stop sits, so it can light up when the head passes
+    const probe = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    svg.appendChild(probe);
+    rail.at = pts.map((_, i) => { probe.setAttribute('d', segs.slice(0, i + 1).join('')); return probe.getTotalLength(); });
+    probe.remove();
+    return { d: segs.join(''), h: box.clientHeight, t };
+  });
+  // jobs tagged data-phase="n" light up once the head reaches stop n (the run of show)
+  const phased = [...box.querySelectorAll('[data-phase]')];
+  rail.snake.onDraw = (len, tip) => {
+    stops.forEach((el, i) => el.classList.toggle('reached', len >= rail.at[i] - 2));
+    phased.forEach(el => el.classList.toggle('lit', len >= rail.at[+el.dataset.phase] - 2));
+    if (rider) rider.style.transform = `translate(${tip.x}px, ${tip.y}px)`;
+  };
+  return rail;
+}
+
+const rails = [...document.querySelectorAll('[data-rail]')].map(railSnake);
+rails.forEach(r => { pageSnakes.push(r.snake); if (reduceMotion.matches) r.snake.draw(1); });
+addEventListener('load', () => rails.forEach(r => r.snake.layout()));
+
+function renderRails(dt) {
+  if (reduceMotion.matches) return;
+  for (const { box, snake, horizontal } of rails) {
+    const r = box.getBoundingClientRect();
+    if (r.top > innerHeight && snake.p === 0) continue;
+    // a horizontal rail runs while the block crosses the lower half of the screen; a vertical one keeps its head at ~70% down
+    const target = horizontal
+      ? clamp((innerHeight * .9 - r.top) / (innerHeight * .55), 0, 1)
+      : clamp((innerHeight * .7 - r.top) / r.height, 0, 1);
+    snake.p += (target - snake.p) * Math.min(1, dt * 5);
+    if (Math.abs(target - snake.p) < .001) snake.p = target;
+    snake.draw(snake.p);
+  }
+}
+
+/* Snakes inside fixed drawings (the Sponsor floor plan, the Community metro map, the Code of Conduct coil):
+   any <path data-snake> becomes a body with the mascot's head on its tip, growing in once when seen.
+   data-snake holds the body thickness in the drawing's own units. */
+function pathSnake(path) {
+  const t = +path.dataset.snake || 12;
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', SNAKE_GREEN);
+  path.setAttribute('stroke-width', t);
+  path.setAttribute('stroke-linecap', 'round');
+  path.setAttribute('stroke-linejoin', 'round');
+  const head = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  head.innerHTML = `<g transform="translate(105.5 -199) scale(-1 1)" fill="${SNAKE_GREEN}">
+    <path class="snake-tongue" d="${SNAKE_TONGUE}"/><path d="${SNAKE_HEAD}"/><circle cx="46.3" cy="190.6" r="4.4" fill="#1b1b1b"/></g>`;
+  path.after(head);
+  const total = path.getTotalLength(), scale = t / SNAKE_UNITS, svg = path.ownerSVGElement;
+  const draw = p => {
+    const len = p * total;
+    path.setAttribute('stroke-dasharray', `${len} ${total + 1}`);
+    const a = path.getPointAtLength(Math.max(0, len - 1)), b = path.getPointAtLength(Math.min(total, len + 1));
+    const tip = path.getPointAtLength(len);
+    head.setAttribute('transform', `translate(${tip.x} ${tip.y}) rotate(${Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI}) scale(${scale})`);
+    svg.classList.toggle('arrived', p >= 1);
+  };
+  draw(0);
+  if (reduceMotion.matches) { draw(1); return; }
+  new IntersectionObserver((entries, obs) => {
+    if (!entries[0].isIntersecting) return;
+    obs.disconnect();
+    growSnake({ draw }, +path.dataset.snakeMs || 1600, 200);
+  }, { threshold: .35 }).observe(svg);
+}
+document.querySelectorAll('path[data-snake]').forEach(pathSnake);
+
+/* Sponsor doors: the snake weaves through the three cards, under the first, over the middle one and under
+   the last; left to right on desktop, downwards on phones. Two copies share one pose: one runs behind
+   the cards, and the other runs in front, clipped to the middle card's photo so it never crosses text. */
+const doors = document.querySelector('[data-doors]');
+if (doors) {
+  const under = doors.querySelector('.doors-snake');
+  const over = under.cloneNode();
+  under.classList.add('doors-under');
+  over.classList.add('doors-over');
+  doors.appendChild(over);
+  const cards = [...doors.querySelectorAll('.door')];
+  const shape = W => {
+    const small = W < 700, t = small ? 10 : 14, s = t / SNAKE_UNITS;
+    const f = under.getBoundingClientRect();
+    const boxes = cards.map(c => {
+      const r = c.getBoundingClientRect(), img = c.querySelector('img').getBoundingClientRect();
+      return { left: r.left - f.left, right: r.right - f.left, top: r.top - f.top, bottom: r.bottom - f.top, photo: img.bottom - f.top };
+    });
+    const h = doors.clientHeight;
+    if (!compactView.matches) {
+      // across the lower part of the photos, dipping and rising between the cards
+      const amp = 34, y = boxes[0].photo - 34;
+      const pts = boxes.map((b, i) => ({ x: (b.left + b.right) / 2, y: y + (i % 2 ? -amp : amp) }));
+      pts.push({ x: noseEnd(W) - SNOUT * s, y });
+      let d = `M${-SNOUT * s - t} ${y}`, p = { x: -SNOUT * s - t, y };
+      for (const q of pts) {
+        const dx = (q.x - p.x) / 2;
+        d += `C${p.x + dx} ${p.y} ${q.x - dx} ${q.y} ${q.x} ${q.y}`;
+        p = q;
+      }
+      return { d, h, t };
+    }
+    // phones: down the right side of the stacked cards, swaying in and out, head ending below the last
+    const amp = 18, x = boxes[0].right - 56;
+    const pts = boxes.map((b, i) => ({ x: x + (i % 2 ? amp : -amp), y: (b.top + b.bottom) / 2 }));
+    pts.push({ x, y: h - SNOUT * s - 8 });
+    let d = `M${x} ${-t}`, p = { x, y: -t };
+    for (const q of pts) {
+      const dy = (q.y - p.y) / 2;
+      d += `C${p.x} ${p.y + dy} ${q.x} ${q.y - dy} ${q.x} ${q.y}`;
+      p = q;
+    }
+    return { d, h, t };
+  };
+  const a = makeSnake(under, shape), b = makeSnake(over, shape);
+  const clip = () => {
+    const f = over.getBoundingClientRect(), r = cards[1].querySelector('img').getBoundingClientRect();
+    over.style.clipPath = `inset(${r.top - f.top}px ${f.right - r.right}px ${f.bottom - r.bottom}px ${r.left - f.left}px round 18px)`;
+  };
+  const both = { layout() { a.layout(); b.layout(); clip(); }, draw(p) { a.p = b.p = p; a.draw(p); b.draw(p); } };
+  pageSnakes.push(both);
+  addEventListener('load', () => both.layout());
+  (document.fonts?.ready || Promise.resolve()).then(() => both.layout());
+  new IntersectionObserver((entries, obs) => {
+    if (!entries[0].isIntersecting) return;
+    obs.disconnect();
+    both.layout();
+    growSnake(both, 2200, 150);
+    // the cards rise into place as they're revealed, so measure again once they've settled
+    setTimeout(() => both.layout(), 1000);
+  }, { threshold: .3 }).observe(doors);
+}
+
+/* Sponsor thank-you slide: past sponsors' logos, then the open spot */
+const SLIDE_SPONSORS = ['Microsoft', 'Zomato', 'Adobe', 'Thoughtworks', 'Nykaa', 'Gojek', 'EPAM Systems', 'Tata 1mg', 'HT Media', 'GitHub', 'SingleStore'];
+document.getElementById('thanks-logos')?.insertAdjacentHTML('afterbegin',
+  SLIDE_SPONSORS.map(n => logoEl(SPONSORS.find(l => l.name === n))).join(''));
+
+/* Blog shelves: a thin straight snake lies along each year's shelf and slides in once when it comes into view */
+document.querySelectorAll('.shelf-snake').forEach(svg => {
+  const snake = makeSnake(svg, W => {
+    const t = W < 500 ? 9 : 11, s = t / SNAKE_UNITS, y = Math.ceil(30 * s + t / 2);
+    return { d: `M${-SNOUT * s - t} ${y}L${W - SNOUT * s - 4} ${y}`, h: y + t / 2, t };
+  });
+  pageSnakes.push(snake);
+  if (reduceMotion.matches) { snake.draw(1); return; }
+  new IntersectionObserver((entries, obs) => {
+    if (!entries[0].isIntersecting) return;
+    obs.disconnect();
+    growSnake(snake, 1100);
+  }, { threshold: .6 }).observe(svg);
+});

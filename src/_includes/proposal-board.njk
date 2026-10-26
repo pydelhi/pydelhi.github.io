@@ -1,0 +1,49 @@
+{#- Speak page: the four stages a talk goes through, each with a small hand-drawn example of that stage.
+    script.js runs the snake through the step numbers, carrying "Your talk". No blank lines: Markdown includes this -#}
+<div class="board" data-rail="x">
+  <svg class="snake rail-snake" aria-hidden="true"></svg>
+  <span class="board-rider" data-rail-rider aria-hidden="true">Your talk</span>
+  <div class="board-cols">
+    <section class="board-col" aria-labelledby="stage-1">
+      <header class="board-head">
+        <span class="board-step" data-rail-stop>1</span>
+        <div><h3 id="stage-1">Proposed</h3><p>Open an issue with the proposal form. An outline is enough.</p></div>
+      </header>
+      <div class="board-card" aria-hidden="true">
+        <span class="board-tag"><i class="ph ph-lightbulb"></i> Proposal</span>
+        <strong>Your idea, in one line</strong>
+        <span class="board-lines"><i></i><i></i><i></i></span>
+      </div>
+    </section>
+    <section class="board-col" aria-labelledby="stage-2">
+      <header class="board-head">
+        <span class="board-step" data-rail-stop>2</span>
+        <div><h3 id="stage-2">In review</h3><p>Volunteer reviewers reply on the issue, often with ideas to sharpen it.</p></div>
+      </header>
+      <div class="board-card board-comment" aria-hidden="true">
+        <span class="board-tag"><i class="ph ph-chat-circle"></i> Reviewer</span>
+        <p>Love this. Could you add a short live demo near the end?</p>
+      </div>
+    </section>
+    <section class="board-col" aria-labelledby="stage-3">
+      <header class="board-head">
+        <span class="board-step" data-rail-stop>3</span>
+        <div><h3 id="stage-3">Scheduled</h3><p>Share a draft of your slides and we lock in a Saturday.</p></div>
+      </header>
+      <div class="board-card board-date" aria-hidden="true">
+        <span class="board-cal"><b>Sat</b>21</span>
+        <div><strong>You're on</strong><span><i class="ph ph-check"></i> Slides draft shared</span></div>
+      </div>
+    </section>
+    <section class="board-col" aria-labelledby="stage-4">
+      <header class="board-head">
+        <span class="board-step" data-rail-stop>4</span>
+        <div><h3 id="stage-4">Given</h3><p>On stage at the meetup, and often recorded for YouTube.</p></div>
+      </header>
+      <div class="board-card board-given" aria-hidden="true">
+        <span class="board-play"><i class="ph ph-play"></i></span>
+        <div><strong>Your talk</strong><span>Recorded and shared</span></div>
+      </div>
+    </section>
+  </div>
+</div>

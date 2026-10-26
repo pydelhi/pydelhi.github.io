@@ -5,6 +5,8 @@ layout: layouts/base.njk
 <main class="page{% if pageClass %} {{ pageClass }}{% endif %}">
 
   <header class="page-head">
+    <!-- MASCOT: script.js poses it around the title, see PAGE SNAKES -->
+    <svg class="snake snake-title" id="snake-title" aria-hidden="true"></svg>
     <div class="wrap">
       <h1 class="page-title">{{ heading | safe }}</h1>
       {%- if lede %}

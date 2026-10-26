@@ -1,0 +1,25 @@
+{#- Sponsor page: the three ways in, as photo cards in their own pastel. script.js weaves the snake
+    through them, under the first, over the middle one and under the last. No blank lines: Markdown includes this -#}
+<div class="doors" data-doors>
+  <svg class="snake doors-snake" aria-hidden="true"></svg>
+  <div class="doors-row">
+    <article class="door door-blue" data-reveal>
+      {% photo "photos/bof.jpg", "A PyDelhi meetup in a company meeting room, a speaker at the screen", "(max-width: 860px) 100vw, 360px", { class: "door-img", loading: "lazy" } %}
+      <span class="door-tag"><i class="ph ph-door-open"></i> Host</span>
+      <h3>The room</h3>
+      <p>Seats for a full room, a projector or screen, a mic and Wi-Fi, and a way in for visitors on a Saturday.</p>
+    </article>
+    <article class="door door-yellow" data-reveal style="--d:120ms">
+      {% photo "blog/8-july-2018-lunch.jpg", "Attendees eating lunch together at a long table during a PyDelhi meetup", "(max-width: 860px) 100vw, 360px", { class: "door-img", loading: "lazy" } %}
+      <span class="door-tag"><i class="ph ph-coffee"></i> Feed</span>
+      <h3>Food and chai</h3>
+      <p>The break is where people meet, ask follow-up questions and find collaborators. Keep it going.</p>
+    </article>
+    <article class="door door-green" data-reveal style="--d:240ms">
+      {% photo "photos/aiohttp-talk.jpeg", "A speaker presenting a talk on aiohttp at a PyDelhi meetup", "(max-width: 860px) 100vw, 360px", { class: "door-img", loading: "lazy" } %}
+      <span class="door-tag"><i class="ph ph-hand-coins"></i> Fund</span>
+      <h3>Recordings and travel</h3>
+      <p>Recording talks for YouTube, swag for speakers, and travel for speakers who come from out of town.</p>
+    </article>
+  </div>
+</div>

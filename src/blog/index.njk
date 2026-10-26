@@ -1,20 +1,49 @@
 ---
 layout: layouts/page.njk
 title: Blog | PyDelhi
+description: Recaps of PyDelhi meetups, sprints and workshops, written by the people who were there.
 heading: Recaps, <em>straight from the room.</em>
 lede: What happened at PyDelhi meetups, sprints and workshops, written up by the people who were there.
 permalink: /blog/
 ---
-<section class="page-section"><div class="wrap"><div class="post-grid">
-{%- for post in collections.post | reverse %}
-  <a href="{{ post.url }}" class="post-card" data-reveal>
-    {% if post.data.cover %}<span class="past-img">{% photo post.data.cover, "", "(max-width: 860px) 100vw, 360px", { loading: "lazy" } %}</span>
-    {% else %}<span class="past-img past-gen"><span class="past-gen-logo"></span></span>{% endif %}
-    <span class="post-card-body">
-      <span class="past-date">{{ post.data.monthLabel }}</span>
-      <strong>{{ post.data.title }}</strong>
-      <span class="post-card-by">By {{ post.data.author }}</span>
-    </span>
-  </a>
-{%- endfor %}
-</div></div></section>
+{#- The newest recap runs large, then the rest sit on one shelf per year, each with the snake lying along it -#}
+{%- set latest = (collections.post | reverse)[0] %}
+<section class="page-section">
+  <div class="wrap">
+    <a href="{{ latest.url }}" class="post-feature" data-reveal>
+      {% if latest.data.cover %}<span class="past-img">{% photo latest.data.cover, "", "(max-width: 860px) 100vw, 620px" %}</span>
+      {% else %}<span class="past-img past-gen"><span class="past-gen-logo"></span></span>{% endif %}
+      <span class="post-feature-body">
+        <span class="past-date">{{ latest.data.dateLabel }}</span>
+        <strong>{{ latest.data.title }}</strong>
+        {%- if latest.data.summary %}<span class="post-card-sum">{{ latest.data.summary }}</span>{% endif %}
+        <span class="post-card-by">By {{ latest.data.author }}</span>
+        <span class="text-link">Read the recap <i class="ph ph-arrow-right"></i></span>
+      </span>
+    </a>
+    {%- for shelf in collections.postsByYear %}
+    {%- set posts = shelf.posts | reject("equalto", latest) %}
+    {%- if posts.length %}
+    <section class="shelf" aria-labelledby="year-{{ shelf.year }}">
+      <div class="shelf-head">
+        <h2 id="year-{{ shelf.year }}">{{ shelf.year }}</h2>
+        <svg class="snake shelf-snake" aria-hidden="true"></svg>
+      </div>
+      <div class="post-grid">
+        {%- for post in posts %}
+        <a href="{{ post.url }}" class="post-card" data-reveal>
+          {% if post.data.cover %}<span class="past-img">{% photo post.data.cover, "", "(max-width: 860px) 100vw, 360px", { loading: "lazy" } %}</span>
+          {% else %}<span class="past-img past-gen"><span class="past-gen-logo"></span></span>{% endif %}
+          <span class="post-card-body">
+            <span class="past-date">{{ post.data.monthLabel }}</span>
+            <strong>{{ post.data.title }}</strong>
+            <span class="post-card-by">By {{ post.data.author }}</span>
+          </span>
+        </a>
+        {%- endfor %}
+      </div>
+    </section>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+</section>

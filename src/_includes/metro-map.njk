@@ -1,0 +1,42 @@
+{#- Community page: the channels as a metro map, from _data/metro.js. Desktop gets the map; phones get a line-strip map,
+    one line at a time. The green line is the snake in both (script.js adds its head). No blank lines: Markdown includes this -#}
+{%- macro mapLabel(st, big) -%}
+{%- set pos = st.d -%}
+{%- set dx = (24 if big else 18) if pos.a == 'r' else (-18 if pos.a == 'l' else 0) -%}
+{#- the interchange label sits low enough to clear both diagonals -#}
+{%- set dy = -24 if pos.a == 't' else ((70 if big else 30) if pos.a == 'b' else -2) -%}
+{%- set anchor = 'start' if pos.a == 'r' else ('end' if pos.a == 'l' else 'middle') -%}
+<text class="metro-name{% if big %} metro-hub-name{% endif %}" x="{{ pos.x + dx }}" y="{{ pos.y + dy }}" text-anchor="{{ anchor }}">{{ st.label }}</text>
+<text class="metro-sub" x="{{ pos.x + dx }}" y="{{ pos.y + dy + 19 }}" text-anchor="{{ anchor }}">{{ st.sub }}</text>
+{%- endmacro -%}
+{%- macro ext(url) %}{% if url.startsWith('http') %} target="_blank" rel="noopener"{% endif %}{% endmacro -%}
+<svg class="metro" viewBox="0 0 1000 520" role="group" aria-label="PyDelhi's channels as a metro map">
+  {%- for line in metro.lines %}
+  {%- if line.colour == 'snake' %}
+  <path data-snake="16" data-snake-ms="2400" d="{{ line.d }}"/>
+  {%- else %}
+  <path class="metro-line metro-{{ line.colour }}" d="{{ line.d }}"/>
+  {%- endif %}
+  {%- endfor %}
+  {%- for st in metro.stations %}
+  <a href="{{ st.url }}"{{ ext(st.url) }} class="metro-station"><circle cx="{{ st.d.x }}" cy="{{ st.d.y }}" r="10"/>{{ mapLabel(st) }}</a>
+  {%- endfor %}
+  <a href="{{ metro.hub.url }}"{{ ext(metro.hub.url) }} class="metro-station metro-hub"><circle cx="{{ metro.hub.d.x }}" cy="{{ metro.hub.d.y }}" r="20"/>{{ mapLabel(metro.hub, true) }}</a>
+</svg>
+<div class="line-strips">
+  <a href="{{ metro.hub.url }}" target="_blank" rel="noopener" class="line-strip-hub"><span class="line-strip-dot"></span><span><strong>{{ metro.hub.label }}</strong><span>Interchange for all three lines. {{ metro.hub.sub }}.</span></span></a>
+  {%- for line in metro.lines %}
+  <section class="line-strip line-strip-{{ line.colour }}"{% if line.colour == 'snake' %} data-rail{% endif %}>
+    {%- if line.colour == 'snake' %}<svg class="snake rail-snake" aria-hidden="true"></svg>{% endif %}
+    <h3>{{ line.name }}</h3>
+    <ol>
+      {%- for st in metro.stations %}{% if st.line == line.key %}
+      <li><a href="{{ st.url }}"{{ ext(st.url) }}><span class="line-strip-dot"{% if line.colour == 'snake' %} data-rail-stop{% endif %}></span><span><strong>{{ st.label }}</strong><span>{{ st.sub }}</span></span></a></li>
+      {%- endif %}{% endfor %}
+    </ol>
+  </section>
+  {%- endfor %}
+</div>
+<ul class="metro-key" aria-hidden="true">
+  {%- for line in metro.lines %}<li><span class="metro-swatch metro-{{ line.colour }}"></span>{{ line.name }}</li>{% endfor -%}
+</ul>

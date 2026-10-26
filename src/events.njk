@@ -1,14 +1,19 @@
 ---
-layout: layouts/base.njk
+layout: layouts/page.njk
+pageClass: events-page
 title: Events | PyDelhi
 description: Upcoming and past PyDelhi meetups in Delhi NCR. Free talks, workshops and Birds of a Feather sessions every month.
 permalink: /events/
+heading: A meetup, <em>every month.</em>
+lede: Free talks, workshops and Birds of a Feather sessions across Delhi NCR, usually on a Saturday. RSVPs open on Commudle.
+actions:
+  - { label: "RSVP on Commudle", url: "https://www.commudle.com/communities/pydelhi", icon: "arrow-up-right" }
+  - { label: "Propose a talk", url: "/speak/", class: "btn-line" }
 ---
-<main class="events-page">
 
   <section class="events" aria-labelledby="events-title">
     <div class="wrap">
-      <h1 class="h2" id="events-title">Next up.</h1>
+      <h2 class="h2" id="events-title">Next up.</h2>
       {% include "ticket.njk" %}
       {%- if events.upcoming.length > 1 %}
       <h2 class="events-sub">Also coming up</h2>
@@ -44,5 +49,3 @@ permalink: /events/
     </div>
   </section>
   {%- endif %}
-
-</main>

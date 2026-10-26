@@ -11,69 +11,57 @@ actions:
 join: true
 ---
 
-{% section %}
-{% include "stats.njk" %}
-{% endsection %}
-
-{% section "What we <em>do.</em>", "Meetups are the heart of it, but there's a lot more going on between them." %}
-{% tiles %}
-{% tile "calendar-dots", "Monthly meetups" %}
-Talks, lightning talks and Birds of a Feather circles, usually on the third Saturday of the month, hosted by a different company or campus each time.
-{% endtile %}
-{% tile "laptop", "Workshops" %}
-Laptops open, code along, leave with something working. We also run workshops at colleges and institutes across Delhi NCR.
-{% endtile %}
-{% tile "microphone-stage", "Conferences" %}
-PyDelhi Conf, our own local conference, ran in 2016, 2017 and 2023, and PyDelhi volunteers helped bring PyCon India to New Delhi in 2016 and 2017.
-{% endtile %}
-{% tile "git-pull-request", "Dev sprints" %}
-Afternoons spent contributing to open source together, from Python libraries to Debian packaging, with people who've done it before.
-{% endtile %}
-{% tile "briefcase", "Hiring and pitching" %}
-Near the end of most meetups, anyone can pitch themselves for a job or internship, or pitch a role their team is hiring for. [How it works](/blog/pydelhi-hiring-pitching-sessions/).
-{% endtile %}
-{% tile "handshake", "Collaborations" %}
-Joint meetups with PyData Delhi, Django India, Grafana and Friends, ILUG-D and others. Python is better with company.
-{% endtile %}
-{% endtiles %}
-{% endsection %}
-
-{% section "Fifteen years of <em>Saturdays.</em>" %}
+{% section "Fifteen years of <em>Saturdays.</em>", "From a handful of developers in a room to conferences, sprints and a meetup almost every month." %}
 {% timeline %}
 {% moment "2011", "The first meetups" %}
-A handful of Python developers in Delhi NCR start meeting up to talk about what they're building. The mailing list, ncr-python.in, is still running today.
+A few Python developers in Delhi NCR start meeting up to talk about what they're building. The mailing list they started, ncr-python.in, still runs today.
 {% endmoment %}
-{% moment "2016", "PyDelhi Conf and PyCon India" %}
-The first PyDelhi Conf, and PyCon India comes to New Delhi, at JNU, with PyDelhi volunteers on the team.
+{% moment "2016", "PyDelhi Conf, and PyCon India in Delhi", "blog/pydelhi-14-05-16.jpg", "Attendees at a PyDelhi meetup in May 2016" %}
+The first PyDelhi Conf. Later that year PyCon India comes to New Delhi, at JNU, with PyDelhi volunteers on the team.
 {% endmoment %}
 {% moment "2017", "Second time round" %}
-PyDelhi Conf 2017, and PyCon India in New Delhi again.
+PyDelhi Conf 2017, and PyCon India in New Delhi again. Workshops at colleges and institutes across the city.
 {% endmoment %}
-{% moment "2018", "Mega meetups" %}
-An International Women's Day mega meetup and a FOSS mega meetup at Adobe, Noida, with communities from across the city, plus dev sprints and our first blog recaps.
+{% moment "2018", "Mega meetups", "blog/pydelhi-11-03-11.jpg", "Attendees at the International Women's Day mega meetup in 2018" %}
+An [International Women's Day mega meetup](/blog/pydelhi-meetup-11-march-2018/), a [FOSS mega meetup at Adobe](/blog/pydelhi-meetup-04-august-2018/) with communities from across the city, and the first [blog recaps](/blog/).
+{% endmoment %}
+{% moment "2019", "Dev sprints and an anniversary", "blog/2019-02-02-devsprint-pydelhi.jpeg", "Participants and mentors at the PyDelhi dev sprint in February 2019" %}
+An [anniversary meetup at Microsoft, Gurugram](/blog/pydelhi-meetup-12-january-2019/) with three other communities, and [dev sprints](/blog/pydelhi-devsprint-02-february-2019/) where first-timers sent their first open source pull requests.
 {% endmoment %}
 {% moment "2023", "PyDelhi Conf returns" %}
 The conference comes back for a third edition, with talks [recorded on our YouTube channel]({{ site.youtube }}).
 {% endmoment %}
 {% moment "2025", "A new home on Commudle" %}
-Events and RSVPs move to [Commudle]({{ site.commudle }}). Talk proposals are reviewed in the open on [GitHub]({{ site.talksRepo }}), where {{ talks.length }} talks have been delivered and counting.
+Meetups and RSVPs move to [Commudle]({{ site.commudle }}), and talk proposals are reviewed in the open on [GitHub]({{ site.talksRepo }}).
+{% endmoment %}
+{% moment "Now", "Still meeting", "photos/iwd-meetup.jpeg", "A full room at a PyDelhi meetup in 2026" %}
+{{ events.past.length }} meetups on Commudle so far, most recently {{ events.past[0].name }}, and {{ talks.length }} talks given through GitHub. [See what's next](/events/).
 {% endmoment %}
 {% endtimeline %}
 {% endsection %}
 
 {% section "How we run the <em>room.</em>" %}
-{% tiles 2 %}
-{% tile "currency-inr", "Free, always" %}
+{% points %}
+{% point "Free, always" %}
 No tickets, no fees. Venues, food and chai come from [sponsors](/sponsor/), and everything else from volunteers.
-{% endtile %}
-{% tile "plant", "Beginners welcome" %}
+{% endpoint %}
+{% point "Beginners welcome" %}
 Most of the room is new to Python or to speaking. Ask the question. Give the lightning talk. That's what it's for.
-{% endtile %}
-{% tile "hand-heart", "Everyone is safe here" %}
+{% endpoint %}
+{% point "Everyone is safe" %}
 Our [Code of Conduct](/coc/) applies at every meetup and in every chat, and we enforce it.
-{% endtile %}
-{% tile "users-three", "Run by volunteers" %}
-Nobody is paid. People who came to a meetup once now [run them](/volunteers/), and you could too.
-{% endtile %}
-{% endtiles %}
+{% endpoint %}
+{% point "Run by volunteers" %}
+Nobody is paid. People who came to one meetup now [run them](/volunteers/), and you could too.
+{% endpoint %}
+{% endpoints %}
+{% endsection %}
+
+{% section %}
+{% panel "blue", "Run the next one <em>with us.</em>", "Every meetup is run by volunteers: finding venues, reviewing talks, running the room on the day and writing the recap. Most of us started by helping out once." %}
+{% buttons %}
+{% button "See how to volunteer", "/volunteers/" %}
+{% button "Put your hand up", site.volunteerForm, "arrow-up-right", "line" %}
+{% endbuttons %}
+{% endpanel %}
 {% endsection %}

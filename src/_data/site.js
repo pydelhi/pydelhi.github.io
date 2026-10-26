@@ -21,6 +21,8 @@ export default {
   volunteerForm: 'https://github.com/pydelhi/talks/issues/new?title=Interested%20in%20volunteering',
   // TODO confirm: hand-set numbers shown on the home page and inner pages (meetup.com/pydelhi lists ~14.7k members)
   stats: { speakers: '350+', members: '12k+' },
+  // the SPONSORS list in script.js, rounded down for copy
+  sponsorCount: 27 - 27 % 5,
   nav: [
     { url: '/events/', label: 'Events' },
     { url: '/speak/', label: 'Speak' },

@@ -8,6 +8,10 @@ lede: We are all here to help each other learn, grow our skills and have a good 
 ---
 
 {% section %}
+{% include "coc-summary.njk" %}
+{% endsection %}
+
+{% section %}
 {% prose %}
 This Code of Conduct covers how we behave as members of the PyDelhi community, in any forum, mailing list, wiki, website, code repository, chat group, private correspondence or public meeting.
 
@@ -18,26 +22,31 @@ This isn't an exhaustive list of things you can't do. Take it in the spirit it's
 {% endsection %}
 
 {% section "PyDelhi members strive to" %}
-{% tiles %}
-{% tile "hand-heart", "Be friendly, patient and welcoming" %}
+{% prose %}
+### Be friendly, patient and welcoming
+
 We welcome and support people of all backgrounds and identities. This includes, but is not limited to, members of any race, ethnicity, culture, national origin, colour, immigration status, social and economic class, educational level, sex, sexual orientation, gender identity and expression, age, size, family status, political belief, religion and mental and physical ability.
-{% endtile %}
-{% tile "globe-hemisphere-east", "Be considerate" %}
+
+### Be considerate
+
 Our work will be used by other people, and we in turn depend on the work of others. Any decision we take affects users and colleagues, so we take those consequences into account. We're part of a worldwide community, and even when it isn't obvious at the time, our contributions to Python affect the work of others.
-{% endtile %}
-{% tile "handshake", "Be respectful" %}
+
+### Be respectful
+
 Not all of us will agree all the time, but disagreement is no excuse for poor behaviour or poor manners. We may all feel frustrated now and then, but that frustration must never turn into a personal attack. A community where people feel uncomfortable or threatened is not a productive one.
-{% endtile %}
-{% tile "users-three", "Collaborate openly" %}
+
+### Collaborate openly
+
 Collaboration is central to PyDelhi and the wider free software community: within teams, across projects and with communities outside PyDelhi. We work transparently, involve interested people early, and tell others when we take a different approach. We don't create private channels that shut out other contributors.
-{% endtile %}
-{% tile "chats-circle", "Try to understand why we disagree" %}
+
+### Try to understand why we disagree
+
 Disagreements, social and technical, happen all the time. Different people have different perspectives, and being unable to understand a viewpoint doesn't mean it's wrong. Focus on resolving issues and learning from mistakes, with the help of the community. When goals differ a lot, we encourage alternative implementations so the community can test new ideas.
-{% endtile %}
-{% tile "question", "Ask for help when unsure" %}
+
+### Ask for help when unsure
+
 Nobody knows everything, and nobody is expected to be perfect. Asking questions avoids many problems down the road, so questions are encouraged. Those who are asked should be responsive and helpful. When asking, pick an appropriate place to do it.
-{% endtile %}
-{% endtiles %}
+{% endprose %}
 {% endsection %}
 
 {% section "What we take seriously" %}
@@ -56,7 +65,5 @@ Violations may affect your ability to take part in the community. Be careful wit
 {% endsection %}
 
 {% section %}
-{% panel "green", "Something happened?", "You don't have to deal with it alone." %}
-At a meetup, talk to any PyDelhi volunteer on the spot. Online, message the organisers on [Telegram]({{ site.telegram }}) or [LinkedIn]({{ site.linkedin }}). We'll listen, keep it confidential, and act on it.
-{% endpanel %}
+{% include "coc-report.njk" %}
 {% endsection %}
