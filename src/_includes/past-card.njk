@@ -1,7 +1,7 @@
 {#- One past meetup. Expects `ev`: a Commudle event from _data/events.js -#}
-<a href="{{ ev.link or ev.url }}" class="past-card" data-reveal{% if not ev.link %} target="_blank" rel="noopener"{% endif %}>
+<a href="{{ ev.url }}" class="past-card" data-reveal target="_blank" rel="noopener">
             {% if ev.photo -%}
-            <span class="past-img">{% photo ev.photo, ev.alt, "(max-width: 600px) 110px, 168px", { loading: "lazy" } %}</span>
+            <span class="past-img{% if ev.banner %} past-banner{% endif %}">{% photo ev.photo, ("" if ev.banner else "Photo from " + ev.name), "(max-width: 600px) 110px, 168px", { loading: "lazy" } %}</span>
             {%- else -%}
             <span class="past-img past-gen"><span class="past-gen-logo"></span></span>
             {%- endif %}

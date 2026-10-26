@@ -172,9 +172,10 @@ layout: layouts/base.njk
         {% include "ticket.njk" %}
 
         <div class="past">
-          {%- for ev in events.past.slice(0, 2) %}
+          {#- asyncEach, not for: Nunjucks drops the async {% photo %} output of an include inside a for loop #}
+          {%- asyncEach ev in events.past.slice(0, 2) %}
           {% include "past-card.njk" %}
-          {%- endfor %}
+          {%- endeach %}
           <a href="{{ site.commudle }}" class="text-link" target="_blank" rel="noopener">View all events <i class="ph ph-arrow-right"></i></a>
         </div>
       </div>

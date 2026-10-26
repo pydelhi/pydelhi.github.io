@@ -25,29 +25,12 @@ One-time setup on GitHub: **Settings → Pages → Source: GitHub Actions**, wit
 
 Events come from [PyDelhi on Commudle](https://www.commudle.com/communities/pydelhi). Create the event there and the site picks it up on the next build: the hero card, the "Next up" ticket and the past-event cards. There's no events page on the site: "View all events" goes to Commudle. Nothing to edit here.
 
-## Adding photos after a meetup
+## Adding a photo after a meetup
+
+The home page shows the last two meetups. Until an event has a photo of its own, its card shows the event's banner from Commudle, fitted whole on white.
 
 1. Find the event's slug: the last part of its Commudle URL, e.g. `pydelhi-3-15-the-next-python` in `commudle.com/communities/pydelhi/events/pydelhi-3-15-the-next-python`.
-2. Make a folder `src/assets/events/<slug>/` and put the photos in it. Any size is fine; the build resizes them.
-3. The card uses the file named `cover.jpg` (or `cover.png`, etc.). Without one, it uses the first file in alphabetical order.
-4. Optional: describe the photo, or point the card at a blog recap, in `src/_data/eventExtras.json`:
-
-   ```json
-   {
-     "events": {
-       "pydelhi-3-15-the-next-python": {
-         "alt": "Group photo from PyDelhi 3.15 at Essentia",
-         "recap": "/blog/pydelhi-3-15"
-       }
-     },
-     "archive": []
-   }
-   ```
-
-5. Commit and push.
-
-An event without photos gets a pastel blue cover with the PyDelhi wordmark.
-
+2. Name the photo after it (`pydelhi-3-15-the-next-python.jpg`; png and webp work too) and add it to `src/assets/events/`. On GitHub: open that folder, **Add file → Upload files**, and commit. Any size is fine; the build resizes it. The card crops it to 4:3, so keep faces away from the edges.
 
 ## Writing a blog recap
 
@@ -67,7 +50,7 @@ Write the recap in plain Markdown.
 {% photo "blog/october-2026-talk.jpg", "A speaker explaining Redis persistence", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
 ```
 
-Put photos in `src/assets/blog/`; `cover` is the card image on `/blog`. To point the meetup's card on the home page at the recap, add `"recap": "/blog/pydelhi-october-2026/"` for its Commudle slug in `src/_data/eventExtras.json`.
+Put photos in `src/assets/blog/`; `cover` is the card image on `/blog`.
 
 ## Writing a page
 

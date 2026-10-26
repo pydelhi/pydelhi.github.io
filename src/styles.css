@@ -386,6 +386,9 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .past-card:hover .past-img img{transform:scale(1.05)}
 /* generated cover for events without a photo: PyDelhi wordmark drawn through a mask */
 .past-gen{display:grid;place-items:center;background:var(--pastel-blue)}
+/* a Commudle banner is a wide poster with text on it, so it's fitted whole on white rather than cropped */
+.past-banner{background:#fff;border:1px solid var(--line)}
+.past-banner img{object-fit:contain}
 .past-gen-logo{width:64%;aspect-ratio:894/399;background:var(--navy);-webkit-mask:url(./assets/logos/pydelhi.svg) center/contain no-repeat;mask:url(./assets/logos/pydelhi.svg) center/contain no-repeat;transition:transform .6s var(--ease)}
 .past-card:hover .past-gen-logo{transform:scale(1.05)}.past-date{display:block;font-size:13.5px;font-weight:600;color:#9a5d00;margin-bottom:6px}
 .past-body strong{display:block;font-size:19px;font-weight:700;letter-spacing:calc(-.02em + .01em);color:var(--navy);line-height:1.25}
