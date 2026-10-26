@@ -35,6 +35,6 @@ More than {{ site.sponsorCount }} companies and venues have hosted or fed a PyDe
 {% endpoints %}
 {% endsection %}
 
-{% section %}
-{% include "sponsor-pass.njk" %}
+{% section "What sponsors get.", "Whichever way you come in, this is what comes back." %}
+{% include "sponsor-perks.njk" %}
 {% endsection %}

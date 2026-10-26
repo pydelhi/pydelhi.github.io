@@ -1,0 +1,26 @@
+{#- Sponsor page: what sponsors get, as a bento like the home hero and the Community channels. The thank-you on stage
+    is the big photo tile, the other perks are pastel tiles and the last tile is the way to get in touch.
+    No blank lines: Markdown includes this -#}
+<div class="perks" data-reveal-group>
+  <div class="perk perk-photo" data-reveal>
+    {% photo "photos/speaker-on-stage.jpg", "A speaker on stage at a PyDelhi meetup, facing the room", "(max-width: 860px) 100vw, 560px", { class: "perk-img", loading: "lazy" } %}
+    <span class="perk-text"><strong>A thank-you on stage</strong><span>At the start and the end of the meetup, with a few minutes to talk about your team.</span></span>
+  </div>
+  <div class="perk perk-blue" data-reveal>
+    <i class="ph ph-image perk-icon" aria-hidden="true"></i>
+    <span class="perk-text"><strong>Your logo where it counts</strong><span>The event page, the slides, the recap and this site.</span></span>
+  </div>
+  <div class="perk perk-yellow" data-reveal>
+    <i class="ph ph-briefcase perk-icon" aria-hidden="true"></i>
+    <span class="perk-text"><strong>The hiring slot</strong><span>Talk about the roles you're hiring for at the closing session.</span></span>
+  </div>
+  <div class="perk perk-green" data-reveal>
+    <i class="ph ph-presentation-chart perk-icon" aria-hidden="true"></i>
+    <span class="perk-text"><strong>A shot at the stage</strong><span>Your engineers can propose a talk through the same open review as everyone.</span></span>
+  </div>
+  <a class="perk perk-cta" href="mailto:{{ site.email }}" data-reveal>
+    <i class="ph ph-envelope-simple perk-icon" aria-hidden="true"></i>
+    <i class="ph ph-arrow-up-right perk-go" aria-hidden="true"></i>
+    <span class="perk-text"><strong>Talk to us</strong><span>{{ site.email }}</span></span>
+  </a>
+</div>
