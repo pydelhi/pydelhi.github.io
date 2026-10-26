@@ -19,7 +19,7 @@ layout: layouts/base.njk
     <div id="grid-layer">
       <div class="grid-card">
         <div class="profile-row">
-          <img src="https://raw.githubusercontent.com/pydelhi/resources/refs/heads/main/logos/pydelhi-black.png" alt="PyDelhi" class="profile-avatar" style="object-fit:contain;background:transparent;">
+          <img src="/assets/brand/pydelhi-black.png" alt="PyDelhi" class="profile-avatar" style="object-fit:contain;background:transparent;">
           <div><div class="profile-name">PyDelhi Community</div><div class="profile-bio">We write Python. We learn together. We have chai after.</div></div>
           <a href="{{ site.commudle }}" class="join-btn" target="_blank" rel="noopener">+ Join community</a>
         </div>
@@ -29,7 +29,7 @@ layout: layouts/base.njk
           <div class="bento-cell"                 id="bento-cell-2"><div class="ghost-placeholder" id="ghost-2"><div class="ghost-bar"></div></div><template>{% photo "photos/iwd-meetup.jpeg", "Workshops", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
           <div class="bento-cell bento-cell-info">
             {%- set next = events.next %}
-            <div class="info-card info-card-registration" id="meetup-card" style="grid-column: span 2; width: 100%; padding: 14px;">
+            <div class="info-card info-card-registration" id="meetup-card">
               <span class="info-chip info-chip-open">{{ "Upcoming" if next else "Coming soon" }}</span>
               <div class="info-title">{{ next.name if next else "Next Meetup" }}</div>
               <div class="info-body">{{ "Python talks, lightning sessions, and great conversations over chai. Everyone's welcome." if next else "Date and venue coming soon. Join PyDelhi on Commudle to hear first." }}</div>

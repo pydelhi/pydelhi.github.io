@@ -1,9 +1,9 @@
 // each photo's <img> is built into a <template> in its bento cell, so it gets a resized srcset
 // m = start position on phones: x/y as a fraction of the screen, x may be negative so the card bleeds off the edge
 const PHOTOS = [
-  { cid:'bento-cell-0', lb:"Talks",   spct:.04,  srpct:null, sy:.20, sw:150, sh:185, rot:-7, m:{ x:-.1,  y:.15, w:112, h:140 } },
-  { cid:'bento-cell-1', lb:'Meetups', spct:.10,  srpct:null, sy:.55, sw:210, sh:150, rot: 6, m:{ x:.74,  y:.1,  w:130, h:96  } },
-  { cid:'bento-cell-2', lb:'Workshops', spct:null, srpct:.04,  sy:.15, sw:158, sh:195, rot: 9, m:{ x:-.14, y:.52, w:108, h:146 } },
+  { cid:'bento-cell-0', lb:"Talks",   spct:.04,  srpct:null, sy:.20, sw:150, sh:185, rot:-7, m:{ x:-.15, y:.07,  w:96,  h:116 } },
+  { cid:'bento-cell-1', lb:'Meetups', spct:.10,  srpct:null, sy:.55, sw:210, sh:150, rot: 6, m:{ x:.75,  y:.075, w:130, h:96 } },
+  { cid:'bento-cell-2', lb:'Workshops', spct:null, srpct:.04,  sy:.15, sw:158, sh:195, rot: 9, m:{ x:-.12, y:.79, w:100, h:128 } },
   { cid:'bento-cell-3', lb:'Birds of a Feather', spct:null, srpct:.08,  sy:.55, sw:290, sh:210, rot:-6, m:{ x:.66,  y:.8,  w:156, h:112 } },
 ];
 
@@ -80,10 +80,7 @@ const touchScreen  = matchMedia('(pointer: coarse)');
    the bento arrives under the nav. Only transform and opacity change, so the
    browser never has to lay the page out again while you scroll. */
 
-const heroText  = document.getElementById('hero-text');
 const gridLayer = document.getElementById('grid-layer');
-
-const GRID_FINAL_TOP = 92;
 
 // only the home page has the hero
 const photoEls = gridLayer ? PHOTOS.map(p => {
@@ -758,11 +755,8 @@ function railSnake(box) {
     probe.remove();
     return { d: segs.join(''), h: box.clientHeight, t };
   });
-  // jobs tagged data-phase="n" light up once the head reaches stop n
-  const phased = [...box.querySelectorAll('[data-phase]')];
   rail.snake.onDraw = (len, tip) => {
     stops.forEach((el, i) => el.classList.toggle('reached', len >= rail.at[i] - 2));
-    phased.forEach(el => el.classList.toggle('lit', len >= rail.at[+el.dataset.phase] - 2));
     if (rider) rider.style.transform = `translate(${tip.x}px, ${tip.y}px)`;
   };
   return rail;

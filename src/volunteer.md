@@ -5,9 +5,9 @@ description: PyDelhi is run entirely by volunteers. Meet the core team and the v
 permalink: /volunteer/
 heading: Help us run <em>the room.</em>
 lede: Every PyDelhi meetup is put together by volunteers, most of whom came to one as an attendee first. Pick what you're good at, or tell us something new.
-# TODO: same placeholder as volunteerForm in src/_data/site.js (front matter cannot read site data); update both
-actions:
-  - { label: "Volunteer with us", url: "https://forms.gle/TODO", icon: "arrow-up-right" }
+eleventyComputed:
+  actions:
+    - { label: "Volunteer with us", url: "{{ site.volunteerForm }}", icon: "arrow-up-right" }
 ---
 
 {% section "Where you <em>fit in.</em>", "Pick one, or a few. Every card opens the same short Google Form so we can say hello." %}

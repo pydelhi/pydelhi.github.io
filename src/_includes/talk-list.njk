@@ -1,9 +1,0 @@
-{#- Recent talks from github.com/pydelhi/talks (issues labelled "delivered"); see _data/talks.js -#}
-<ul class="talk-list">
-  {%- for t in talks.slice(0, talkCount or 12) %}
-  <li data-reveal><a href="{{ t.url }}" target="_blank" rel="noopener">
-    <span><strong>{{ t.title }}</strong><span>{{ t.monthYear }} · @{{ t.speaker }}</span></span>
-    <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
-  </a></li>
-  {%- endfor %}
-</ul>

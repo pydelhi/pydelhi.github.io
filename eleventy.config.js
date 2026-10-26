@@ -2,7 +2,7 @@ import { photo, photoUrl, setOutputDir } from './lib/image.js';
 import shortcodes from './lib/shortcodes.js';
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ 'src/assets/logos': 'assets/logos' });
+  eleventyConfig.addPassthroughCopy({ 'src/assets/logos': 'assets/logos', 'src/assets/brand': 'assets/brand' });
   eleventyConfig.addPassthroughCopy('src/styles.css');
   eleventyConfig.addPassthroughCopy('src/script.js');
   eleventyConfig.addWatchTarget('src/assets/');

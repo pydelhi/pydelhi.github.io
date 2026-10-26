@@ -106,7 +106,7 @@ Give one section per page, the one over the page's centrepiece, the gold underli
 
 The core team and volunteer teams live in `src/_data/volunteerTeams.json`. For a core member, `role` is a word or two ("Talk reviews, remote help"), `photo` a square-ish face shot in `src/assets/team/` (`"team/daksh.jpg"`; without one the card shows initials) and `linkedin` their profile URL, which adds a LinkedIn button under the role. Core members also go in the `people` of each team they work in. Keep the core list, the teams and each team's names in alphabetical order.
 
-Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. Each page also has its own centrepiece, as an include: `proposal-board.njk` (Speak), `sponsor-doors.njk`, `sponsor-slide.njk` and `sponsor-perks.njk` (Sponsor), `channel-bento.njk` (Community, from `src/_data/channels.js`), `volunteer-roles.njk`, `core-team.njk` and `volunteer-teams.njk` (Volunteer, from `src/_data/volunteerRoles.json` and `src/_data/volunteerTeams.json`), `coc-summary.njk` and `coc-report.njk`. Supporting sections (not centrepieces, so their headings carry no `<em>`): `pick-format.njk` (Speak: lightning talk, talk and workshop as pastel cards with a length bar) and `event-kinds.njk` (About: the kinds of event as small tinted cards). Smaller pieces: `stats.njk` (meetup numbers), `talk-list.njk` (recent talks), `logos.njk` (logo marquees), `partner.njk` and `ruler.njk`. Links used across the site (WhatsApp, Telegram, YouTube...) live in `src/_data/site.js`; use them as `{{ site.whatsapp }}`.
+Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. Each page also has its own centrepiece, as an include: `proposal-board.njk` (Speak), `sponsor-doors.njk`, `sponsor-slide.njk` and `sponsor-perks.njk` (Sponsor), `channel-bento.njk` (Community, from `src/_data/channels.js`), `volunteer-roles.njk`, `core-team.njk` and `volunteer-teams.njk` (Volunteer, from `src/_data/volunteerRoles.json` and `src/_data/volunteerTeams.json`), `coc-summary.njk` and `coc-report.njk`. Supporting sections (not centrepieces, so their headings carry no `<em>`): `pick-format.njk` (Speak: lightning talk, talk and workshop as pastel cards with a length bar) and `event-kinds.njk` (About: the kinds of event as small tinted cards). Smaller pieces: `partner.njk` and `ruler.njk`. Links used across the site (WhatsApp, Telegram, YouTube...) live in `src/_data/site.js`; use them as `{{ site.whatsapp }}`.
 
 ## Where things live
 
@@ -116,7 +116,7 @@ Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. 
 | `src/blog/posts/` | Blog recaps |
 | `lib/shortcodes.js` | The designed blocks used in Markdown pages |
 | `src/_data/site.js` | Shared links and the hand-set stats |
-| `src/_data/talks.js` | Delivered talks from github.com/pydelhi/talks (snapshot in `lib/talks-fallback.json`) |
+| `src/_data/talks.js` | How many talks have been delivered (github.com/pydelhi/talks), shown on About; last good count in `lib/talks-fallback.json` |
 | `src/_data/volunteerRoles.json`, `src/_data/volunteerTeams.json` | The ways to volunteer, the core team (name, role, photo) and the volunteer teams on `/volunteer` |
 | `src/_data/channels.js` | The Community channel tiles |
 | `lib/image.js` | The photo resizing used by `{% photo %}` |
