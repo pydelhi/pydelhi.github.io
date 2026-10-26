@@ -712,7 +712,7 @@ addEventListener('resize', () => {
 
 /* Rail snakes thread through a list of stops ([data-rail-stop]) inside a [data-rail] block and grow
    as you scroll, lighting each stop as the head passes it. data-rail="x" runs them left to right on
-   desktop (the Speak board, the run of show); otherwise, and on every phone, they run downwards. */
+   desktop (the Speak board); otherwise, and on every phone, they run downwards. */
 function railSnake(box) {
   const svg = box.querySelector('.rail-snake');
   const stops = [...box.querySelectorAll('[data-rail-stop]')];
@@ -752,7 +752,7 @@ function railSnake(box) {
     probe.remove();
     return { d: segs.join(''), h: box.clientHeight, t };
   });
-  // jobs tagged data-phase="n" light up once the head reaches stop n (the run of show)
+  // jobs tagged data-phase="n" light up once the head reaches stop n
   const phased = [...box.querySelectorAll('[data-phase]')];
   rail.snake.onDraw = (len, tip) => {
     stops.forEach((el, i) => el.classList.toggle('reached', len >= rail.at[i] - 2));

@@ -399,7 +399,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .speak-panel{background:var(--pastel-blue);border-radius:28px;padding:72px 56px 56px;color:var(--navy)}
 .speak-head{display:flex;flex-direction:column;gap:18px;margin-bottom:56px}
 .speak .h2{max-width:22ch;color:var(--navy)}
-.speak .h2 em{color:inherit;background:linear-gradient(var(--gold),var(--gold)) 0 90%/100% .12em no-repeat}
+.speak .h2 em{color:inherit}
 .speak .lede{color:#33415e}
 .ruler{--name:190px;position:relative;padding-top:34px}
 .ruler-scale{position:absolute;top:0;left:var(--name);right:0;height:100%;font-size:12px;font-weight:500;color:rgba(0,41,107,.6);pointer-events:none}
@@ -464,6 +464,8 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .join-inner{position:relative;z-index:2;max-width:640px;margin:0 auto;padding:0 16px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
 .join-title{font-size:clamp(40px,5.6vw,72px);font-weight:800;letter-spacing:calc(-.045em + .01em);line-height:1.02;color:var(--navy)}
 .join-title em{font-style:normal;background:linear-gradient(var(--gold),var(--gold)) 0 90%/100% .12em no-repeat}
+/* one underline per page: on inner pages it belongs to the centrepiece heading, so the closing title stays plain there */
+.page .join-title em{background:none}
 .join .hero-actions{animation:none;margin-top:8px}
 .join-photos{position:absolute;inset:0;pointer-events:none}
 .join-photo{position:absolute;display:block;border:4px solid #fff;border-radius:16px;overflow:hidden;box-shadow:0 22px 44px -18px rgba(0,41,107,.35);transform:translateY(var(--dy,0px)) rotate(var(--r));will-change:transform}
@@ -928,6 +930,7 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 .credits dt{font-size:20px;font-weight:800;letter-spacing:calc(-.02em + .01em);color:var(--navy)}
 .credits dt span{display:block;font-size:14.5px;font-weight:400;letter-spacing:.01em;line-height:1.5;color:var(--ink-soft);margin-top:4px}
 .credits dd{display:flex;flex-direction:column;gap:6px;font-size:18px;font-weight:600;color:var(--navy)}
+.credits-names dd{flex-direction:row;flex-wrap:wrap;column-gap:24px;row-gap:6px;align-items:center}
 @media (max-width:860px){.credits > div{grid-template-columns:minmax(0,1fr);gap:12px;padding:20px 0}.credits dd{font-size:16.5px}}
 
 /* points: short principles as pastel notes, each tilted a little like the hero photos; they straighten on hover.
@@ -1021,7 +1024,6 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 .thanks{text-align:center}
 .thanks-screen{position:relative;background:#fff;border:1px solid var(--line);border-radius:24px;padding:44px 48px 48px;box-shadow:0 30px 60px -40px rgba(0,41,107,.35)}
 .thanks-title{font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:calc(-.03em + .01em);color:var(--navy);margin-bottom:36px}
-.thanks-title em{font-style:normal;background:linear-gradient(var(--gold),var(--gold)) 0 90%/100% .12em no-repeat}
 .thanks-logos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
 @media (max-width:1060px){.thanks-logos{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .thanks-logos .logo{justify-content:center;height:72px;border-radius:14px;background:var(--bg);opacity:1}
@@ -1077,30 +1079,6 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
   .channel-text span{font-size:13.5px}
 }
 
-/* ─── VOLUNTEERS: the run of show. One lane per role, the snake runs along the phases and lights each job ─── */
-.show{position:relative;text-align:left;overflow-x:clip}
-.show-grid{position:relative;z-index:1;display:grid;grid-template-columns:170px repeat(var(--phases),minmax(0,1fr));column-gap:8px;row-gap:10px;align-items:stretch}
-.show-phase{display:flex;flex-direction:column;align-items:center;gap:12px;font-size:13.5px;font-weight:700;color:var(--navy);text-align:center;line-height:1.25;padding-bottom:18px}
-.show-dot{width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--line);transition:background .4s,border-color .4s;flex-shrink:0}
-.show-dot.reached{background:var(--navy);border-color:var(--navy)}
-.show-role{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:700;color:var(--navy);padding-right:8px}
-.show-role i{font-size:19px;opacity:.6}
-.show-task{display:flex;align-items:center;font-size:13.5px;font-weight:600;line-height:1.3;color:var(--ink-soft);background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 12px;min-height:52px;transition:background .4s,border-color .4s,color .4s}
-.show-task.lit{background:var(--pastel-blue);border-color:#b8c7e4;color:var(--navy)}
-.show-list{display:none;position:relative;text-align:left}
-.show-list > ol{list-style:none;position:relative;z-index:1;display:flex;flex-direction:column;gap:26px}
-.show-list h3{display:flex;align-items:center;gap:16px;font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px}
-.show-list h3 .show-dot{margin-left:5px}
-.show-list ul{list-style:none;display:flex;flex-direction:column;gap:8px;padding-left:48px}
-.show-list ul li{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14.5px;line-height:1.45;color:var(--ink-soft);transition:background .4s,border-color .4s}
-.show-list ul li.lit{background:var(--pastel-blue);border-color:#b8c7e4}
-.show-list ul i{font-size:19px;color:var(--navy);opacity:.6;margin-top:1px}
-.show-list strong{display:block;font-size:14px;font-weight:700;color:var(--navy);margin-bottom:2px}
-@media (max-width:860px){
-  .show{display:none}
-  .show-list{display:block}
-}
-
 /* ─── CODE OF CONDUCT: quiet on purpose. One breath, the full text, and a calm coiled snake by the reporting box ─── */
 .coc-breath{background:var(--pastel-green);border-radius:28px;padding:44px 48px;text-align:center}
 .coc-breath p{font-size:clamp(20px,2.2vw,26px);font-weight:600;line-height:1.4;color:#1f4a31}
@@ -1135,4 +1113,44 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
   .post-feature .past-img{height:auto}
   .post-feature-body{padding:24px 22px 28px}
   .shelf{margin-top:52px}
+}
+
+/* ─── VOLUNTEER: the ways in, tinted by when the work happens, and the core team ─── */
+.role-before{--tint:var(--pastel-blue);--deep:#33415e}
+.role-day{--tint:var(--pastel-yellow);--deep:#4f4632}
+.role-any{--tint:var(--pastel-green);--deep:#2c5a3f}
+.roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;text-align:left}
+.role{position:relative;display:flex;flex-direction:column;gap:6px;min-height:212px;padding:22px 24px 24px;border-radius:24px;background:var(--tint);color:var(--navy);text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s}
+.role:hover,.role:focus-visible{transform:translateY(-3px);box-shadow:0 18px 36px -22px rgba(0,41,107,.4);outline:none}
+.role-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:auto;padding-bottom:20px}
+.role-top i{font-size:30px}
+.role-when{font-size:12.5px;font-weight:600;color:var(--deep);background:rgba(255,255,255,.6);border-radius:100px;padding:4px 10px;transition:opacity .2s}
+.role strong{font-size:20px;font-weight:800;letter-spacing:calc(-.02em + .01em);line-height:1.15}
+.role-about{font-size:14.5px;line-height:1.45;color:var(--deep)}
+.role-any{color:#1f4a31}
+.role-go{position:absolute;top:24px;right:24px;font-size:18px;opacity:0;transform:translate(-4px,4px);transition:opacity .2s,transform .3s var(--ease)}
+.role:hover .role-go,.role:focus-visible .role-go{opacity:1;transform:none}
+.role:hover .role-when,.role:focus-visible .role-when{opacity:0}
+.role-else{--deep:var(--ink-soft);background:transparent;border:1.5px dashed #b8c7e4}
+.role-else:hover,.role-else:focus-visible{border-color:var(--navy);background:#fff}
+.core{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.core li{flex:0 1 calc((100% - 48px) / 4);display:flex;flex-direction:column;align-items:center;gap:4px;padding:28px 20px 26px;background:#fff;border:1px solid var(--line);border-radius:24px;text-align:center}
+.core-photo{width:112px;height:112px;border-radius:50%;overflow:hidden;margin-bottom:14px;background:var(--pastel-blue)}
+.core-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.core-initials{display:grid;place-items:center;font-size:34px;font-weight:800;letter-spacing:.01em;color:var(--navy)}
+.core strong{font-size:19px;font-weight:800;letter-spacing:calc(-.02em + .01em);color:var(--navy)}
+.core li > span:last-child{font-size:14.5px;color:var(--ink-soft)}
+@media (max-width:960px){.roles{grid-template-columns:repeat(2,minmax(0,1fr))}.core li{flex-basis:calc((100% - 16px) / 2)}}
+@media (max-width:560px){
+  .roles{grid-template-columns:minmax(0,1fr);gap:12px}
+  .role{min-height:0;padding:18px 20px 20px;border-radius:20px}
+  .role-top{padding-bottom:14px}
+  .role-top i{font-size:26px}
+  .role strong{font-size:18px}
+  .core{gap:12px}
+  .core li{flex-basis:calc((100% - 12px) / 2);padding:22px 12px 20px;border-radius:20px}
+  .core-photo{width:84px;height:84px;margin-bottom:10px}
+  .core-initials{font-size:26px}
+  .core strong{font-size:16.5px}
+  .core li > span:last-child{font-size:13.5px}
 }

@@ -24,7 +24,6 @@ layout: layouts/base.njk
 
 {{ content | safe }}
 
-  {%- if join %}
-{% include "join.njk" %}
-  {%- endif %}
+{#- not an if block: Nunjucks drops the async {% photo %} output of an include inside one, so pick the template instead -#}
+{% include ("join.njk" if join else "no-join") ignore missing %}
 </main>

@@ -1,0 +1,18 @@
+{#- Volunteer page: the ways in (_data/volunteerRoles.json), tinted and labelled by when the work happens, then an open "Something else" card.
+    Each card opens the volunteer issue with its role in the title. No blank lines: Markdown includes this -#}
+<div class="roles">
+  {%- for r in volunteerRoles.roles %}
+  <a class="role role-{{ r.when }}" href="{{ site.volunteerForm }}%3A%20{{ r.name | urlencode }}" target="_blank" rel="noopener" data-reveal>
+    <span class="role-top"><i class="ph ph-{{ r.icon }}" aria-hidden="true"></i><span class="role-when">{{ volunteerRoles.when[r.when] }}</span></span>
+    <strong>{{ r.name }}</strong>
+    <span class="role-about">{{ r.about }}</span>
+    <i class="ph ph-arrow-up-right role-go" aria-hidden="true"></i>
+  </a>
+  {%- endfor %}
+  <a class="role role-else" href="{{ site.volunteerForm }}" target="_blank" rel="noopener" data-reveal>
+    <span class="role-top"><i class="ph ph-dots-three" aria-hidden="true"></i></span>
+    <strong>Something else</strong>
+    <span class="role-about">Photos, mentoring, a venue, an idea. Tell us what you'd like to do.</span>
+    <i class="ph ph-arrow-up-right role-go" aria-hidden="true"></i>
+  </a>
+</div>

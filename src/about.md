@@ -40,7 +40,7 @@ Meetups and RSVPs move to [Commudle]({{ site.commudle }}), and talk proposals ar
 {% endtimeline %}
 {% endsection %}
 
-{% section "How we run the <em>room.</em>" %}
+{% section "How we run the room." %}
 {% points %}
 {% point "Free, always" %}
 No tickets, no fees. Venues, food and chai come from [sponsors](/sponsor/), and everything else from volunteers.
@@ -58,7 +58,7 @@ Nobody is paid. People who came to one meetup now [run them](/volunteer/), and y
 {% endsection %}
 
 {% section %}
-{% panel "blue", "Run the next one <em>with us.</em>", "Every meetup is run by volunteers: finding venues, reviewing talks, running the room on the day and writing the recap. Most of us started by helping out once." %}
+{% panel "blue", "Run the next one with us.", "Every meetup is run by volunteers: finding venues, reviewing talks, running the room on the day and writing the recap. Most of us started by helping out once." %}
 {% buttons %}
 {% button "See how to volunteer", "/volunteer/" %}
 {% button "Put your hand up", site.volunteerForm, "arrow-up-right", "line" %}

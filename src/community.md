@@ -12,7 +12,7 @@ join: true
 {% include "channel-bento.njk" %}
 {% endsection %}
 
-{% section "Friends of <em>PyDelhi.</em>", "Communities we've co-hosted meetups with. If you run one too, let's do something together." %}
+{% section "Friends of PyDelhi.", "Communities we've co-hosted meetups with. If you run one too, let's do something together." %}
 {% chips %}
 - PyData Delhi
 - Django India
@@ -27,7 +27,7 @@ join: true
 {% endsection %}
 
 {% section %}
-{% panel "green", "One rule for every <em>channel.</em>", "Our Code of Conduct applies in every chat and on every list, not just at meetups. Be friendly, be patient, and if someone asks you to stop, stop." %}
+{% panel "green", "One rule for every channel.", "Our Code of Conduct applies in every chat and on every list, not just at meetups. Be friendly, be patient, and if someone asks you to stop, stop." %}
 {% buttons %}
 {% button "Read the Code of Conduct", "/coc/" %}
 {% endbuttons %}

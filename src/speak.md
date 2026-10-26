@@ -14,7 +14,7 @@ actions:
 {% include "proposal-board.njk" %}
 {% endsection %}
 
-{% section "What reviewers look <em>for.</em>" %}
+{% section "What reviewers look for." %}
 {% checklist %}
 - **It's about Python.** Libraries, internals, tooling, testing, data, the web, or the side project that got out of hand.
 - **It works for beginners.** Most of the room is new to Python. Advanced topics are welcome if you explain them accessibly and state any prerequisites.
@@ -26,7 +26,7 @@ actions:
 {% endsection %}
 
 {% section %}
-{% panel "green", "Ready when <em>you are.</em>", "Talks given at PyDelhi are shared under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 licence unless you say otherwise, and many are recorded for our YouTube channel." %}
+{% panel "green", "Ready when you are.", "Talks given at PyDelhi are shared under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 licence unless you say otherwise, and many are recorded for our YouTube channel." %}
 {% buttons %}
 {% button "Propose a talk", site.proposeTalk %}
 {% button "Watch past talks", site.youtube, "youtube-logo", "line" %}

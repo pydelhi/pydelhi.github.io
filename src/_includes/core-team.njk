@@ -1,0 +1,16 @@
+{#- Volunteer page: the core team with photos and a word or two on what they do (_data/volunteerTeams.json `core`).
+    `photo` is a path under src/assets/; without one the card shows initials. No blank lines: Markdown includes this -#}
+<ul class="core">
+  {%- for person in volunteerTeams.core %}
+  <li data-reveal>
+    {%- if person.photo %}
+    <span class="core-photo">{% photo person.photo, person.name, "160px", { loading: "lazy" } %}</span>
+    {%- else %}
+    {%- set parts = person.name.split(" ") %}
+    <span class="core-photo core-initials" aria-hidden="true">{{ parts[0][0] }}{{ parts[parts.length - 1][0] }}</span>
+    {%- endif %}
+    <strong>{{ person.name }}</strong>
+    <span>{{ person.role }}</span>
+  </li>
+  {%- endfor %}
+</ul>

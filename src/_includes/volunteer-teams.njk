@@ -1,6 +1,6 @@
-{#- Volunteers page: the teams as closing credits, from _data/volunteerTeams.json (copied from github.com/pydelhi/volunteers).
+{#- Volunteer page: the volunteers by team, with what each team does, from _data/volunteerTeams.json (copied from github.com/pydelhi/volunteers).
     No blank lines: Markdown includes this -#}
-<dl class="credits">
+<dl class="credits credits-names">
   {%- for team in volunteerTeams.teams %}
   <div data-reveal>
     <dt>{{ team.name }}<span>{{ team.about }}</span></dt>

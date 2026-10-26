@@ -14,11 +14,11 @@ actions:
 {% include "sponsor-doors.njk" %}
 {% endsection %}
 
-{% section "Your logo, on the <em>thank-you slide.</em>", "Every meetup opens and closes on this slide, in front of the whole room." %}
+{% section "Your logo, on the thank-you slide.", "Every meetup opens and closes on this slide, in front of the whole room." %}
 {% include "sponsor-slide.njk" %}
 {% endsection %}
 
-{% section "Who's in the <em>room.</em>" %}
+{% section "Who's in the room." %}
 {% points %}
 {% point "Working developers" %}
 Backend, data, ML, DevOps and platform engineers from startups and large companies across Delhi NCR.

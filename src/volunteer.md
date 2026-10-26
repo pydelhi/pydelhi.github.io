@@ -1,7 +1,7 @@
 ---
 layout: layouts/page.njk
 title: Volunteer | PyDelhi
-description: PyDelhi is run entirely by volunteers. See who does what on a meetup Saturday, meet the teams, and find out how to help.
+description: PyDelhi is run entirely by volunteers. Meet the core team and the volunteer teams, and find out how to help.
 permalink: /volunteer/
 heading: Help us run <em>the room.</em>
 lede: Every PyDelhi meetup is put together by volunteers, most of whom came to one as an attendee first. Pick what you're good at, or tell us something new.
@@ -10,11 +10,11 @@ actions:
 join: true
 ---
 
-{% section "A meetup, <em>backstage.</em>", "Who does what, from the week before to the week after. Every lane is a way to help." %}
-{% include "run-of-show.njk" %}
+{% section "Where you <em>fit in.</em>", "Pick one, or a few. Every card opens a short GitHub issue so we can say hello." %}
+{% include "volunteer-roles.njk" %}
 {% endsection %}
 
-{% section "How to <em>start.</em>" %}
+{% section "How to start" %}
 {% steps %}
 {% step "Say hello" %}
 [Open an issue]({{ site.volunteerForm }}) saying what you'd like to help with, or tell any volunteer at a meetup.
@@ -25,15 +25,25 @@ We'll add you to the volunteers' chat, where meetups get planned.
 {% step "Shadow a meetup" %}
 Help out on the day alongside someone who has done it before.
 {% endstep %}
-{% step "Own a lane" %}
-Take on one lane of the next meetup, from the poster to the venue to the recap.
+{% step "Pick a team" %}
+Take on one part of the next meetup, from the poster to the venue to the recap.
 {% endstep %}
 {% endsteps %}
 {% endsection %}
 
-{% section "The <em>crew.</em>", "Our volunteer teams, as listed on GitHub. Volunteered with us and not here? Add yourself." %}
+{% section "Core team", "The people who organise every meetup, from planning to the day itself." %}
+{% include "core-team.njk" %}
+{% endsection %}
+
+{% section "Volunteers by team", "Everyone else who helps, team by team." %}
 {% include "volunteer-teams.njk" %}
+{% endsection %}
+
+{% section %}
+{% panel "blue", "Got a Saturday to spare?", "Fill the volunteer form and we'll get in touch before the next meetup. Not sure yet? Ask us anything on WhatsApp first." %}
 {% buttons %}
-{% button "Add yourself on GitHub", "https://github.com/pydelhi/volunteers", "github-logo", "line" %}
+{% button "Fill the volunteer form", site.volunteerForm, "arrow-up-right" %}
+{% button "Ask on WhatsApp", site.whatsapp, "whatsapp-logo", "line" %}
 {% endbuttons %}
+{% endpanel %}
 {% endsection %}

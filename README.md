@@ -79,7 +79,7 @@ layout: layouts/page.njk
 title: About | PyDelhi            # browser tab
 description: One sentence for search results.
 permalink: /about/
-heading: Delhi's Python community, <em>since 2011.</em>   # words in <em> get the gold underline
+heading: Delhi's Python community, <em>since 2011.</em>
 lede: The paragraph under the title.
 actions:                          # optional buttons under the lede
   - { label: "Join on Commudle", url: "https://www.commudle.com/communities/pydelhi", icon: "arrow-up-right" }
@@ -91,7 +91,7 @@ join: true                        # optional "Save yourself a seat" section at t
 The body is Markdown plus these blocks, so every page gets the site's design without writing HTML:
 
 ```markdown
-{% section "What we <em>do.</em>", "Optional lede under the heading", "optional-anchor-id" %}
+{% section "What we do", "Optional lede under the heading", "optional-anchor-id" %}
 
   {% tiles %}                     {# {% tiles 2 %} for two columns #}
   {% tile "calendar-dots", "Monthly meetups" %}
@@ -119,7 +119,11 @@ The body is Markdown plus these blocks, so every page gets the site's design wit
 {% buttons %}{% button "Propose a talk", "https://...", "arrow-up-right", "line" %}{% endbuttons %}
 ```
 
-Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. Each page also has its own centrepiece, as an include: `proposal-board.njk` (Speak), `sponsor-doors.njk`, `sponsor-slide.njk` and `sponsor-pass.njk` (Sponsor), `channel-bento.njk` (Community, from `src/_data/channels.js`), `run-of-show.njk` (Volunteer, from `src/_data/runOfShow.json`), `volunteer-teams.njk`, `coc-summary.njk` and `coc-report.njk`. Smaller pieces: `stats.njk` (meetup numbers), `talk-list.njk` (recent talks), `logos.njk` (logo marquees), `partner.njk` and `ruler.njk`. Links used across the site (WhatsApp, Telegram, YouTube...) live in `src/_data/site.js`; use them as `{{ site.whatsapp }}`.
+Give one section per page, the one over the page's centrepiece, the gold underline by putting its last words in `<em>` (`{% section "Pick your <em>channel.</em>" %}`). Leave it out of every other heading.
+
+To add a core team photo, put it in `src/assets/team/` and set `"photo": "team/daksh.jpg"` for that person in `src/_data/volunteerTeams.json`; without one their card shows initials.
+
+Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. Each page also has its own centrepiece, as an include: `proposal-board.njk` (Speak), `sponsor-doors.njk`, `sponsor-slide.njk` and `sponsor-pass.njk` (Sponsor), `channel-bento.njk` (Community, from `src/_data/channels.js`), `volunteer-roles.njk`, `core-team.njk` and `volunteer-teams.njk` (Volunteer, from `src/_data/volunteerRoles.json` and `src/_data/volunteerTeams.json`), `coc-summary.njk` and `coc-report.njk`. Smaller pieces: `stats.njk` (meetup numbers), `talk-list.njk` (recent talks), `logos.njk` (logo marquees), `partner.njk` and `ruler.njk`. Links used across the site (WhatsApp, Telegram, YouTube...) live in `src/_data/site.js`; use them as `{{ site.whatsapp }}`.
 
 ## Where things live
 
@@ -130,8 +134,8 @@ Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. 
 | `lib/shortcodes.js` | The designed blocks used in Markdown pages |
 | `src/_data/site.js` | Shared links and the hand-set stats |
 | `src/_data/talks.js` | Delivered talks from github.com/pydelhi/talks (snapshot in `lib/talks-fallback.json`) |
-| `src/_data/volunteerTeams.json` | Volunteer teams on `/volunteer` |
-| `src/_data/channels.js`, `src/_data/runOfShow.json` | The Community channel tiles and the Volunteer run of show |
+| `src/_data/volunteerRoles.json`, `src/_data/volunteerTeams.json` | The ways to volunteer, the core team (name, role, photo) and the volunteer teams on `/volunteer` |
+| `src/_data/channels.js` | The Community channel tiles |
 | `lib/image.js` | The photo resizing used by `{% photo %}` |
 | `src/_includes/` | Layout, ticket and event card |
 | `src/styles.css`, `src/script.js` | All styles and behaviour |
