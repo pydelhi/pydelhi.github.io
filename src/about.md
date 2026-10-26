@@ -39,6 +39,10 @@ Meetups and RSVPs move to [Commudle]({{ site.commudle }}), and talk proposals ar
 {% endtimeline %}
 {% endsection %}
 
+{% section "More than a monthly meetup.", "Besides the regular Saturday, these are the kinds of event we run." %}
+{% include "event-kinds.njk" %}
+{% endsection %}
+
 {% section "How we run the room." %}
 {% points %}
 {% point "Free, always" %}

@@ -237,8 +237,11 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 
 /* scroll reveal (only when motion is allowed) */
 @media (prefers-reduced-motion:no-preference){
-  [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease) var(--d,0ms),transform .7s var(--ease) var(--d,0ms)}
-  [data-reveal].in{opacity:1;transform:none}
+  /* the slide uses `translate`, not `transform`, so it never clashes with a card's own hover transform. A card that
+     sets its own `transition` must list var(--reveal) in it too, or its fade-in turns into a sudden pop */
+  :root{--reveal:opacity .7s var(--ease) var(--d,0ms),translate .7s var(--ease) var(--d,0ms)}
+  [data-reveal]{opacity:0;translate:0 22px;transition:var(--reveal)}
+  [data-reveal].in{opacity:1;translate:none}
   /* held hidden by script.js until its reveal animation starts */
   .pre-reveal{opacity:0}
 }
@@ -259,7 +262,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
    Animating each of the ~190 cells separately promoted every cell to its own layer and made the page stutter */
 @property --sweep{syntax:'<percentage>';inherits:false;initial-value:120%}
 @media (prefers-reduced-motion:no-preference){
-  .graph-card[data-reveal]{opacity:1;transform:none}
+  .graph-card[data-reveal]{opacity:1;translate:none}
   .graph-card .graph{
     --sweep:0%;
     -webkit-mask-image:linear-gradient(90deg,#000 calc(var(--sweep) - 20%),transparent var(--sweep));
@@ -379,7 +382,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 /* no date announced yet: a calendar stands in for the day */
 .ticket-stub i{font-size:58px;line-height:1;color:#1f4a31;margin:4px 0}
 .past{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
-.past-card{display:grid;grid-template-columns:168px 1fr 24px;gap:20px;align-items:center;width:100%;padding:10px;border-radius:20px;background:#fff;border:1px solid var(--line);text-decoration:none;color:inherit;transition:border-color .2s,transform .3s var(--ease),box-shadow .3s}
+.past-card{display:grid;grid-template-columns:168px 1fr 24px;gap:20px;align-items:center;width:100%;padding:10px;border-radius:20px;background:#fff;border:1px solid var(--line);text-decoration:none;color:inherit;transition:border-color .2s,transform .3s var(--ease),box-shadow .3s,var(--reveal,opacity 0s)}
 .past-card:hover{border-color:#b8c7e4;transform:translateY(-2px);box-shadow:0 14px 34px -18px rgba(0,41,107,.35)}
 .past-img{display:block;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--gray-100)}
 .past-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease)}
@@ -431,7 +434,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
   .ruler .ruler-bar span{opacity:0;transition:opacity .4s ease .9s}
   .ruler.in .ruler-bar{transform:none}
   .ruler.in .ruler-bar span{opacity:1}
-  .ruler[data-reveal]{opacity:1;transform:none}
+  .ruler[data-reveal]{opacity:1;translate:none}
 }
 .speak-foot{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:56px;padding-top:32px;border-top:1px solid rgba(0,41,107,.14)}
 .speak-foot p{font-size:15.5px;line-height:1.55;color:#33415e;max-width:56ch}
@@ -841,7 +844,12 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 .panel-blue{background:var(--pastel-blue)}
 .panel-green{background:var(--pastel-green)}
 .panel-green .h2,.panel-green h3{color:#1f4a31}
-.panel-green .lede,.panel-green p{color:#2c5a3f}
+.panel-green .lede,.panel-green p,.panel.panel-green .lede{color:#2c5a3f}
+/* buttons follow their panel's colour: dark green on a green panel instead of navy */
+.panel-green .btn-navy{background:#1f4a31}
+.panel-green .btn-navy:hover{background:#2c5a3f}
+.panel-green .btn-line{color:#1f4a31;border-color:rgba(31,74,49,.25)}
+.panel-green .btn-line:hover{border-color:#1f4a31}
 .panel .lede{margin:0 auto;color:#33415e}
 
 /* past talks from GitHub: two columns of rows */
@@ -883,7 +891,7 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 
 /* blog index cards and post header */
 .post-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.post-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s,transform .3s var(--ease),box-shadow .3s}
+.post-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s,transform .3s var(--ease),box-shadow .3s,var(--reveal,opacity 0s)}
 .post-card:hover{border-color:#b8c7e4;transform:translateY(-2px);box-shadow:0 14px 34px -18px rgba(0,41,107,.35)}
 .post-card .past-img{aspect-ratio:16/10;border-radius:0}
 .post-card:hover .past-img img,.post-card:hover .past-gen-logo{transform:scale(1.05)}
@@ -939,11 +947,11 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 /* points: short principles as pastel notes, each tilted a little like the hero photos; they straighten on hover.
    `rotate` (not transform) so the scroll reveal's transform doesn't undo the tilt */
 .points{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;text-align:left;padding:8px 0}
-.point{border-radius:20px;padding:28px 26px 30px;background:var(--pastel-blue);color:var(--navy);rotate:-2deg;box-shadow:0 18px 30px -24px rgba(0,41,107,.35);transition:rotate .35s var(--ease),translate .35s var(--ease)}
+.point{border-radius:20px;padding:28px 26px 30px;background:var(--pastel-blue);color:var(--navy);rotate:-2deg;box-shadow:0 18px 30px -24px rgba(0,41,107,.35);transition:rotate .35s var(--ease),transform .35s var(--ease),var(--reveal,opacity 0s)}
 .point:nth-child(4n+2){background:var(--pastel-yellow);rotate:1.5deg}
 .point:nth-child(4n+3){background:var(--pastel-green);rotate:-1deg}
 .point:nth-child(4n+4){rotate:2deg}
-.point:hover{rotate:0deg;translate:0 -4px}
+.point:hover{rotate:0deg;transform:translateY(-4px)}
 .point h3{font-size:22px;font-weight:800;letter-spacing:calc(-.025em + .01em);line-height:1.15;margin-bottom:10px}
 .point p{font-size:15px;line-height:1.6;color:#33415e}
 .point:nth-child(4n+2) p{color:#4f4632}
@@ -1055,7 +1063,7 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 
 /* ─── COMMUNITY: the channels as a bento grid, like the home hero; a snake lies in the gutter under row two ─── */
 .bento-channels{--row:150px;--gap:24px;position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:var(--row);gap:var(--gap);grid-auto-flow:dense;text-align:left}
-.channel{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;border-radius:24px;background:#fff;border:1px solid var(--line);color:var(--navy);text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s,border-color .2s}
+.channel{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;border-radius:24px;background:#fff;border:1px solid var(--line);color:var(--navy);text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s,border-color .2s,var(--reveal,opacity 0s)}
 .channel:hover,.channel:focus-visible{transform:translateY(-3px);border-color:#b8c7e4;box-shadow:0 18px 36px -22px rgba(0,41,107,.4);outline:none}
 .channel-icon{font-size:30px}
 .channel-go{position:absolute;top:20px;right:22px;font-size:18px;opacity:0;transform:translate(-4px,4px);transition:opacity .2s,transform .3s var(--ease)}
@@ -1074,6 +1082,8 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 .channel-green .channel-text span{color:#2c5a3f}
 @media (max-width:860px){
   .bento-channels{--row:132px;--gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  /* the smallest phones wrap two-word labels onto two lines, so give the rows a little more height */
+  @media (max-width:400px){.bento-channels{--row:150px}}
   .channel{padding:16px 18px;border-radius:20px}
   .channel-big{padding:22px 22px}
   .channel-big .channel-icon{font-size:32px}
@@ -1099,7 +1109,7 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 }
 
 /* ─── BLOG: the newest recap runs large, then one shelf per year with the snake lying along it ─── */
-.post-feature{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;text-decoration:none;color:inherit;text-align:left;transition:border-color .2s,box-shadow .3s}
+.post-feature{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;text-decoration:none;color:inherit;text-align:left;transition:border-color .2s,box-shadow .3s,var(--reveal,opacity 0s)}
 .post-feature:hover{border-color:#b8c7e4;box-shadow:0 18px 40px -22px rgba(0,41,107,.35)}
 .post-feature .past-img{aspect-ratio:4/3;border-radius:0;height:100%}
 .post-feature:hover .past-img img{transform:scale(1.04)}
@@ -1123,7 +1133,7 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 .role-day{--tint:var(--pastel-yellow);--deep:#4f4632}
 .role-any{--tint:var(--pastel-green);--deep:#2c5a3f}
 .roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;text-align:left}
-.role{position:relative;display:flex;flex-direction:column;gap:6px;min-height:212px;padding:22px 24px 24px;border-radius:24px;background:var(--tint);color:var(--navy);text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s}
+.role{position:relative;display:flex;flex-direction:column;gap:6px;min-height:212px;padding:22px 24px 24px;border-radius:24px;background:var(--tint);color:var(--navy);text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s,var(--reveal,opacity 0s)}
 .role:hover,.role:focus-visible{transform:translateY(-3px);box-shadow:0 18px 36px -22px rgba(0,41,107,.4);outline:none}
 .role-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:auto;padding-bottom:20px}
 .role-top i{font-size:30px}
@@ -1156,4 +1166,39 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
   .core-initials{font-size:26px}
   .core strong{font-size:16.5px}
   .core li > span:last-child{font-size:13.5px}
+}
+
+/* SPEAK: three formats you can propose, length big, bar drawn against a 90-minute line */
+.picks{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;text-align:left}
+.pick{display:flex;flex-direction:column;gap:14px;border-radius:24px;padding:28px 28px 30px;background:var(--pastel-blue);color:var(--navy)}
+.pick-workshop{background:var(--pastel-green);color:#1f4a31}
+.pick-workshop .pick-bar i{background:#1f4a31}
+.pick-lightning{background:#e6ecf6}
+.pick-name{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:700}
+.pick-name i{font-size:20px}
+.pick-time{font-size:17px;font-weight:600;line-height:1}
+.pick-time b{font-size:clamp(44px,5vw,64px);font-weight:800;letter-spacing:calc(-.035em + .01em);line-height:1;margin-right:.15em}
+.pick-bar{display:block;height:10px;border-radius:100px;background:rgba(255,255,255,.7);overflow:hidden}
+.pick-bar i{display:block;height:100%;width:calc(var(--w) / 90 * 100%);min-width:10px;border-radius:100px;background:var(--navy)}
+.pick p{font-size:15.5px;line-height:1.55;color:#33415e}
+.pick-workshop p{color:#2c5a3f}
+.pick-good{font-weight:600}
+.pick-hint{margin-top:auto;padding-top:14px;border-top:1px solid rgba(0,41,107,.16)}
+/* the five rows line up across the three cards (subgrid), so the hairlines sit at one height */
+@media (min-width:861px){.pick{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:14px;align-content:start}.pick-hint{margin-top:0}}
+.pick-workshop .pick-hint{border-top-color:rgba(31,74,49,.2)}
+@media (max-width:860px){.picks{grid-template-columns:minmax(0,1fr)}.pick{padding:24px 22px 26px}}
+
+/* ABOUT: the kinds of event, one programme list (coloured tag, then what happens) */
+.kinds{list-style:none;display:flex;flex-direction:column;gap:10px;text-align:left}
+.kind{display:grid;grid-template-columns:240px minmax(0,1fr);align-items:center;gap:20px;padding:10px 24px 10px 10px;border:1px solid var(--line);border-radius:100px;background:rgba(255,255,255,.55)}
+.kind-tag{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:100px;font-size:16px;font-weight:700;color:var(--navy);background:var(--pastel-blue)}
+.kind-yellow .kind-tag{background:var(--pastel-yellow);color:#4f4632}
+.kind-green .kind-tag{background:var(--pastel-green);color:#1f4a31}
+.kind-tag i{font-size:20px;flex:none}
+.kind p{font-size:15.5px;line-height:1.5;color:var(--ink-soft)}
+@media (max-width:760px){
+  .kind{grid-template-columns:minmax(0,1fr);gap:8px;border-radius:24px;padding:10px 10px 16px}
+  .kind-tag{justify-self:start}
+  .kind p{padding:0 10px}
 }

@@ -14,6 +14,10 @@ actions:
 {% include "proposal-board.njk" %}
 {% endsection %}
 
+{% section "Pick the format that fits.", "Three ways to take the stage. Not sure which? Say so in the proposal and the reviewers will help you choose." %}
+{% include "pick-format.njk" %}
+{% endsection %}
+
 {% section "What reviewers look for." %}
 {% checklist %}
 - **It's about Python.** Libraries, internals, tooling, testing, data, the web, or the side project that got out of hand.
