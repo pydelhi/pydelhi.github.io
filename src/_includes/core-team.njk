@@ -1,5 +1,5 @@
 {#- Volunteer page: the core team with photos and a word or two on what they do (_data/volunteerTeams.json `core`).
-    `photo` is a path under src/assets/; without one the card shows initials. No blank lines: Markdown includes this -#}
+    `photo` is a path under src/assets/; without one the card shows initials. `linkedin` adds a LinkedIn button under the role. No blank lines: Markdown includes this -#}
 <ul class="core">
   {%- for person in volunteerTeams.core %}
   <li data-reveal>
@@ -10,7 +10,10 @@
     <span class="core-photo core-initials" aria-hidden="true">{{ parts[0][0] }}{{ parts[parts.length - 1][0] }}</span>
     {%- endif %}
     <strong>{{ person.name }}</strong>
-    <span>{{ person.role }}</span>
+    <span class="core-role">{{ person.role }}</span>
+    {%- if person.linkedin %}
+    <a class="core-link" href="{{ person.linkedin }}" target="_blank" rel="noopener" aria-label="{{ person.name }} on LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
+    {%- endif %}
   </li>
   {%- endfor %}
 </ul>

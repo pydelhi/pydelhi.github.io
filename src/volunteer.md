@@ -35,7 +35,7 @@ Take on one part of the next meetup, from the poster to the venue to the recap.
 {% include "core-team.njk" %}
 {% endsection %}
 
-{% section "Volunteers by team", "Everyone else who helps, team by team." %}
+{% section "Volunteers by team", "Everyone who helps, core team included, team by team." %}
 {% include "volunteer-teams.njk" %}
 {% endsection %}
 

@@ -1181,7 +1181,9 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 .core-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .core-initials{display:grid;place-items:center;font-size:34px;font-weight:800;letter-spacing:.01em;color:var(--navy)}
 .core strong{font-size:19px;font-weight:800;letter-spacing:calc(-.02em + .01em);color:var(--navy)}
-.core li > span:last-child{font-size:14.5px;color:var(--ink-soft)}
+.core-role{font-size:14.5px;color:var(--ink-soft);margin-bottom:12px}
+.core-link{display:grid;place-items:center;width:36px;height:36px;margin-top:auto;border-radius:50%;background:var(--pastel-blue);color:var(--navy);font-size:18px;text-decoration:none;transition:transform .2s ease}
+.core-link:hover{transform:translateY(-2px)}
 @media (max-width:960px){.roles{grid-template-columns:repeat(2,minmax(0,1fr))}.core li{flex-basis:calc((100% - 16px) / 2)}}
 @media (max-width:560px){
   .roles{grid-template-columns:minmax(0,1fr);gap:12px}
@@ -1194,7 +1196,7 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
   .core-photo{width:84px;height:84px;margin-bottom:10px}
   .core-initials{font-size:26px}
   .core strong{font-size:16.5px}
-  .core li > span:last-child{font-size:13.5px}
+  .core-role{font-size:13.5px}
 }
 
 /* SPEAK: three formats you can propose, length big, bar drawn against a 90-minute line */

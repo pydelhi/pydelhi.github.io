@@ -1,15 +1,19 @@
 {
-  "source": "https://github.com/pydelhi/volunteers",
   "core": [
-    {"name": "Daksh Jain", "role": "Design lead, meetups", "photo": ""},
-    {"name": "Anuvrat Parashar", "role": "Advisor", "photo": ""}
+    {"name": "Agriya Khetarpal", "role": "Meetup planning, talk reviews", "photo": "team/agriya.jpg", "linkedin": "https://www.linkedin.com/in/agriyakhetarpal/"},
+    {"name": "Animesh Ghosh", "role": "Sponsor outreach, remote help", "photo": "team/animesh.jpg", "linkedin": "https://www.linkedin.com/in/i-am-animesh/"},
+    {"name": "Anuvrat Parashar", "role": "Veteran organiser, advisor", "photo": "team/anuvrat.jpg", "linkedin": "https://www.linkedin.com/in/anuvratparashar/"},
+    {"name": "Bhupinder Kumar", "role": "Talk reviews, remote help", "photo": "team/bhupinder.jpg", "linkedin": "https://www.linkedin.com/in/bhupinder-kumar-sde/"},
+    {"name": "Daksh P. Jain", "role": "Lead organiser, design lead", "photo": "team/daksh.jpg", "linkedin": "https://www.linkedin.com/in/daksh777/"},
+    {"name": "Khushbu Saifi", "role": "Social media lead, on-ground", "photo": "team/khushbu.jpg", "linkedin": "https://www.linkedin.com/in/khushbu-sde/"},
+    {"name": "Satyakam Goswami", "role": "Veteran organiser, advisor", "photo": "team/satyakam.jpg", "linkedin": "https://www.linkedin.com/in/satyaakam/"},
+    {"name": "Vaibhav Jain", "role": "Talk reviews, advisor", "photo": "team/vaibhav.jpg", "linkedin": "https://www.linkedin.com/in/gvaibhavjain/"}
   ],
   "teams": [
-    {"name": "Administration", "icon": "clipboard-text", "about": "Plans each meetup, keeps the calendar and makes sure the day runs.", "people": ["Akkshay Arora", "Animesh Ghosh", "Satyakam Goswami", "Saurabh Kumar", "Ishaan Arora"]},
-    {"name": "Location", "icon": "map-pin", "about": "Finds venues and works with hosts on the room, the screen and the Wi-Fi.", "people": ["Akkshay Arora", "Satyakam Goswami"]},
-    {"name": "Speaker affairs", "icon": "microphone-stage", "about": "Reviews talk proposals and helps speakers get their talk ready.", "people": ["Animesh Ghosh", "Ishaan Arora"]},
-    {"name": "Sponsors", "icon": "hand-coins", "about": "Talks to companies about venues, food and funding.", "people": ["Satyakam Goswami"]},
-    {"name": "Marketing", "icon": "megaphone", "about": "Announces meetups and posts recaps across our channels.", "people": ["Animesh Ghosh", "Ishaan Arora"]},
-    {"name": "Design", "icon": "palette", "about": "Posters, slides, social graphics and this website.", "people": ["Ishaan Arora"]}
+    {"name": "Design", "icon": "palette", "about": "Posters, slides, social graphics and the look of this website.", "people": ["Daksh P. Jain"]},
+    {"name": "Development", "icon": "code", "about": "Writes and looks after the code behind this website.", "people": ["Agriya Khetarpal", "Daksh P. Jain", "Khushbu Saifi"]},
+    {"name": "On the ground", "icon": "users-three", "about": "Runs the room on meetup day.", "people": ["Agriya Khetarpal", "Animesh Ghosh", "Anuvrat Parashar", "Bhupinder Kumar", "Daksh P. Jain", "Ghanatava Thakaran", "Khushbu Saifi", "Parampreet Singh", "Satyakam Goswami", "Srijan Srivastava", "Vaibhav Jain"]},
+    {"name": "Social media and marketing", "icon": "megaphone", "about": "Announces meetups and posts recaps across our channels.", "people": ["Albert Jokelin", "Harshita Harsh", "Khushbu Saifi", "Sakshi Verma"]},
+    {"name": "Talk reviews", "icon": "microphone-stage", "about": "Reviews talk proposals and helps speakers get their talk ready.", "people": ["Agriya Khetarpal", "Bhupinder Kumar", "Gaurav Trivedi", "Ghanatava Thakaran", "Pranav Puri", "Sanket Dutta", "Srijan Srivastava", "Vaibhav Jain"]}
   ]
 }
