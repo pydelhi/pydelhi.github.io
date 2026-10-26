@@ -8,8 +8,8 @@ lede: The meetup is one Saturday a month. The conversation carries on every day,
 join: true
 ---
 
-{% section "Mind the <em>gap.</em>", "Every line runs through Commudle, where each meetup is announced first. Pick a station." %}
-{% include "metro-map.njk" %}
+{% section "Pick your <em>channel.</em>", "Every meetup starts on Commudle. Everything in between happens here." %}
+{% include "channel-bento.njk" %}
 {% endsection %}
 
 {% section "Friends of <em>PyDelhi.</em>", "Communities we've co-hosted meetups with. If you run one too, let's do something together." %}
@@ -27,7 +27,7 @@ join: true
 {% endsection %}
 
 {% section %}
-{% panel "green", "One rule for every <em>line.</em>", "Our Code of Conduct applies in every chat and on every list, not just at meetups. Be friendly, be patient, and if someone asks you to stop, stop." %}
+{% panel "green", "One rule for every <em>channel.</em>", "Our Code of Conduct applies in every chat and on every list, not just at meetups. Be friendly, be patient, and if someone asks you to stop, stop." %}
 {% buttons %}
 {% button "Read the Code of Conduct", "/coc/" %}
 {% endbuttons %}

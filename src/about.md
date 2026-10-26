@@ -35,7 +35,7 @@ The conference comes back for a third edition, with talks [recorded on our YouTu
 Meetups and RSVPs move to [Commudle]({{ site.commudle }}), and talk proposals are reviewed in the open on [GitHub]({{ site.talksRepo }}).
 {% endmoment %}
 {% moment "Now", "Still meeting", "photos/iwd-meetup.jpeg", "A full room at a PyDelhi meetup in 2026" %}
-{{ events.past.length }} meetups on Commudle so far, most recently {{ events.past[0].name }}, and {{ talks.length }} talks given through GitHub. [See what's next](/events/).
+{{ events.past.length }} meetups on Commudle so far, most recently {{ events.past[0].name }}, and {{ talks.length }} talks given through GitHub. [See what's next]({{ site.commudle }}).
 {% endmoment %}
 {% endtimeline %}
 {% endsection %}
@@ -52,7 +52,7 @@ Most of the room is new to Python or to speaking. Ask the question. Give the lig
 Our [Code of Conduct](/coc/) applies at every meetup and in every chat, and we enforce it.
 {% endpoint %}
 {% point "Run by volunteers" %}
-Nobody is paid. People who came to one meetup now [run them](/volunteers/), and you could too.
+Nobody is paid. People who came to one meetup now [run them](/volunteer/), and you could too.
 {% endpoint %}
 {% endpoints %}
 {% endsection %}
@@ -60,7 +60,7 @@ Nobody is paid. People who came to one meetup now [run them](/volunteers/), and 
 {% section %}
 {% panel "blue", "Run the next one <em>with us.</em>", "Every meetup is run by volunteers: finding venues, reviewing talks, running the room on the day and writing the recap. Most of us started by helping out once." %}
 {% buttons %}
-{% button "See how to volunteer", "/volunteers/" %}
+{% button "See how to volunteer", "/volunteer/" %}
 {% button "Put your hand up", site.volunteerForm, "arrow-up-right", "line" %}
 {% endbuttons %}
 {% endpanel %}

@@ -1,8 +1,8 @@
 ---
 layout: layouts/page.njk
-title: Volunteers | PyDelhi
+title: Volunteer | PyDelhi
 description: PyDelhi is run entirely by volunteers. See who does what on a meetup Saturday, meet the teams, and find out how to help.
-permalink: /volunteers/
+permalink: /volunteer/
 heading: Help us run <em>the room.</em>
 lede: Every PyDelhi meetup is put together by volunteers, most of whom came to one as an attendee first. Pick what you're good at, or tell us something new.
 actions:

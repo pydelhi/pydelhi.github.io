@@ -23,7 +23,7 @@ One-time setup on GitHub: **Settings → Pages → Source: GitHub Actions**, wit
 
 ## Adding a meetup
 
-Events come from [PyDelhi on Commudle](https://www.commudle.com/communities/pydelhi). Create the event there and the site picks it up on the next build: the hero card, the "Next up" ticket and `/events`. Nothing to edit here.
+Events come from [PyDelhi on Commudle](https://www.commudle.com/communities/pydelhi). Create the event there and the site picks it up on the next build: the hero card, the "Next up" ticket and the past-event cards. There's no events page on the site: "View all events" goes to Commudle. Nothing to edit here.
 
 ## Adding photos after a meetup
 
@@ -48,15 +48,6 @@ Events come from [PyDelhi on Commudle](https://www.commudle.com/communities/pyde
 
 An event without photos gets a pastel blue cover with the PyDelhi wordmark.
 
-### Meetups from before Commudle
-
-Commudle only has events from 2025 on. Add older ones to `archive` in `src/_data/eventExtras.json`, and they show up at the bottom of `/events`:
-
-```json
-{ "slug": "pydelhi-meetup-2019-08", "name": "PyDelhi August Meetup", "date": "2019-08-17", "url": "https://www.meetup.com/pydelhi/events/..." }
-```
-
-Their photos go in `src/assets/events/<slug>/` the same way.
 
 ## Writing a blog recap
 
@@ -76,7 +67,7 @@ Write the recap in plain Markdown.
 {% photo "blog/october-2026-talk.jpg", "A speaker explaining Redis persistence", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
 ```
 
-Put photos in `src/assets/blog/`; `cover` is the card image on `/blog`. To point the meetup's card on the home page and `/events` at the recap, add `"recap": "/blog/pydelhi-october-2026/"` for its Commudle slug in `src/_data/eventExtras.json`.
+Put photos in `src/assets/blog/`; `cover` is the card image on `/blog`. To point the meetup's card on the home page at the recap, add `"recap": "/blog/pydelhi-october-2026/"` for its Commudle slug in `src/_data/eventExtras.json`.
 
 ## Writing a page
 
@@ -104,7 +95,7 @@ The body is Markdown plus these blocks, so every page gets the site's design wit
 
   {% tiles %}                     {# {% tiles 2 %} for two columns #}
   {% tile "calendar-dots", "Monthly meetups" %}
-  Text in **Markdown**, with [links](/events/).
+  Text in **Markdown**, with [links](/speak/).
   {% endtile %}
   {% tile "github-logo", "GitHub", "https://github.com/pydelhi", "Footnote" %}
   A tile with a link becomes one big link (so links inside its text are dropped).
@@ -115,7 +106,7 @@ The body is Markdown plus these blocks, so every page gets the site's design wit
 
 {% steps %}{% step "Open a proposal" %}Text{% endstep %} ... {% endsteps %}
 {% timeline %}{% moment "2016", "PyDelhi Conf", "blog/photo.jpg", "Photo alt" %}Text{% endmoment %} ... {% endtimeline %}   {# the snake winds through the years #}
-{% points %}{% point "Free, always" %}Text{% endpoint %} ... {% endpoints %}   {# a row of short principles #}
+{% points %}{% point "Free, always" %}Text{% endpoint %} ... {% endpoints %}   {# short principles as tilted pastel notes #}
 {% checklist %}
 - **Bold first line.** Then the detail.
 {% endchecklist %}
@@ -128,19 +119,19 @@ The body is Markdown plus these blocks, so every page gets the site's design wit
 {% buttons %}{% button "Propose a talk", "https://...", "arrow-up-right", "line" %}{% endbuttons %}
 ```
 
-Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. Each page also has its own centrepiece, as an include: `proposal-board.njk` (Speak), `sponsor-doors.njk`, `sponsor-slide.njk` and `sponsor-pass.njk` (Sponsor), `metro-map.njk` (Community, from `src/_data/metro.js`), `run-of-show.njk` (Volunteers, from `src/_data/runOfShow.json`), `volunteer-teams.njk`, `coc-summary.njk` and `coc-report.njk`. Smaller pieces: `stats.njk` (meetup numbers), `talk-list.njk` (recent talks), `logos.njk` (logo marquees), `partner.njk` and `ruler.njk`. Links used across the site (WhatsApp, Telegram, YouTube...) live in `src/_data/site.js`; use them as `{{ site.whatsapp }}`.
+Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. Each page also has its own centrepiece, as an include: `proposal-board.njk` (Speak), `sponsor-doors.njk`, `sponsor-slide.njk` and `sponsor-pass.njk` (Sponsor), `channel-bento.njk` (Community, from `src/_data/channels.js`), `run-of-show.njk` (Volunteer, from `src/_data/runOfShow.json`), `volunteer-teams.njk`, `coc-summary.njk` and `coc-report.njk`. Smaller pieces: `stats.njk` (meetup numbers), `talk-list.njk` (recent talks), `logos.njk` (logo marquees), `partner.njk` and `ruler.njk`. Links used across the site (WhatsApp, Telegram, YouTube...) live in `src/_data/site.js`; use them as `{{ site.whatsapp }}`.
 
 ## Where things live
 
 | Path | What |
 |---|---|
-| `src/index.njk`, `src/events.njk`, `src/*.md` | Pages |
+| `src/index.njk`, `src/*.md` | Pages |
 | `src/blog/posts/` | Blog recaps |
 | `lib/shortcodes.js` | The designed blocks used in Markdown pages |
 | `src/_data/site.js` | Shared links and the hand-set stats |
 | `src/_data/talks.js` | Delivered talks from github.com/pydelhi/talks (snapshot in `lib/talks-fallback.json`) |
-| `src/_data/volunteerTeams.json` | Volunteer teams on `/volunteers` |
-| `src/_data/metro.js`, `src/_data/runOfShow.json` | The Community map and the Volunteers run of show |
+| `src/_data/volunteerTeams.json` | Volunteer teams on `/volunteer` |
+| `src/_data/channels.js`, `src/_data/runOfShow.json` | The Community channel tiles and the Volunteer run of show |
 | `lib/image.js` | The photo resizing used by `{% photo %}` |
 | `src/_includes/` | Layout, ticket and event card |
 | `src/styles.css`, `src/script.js` | All styles and behaviour |

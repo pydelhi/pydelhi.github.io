@@ -743,18 +743,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 }
 @keyframes tongue{0%,72%,100%{transform:none}76%,84%{transform:scaleX(.15)}80%,88%{transform:none}}
 
-/* ─── /events page: the home page's ticket and past cards, laid out as a full list ─── */
-.events-page .events{padding:24px 0 64px}
-.events-page .events.events-past{padding:24px 0 120px}
-.events-page .events .h2{margin-bottom:48px}
-.events-sub{font-size:22px;font-weight:700;letter-spacing:calc(-.02em + .01em);color:var(--navy);text-align:center;margin:56px 0 20px}
-.past-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-@media (max-width:860px){
-  .events-page .events{padding:16px 0 48px}
-  .events-page .events.events-past{padding:16px 0 88px}
-  .past-grid{grid-template-columns:minmax(0,1fr)}
-}
-
 /* ─── INNER PAGES: shared pieces for /about, /speak, /sponsor, /community, /volunteers, /coc, /blog ─── */
 .nav-links a[aria-current="page"]{color:var(--navy);background:var(--gray-100)}
 
@@ -942,14 +930,22 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 .credits dd{display:flex;flex-direction:column;gap:6px;font-size:18px;font-weight:600;color:var(--navy)}
 @media (max-width:860px){.credits > div{grid-template-columns:minmax(0,1fr);gap:12px;padding:20px 0}.credits dd{font-size:16.5px}}
 
-/* points: a row of short principles, each under a navy rule */
-.points{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;text-align:left}
-.point{border-top:3px solid var(--navy);padding-top:20px}
-.point h3{font-size:22px;font-weight:800;letter-spacing:calc(-.025em + .01em);line-height:1.15;color:var(--navy);margin-bottom:10px}
-.point p{font-size:15px;line-height:1.6;color:var(--ink-soft)}
-.point a{color:var(--navy);font-weight:600;text-underline-offset:3px}
+/* points: short principles as pastel notes, each tilted a little like the hero photos; they straighten on hover.
+   `rotate` (not transform) so the scroll reveal's transform doesn't undo the tilt */
+.points{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;text-align:left;padding:8px 0}
+.point{border-radius:20px;padding:28px 26px 30px;background:var(--pastel-blue);color:var(--navy);rotate:-2deg;box-shadow:0 18px 30px -24px rgba(0,41,107,.35);transition:rotate .35s var(--ease),translate .35s var(--ease)}
+.point:nth-child(4n+2){background:var(--pastel-yellow);rotate:1.5deg}
+.point:nth-child(4n+3){background:var(--pastel-green);rotate:-1deg}
+.point:nth-child(4n+4){rotate:2deg}
+.point:hover{rotate:0deg;translate:0 -4px}
+.point h3{font-size:22px;font-weight:800;letter-spacing:calc(-.025em + .01em);line-height:1.15;margin-bottom:10px}
+.point p{font-size:15px;line-height:1.6;color:#33415e}
+.point:nth-child(4n+2) p{color:#4f4632}
+.point:nth-child(4n+3){color:#1f4a31}
+.point:nth-child(4n+3) p{color:#2c5a3f}
+.point a{color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:1060px){.points{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:520px){.points{grid-template-columns:minmax(0,1fr);gap:28px}}
+@media (max-width:520px){.points{grid-template-columns:minmax(0,1fr);gap:20px}.point{padding:22px 22px 24px}}
 
 /* ─── SPEAK: the four stages of a talk, each with a small example; the snake carries "Your talk" across ─── */
 .board{position:relative;text-align:left}
@@ -1052,47 +1048,33 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 .sponsor-pass .ticket-stub strong{font-size:56px}
 @media (max-width:860px){.sponsor-pass .ticket-stub strong{font-size:36px}}
 
-/* ─── COMMUNITY: the channels as a Delhi Metro map. The green line is the snake ─── */
-.metro{display:block;width:100%;height:auto;overflow:visible}
-.metro-line{fill:none;stroke-width:16;stroke-linecap:round;stroke-linejoin:round}
-.metro-line.metro-navy{stroke:var(--navy)}
-.metro-line.metro-gold{stroke:var(--gold)}
-.metro-station{text-decoration:none;cursor:pointer}
-.metro-station circle{fill:#fff;stroke:var(--navy);stroke-width:4;transition:transform .25s var(--ease);transform-box:fill-box;transform-origin:center}
-.metro-station:hover circle,.metro-station:focus-visible circle{transform:scale(1.3)}
-.metro-station:focus-visible{outline:none}
-.metro-hub circle{stroke-width:6}
-/* labels get a halo in the page colour so they stay readable where they cross a line */
-.metro-name,.metro-sub{paint-order:stroke;stroke:#f7f6f3;stroke-width:7px;stroke-linejoin:round}
-.metro-name{font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;fill:var(--navy);letter-spacing:-.01em}
-.metro-hub-name{font-size:26px}
-.metro-sub{font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;fill:var(--ink-soft)}
-.metro-station:hover .metro-name{text-decoration:underline;text-underline-offset:3px}
-.metro-key{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:28px;font-size:14.5px;font-weight:600;color:var(--navy)}
-.metro-key li{display:flex;align-items:center;gap:10px}
-.metro-swatch{width:30px;height:8px;border-radius:4px;display:inline-block}
-.metro-swatch.metro-navy{background:var(--navy)}
-.metro-swatch.metro-gold{background:var(--gold)}
-.metro-swatch.metro-snake{background:#9BB693}
-/* phones: a strip map, one line at a time, like the ones above Metro doors */
-.line-strips{display:none;flex-direction:column;gap:28px;text-align:left}
-.line-strip-hub{display:flex;gap:16px;align-items:center;padding:18px;border-radius:20px;background:#fff;border:1px solid var(--line);text-decoration:none}
-.line-strip-hub .line-strip-dot{width:30px;height:30px;border-width:6px}
-.line-strip{position:relative}
-.line-strip h3{font-size:14px;font-weight:700;color:var(--ink-soft);margin:0 0 6px 52px}
-.line-strip ol{list-style:none;position:relative}
-.line-strip:not(.line-strip-snake) ol::before{content:'';position:absolute;left:14px;top:22px;bottom:22px;width:12px;border-radius:6px;background:var(--navy)}
-.line-strip-gold ol::before{background:var(--gold)!important}
-.line-strip a{display:flex;gap:22px;align-items:center;padding:10px 0;text-decoration:none;position:relative;z-index:1}
-.line-strip-dot{flex-shrink:0;width:24px;height:24px;margin-left:8px;border-radius:50%;background:#fff;border:4px solid var(--navy)}
-.line-strips strong{display:block;font-size:17px;font-weight:800;color:var(--navy)}
-.line-strips a span span{display:block;font-size:13.5px;color:var(--ink-soft)}
-.line-strip-snake .rail-snake{z-index:0}
+/* ─── COMMUNITY: the channels as a bento grid, like the home hero; a snake lies in the gutter under row two ─── */
+.bento-channels{--row:150px;--gap:24px;position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:var(--row);gap:var(--gap);grid-auto-flow:dense;text-align:left}
+.channel{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px;border-radius:24px;background:#fff;border:1px solid var(--line);color:var(--navy);text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s,border-color .2s}
+.channel:hover,.channel:focus-visible{transform:translateY(-3px);border-color:#b8c7e4;box-shadow:0 18px 36px -22px rgba(0,41,107,.4);outline:none}
+.channel-icon{font-size:30px}
+.channel-go{position:absolute;top:20px;right:22px;font-size:18px;opacity:0;transform:translate(-4px,4px);transition:opacity .2s,transform .3s var(--ease)}
+.channel:hover .channel-go,.channel:focus-visible .channel-go{opacity:1;transform:none}
+.channel-text strong{display:block;font-size:20px;font-weight:800;letter-spacing:calc(-.02em + .01em);line-height:1.15}
+.channel-text span{display:block;font-size:14.5px;line-height:1.45;color:var(--ink-soft);margin-top:4px}
+.channel-wide{grid-column:span 2}
+.channel-big{grid-column:span 2;grid-row:span 2;padding:32px 34px}
+.channel-big .channel-icon{font-size:44px}
+.channel-big .channel-text strong{font-size:clamp(30px,3.4vw,44px);letter-spacing:calc(-.035em + .01em)}
+.channel-big .channel-text span{font-size:17px;max-width:34ch;color:#33415e}
+.channel-blue{background:var(--pastel-blue);border-color:transparent}
+.channel-yellow{background:var(--pastel-yellow);border-color:transparent}
+.channel-yellow .channel-text span{color:#4f4632}
+.channel-green{background:var(--pastel-green);border-color:transparent;color:#1f4a31}
+.channel-green .channel-text span{color:#2c5a3f}
 @media (max-width:860px){
-  .metro{display:none}
-  .line-strips{display:flex}
-  .metro-key{display:none}
-}
+  .bento-channels{--row:132px;--gap:16px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .channel{padding:16px 18px;border-radius:20px}
+  .channel-big{padding:22px 22px}
+  .channel-big .channel-icon{font-size:32px}
+  .channel-big .channel-text span{font-size:14.5px}
+  .channel-text strong{font-size:18px}
+  .channel-text span{font-size:13.5px}
 }
 
 /* ─── VOLUNTEERS: the run of show. One lane per role, the snake runs along the phases and lights each job ─── */

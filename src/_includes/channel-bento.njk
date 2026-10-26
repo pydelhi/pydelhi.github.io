@@ -1,0 +1,11 @@
+{#- Community page: every channel as a tile in a bento grid, like the home page hero (_data/channels.js).
+    The tiles reveal together as a group, Commudle first. No blank lines: Markdown includes this -#}
+<div class="bento-channels" data-reveal-group>
+  {%- for c in channels %}
+  <a class="channel{% if c.size %} channel-{{ c.size }}{% endif %}{% if c.tint %} channel-{{ c.tint }}{% endif %}" href="{{ c.url }}"{% if c.url.startsWith('http') %} target="_blank" rel="noopener"{% endif %} data-reveal>
+    <i class="ph ph-{{ c.icon }} channel-icon" aria-hidden="true"></i>
+    <i class="ph ph-arrow-up-right channel-go" aria-hidden="true"></i>
+    <span class="channel-text"><strong>{{ c.label }}</strong><span>{{ c.sub }}</span></span>
+  </a>
+  {%- endfor %}
+</div>

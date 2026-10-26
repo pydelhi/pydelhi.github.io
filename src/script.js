@@ -306,8 +306,21 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: .25, rootMargin: '0px 0px -8% 0px' });
 
 document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+  if (el.closest('[data-reveal-group]')) return;
   el.style.setProperty('--d', (i % 4) * 70 + 'ms');
   io.observe(el);
+});
+
+/* A group (the Community bento) reveals all its tiles at once when its top comes into view, in source order,
+   so a tall tile never waits on its own threshold */
+const groupIO = new IntersectionObserver(entries => entries.forEach(e => {
+  if (!e.isIntersecting && e.boundingClientRect.bottom > 0) return;
+  e.target.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('in'));
+  groupIO.unobserve(e.target);
+}), { rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('[data-reveal-group]').forEach(g => {
+  g.querySelectorAll('[data-reveal]').forEach((el, i) => el.style.setProperty('--d', i * 50 + 'ms'));
+  groupIO.observe(g);
 });
 
 /* Everything else animates in once with the Web Animations API. Nothing stays on the
@@ -768,7 +781,7 @@ function renderRails(dt) {
   }
 }
 
-/* Snakes inside fixed drawings (the Sponsor floor plan, the Community metro map, the Code of Conduct coil):
+/* Snakes inside fixed drawings (the Code of Conduct coil):
    any <path data-snake> becomes a body with the mascot's head on its tip, growing in once when seen.
    data-snake holds the body thickness in the drawing's own units. */
 function pathSnake(path) {

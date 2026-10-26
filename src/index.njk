@@ -175,7 +175,7 @@ layout: layouts/base.njk
           {%- for ev in events.past.slice(0, 2) %}
           {% include "past-card.njk" %}
           {%- endfor %}
-          <a href="/events/" class="text-link">View all events <i class="ph ph-arrow-right"></i></a>
+          <a href="{{ site.commudle }}" class="text-link" target="_blank" rel="noopener">View all events <i class="ph ph-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -220,7 +220,7 @@ layout: layouts/base.njk
           <li><i class="ph ph-clipboard-text" aria-hidden="true"></i>On-ground: logistics, registrations</li>
           <li><i class="ph ph-dots-three" aria-hidden="true"></i>Something else</li>
         </ul>
-        <a href="/volunteers/" class="btn-navy">Volunteer with us <i class="ph ph-arrow-right"></i></a>
+        <a href="/volunteer/" class="btn-navy">Volunteer with us <i class="ph ph-arrow-right"></i></a>
       </div>
     </div>
     <!-- MASCOT: drawn by script.js, lies on the section's bottom edge and slithers in as you scroll -->

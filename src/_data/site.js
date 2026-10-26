@@ -24,10 +24,10 @@ export default {
   // the SPONSORS list in script.js, rounded down for copy
   sponsorCount: 27 - 27 % 5,
   nav: [
-    { url: '/events/', label: 'Events' },
     { url: '/speak/', label: 'Speak' },
     { url: '/sponsor/', label: 'Sponsor' },
     { url: '/community/', label: 'Community' },
+    { url: '/volunteer/', label: 'Volunteer' },
     { url: '/about/', label: 'About' },
     { url: '/blog/', label: 'Blog' },
   ],
