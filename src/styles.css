@@ -50,7 +50,9 @@ nav{
   padding:4px 9px 4px 20px;
   white-space:nowrap;width:max-content;max-width:calc(100vw - 48px);
 }
-.nav-logo{display:flex;align-items:center;justify-content:center;gap:0;padding:1px 10px 1px 1px;position:relative;margin-right:6px;flex-shrink:0}
+.nav-logo img{height:22px;width:auto;display:block}
+.nav-links abbr{text-decoration:none}
+.nav-logo{display:flex;align-items:center;justify-content:center;gap:0;padding:1px 19px 1px 10px;position:relative;margin-right:6px;flex-shrink:0}
 .nav-logo::after{
   content: '';
   position: absolute;
@@ -241,11 +243,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
   /* once the sweep is done, drop the mask entirely */
   .graph-card.swept .graph{-webkit-mask-image:none;mask-image:none}
 }
-.graph-legend{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--ink-soft)}
-.graph-legend li{display:flex;align-items:center;gap:8px}
-.sw{width:14px;height:14px;border-radius:4px;display:inline-block}
-.sw-met{background:#D5DEEF;box-shadow:inset 0 0 0 1px #b8c7e4}
-.sw-none{background:#efede8}
 .stat-pair{display:flex;gap:48px}
 .stat-pair div{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:4px}
 .stat-pair dd{font-size:clamp(40px,4.6vw,60px);font-weight:800;letter-spacing:calc(-.04em + .01em);color:var(--navy);line-height:1}
@@ -446,7 +443,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 /* ─── FOOTER ─── */
 .footer{background:var(--navy);color:#fff;padding:80px 0 0}
 .footer-top{display:grid;grid-template-columns:240px 1fr;gap:56px;padding-bottom:60px}
-.footer-logo{height:52px;width:auto;filter:brightness(0) invert(1);align-self:flex-start}
+.footer-logo{height:24px;width:auto;filter:brightness(0) invert(1);align-self:flex-start}
 .footer-brand{display:flex;flex-direction:column;gap:18px}
 .footer-brand p{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.6);max-width:30ch}
 .footer-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
@@ -547,7 +544,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
   .footer-bottom{flex-direction:column}
 }
 @media (max-width:520px){
-  .nav-logo img{height:38px!important}
+  .nav-logo img{height:18px}
   .nav-cta{padding:10px 14px;font-size:13.5px}
   .hero-actions{flex-direction:column;width:100%}
   .hero-actions a{justify-content:center}
@@ -563,8 +560,8 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 /* smallest phones: logo, Join Community and the menu button only just fit, so trim the spacing */
 @media (max-width:359px){
   nav{padding:4px 6px 4px 12px}
-  .nav-logo{padding-right:2px;margin-right:4px}
-  .nav-logo img{height:34px!important}
+  .nav-logo{padding:1px 9px 1px 7px;margin-right:4px}
+  .nav-logo img{height:16px}
   .nav-cta{padding:10px 12px;font-size:13px;margin-left:auto}
   .nav-toggle{width:40px;height:40px;margin-left:4px}
 }
@@ -643,11 +640,9 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .graph-tip{position:absolute;left:0;top:0;transform:translate(-50%,calc(-100% - 10px));background:var(--navy);color:#fff;font-size:12.5px;font-weight:500;white-space:nowrap;padding:6px 10px;border-radius:8px;pointer-events:none;opacity:0;transition:opacity .15s}
 .graph-tip.on{opacity:1}
 .graph-main{flex-direction:row;align-items:center;gap:48px}
-.graph-legend{flex-direction:column;gap:10px}
 @media (max-width:860px){
   .graph-main{flex-direction:column;align-items:center;gap:20px}
   .graph{--cell:14px;gap:3px}
-  .graph-legend{flex-direction:row;justify-content:center}
 }
 
 /* collaborate: link to proposals */
@@ -672,7 +667,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
   .graph{width:100%;grid-auto-columns:1fr;grid-template-rows:repeat(12,auto);gap:3px}
   .cell{width:auto;height:auto;aspect-ratio:1}
   .graph-card{padding:18px 14px}
-  .graph-legend{gap:6px 14px;font-size:12.5px}
   .gallery-head{align-items:center}
   .round-btn{width:42px;height:42px;flex-shrink:0}
 }

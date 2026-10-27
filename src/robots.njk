@@ -1,0 +1,12 @@
+---
+# Crawlers may fetch everything. A Vercel preview (site.preview) is kept out of search by the noindex tag
+# in base.njk instead of a Disallow here, so link previews on X and WhatsApp can still read its cards
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Allow: /
+{%- if not site.preview %}
+
+Sitemap: {{ site.url }}/sitemap.xml
+{%- endif %}

@@ -3,8 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ title or "PyDelhi" }}</title>
-<meta name="description" content="{{ description or "PyDelhi is Delhi NCR's Python community. Free monthly meetups, talks, workshops and lightning talks." }}">
+{#- every page: title, description, canonical URL and the preview card shown when a link is shared.
+    A blog post's card uses its cover photo; every other page the default card in assets/icons/ -#}
+{%- set pageTitle = (title + " | PyDelhi" if isPost else title) or "PyDelhi | " + site.tagline %}
+{%- set pageDescription = description or summary or site.description %}
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDescription }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{%- if site.preview %}
+<meta name="robots" content="noindex">
+{%- endif %}
+<meta name="theme-color" content="#00296B">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:site_name" content="PyDelhi">
+<meta property="og:type" content="{{ 'article' if isPost else 'website' }}">
+<meta property="og:title" content="{{ title if isPost else pageTitle }}">
+<meta property="og:description" content="{{ pageDescription }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+{%- set ogImage = cover or "icons/og-default.jpg" %}
+<meta property="og:image" content="{{ site.url }}{% photoUrl ogImage, 1200 %}">
+<meta property="og:image:alt" content="{{ ('Photo from ' + title) if cover else "PyDelhi: where Delhi's Pythonistas come together" }}">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@pydelhi">
+{%- if page.url == "/" %}
+{#- tells search engines who PyDelhi is, for the knowledge panel beside search results #}
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org", "@type": "Organization", "name": "PyDelhi", "alternateName": site.tagline,
+  "url": site.url + "/", "logo": site.url + "/assets/icons/icon-512.png", "email": site.email, "foundingDate": "2011",
+  "description": site.description, "sameAs": [site.commudle, site.github, site.linkedin, site.x, site.youtube]
+} | dump | safe }}
+</script>
+{%- endif %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,11 +49,11 @@
 
 <nav id="site-nav">
   <a href="/" class="nav-logo" aria-label="PyDelhi home">
-    <img src="/assets/brand/pydelhi-wordmark.svg" alt="PyDelhi" style="height:48px;width:auto;display:block;">
+    <img src="/assets/brand/pydelhi-wordmark.svg" alt="PyDelhi">
   </a>
   <div class="nav-links" id="nav-links">
     {%- for item in site.nav %}
-    <a href="{{ item.url }}"{% if page.url.startsWith(item.url) %} aria-current="page"{% endif %}>{{ item.label }}</a>
+    <a href="{{ item.url }}"{% if page.url.startsWith(item.url) %} aria-current="page"{% endif %}>{% if item.title %}<abbr title="{{ item.title }}">{{ item.label }}</abbr>{% else %}{{ item.label }}{% endif %}</a>
     {%- endfor %}
   </div>
   <a href="{{ site.commudle }}" class="nav-cta" target="_blank" rel="noopener">

@@ -48,7 +48,7 @@ layout: layouts/base.njk
                   <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
                   {{ "Register now" if next else "Get notified" }}
                 </a>
-                <a href="/speak/" class="meetup-btn-secondary">
+                <a href="{{ site.proposeTalk }}" class="meetup-btn-secondary" target="_blank" rel="noopener">
                   <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="1" width="5" height="9" rx="2.5"/><path d="M3 8a5 5 0 0 0 10 0M8 13v2"/></svg>
                   Submit talk
                 </a>
@@ -77,10 +77,6 @@ layout: layouts/base.njk
             <div class="graph-ends" aria-hidden="true"><span>2011</span><span>Today</span></div>
             <div class="graph-tip" id="graph-tip" aria-hidden="true"></div>
           </div>
-          <ul class="graph-legend">
-            <li><span class="sw sw-met"></span>Meetup</li>
-            <li><span class="sw sw-none"></span>No meetup</li>
-          </ul>
         </div>
         <div class="graph-side">
           <dl class="stat-pair">
@@ -197,7 +193,7 @@ layout: layouts/base.njk
 
       <div class="speak-foot">
         <p>Topics we love: web, data, ML, tooling, testing, packaging, Python internals and the odd side project that got out of hand.</p>
-        <a href="/speak/" class="btn-navy">Submit a Talk <i class="ph ph-arrow-right"></i></a>
+        <a href="{{ site.proposeTalk }}" class="btn-navy" target="_blank" rel="noopener">Submit a Talk <i class="ph ph-arrow-up-right"></i></a>
       </div>
       </div>
     </div>
