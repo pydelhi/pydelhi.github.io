@@ -22,7 +22,7 @@ actions:
 {% checklist %}
 - **It's about Python.** Libraries, internals, tooling, testing, data, the web, or the side project that got out of hand.
 - **It works for beginners.** Most of the room is new to Python. Advanced topics are welcome if you explain them accessibly and state any prerequisites.
-- **It fits a slot.** A 5-minute lightning talk, or 20 minutes plus 5 for questions. Workshops run longer, so say so in the proposal.
+- **It fits a slot.** A 5-minute lightning talk, or a 20 to 30 minute talk with time for questions. Workshops and Birds of a Feather sessions run longer, so say so in the proposal.
 - **It's still taking shape, and that's fine.** Submit early. The sooner it's in, the more time there is for feedback.
 - **It has a fresh angle on hot topics.** GenAI, LLMs, RAG and agents get lots of proposals, so bring a new use case, a deep dive into internals, or lessons from production.
 - **It's accessible to everyone.** Readable slides and clear audio, following our [accessibility guidelines]({{ site.accessibilityGuidelines }}). Content matters more than polish or perfect English.
@@ -35,8 +35,8 @@ actions:
 {% section %}
 {% panel "green", "Ready when you are.", "Talks given at PyDelhi are shared under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 licence unless you say otherwise, and many are recorded for our YouTube channel." %}
 {% buttons %}
-{% button "Propose a talk", site.proposeTalk %}
-{% button "Watch past talks", site.youtube, "youtube-logo", "line" %}
+{% button "Propose a session", site.proposeTalk %}
+{% button "Watch on YouTube", site.youtube, "youtube-logo", "line" %}
 {% endbuttons %}
 {% endpanel %}
 {% endsection %}

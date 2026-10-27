@@ -7,7 +7,7 @@ heading: Help a room full of developers <em>show up.</em>
 lede: Every PyDelhi meetup is free for attendees. Venues, food and funding from sponsors make that possible, and put you in front of the people who use your tools every day.
 actions:
   - { label: "Talk to us", url: "https://github.com/orgs/pydelhi/discussions", icon: "arrow-up-right" }
-  - { label: "Sponsor on GitHub", url: "https://github.com/sponsors/pydelhi", icon: "heart", class: "btn-line" }
+  - { label: "Sponsor on GitHub", url: "https://github.com/sponsors/pydelhi", icon: "github-logo", class: "btn-line" }
 ---
 
 {% section "One Saturday, <em>three ways in.</em>", "Host the room, feed it, or fund what happens in it. Most sponsors pick one; some do all three." %}

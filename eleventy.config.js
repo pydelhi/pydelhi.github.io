@@ -14,7 +14,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(shortcodes);
 
   // the blog index: recaps from the last two years sit on year shelves; anything older goes to the archive.
-  // The cut-off moves with each build (the deploy runs daily), so posts drift into the archive by themselves
+  // The cut-off moves with each build, so posts drift into the archive by themselves
   const byYear = posts => {
     const years = new Map();
     for (const post of posts) {

@@ -15,7 +15,7 @@ layout: layouts/base.njk
       {%- if actions %}
       <div class="page-actions">
         {%- for a in actions %}
-        <a href="{{ a.url }}" class="{{ a.class or 'btn-navy' }}"{% if a.url.startsWith('http') %} target="_blank" rel="noopener"{% endif %}>{{ a.label }}{% if a.icon %} <i class="ph ph-{{ a.icon }}"></i>{% endif %}</a>
+        <a href="{{ a.url }}" class="{{ a.class or 'btn-navy' }}"{% if a.url.startsWith('http') %} target="_blank" rel="noopener"{% endif %}>{{ a.label }} <i class="ph ph-{{ a.icon or ('arrow-up-right' if a.url.startsWith('http') else 'arrow-right') }}"></i></a>
         {%- endfor %}
       </div>
       {%- endif %}

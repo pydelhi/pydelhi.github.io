@@ -17,20 +17,32 @@ That serves the site at http://localhost:8080 and rebuilds when you save. `npm r
 
 ## Publishing
 
-Every push to `main` builds and deploys the site (`.github/workflows/deploy.yml`). It also rebuilds every morning at 08:00 IST, so new Commudle events appear without a commit. To rebuild by hand, open **Actions → Deploy to GitHub Pages → Run workflow**.
+Every push to `main` builds and deploys the site to pydelhi.org (`.github/workflows/deploy.yml`). Nothing rebuilds on a timer, so Commudle changes only show up after a build.
+
+To rebuild without a commit: on GitHub, open **Actions → Deploy to GitHub Pages → Run workflow** (branch `main`) and wait a minute or two for the green tick.
 
 One-time setup on GitHub: **Settings → Pages → Source: GitHub Actions**, with pydelhi.org as the custom domain.
 
-## Adding a meetup
+## After you create a meetup on Commudle
 
-Events come from [PyDelhi on Commudle](https://www.commudle.com/communities/pydelhi). Create the event there and the site picks it up on the next build: the hero card, the "Next up" ticket and the past-event cards. There's no events page on the site: "View all events" goes to Commudle. Nothing to edit here.
+Events come from [PyDelhi on Commudle](https://www.commudle.com/communities/pydelhi): the hero card, the "Next up" ticket, the past-event cards and the meetup graph all read from it. There's no events page on the site; "View all events" goes to Commudle.
 
-## Adding a photo after a meetup
+1. Create and publish the event on Commudle.
+2. Rebuild the site: **Actions → Deploy to GitHub Pages → Run workflow**.
+3. Check pydelhi.org: the hero card and the ticket should show the new date and venue.
 
-The home page shows the last two meetups. Until an event has a photo of its own, its card shows the event's banner from Commudle, fitted whole on white.
+Rebuild again the day after the meetup, so it moves from "Next up" to the past-event cards (adding its photos below does that for you, since a commit rebuilds).
 
-1. Find the event's slug: the last part of its Commudle URL, e.g. `pydelhi-3-15-the-next-python` in `commudle.com/communities/pydelhi/events/pydelhi-3-15-the-next-python`.
-2. Name the photo after it (`pydelhi-3-15-the-next-python.jpg`; png and webp work too) and add it to `src/assets/events/`. On GitHub: open that folder, **Add file → Upload files**, and commit. Any size is fine; the build resizes it. The card crops it to 4:3, so keep faces away from the edges.
+If a build can't reach Commudle it uses `lib/commudle-fallback.json`, the last good response, which every successful local build updates. Commit it when it changes.
+
+## Adding photos after a meetup
+
+The home page shows the last two meetups. Until one has a photo of its own, its card shows the event's banner from Commudle, fitted whole on white.
+
+1. Name the photo of the latest meetup `past-1.jpg` and the one before it `past-2.jpg` (png and webp work too).
+2. Add both to `src/assets/events/`, replacing last month's. On GitHub: open that folder, **Add file → Upload files**, and commit. Any size is fine; the build resizes them. The cards crop to 4:3, so keep faces away from the edges.
+
+After the next meetup, the old `past-1` becomes the new `past-2`: rename or re-upload so each photo stays with its meetup.
 
 ## Writing a blog recap
 
@@ -99,14 +111,21 @@ The body is Markdown plus these blocks, so every page gets the site's design wit
 - PyData Delhi
 - Django India
 {% endchips %}
-{% buttons %}{% button "Propose a talk", "https://...", "arrow-up-right", "line" %}{% endbuttons %}
+{% buttons %}{% button "Propose a session", "https://...", "", "line" %}{% endbuttons %}   {# the arrow is picked from the link; pass an icon only for a platform logo #}
 ```
 
 Give one section per page, the one over the page's centrepiece, the gold underline by putting its last words in `<em>` (`{% section "Pick your <em>channel.</em>" %}`). Leave it out of every other heading.
 
 The core team and volunteer teams live in `src/_data/volunteerTeams.json`. For a core member, `role` is a word or two ("Talk reviews, remote help"), `photo` a square-ish face shot in `src/assets/team/` (`"team/daksh.jpg"`; without one the card shows initials) and `linkedin` their profile URL, which adds a LinkedIn button under the role. Core members also go in the `people` of each team they work in. Keep the core list, the teams and each team's names in alphabetical order.
 
-Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. Every page's `<head>` (title, description, canonical URL, share card) is filled from its front matter in `layouts/base.njk`, so a new page only needs `title` and `description`; a blog post's `summary` and `cover` are used for its card. Each page also has its own centrepiece, as an include: `proposal-board.njk` (Speak), `sponsor-doors.njk`, `sponsor-slide.njk` and `sponsor-perks.njk` (Sponsor), `channel-bento.njk` (Community, from `src/_data/channels.js`), `volunteer-roles.njk`, `core-team.njk` and `volunteer-teams.njk` (Volunteer, from `src/_data/volunteerRoles.json` and `src/_data/volunteerTeams.json`), `coc-summary.njk` and `coc-report.njk`. Supporting sections (not centrepieces, so their headings carry no `<em>`): `pick-format.njk` (Speak: lightning talk, talk and workshop as pastel cards with a length bar) and `event-kinds.njk` (About: the kinds of event as small tinted cards). Smaller pieces: `partner.njk` and `ruler.njk`. Links used across the site (WhatsApp, Telegram, YouTube...) live in `src/_data/site.js`; use them as `{{ site.whatsapp }}`.
+Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. Every page's `<head>` (title, description, canonical URL, share card) is filled from its front matter in `layouts/base.njk`, so a new page only needs `title` and `description`; a blog post's `summary` and `cover` are used for its card. Each page also has its own centrepiece, as an include: `proposal-board.njk` (Speak), `sponsor-doors.njk`, `sponsor-slide.njk` and `sponsor-perks.njk` (Sponsor), `channel-bento.njk` (Community, from `src/_data/channels.js`), `volunteer-roles.njk`, `core-team.njk` and `volunteer-teams.njk` (Volunteer, from `src/_data/volunteerRoles.json` and `src/_data/volunteerTeams.json`), `coc-summary.njk` and `coc-report.njk`. Supporting sections (not centrepieces, so their headings carry no `<em>`): `pick-format.njk` (Speak: the session formats as pastel cards with a length bar) and `event-kinds.njk` (About: the kinds of event as small tinted cards). Smaller pieces: `partner.njk` and `ruler.njk`. Links used across the site (WhatsApp, Telegram, YouTube...) live in `src/_data/site.js`; use them as `{{ site.whatsapp }}`.
+
+## Updating the team, logos and links
+
+- **Team:** `src/_data/volunteerTeams.json` (see above). Team photos go in `src/assets/team/`.
+- **Ways to volunteer:** the role cards on `/volunteer` come from `src/_data/volunteerRoles.json`; every card opens `site.volunteerForm`.
+- **Speaker company and sponsor logos:** add the file to `src/assets/logos/` (transparent background, any colour; the site draws it navy) and an entry to `SPEAKER_COMPANIES` or `SPONSORS` in `src/script.js`: `{ name, file, r, url }`, where `r` is the logo's width divided by its height and `url` the company's site. Add `text` only when the file is a bare symbol that needs the name beside it.
+- **Links and numbers:** WhatsApp, Telegram, the volunteer form, GitHub Sponsors and the hand-set stats (speakers, members) are all in `src/_data/site.js`.
 
 ## Where things live
 
@@ -124,7 +143,10 @@ Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. 
 | `src/_includes/` | Layout, ticket and event card |
 | `src/styles.css`, `src/script.js` | All styles and behaviour |
 | `src/assets/photos/` | Photos used around the home page |
+| `src/assets/events/` | `past-1` and `past-2`, our photos of the last two meetups |
+| `src/assets/team/` | Core team photos |
+| `src/assets/brand/` | The PyDelhi wordmark and logo used in the nav, footer and hero |
 | `src/assets/logos/` | Speaker company and sponsor logos (lists in `script.js`) |
 | `src/_data/meetupHistory.js` | The meetup graph: pre-2025 months by hand, later ones from Commudle |
 | `lib/commudle.js` | Fetches events from Commudle |
-| `lib/commudle-fallback.json` | Last good Commudle response, used if Commudle is down. Commit it when it changes. |
+| `lib/commudle-fallback.json` | Last good Commudle response (only the fields the site reads), used if Commudle is down. Commit it when it changes. |

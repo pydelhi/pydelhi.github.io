@@ -76,7 +76,7 @@ nav{
   transition:background .15s;text-decoration:none;
 }
 .nav-cta:hover{background:#194182}
-.nav-cta svg{width:12px;height:12px;flex-shrink:0}
+.nav-cta i{font-size:14px;flex-shrink:0}
 
 /* HERO: ordinary page flow, nothing pinned. The photos' scattered start is only a
    transform on each bento photo (see script.js), so the page always scrolls natively */
@@ -138,10 +138,12 @@ h1 em{font-style:normal;color:var(--gold)}
 h1 .light-text{font-weight:300;color:var(--gray-400)}
 .hero-subtitle{font-size:17px;line-height:1.65;color:var(--gray-600);max-width:400px;margin-bottom:36px;animation:fade-up .5s ease .3s both}
 .hero-actions{display:flex;gap:12px;animation:fade-up .5s ease .4s both}
-.btn-primary{text-decoration:none;display:inline-flex;align-items:center;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--navy-dark);border:none;padding:13px 28px;border-radius:100px;cursor:pointer;transition:background .15s,transform .15s}
+.btn-primary{text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#fff;background:var(--navy-dark);border:none;padding:13px 28px;border-radius:100px;cursor:pointer;transition:background .15s,transform .15s}
 .btn-primary:hover{background:#194182;transform:translateY(-1px)}
-.btn-ghost{text-decoration:none;display:inline-flex;align-items:center;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;color:var(--gray-600);background:var(--white);border:1px solid var(--gray-200);padding:13px 24px;border-radius:100px;cursor:pointer;transition:border-color .15s,transform .15s}
+.btn-ghost{text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;color:var(--gray-600);background:var(--white);border:1px solid var(--gray-200);padding:13px 24px;border-radius:100px;cursor:pointer;transition:border-color .15s,transform .15s}
 .btn-ghost:hover{border-color:var(--gray-400);transform:translateY(-1px)}
+/* every button ends in one icon: an arrow for where it goes (up-right leaves the site), or the logo of the platform it names */
+.btn-primary i,.btn-ghost i{font-size:16px}
 
 /* BENTO PHOTOS: each one lives in its cell; script.js throws it out to its scattered start with a transform.
    --f is 1 while scattered and 0 once landed; it fades in the white frame and the shadow */
@@ -185,6 +187,7 @@ h1 .light-text{font-weight:300;color:var(--gray-400)}
 .meetup-btn-primary:hover{background:#194182}
 .meetup-btn-secondary{font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;color:var(--navy-dark);background:transparent;border:1.5px solid var(--gray-200);padding:10px 22px;border-radius:100px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:border-color .15s,color .15s;white-space:nowrap}
 .meetup-btn-secondary:hover{border-color:var(--navy-dark)}
+.meetup-btn-primary i,.meetup-btn-secondary i{font-size:14px}
 
 
 @keyframes fade-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
