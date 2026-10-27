@@ -33,7 +33,7 @@ actions:
 {% endsection %}
 
 {% section %}
-{% panel "green", "Ready when you are.", "Talks given at PyDelhi are shared under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 licence unless you say otherwise, and many are recorded for our YouTube channel." %}
+{% panel "green", "Licence and recording.", "Talks given at PyDelhi are shared under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 licence unless you say otherwise, and many are recorded for our YouTube channel." %}
 {% buttons %}
 {% button "Propose a session", site.proposeTalk %}
 {% button "Watch on YouTube", site.youtube, "youtube-logo", "line" %}

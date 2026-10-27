@@ -4,7 +4,7 @@ title: Sponsor PyDelhi
 description: Host a PyDelhi meetup, feed the room or fund venues, recording gear and the meetups to come. Every PyDelhi meetup is free for attendees because of sponsors.
 permalink: /sponsor/
 heading: Help a room full of developers <em>show up.</em>
-lede: Every PyDelhi meetup is free for attendees. Venues, food and funding from sponsors make that possible, and put you in front of the people who use your tools every day.
+lede: Every PyDelhi meetup is free for attendees. Venues, food and funding from sponsors make that possible, and you meet the developers who use your tools.
 actions:
   - { label: "Talk to us", url: "https://github.com/orgs/pydelhi/discussions", icon: "arrow-up-right" }
   - { label: "Sponsor on GitHub", url: "https://github.com/sponsors/pydelhi", icon: "github-logo", class: "btn-line" }

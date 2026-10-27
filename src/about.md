@@ -4,7 +4,7 @@ title: About | PyDelhi
 description: PyDelhi is Delhi NCR's Python community, a volunteer-run group that has met since 2011 for free talks, workshops, sprints and conferences.
 permalink: /about/
 heading: Delhi's Python community, <em>since 2011.</em>
-lede: PyDelhi is a volunteer collective of students, professionals, teachers and founders who share one interest, the Python programming language. We meet once a month, it's free, and everyone is welcome.
+lede: PyDelhi is a volunteer group of students, professionals, teachers and founders who all like Python. We meet once a month, it's free, and everyone is welcome.
 actions:
   - { label: "Join on Commudle", url: "https://www.commudle.com/communities/pydelhi", icon: "arrow-up-right" }
   - { label: "Read the Code of Conduct", url: "/coc/", class: "btn-line" }
@@ -33,7 +33,7 @@ The conference comes back for a third edition, with talks [recorded on our YouTu
 {% moment "2025", "A new home on Commudle" %}
 Meetups and RSVPs move to [Commudle]({{ site.commudle }}), and talk proposals are reviewed in the open on [GitHub]({{ site.talksRepo }}).
 {% endmoment %}
-{% moment "Now", "Still meeting", "photos/iwd-meetup.jpeg", "A full room at a PyDelhi meetup in 2026" %}
+{% moment "Now", "Meetups every month", "photos/iwd-meetup.jpeg", "A full room at a PyDelhi meetup in 2026" %}
 We still meet almost every month, and the next meetup is never far away. [See what's next]({{ site.commudle }}).
 {% endmoment %}
 {% endtimeline %}
