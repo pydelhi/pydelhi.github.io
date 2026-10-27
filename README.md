@@ -113,10 +113,9 @@ Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. 
 | Path | What |
 |---|---|
 | `src/index.njk`, `src/*.md` | Pages |
-| `src/blog/posts/` | Blog recaps |
+| `src/blog/posts/` | Blog recaps. Posts from the last two years sit on the year shelves; older ones move to the archive list on their own (collections in `eleventy.config.js`) |
 | `lib/shortcodes.js` | The designed blocks used in Markdown pages |
 | `src/_data/site.js` | Shared links and the hand-set stats |
-| `src/_data/talks.js` | How many talks have been delivered (github.com/pydelhi/talks), shown on About; last good count in `lib/talks-fallback.json` |
 | `src/_data/volunteerRoles.json`, `src/_data/volunteerTeams.json` | The ways to volunteer, the core team (name, role, photo) and the volunteer teams on `/volunteer` |
 | `src/_data/channels.js` | The Community channel tiles |
 | `src/assets/icons/` | Favicon, app icons and `og-default.jpg`, the 1200×630 card shown when a page is shared (blog posts use their `cover` instead) |

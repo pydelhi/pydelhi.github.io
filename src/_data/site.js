@@ -19,6 +19,7 @@ export default {
   linkedin: 'https://www.linkedin.com/company/pydelhi-community/',
   youtube: 'https://www.youtube.com/channel/UC3QVyJ-Zt0QoYAibn4SD20A',
   github: 'https://github.com/pydelhi',
+  githubSponsors: 'https://github.com/sponsors/pydelhi',
   discussions: 'https://github.com/orgs/pydelhi/discussions',
   communityPartnership: 'https://github.com/orgs/pydelhi/discussions/new?category=community-partnership',
   collaborativeMeetups: 'https://github.com/orgs/pydelhi/discussions/new?category=collaborative-meetups',

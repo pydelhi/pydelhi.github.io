@@ -6,8 +6,10 @@ heading: Recaps, <em>straight from the room.</em>
 lede: What happened at PyDelhi meetups, sprints and workshops, written up by the people who were there.
 permalink: /blog/
 ---
-{#- The newest recap runs large, then the rest sit on one shelf per year, each with the snake lying along it -#}
-{%- set latest = (collections.post | reverse)[0] %}
+{#- The newest recent recap runs large, then the rest of the last two years sit on one shelf per year, each
+    with the snake lying along it. Older recaps go to the archive below as a plain list (collections in eleventy.config.js) -#}
+{%- set latest = collections.recentPosts[0] %}
+{%- if latest %}
 <section class="page-section">
   <div class="wrap">
     <a href="{{ latest.url }}" class="post-feature" data-reveal>
@@ -47,3 +49,30 @@ permalink: /blog/
     {%- endfor %}
   </div>
 </section>
+{%- endif %}
+{%- if collections.archiveByYear.length %}
+<section class="page-section" aria-labelledby="archive-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="h2" id="archive-title">From the archive</h2>
+      <p class="lede">Recaps more than two years old, kept for the record.</p>
+    </div>
+    <div class="archive">
+      {%- for shelf in collections.archiveByYear %}
+      <section class="archive-year" aria-labelledby="archive-{{ shelf.year }}">
+        <h3 id="archive-{{ shelf.year }}">{{ shelf.year }}</h3>
+        <ul>
+          {%- for post in shelf.posts %}
+          <li data-reveal><a href="{{ post.url }}">
+            <span class="archive-date">{{ post.data.monthLabel }}</span>
+            <span class="archive-title"><strong>{{ post.data.title }}</strong><span>By {{ post.data.author }}</span></span>
+            <i class="ph ph-arrow-right" aria-hidden="true"></i>
+          </a></li>
+          {%- endfor %}
+        </ul>
+      </section>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}

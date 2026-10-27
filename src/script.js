@@ -1,10 +1,11 @@
 // each photo's <img> is built into a <template> in its bento cell, so it gets a resized srcset
-// m = start position on phones: x/y as a fraction of the screen, x may be negative so the card bleeds off the edge
+// m = start position on phones, as a fraction of the screen: like Portrait, the cards sit mostly off the left
+// and right edges beside the text, only a third or so showing, so they frame the headline without covering it
 const PHOTOS = [
-  { cid:'bento-cell-0', lb:"Talks",   spct:.04,  srpct:null, sy:.20, sw:150, sh:185, rot:-7, m:{ x:-.15, y:.07,  w:96,  h:116 } },
-  { cid:'bento-cell-1', lb:'Meetups', spct:.10,  srpct:null, sy:.55, sw:210, sh:150, rot: 6, m:{ x:.75,  y:.075, w:130, h:96 } },
-  { cid:'bento-cell-2', lb:'Workshops', spct:null, srpct:.04,  sy:.15, sw:158, sh:195, rot: 9, m:{ x:-.12, y:.79, w:100, h:128 } },
-  { cid:'bento-cell-3', lb:'Birds of a Feather', spct:null, srpct:.08,  sy:.55, sw:290, sh:210, rot:-6, m:{ x:.66,  y:.8,  w:156, h:112 } },
+  { cid:'bento-cell-0', lb:"Talks",   spct:.04,  srpct:null, sy:.20, sw:150, sh:185, rot:-7, m:{ x:-.11, y:.265, w:100, h:124 } },
+  { cid:'bento-cell-1', lb:'Meetups', spct:.10,  srpct:null, sy:.55, sw:210, sh:150, rot: 6, m:{ x:.76,  y:.07, w:136, h:100 } },
+  { cid:'bento-cell-2', lb:'Workshops', spct:null, srpct:.04,  sy:.15, sw:158, sh:195, rot: 9, m:{ x:-.12, y:.72, w:104, h:128 } },
+  { cid:'bento-cell-3', lb:'Birds of a Feather', spct:null, srpct:.08,  sy:.55, sw:290, sh:210, rot:-6, m:{ x:.74,  y:.75, w:150, h:110 } },
 ];
 
 // Logos live in src/assets/logos and are drawn in navy through a CSS mask, so any colour file works.
@@ -13,55 +14,55 @@ const PHOTOS = [
 // `text` is only for a bare symbol that needs the name beside it.
 // Speakers: employers named in the bios of delivered talks (github.com/pydelhi/talks).
 const SPEAKER_COMPANIES = [
-  { name:'Adobe', file:'adobe.svg', r:3.96 },
-  { name:'Microsoft', file:'microsoft.svg', r:4.69 },
-  { name:'Red Hat', file:'redhat.svg', r:4.23 },
-  { name:'EPAM Systems', file:'epam.png', r:2.84 },
-  { name:'Thoughtworks', file:'thoughtworks.png', r:6.15 },
-  { name:'Accenture', file:'accenture.svg', r:3.80 },
-  { name:'SingleStore', file:'singlestore.svg', r:4.83 },
-  { name:'Tata 1mg', file:'tata1mg.svg', r:4.50 },
-  { name:'NEC', file:'nec.svg', r:3.68 },
-  { name:'Nagarro', file:'nagarro.svg', r:4.03 },
-  { name:'Cars24', file:'cars24.svg', r:3.57 },
-  { name:'L&T Technology Services', file:'ltts.svg', r:6.67 },
-  { name:'Unstop', file:'unstop.svg', r:2.51 },
-  { name:'Appinventiv', file:'appinventiv.svg', r:4.58 },
-  { name:'Essentia.dev', file:'essentia.svg', r:5.40 },
-  { name:'GlobalLogic', file:'globallogic.png', r:5.65 },
-  { name:'Quansight', file:'quansight.png', r:3.17 },
-  { name:'Juniper Square', file:'junipersquare.svg', r:7.72 },
-  { name:'FOSSASIA', file:'fossasia.svg', r:2.35 },
+  { name:'Adobe', file:'adobe.svg', r:3.96, url:'https://www.adobe.com/' },
+  { name:'Microsoft', file:'microsoft.svg', r:4.69, url:'https://www.microsoft.com/' },
+  { name:'Red Hat', file:'redhat.svg', r:4.23, url:'https://www.redhat.com/' },
+  { name:'EPAM Systems', file:'epam.png', r:2.84, url:'https://www.epam.com/' },
+  { name:'Thoughtworks', file:'thoughtworks.png', r:6.15, url:'https://www.thoughtworks.com/' },
+  { name:'Accenture', file:'accenture.svg', r:3.80, url:'https://www.accenture.com/' },
+  { name:'SingleStore', file:'singlestore.svg', r:4.83, url:'https://www.singlestore.com/' },
+  { name:'Tata 1mg', file:'tata1mg.svg', r:4.50, url:'https://www.1mg.com/' },
+  { name:'NEC', file:'nec.svg', r:3.68, url:'https://www.nec.com/' },
+  { name:'Nagarro', file:'nagarro.svg', r:4.03, url:'https://www.nagarro.com/' },
+  { name:'Cars24', file:'cars24.svg', r:3.57, url:'https://www.cars24.com/' },
+  { name:'L&T Technology Services', file:'ltts.svg', r:6.67, url:'https://www.ltts.com/' },
+  { name:'Unstop', file:'unstop.svg', r:2.51, url:'https://unstop.com/' },
+  { name:'Appinventiv', file:'appinventiv.svg', r:4.58, url:'https://appinventiv.com/' },
+  { name:'Essentia.dev', file:'essentia.svg', r:5.40, url:'https://essentia.dev/' },
+  { name:'GlobalLogic', file:'globallogic.png', r:5.65, url:'https://www.globallogic.com/' },
+  { name:'Quansight', file:'quansight.png', r:3.17, url:'https://www.quansight.com/' },
+  { name:'Juniper Square', file:'junipersquare.svg', r:7.72, url:'https://www.junipersquare.com/' },
+  { name:'FOSSASIA', file:'fossasia.svg', r:2.35, url:'https://fossasia.org/' },
 ];
 // Sponsors and venues: hosts on meetup.com/pydelhi and Commudle, plus sponsors named in blog recaps.
 const SPONSORS = [
-  { name:'Microsoft', file:'microsoft.svg', r:4.69 },
-  { name:'Zomato', file:'zomato.png', r:4.68 },
-  { name:'Adobe', file:'adobe.svg', r:3.96 },
-  { name:'Nykaa', file:'nykaa.svg', r:2.99 },
-  { name:'Thoughtworks', file:'thoughtworks.png', r:6.15 },
-  { name:'Gojek', file:'gojek.svg', r:3.50 },
-  { name:'EPAM Systems', file:'epam.png', r:2.84 },
-  { name:'Tata 1mg', file:'tata1mg.svg', r:4.50 },
+  { name:'Microsoft', file:'microsoft.svg', r:4.69, url:'https://www.microsoft.com/' },
+  { name:'Zomato', file:'zomato.png', r:4.68, url:'https://www.zomato.com/' },
+  { name:'Adobe', file:'adobe.svg', r:3.96, url:'https://www.adobe.com/' },
+  { name:'Nykaa', file:'nykaa.svg', r:2.99, url:'https://www.nykaa.com/' },
+  { name:'Thoughtworks', file:'thoughtworks.png', r:6.15, url:'https://www.thoughtworks.com/' },
+  { name:'Gojek', file:'gojek.svg', r:3.50, url:'https://www.gojek.com/en-id' },
+  { name:'EPAM Systems', file:'epam.png', r:2.84, url:'https://www.epam.com/' },
+  { name:'Tata 1mg', file:'tata1mg.svg', r:4.50, url:'https://www.1mg.com/' },
   { name:'Hike', file:'hike.svg', r:2.62 },
-  { name:'HT Media', file:'htmedia.svg', r:4.28 },
-  { name:'GitHub', file:'github-mark.svg', r:1, text:'GitHub' },
-  { name:'SingleStore', file:'singlestore.svg', r:4.83 },
-  { name:'WeWork', file:'wework.svg', r:4.70 },
-  { name:'91springboard', file:'91springboard.png', r:4.20 },
-  { name:'Appinventiv', file:'appinventiv.svg', r:4.58 },
-  { name:'Unstop', file:'unstop.svg', r:2.51 },
-  { name:'Essentia.dev', file:'essentia.svg', r:5.40 },
-  { name:'Innovaccer', file:'innovaccer.svg', r:1.08, text:'Innovaccer' },
-  { name:'Grofers', file:'grofers.svg', r:3.23 },
-  { name:'Srijan Technologies', file:'srijan.svg', r:2.96 },
-  { name:'SocialCops', file:'socialcops.svg', r:4.30 },
-  { name:'HealthKart', file:'healthkart.png', r:3.98 },
-  { name:'LambdaTest', file:'lambdatest.svg', r:5.65 },
-  { name:'Fueled', file:'fueled.png', r:5.33 },
-  { name:'Coredge', file:'coredge.png', r:4.22 },
-  { name:'Knowlarity', file:'knowlarity.png', r:4.67 },
-  { name:'E2E Networks', file:'e2e.png', r:1.47, text:'E2E Networks' },
+  { name:'HT Media', file:'htmedia.svg', r:4.28, url:'https://www.htmedia.in/' },
+  { name:'GitHub', file:'github-mark.svg', r:1, text:'GitHub', url:'https://github.com/' },
+  { name:'SingleStore', file:'singlestore.svg', r:4.83, url:'https://www.singlestore.com/' },
+  { name:'WeWork', file:'wework.svg', r:4.70, url:'https://www.wework.co.in/' },
+  { name:'91springboard', file:'91springboard.png', r:4.20, url:'https://www.91springboard.com/' },
+  { name:'Appinventiv', file:'appinventiv.svg', r:4.58, url:'https://appinventiv.com/' },
+  { name:'Unstop', file:'unstop.svg', r:2.51, url:'https://unstop.com/' },
+  { name:'Essentia.dev', file:'essentia.svg', r:5.40, url:'https://essentia.dev/' },
+  { name:'Innovaccer', file:'innovaccer.svg', r:1.08, text:'Innovaccer', url:'https://innovaccer.com/' },
+  { name:'Grofers', file:'grofers.svg', r:3.23, url:'https://blinkit.com/' },
+  { name:'Srijan Technologies', file:'srijan.svg', r:2.96, url:'https://www.materialplus.io/' },
+  { name:'SocialCops', file:'socialcops.svg', r:4.30, url:'https://socialcops.com/' },
+  { name:'HealthKart', file:'healthkart.png', r:3.98, url:'https://www.healthkart.com/' },
+  { name:'LambdaTest', file:'lambdatest.svg', r:5.65, url:'https://www.testmuai.com/' },
+  { name:'Fueled', file:'fueled.png', r:5.33, url:'https://fueled.com/' },
+  { name:'Coredge', file:'coredge.png', r:4.22, url:'https://coredge.io/' },
+  { name:'Knowlarity', file:'knowlarity.png', r:4.67, url:'https://www.knowlarity.com/' },
+  { name:'E2E Networks', file:'e2e.png', r:1.47, text:'E2E Networks', url:'https://www.e2enetworks.com/' },
 ];
 
 function clamp(v,a,b){ return Math.max(a,Math.min(b,v)) }
@@ -80,6 +81,7 @@ const touchScreen  = matchMedia('(pointer: coarse)');
    the bento arrives under the nav. Only transform and opacity change, so the
    browser never has to lay the page out again while you scroll. */
 
+const heroText  = document.getElementById('hero-text');
 const gridLayer = document.getElementById('grid-layer');
 
 // only the home page has the hero
@@ -201,8 +203,16 @@ addEventListener('resize', () => {
 });
 reduceMotion.addEventListener('change', relayout);
 compactView.addEventListener('change', relayout);
-// images and fonts shift the layout as they load, which moves the cells
+// images and fonts shift the layout as they load, which moves the cells. Outfit often arrives after
+// 'load' on phones: the taller headline pushes the bento down, and photos measured before that start
+// lower and fly straight through the title. So re-measure when the fonts are in, and whenever the
+// headline block or the bento changes size (never on scroll: the address bar doesn't resize them)
 addEventListener('load', relayout);
+document.fonts?.ready.then(relayout);
+if (gridLayer) {
+  const heroSizes = new ResizeObserver(relayout);
+  [heroText, gridLayer].forEach(el => el && heroSizes.observe(el));
+}
 
 requestAnimationFrame(() => {
   relayout();
@@ -224,13 +234,15 @@ navToggle.addEventListener('click', () => {
 
 /* ─── LOGOS ─── */
 
-function logoEl({ name, file, r, text }) {
+function logoEl({ name, file, r, text, url }) {
   // wide logos get shorter and tall ones taller, so they all read at about the same size
   const h = text ? 26 : Math.round(clamp(28 * Math.pow(4 / r, .45), 18, 38));
   const mark = `<span class="logo-img" style="--src:url('/assets/logos/${file}');width:${Math.round(h * r)}px;height:${h}px"></span>`;
-  return text
-    ? `<span class="logo" role="img" aria-label="${name}">${mark}<span aria-hidden="true">${text}</span></span>`
-    : `<span class="logo" role="img" aria-label="${name}">${mark}</span>`;
+  const inner = text ? `${mark}<span aria-hidden="true">${text}</span>` : mark;
+  // a company with a site links to it (Hike shut down, so it stays a plain logo)
+  return url
+    ? `<a class="logo" href="${url}" target="_blank" rel="noopener" aria-label="${name}">${inner}</a>`
+    : `<span class="logo" role="img" aria-label="${name}">${inner}</span>`;
 }
 
 function fillMarquee(id, list) {
@@ -238,7 +250,10 @@ function fillMarquee(id, list) {
   const track = document.getElementById(id);
   if (!track) return;
   // track holds the list twice so the loop is seamless; the copy is hidden from screen readers
-  track.innerHTML = row + row.replace(/<span class="logo" role="img" aria-label="[^"]*"/g, '<span class="logo" aria-hidden="true"');
+  // (and its links skipped by the keyboard)
+  track.innerHTML = row + row
+    .replace(/<span class="logo" role="img" aria-label="[^"]*"/g, '<span class="logo" aria-hidden="true"')
+    .replace(/ aria-label="[^"]*">/g, ' aria-hidden="true" tabindex="-1">');
   // keep the same scroll speed however many logos there are
   track.style.animationDuration = list.length * 3.2 + 's';
 }

@@ -13,7 +13,7 @@
     {"name": "Design", "icon": "palette", "about": "Posters, slides, social graphics and the look of this website.", "people": ["Daksh P. Jain"]},
     {"name": "Development", "icon": "code", "about": "Writes and looks after the code behind this website.", "people": ["Agriya Khetarpal", "Daksh P. Jain", "Khushbu Saifi"]},
     {"name": "On the ground", "icon": "users-three", "about": "Runs the room on meetup day.", "people": ["Agriya Khetarpal", "Animesh Ghosh", "Anuvrat Parashar", "Bhupinder Kumar", "Daksh P. Jain", "Ghanatava Thakaran", "Khushbu Saifi", "Parampreet Singh", "Satyakam Goswami", "Srijan Srivastava", "Vaibhav Jain"]},
-    {"name": "Social media and marketing", "icon": "megaphone", "about": "Announces meetups and posts recaps across our channels.", "people": ["Albert Jokelin", "Harshita Harsh", "Khushbu Saifi", "Sakshi Verma"]},
+    {"name": "Social media and marketing", "icon": "megaphone", "about": "Announces meetups and posts recaps across our channels.", "people": ["Albert Jokelin", "Daksh P. Jain", "Harshita Harsh", "Khushbu Saifi", "Sakshi Verma"]},
     {"name": "Talk reviews", "icon": "microphone-stage", "about": "Reviews talk proposals and helps speakers get their talk ready.", "people": ["Agriya Khetarpal", "Bhupinder Kumar", "Gaurav Trivedi", "Ghanatava Thakaran", "Pranav Puri", "Sanket Dutta", "Srijan Srivastava", "Vaibhav Jain"]}
   ]
 }

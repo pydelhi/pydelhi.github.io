@@ -47,7 +47,8 @@ nav{
   border-radius:38px;
   box-shadow:0 4px 24px rgba(0,0,0,0.08),0 1px 4px rgba(0,0,0,0.04);
   display:flex;align-items:center;
-  padding:4px 9px 4px 20px;
+  /* the same 6px around the button (and the menu toggle on phones) on top, right and bottom */
+  padding:6px 6px 6px 20px;
   white-space:nowrap;width:max-content;max-width:calc(100vw - 48px);
 }
 .nav-logo img{height:22px;width:auto;display:block}
@@ -299,11 +300,12 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .marquee-track{display:flex;align-items:center;gap:56px;width:max-content;padding-right:56px}
 @media (prefers-reduced-motion:no-preference){
   .marquee-track{animation:marquee 40s linear infinite}
-  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
 }
 @keyframes marquee{to{transform:translateX(-50%)}}
 .logo{display:inline-flex;align-items:center;gap:10px;font-size:17px;font-weight:700;letter-spacing:calc(-.02em + .01em);color:var(--navy);white-space:nowrap;opacity:.72;transition:opacity .2s}
-.logo:hover{opacity:1}
+a.logo{text-decoration:none}
+.logo:hover,a.logo:focus-visible{opacity:1}
 .logo img{height:26px;width:26px;display:block}
 /* every logo file is used as a mask and filled with the text colour, so they all come out navy */
 .logo-img{display:block;flex-shrink:0;background:currentColor;-webkit-mask:var(--src) center/contain no-repeat;mask:var(--src) center/contain no-repeat}
@@ -559,7 +561,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 }
 /* smallest phones: logo, Join Community and the menu button only just fit, so trim the spacing */
 @media (max-width:359px){
-  nav{padding:4px 6px 4px 12px}
+  nav{padding:5px 5px 5px 12px}
   .nav-logo{padding:1px 9px 1px 7px;margin-right:4px}
   .nav-logo img{height:16px}
   .nav-cta{padding:10px 12px;font-size:13px;margin-left:auto}
@@ -1071,6 +1073,25 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 }
 
 /* ─── BLOG: the newest recap runs large, then one shelf per year with the snake lying along it ─── */
+/* the archive: recaps older than two years as a plain list, year on the left, hairlines between */
+.archive{text-align:left;border-top:1px solid var(--line)}
+.archive-year{display:grid;grid-template-columns:160px minmax(0,1fr);gap:32px;padding:28px 0;border-bottom:1px solid var(--line)}
+.archive-year h3{font-size:clamp(28px,3vw,36px);font-weight:800;letter-spacing:calc(-.04em + .01em);line-height:1;color:var(--navy)}
+.archive-year ul{list-style:none;display:flex;flex-direction:column}
+.archive-year a{display:grid;grid-template-columns:128px minmax(0,1fr) 20px;gap:16px;align-items:baseline;padding:10px 12px;margin:0 -12px;border-radius:12px;text-decoration:none;color:var(--navy);transition:background .2s,var(--reveal,opacity 0s)}
+.archive-year a:hover{background:#fff}
+.archive-date{font-size:13.5px;font-weight:600;color:var(--ink-soft);white-space:nowrap}
+.archive-title strong{display:block;font-size:16.5px;font-weight:700;line-height:1.35}
+.archive-title span{display:block;font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+.archive-year i{font-size:16px;opacity:.3;align-self:center;transition:opacity .2s,transform .25s var(--ease)}
+.archive-year a:hover i{opacity:1;transform:translateX(3px)}
+@media (max-width:700px){
+  .archive-year{grid-template-columns:minmax(0,1fr);gap:12px;padding:22px 0}
+  .archive-year a{grid-template-columns:minmax(0,1fr) 20px;row-gap:2px}
+  .archive-date{grid-column:1}
+  .archive-title{grid-column:1}
+  .archive-year i{grid-column:2;grid-row:1 / span 2}
+}
 .post-feature{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;text-decoration:none;color:inherit;text-align:left;transition:border-color .2s,box-shadow .3s,var(--reveal,opacity 0s)}
 .post-feature:hover{border-color:#b8c7e4;box-shadow:0 18px 40px -22px rgba(0,41,107,.35)}
 .post-feature .past-img{aspect-ratio:4/3;border-radius:0;height:100%}
@@ -1133,12 +1154,16 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
   .core-role{font-size:13.5px}
 }
 
-/* SPEAK: three formats you can propose, length big, bar drawn against a 90-minute line */
-.picks{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;text-align:left}
+/* SPEAK: four formats you can host, two by two, length big, bar drawn against a 90-minute line */
+.picks{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;text-align:left}
 .pick{display:flex;flex-direction:column;gap:14px;border-radius:24px;padding:28px 28px 30px;background:var(--pastel-blue);color:var(--navy)}
 .pick-workshop{background:var(--pastel-green);color:#1f4a31}
 .pick-workshop .pick-bar i{background:#1f4a31}
 .pick-lightning{background:#e6ecf6}
+.pick-bof{background:var(--pastel-yellow);color:#4f4632}
+.pick-bof .pick-bar i{background:#4f4632}
+/* a BoF has no fixed length: the bar fades out instead of ending */
+.pick-bar-open i{-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent);mask-image:linear-gradient(90deg,#000 55%,transparent)}
 .pick-name{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:700}
 .pick-name i{font-size:20px}
 .pick-time{font-size:17px;font-weight:600;line-height:1}
@@ -1147,11 +1172,13 @@ a.tile:hover .tile-arrow{opacity:1;transform:translate(3px,-3px)}
 .pick-bar i{display:block;height:100%;width:calc(var(--w) / 90 * 100%);min-width:10px;border-radius:100px;background:var(--navy)}
 .pick p{font-size:15.5px;line-height:1.55;color:#33415e}
 .pick-workshop p{color:#2c5a3f}
+.pick-bof p{color:#4f4632}
 .pick-good{font-weight:600}
 .pick-hint{margin-top:auto;padding-top:14px;border-top:1px solid rgba(0,41,107,.16)}
-/* the five rows line up across the three cards (subgrid), so the hairlines sit at one height */
+/* the five rows line up across the cards in a row (subgrid), so the hairlines sit at one height */
 @media (min-width:861px){.pick{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:14px;align-content:start}.pick-hint{margin-top:0}}
 .pick-workshop .pick-hint{border-top-color:rgba(31,74,49,.2)}
+.pick-bof .pick-hint{border-top-color:rgba(79,70,50,.2)}
 @media (max-width:860px){.picks{grid-template-columns:minmax(0,1fr)}.pick{padding:24px 22px 26px}}
 
 /* ABOUT: the kinds of event, one programme list (coloured tag, then what happens) */

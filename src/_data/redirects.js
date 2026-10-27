@@ -14,6 +14,8 @@ export default function () {
     { from: '/talks/index.html', to: '/speak/' },
     { from: '/pydelhi-intro/index.html', to: '/about/' },
     { from: '/mailing-list-guidelines/index.html', to: '/community/' },
+    // a deleted post's old address goes to the blog
+    { from: '/blog/hello-pydelhi.html', to: '/blog/' },
     ...posts,
   ];
 }

@@ -34,7 +34,7 @@ The conference comes back for a third edition, with talks [recorded on our YouTu
 Meetups and RSVPs move to [Commudle]({{ site.commudle }}), and talk proposals are reviewed in the open on [GitHub]({{ site.talksRepo }}).
 {% endmoment %}
 {% moment "Now", "Still meeting", "photos/iwd-meetup.jpeg", "A full room at a PyDelhi meetup in 2026" %}
-{{ events.past.length }} meetups on Commudle so far, most recently {{ events.past[0].name }}, and {{ talks.count }} talks given through GitHub. [See what's next]({{ site.commudle }}).
+We still meet almost every month, and the next meetup is never far away. [See what's next]({{ site.commudle }}).
 {% endmoment %}
 {% endtimeline %}
 {% endsection %}

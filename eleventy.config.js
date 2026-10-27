@@ -13,16 +13,22 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode('photoUrl', photoUrl);
   eleventyConfig.addPlugin(shortcodes);
 
-  // the blog index shelves: newest year first, newest post first in each
-  eleventyConfig.addCollection('postsByYear', api => {
+  // the blog index: recaps from the last two years sit on year shelves; anything older goes to the archive.
+  // The cut-off moves with each build (the deploy runs daily), so posts drift into the archive by themselves
+  const byYear = posts => {
     const years = new Map();
-    for (const post of api.getFilteredByTag('post').sort((a, b) => b.date - a.date)) {
+    for (const post of posts) {
       const y = post.date.getUTCFullYear();
       if (!years.has(y)) years.set(y, []);
       years.get(y).push(post);
     }
     return [...years].map(([year, posts]) => ({ year, posts }));
-  });
+  };
+  const cutoff = () => { const d = new Date(); d.setUTCFullYear(d.getUTCFullYear() - 2); return d; };
+  const newestFirst = api => api.getFilteredByTag('post').sort((a, b) => b.date - a.date);
+  eleventyConfig.addCollection('recentPosts', api => newestFirst(api).filter(p => p.date >= cutoff()));
+  eleventyConfig.addCollection('postsByYear', api => byYear(newestFirst(api).filter(p => p.date >= cutoff())));
+  eleventyConfig.addCollection('archiveByYear', api => byYear(newestFirst(api).filter(p => p.date < cutoff())));
 
   return {
     dir: { input: 'src', includes: '_includes', data: '_data', output: '_site' },

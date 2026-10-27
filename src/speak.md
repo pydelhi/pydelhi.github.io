@@ -1,12 +1,12 @@
 ---
 layout: layouts/page.njk
 title: Speak at PyDelhi
-description: Propose a talk, lightning talk or workshop at a PyDelhi meetup. First-time speakers welcome; proposals are reviewed in the open on GitHub.
+description: Propose a talk, lightning talk, workshop or Birds of a Feather session at a PyDelhi meetup. First-time speakers welcome; proposals are reviewed in the open on GitHub.
 permalink: /speak/
-heading: Give a talk at <em>PyDelhi.</em>
+heading: Host a session at <em>PyDelhi.</em>
 lede: First-time speakers, students and seasoned engineers all share the same stage. If it's about Python and you're excited about it, we want to hear it. A rough idea is enough to start.
 actions:
-  - { label: "Propose a talk", url: "https://github.com/pydelhi/talks/issues/new?template=talk-proposal.yaml", icon: "arrow-up-right" }
+  - { label: "Propose a session", url: "https://github.com/pydelhi/talks/issues/new?template=talk-proposal.yaml", icon: "arrow-up-right" }
   - { label: "Read the speaker guidelines", url: "https://github.com/pydelhi/talks/blob/main/guidelines/speaking.md", class: "btn-line" }
 ---
 
@@ -14,7 +14,7 @@ actions:
 {% include "proposal-board.njk" %}
 {% endsection %}
 
-{% section "Pick the format that fits.", "Three ways to take the stage. Not sure which? Say so in the proposal and the reviewers will help you choose." %}
+{% section "Pick the format that fits.", "Four ways to host a session, from five minutes on stage to an open circle. Not sure which? Say so in the proposal and the reviewers will help you choose." %}
 {% include "pick-format.njk" %}
 {% endsection %}
 
@@ -27,6 +27,9 @@ actions:
 - **It has a fresh angle on hot topics.** GenAI, LLMs, RAG and agents get lots of proposals, so bring a new use case, a deep dive into internals, or lessons from production.
 - **It's accessible to everyone.** Readable slides and clear audio, following our [accessibility guidelines]({{ site.accessibilityGuidelines }}). Content matters more than polish or perfect English.
 {% endchecklist %}
+{% buttons %}
+{% button "How we review proposals", site.reviewingGuidelines, "arrow-up-right", "line" %}
+{% endbuttons %}
 {% endsection %}
 
 {% section %}

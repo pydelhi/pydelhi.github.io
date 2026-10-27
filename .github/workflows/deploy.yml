@@ -28,11 +28,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      # no .cache here, so every build fetches Commudle and GitHub fresh (the lib/*-fallback.json files cover outages)
+      # no .cache here, so every build fetches Commudle fresh (lib/commudle-fallback.json covers outages)
       - run: npm run build
-        env:
-          # lets _data/talks.js read github.com/pydelhi/talks without hitting the anonymous rate limit
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
