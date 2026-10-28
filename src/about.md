@@ -24,7 +24,7 @@ PyDelhi Conf 2017, and PyCon India in New Delhi again. Workshops at colleges and
 {% moment "2018", "Mega meetups", "blog/pydelhi-11-03-11.jpg", "Attendees at the International Women's Day mega meetup in 2018" %}
 An [International Women's Day mega meetup](/blog/pydelhi-meetup-11-march-2018/), a [FOSS mega meetup at Adobe](/blog/pydelhi-meetup-04-august-2018/) with communities from across the city, and the first [blog recaps](/blog/).
 {% endmoment %}
-{% moment "2019", "Dev sprints and an anniversary", "blog/2019-02-02-devsprint-pydelhi.jpeg", "Participants and mentors at the PyDelhi dev sprint in February 2019" %}
+{% moment "2019", "Dev sprints and an anniversary", "blog/2019-02-02-devsprint-pydelhi.jpg", "Participants and mentors at the PyDelhi dev sprint in February 2019" %}
 An [anniversary meetup at Microsoft, Gurugram](/blog/pydelhi-meetup-12-january-2019/) with three other communities, and [dev sprints](/blog/pydelhi-devsprint-02-february-2019/) where first-timers sent their first open source pull requests.
 {% endmoment %}
 {% moment "2023", "PyDelhi Conf returns" %}
@@ -33,7 +33,7 @@ The conference comes back for a third edition, with talks [recorded on our YouTu
 {% moment "2025", "A new home on Commudle" %}
 Meetups and RSVPs move to [Commudle]({{ site.commudle }}), and talk proposals are reviewed in the open on [GitHub]({{ site.talksRepo }}).
 {% endmoment %}
-{% moment "Now", "Meetups every month", "photos/iwd-meetup.jpeg", "A full room at a PyDelhi meetup in 2026" %}
+{% moment "Now", "Meetups every month", "photos/iwd-meetup.jpg", "A full room at a PyDelhi meetup in 2026" %}
 We still meet almost every month, and the next meetup is never far away. [See what's next]({{ site.commudle }}).
 {% endmoment %}
 {% endtimeline %}

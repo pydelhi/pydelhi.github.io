@@ -25,8 +25,8 @@ layout: layouts/base.njk
         </div>
         <div class="bento-grid">
           <div class="bento-cell bento-cell-tall" id="bento-cell-0"><div class="ghost-placeholder" id="ghost-0"><div class="ghost-bar"></div></div><template>{% photo "photos/speaker-on-stage.jpg", "Talks", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
-          <div class="bento-cell"                 id="bento-cell-1"><div class="ghost-placeholder" id="ghost-1"><div class="ghost-bar"></div></div><template>{% photo "photos/full-house-group.jpeg", "Meetups", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
-          <div class="bento-cell"                 id="bento-cell-2"><div class="ghost-placeholder" id="ghost-2"><div class="ghost-bar"></div></div><template>{% photo "photos/iwd-meetup.jpeg", "Workshops", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
+          <div class="bento-cell"                 id="bento-cell-1"><div class="ghost-placeholder" id="ghost-1"><div class="ghost-bar"></div></div><template>{% photo "photos/lobby-group-photo.jpg", "Meetups", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
+          <div class="bento-cell"                 id="bento-cell-2"><div class="ghost-placeholder" id="ghost-2"><div class="ghost-bar"></div></div><template>{% photo "photos/iwd-meetup.jpg", "Workshops", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
           <div class="bento-cell bento-cell-info">
             {%- set next = events.next %}
             <div class="info-card info-card-registration" id="meetup-card">
@@ -53,7 +53,7 @@ layout: layouts/base.njk
               </div>
             </div>
           </div>
-          <div class="bento-cell bento-cell-talk" id="bento-cell-3"><div class="ghost-placeholder" id="ghost-3"><div class="ghost-bar"></div></div><template>{% photo "photos/bof.jpg", "Birds of a Feather", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
+          <div class="bento-cell bento-cell-talk" id="bento-cell-3"><div class="ghost-placeholder" id="ghost-3"><div class="ghost-bar"></div></div><template>{% photo "photos/birds-of-a-feather.jpg", "Birds of a Feather", "(max-width: 860px) 50vw, 400px", { draggable: "false" } %}</template></div>
         </div>
       </div>
     </div>
@@ -115,18 +115,18 @@ layout: layouts/base.njk
           <span class="format-name">Talks</span>
           <span class="format-desc">20 to 30 minutes on something you built, broke or learned.</span>
         </li>
-        <li class="format" tabindex="0" data-img="{% photoUrl "photos/iwd-meetup.jpeg", 640 %}">
-          {% photo "photos/iwd-meetup.jpeg", "", "120px", { class: "format-thumb", loading: "lazy" } %}
+        <li class="format" tabindex="0" data-img="{% photoUrl "photos/iwd-meetup.jpg", 640 %}">
+          {% photo "photos/iwd-meetup.jpg", "", "120px", { class: "format-thumb", loading: "lazy" } %}
           <span class="format-name">Workshops</span>
           <span class="format-desc">Laptops open, code along, leave with something working.</span>
         </li>
-        <li class="format" tabindex="0" data-img="{% photoUrl "photos/bof.jpg", 640 %}">
-          {% photo "photos/bof.jpg", "", "120px", { class: "format-thumb", loading: "lazy" } %}
+        <li class="format" tabindex="0" data-img="{% photoUrl "photos/birds-of-a-feather.jpg", 640 %}">
+          {% photo "photos/birds-of-a-feather.jpg", "", "120px", { class: "format-thumb", loading: "lazy" } %}
           <span class="format-name">Birds of a Feather</span>
           <span class="format-desc">Small circles around one topic. Everyone gets a turn.</span>
         </li>
-        <li class="format" tabindex="0" data-img="{% photoUrl "photos/speaker-qr-slide.jpeg", 640 %}">
-          {% photo "photos/speaker-qr-slide.jpeg", "", "120px", { class: "format-thumb", loading: "lazy" } %}
+        <li class="format" tabindex="0" data-img="{% photoUrl "photos/speaker-qr-slide.jpg", 640 %}">
+          {% photo "photos/speaker-qr-slide.jpg", "", "120px", { class: "format-thumb", loading: "lazy" } %}
           <span class="format-name">Lightning Talks</span>
           <span class="format-desc">Five minutes, one idea, slides optional.</span>
         </li>
@@ -146,13 +146,20 @@ layout: layouts/base.njk
       </div>
     </div>
     <div class="strip" id="strip" tabindex="0" aria-label="Photos from past meetups">
-      <figure class="shot shot-wide">{% photo "photos/meetup-group-photo.jpeg", "Group photo of attendees at a PyDelhi meetup", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
-      <figure class="shot">{% photo "photos/aiohttp-talk.jpeg", "Speaker presenting a talk on installing aiohttp", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
-      <figure class="shot shot-land">{% photo "photos/bof.jpg", "Attendees in a Birds of a Feather discussion circle", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
-      <figure class="shot">{% photo "photos/speaker-qr-slide.jpeg", "Speaker sharing a QR code slide with the audience", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
-      <figure class="shot shot-pano">{% photo "photos/full-house-group.jpeg", "Large group photo from a full-house PyDelhi meetup", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
-      <figure class="shot shot-land">{% photo "photos/iwd-meetup.jpeg", "PyDelhi International Women's Day meetup", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-wide">{% photo "photos/april-meetup-group.jpg", "Group photo of attendees at a PyDelhi meetup", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot">{% photo "photos/aiohttp-talk.jpg", "Speaker presenting a talk on installing aiohttp", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-land">{% photo "photos/birds-of-a-feather.jpg", "Attendees in a Birds of a Feather discussion circle", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot">{% photo "photos/speaker-with-mic.jpg", "Speaker with a microphone talking to the audience", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-land">{% photo "photos/django-hack-group.jpg", "Group photo at the PyDelhi x Django India Django Hack event", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot">{% photo "photos/lounge-discussion-circle.jpg", "Attendees in a discussion circle on lounge chairs", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-land">{% photo "photos/django-cake.jpg", "Attendees clapping around a Django cake", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-land">{% photo "photos/iwd-meetup.jpg", "PyDelhi International Women's Day meetup", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-land">{% photo "photos/kubernetes-talk.jpg", "Speaker walking through Kubernetes control loops", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-land">{% photo "photos/organisers-group.jpg", "PyDelhi organisers and volunteers posing together", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
       <figure class="shot shot-sq">{% photo "photos/speaker-on-stage.jpg", "A speaker on stage at PyDelhi", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-land">{% photo "photos/dspy-talk.jpg", "Speaker presenting a DSPy talk to a seated room", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-land">{% photo "photos/full-room-crowd.jpg", "Full room group photo at a PyDelhi meetup", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
+      <figure class="shot shot-land">{% photo "photos/tcp-pipelining-talk.jpg", "Speaker explaining TCP packet pipelining on a projector", "(max-width: 600px) 80vw, 520px", { loading: "lazy", draggable: "false" } %}</figure>
     </div>
   </section>
 
@@ -200,8 +207,7 @@ layout: layouts/base.njk
   <!-- VOLUNTEER -->
   <section class="volunteer" aria-labelledby="volunteer-title">
     <div class="wrap vol">
-      <!-- TODO: swap for a photo of volunteers at work -->
-      {% photo "photos/meetup-group-photo.jpeg", "PyDelhi volunteers and attendees at a meetup", "(max-width: 860px) 100vw, 560px", { class: "vol-img", loading: "lazy" } %}
+      {% photo "photos/volunteers-group.jpg", "PyDelhi volunteers and attendees at a meetup", "(max-width: 860px) 100vw, 560px", { class: "vol-img", loading: "lazy" } %}
       <div class="vol-body">
         <h2 class="h2" id="volunteer-title">Help us run the room.</h2>
         <p class="lede">Every meetup is put together by volunteers. Pick what you're good at, or tell us something new.</p>

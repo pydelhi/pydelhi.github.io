@@ -6,6 +6,8 @@
 }
 /* clip, not hidden: overflow:hidden on body makes it a scroll container and breaks position:sticky */
 html,body{overflow-x:clip}
+/* tabbing scrolls a link into view below the fixed nav, not under it */
+html{scroll-padding-top:88px}
 /* the build wraps photos in <picture> for WebP; it draws no box, so img rules apply as before */
 picture{display:contents}
 picture source{display:none}
@@ -67,6 +69,7 @@ nav{
 .nav-links{display:flex;align-items:center;gap:1px;padding:0 6px}
 .nav-links a{font-size:14.3px;font-weight:500;color:var(--gray-600);text-decoration:none;padding:8px 12px;border-radius:18px;transition:color .15s,background .15s;font-weight:500;}
 .nav-links a:hover{color:var(--navy-dark);background:var(--gray-100)}
+.nav-links a{-webkit-tap-highlight-color:transparent}
 .nav-cta{
   flex-shrink:0;margin-left:6px;
   display:inline-flex;align-items:center;gap:5px;
@@ -293,7 +296,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 .shot-land{aspect-ratio:4/3}
 .shot-wide{aspect-ratio:4/3}
 .shot-sq{aspect-ratio:1031/1200}
-.shot-pano{aspect-ratio:968/338}
 .shot img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;transition:transform .8s var(--ease)}
 .shot:hover img{transform:scale(1.035)}
 

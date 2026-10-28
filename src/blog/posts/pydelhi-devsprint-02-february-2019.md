@@ -37,6 +37,6 @@ Vibhu Agarwal, a first-time contributor was able to make a successful contributi
 
 As the day came to its conclusion, we ended up with a better  understanding of Open source and some sense of self satisfaction. I am looking forward to attend the future events till then signing off.
 
-{% photo "blog/2019-02-02-devsprint-pydelhi.jpeg", "Devsprint participants and mentors at 91springboard, Noida", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
+{% photo "blog/2019-02-02-devsprint-pydelhi.jpg", "Devsprint participants and mentors at 91springboard, Noida", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
 
 *Happy Coding!*

@@ -3,11 +3,11 @@ title: "PyDelhi+ILUG-D meetup at Broctagon solutions Noida"
 date: 2018-11-10
 author: "Dheeraj jha"
 summary: "PyDelhi+ILUG-D Meetup on the 10th of November at Broctagon solutions Noida."
-cover: blog/10-nov-coala-group-pyDelhi-meetup-noida.jpg
+cover: blog/10-nov-coala-group-pydelhi-meetup-noida.jpg
 oldUrl: /blog/pydelhi-meetup-10-november-2018.html
 ---
 
-{% photo "blog/10-nov-coala-group-pyDelhi-meetup-noida.jpg", "Attendees at the PyDelhi and ILUG-D meetup at Broctagon, Noida", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
+{% photo "blog/10-nov-coala-group-pydelhi-meetup-noida.jpg", "Attendees at the PyDelhi and ILUG-D meetup at Broctagon, Noida", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
 
 ### Devsprints with coala
 At today’s dev sprint the newcomers not only learned about the open source community like Coala but also got the hands-on on to how to start contributing to open source. The talk was taken over by Kilari Teja, a software developer at Viper development and a GSoC’18 intern at Coala.
@@ -47,7 +47,7 @@ We choose 2-3 different package which we had to pack for Debian, I did for prett
 
 And we went for everything, from setting up our Debian OS to installing all packager and installer, git, and pretty much everything.
 
-{% photo "blog/devsprints-debian-packaging-glimps.jpg", "Participants at the Debian packaging devsprint", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
+{% photo "blog/devsprints-debian-packaging-glimpse.jpg", "Participants at the Debian packaging devsprint", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
 
 While our mentor was continuously on us for each small and big questions, I felt like wow moment when I could finally see my deb file created after I had done with all commands.
 
@@ -56,7 +56,7 @@ We could not finish pushing package on apt thing due to most of the time went in
 We had some fruitful community discussion and further planning on it as we approached evening time.
 I manage to get out of the box and mixed up with some blockchain and ML developers and put all my questions and had the satisfying discussion with them, and now the time came for the group pic.
 
-{% photo "blog/pydelhi-10-nov-2018-group-picture.jpeg", "Group photo of the PyDelhi and ILUG-D meetup", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
+{% photo "blog/pydelhi-10-nov-2018-group-picture.jpg", "Group photo of the PyDelhi and ILUG-D meetup", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
 
 We ended with cheers on the face and some feeling of contribution for software community which we are consuming almost every time.
 Till the next time, happy coding.

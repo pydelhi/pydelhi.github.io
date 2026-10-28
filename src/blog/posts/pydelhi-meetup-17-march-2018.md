@@ -3,13 +3,13 @@ title: "PyDelhi Meetup – 17th March, 2018"
 date: 2018-03-17
 author: "Anubhav Bhambri & Srihari UnniKrishnan"
 summary: "PyDelhi members gathering once again to learn and share new things with other PyDelhi members."
-cover: blog/pydelhi-17-3-2018.JPG
+cover: blog/pydelhi-17-3-2018.jpg
 oldUrl: /blog/pydelhi-meetup-17-March-2018.html
 ---
 
 Saturday, 17/03/2018, was the day for another PyDelhi meetup. A day for tech lovers to come together and learn from each other.
 
-{% photo "blog/pydelhi-17-3-2018.JPG", "Attendees at the PyDelhi meetup in March 2018", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
+{% photo "blog/pydelhi-17-3-2018.jpg", "Attendees at the PyDelhi meetup in March 2018", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
 
 The venue of the meetup was again [Fueled](https://twitter.com/Fueled), Noida. [Rajat](https://twitter.com/rajataaron) and [Gourav](https://twitter.com/TechDeviant) came to the stage and started the meetup with the introductions. Since in every meetup there are people who are coming for the first time, it’s good to start with introductions. One by one, everybody, including the hosts and the audience, gave a brief introduction about themselves.
 
@@ -40,7 +40,7 @@ Here’s what each line of code is doing:
 
 Then Gourav announced the lightning Talk Session. Amongst others, there was a lightening talk which was not related to python or anything technical for that matter. The talk was given by [Anuvrat](https://twitter.com/bhanuvrat) on touch typing, i.e. typing with all your fingers without looking at the keyboard.
 
-{% photo "blog/touchtyping-17-3-2018.JPG", "Touch typing session at the PyDelhi meetup in March 2018", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
+{% photo "blog/touchtyping-17-3-2018.jpg", "Touch typing session at the PyDelhi meetup in March 2018", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
 
 The talk started with two-sided verbal communication between the speaker and the audience. But gradually speaker started to type, which was being projected on the screen, and stopped talking entirely. As you can see in the picture above. Speaker was communicating with the audience through typed text and showing what is it like to do touch typing. Do you think we can even call it a ‘talk’ anymore? Never mind!
 

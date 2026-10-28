@@ -17,7 +17,7 @@ First we had Pulkit Pahwa, taking up a knowledge enriching session on [Django We
 
 Following explains the entire flow of the web application built on Django.
 
-{% photo "blog/django_request_response_cycle.png", "Diagram of the Django request and response cycle", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
+{% photo "blog/django-request-response-cycle.png", "Diagram of the Django request and response cycle", "(max-width: 760px) 100vw, 720px", { loading: "lazy" } %}
 
 The interaction led process of [request response cycle](https://docs.djangoproject.com/en/1.9/ref/request-response/) and how Django handles the requests and rendering the data onto the templates. A nicely pulled up session came to an end with our dummy Hackathon lists brightening up our pages running on our very own Django development server with developers getting in touch with the awesomeness(speed and ease) of the Django Framework.
 

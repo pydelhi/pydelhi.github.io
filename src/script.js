@@ -97,6 +97,7 @@ const photoEls = gridLayer ? PHOTOS.map(p => {
 let L = null;
 
 function measureHero() {
+  dropFlights();
   photoEls.forEach(el => { el.style.transform = ''; el.style.removeProperty('--f'); });
   if (!gridLayer || reduceMotion.matches) { L = null; return; }
 
@@ -107,11 +108,14 @@ function measureHero() {
   const km = clamp(Math.min(vw / 390, vh / 844), .72, 1);
 
   // where the bento's top edge is when the photos finish landing. Measured off portrait.so, that
-  // happens early, about a quarter of the way down the screen, even if the bento's bottom is still below the fold
+  // happens early, about a quarter of the way down the screen, even if the bento's bottom is still below the fold.
+  // Phones land a little later, just under the nav, so the flight is spread over more of the scroll
   const gr = gridLayer.getBoundingClientRect();
-  const landTop = vh * (compact ? .22 : .26);
+  const landTop = vh * (compact ? .12 : .26);
 
   L = {
+    // on touch screens the compositor flies the photos (see flyOnScroll); a mouse wheel gets the spring
+    scrollLinked: touchScreen.matches && 'ScrollTimeline' in window,
     // scroll distance over which the photos travel
     run: Math.max(1, gr.top + scrollY - landTop),
     photos: PHOTOS.map((p, i) => {
@@ -131,15 +135,76 @@ function measureHero() {
   };
 }
 
+/* Each photo's pose at hero progress p (0 scattered, 1 landed). So they don't move as one block,
+   every photo gets its own slice of the scroll (they set off and land one after another), eases out
+   of its spot and into its cell, and lets its tilt trail the move, swinging a touch past level before
+   it settles. The white frame and shadow stay on until the last part of the flight, so the photos read
+   as prints until they drop into the grid. */
+// a sine ease is gentle at its steepest (about 1.6x the scroll), so scrolling back and forth never whips the photos
+const easeInOut = t => (1 - Math.cos(Math.PI * t)) / 2;
+// eases in, then swings about 5% past the end before settling
+const easeInBack = t => t < .5 ? 4 * t * t * t : .5 + .5 * (1 + 2.70158 * Math.pow(2 * t - 2, 3) + 1.70158 * Math.pow(2 * t - 2, 2));
+function pose(ph, i, p) {
+  const t = clamp((p - i * .04) / .88, 0, 1);       // photo i flies from 4i% to 4i + 88% of the run
+  const m = easeInOut(t);
+  const r = easeInBack(clamp((t - .15) / .85, 0, 1)); // the tilt starts a beat late
+  return {
+    transform: `translate3d(${ph.dx * (1 - m)}px, ${ph.dy * (1 - m)}px, 0) scale(${lerp(ph.s, 1, m)}) rotate(${ph.rot * (1 - r)}deg)`,
+    frame: 1 - easeInOut(clamp((t - .55) / .45, 0, 1)),
+  };
+}
+
 function renderHero(p) {
   L.photos.forEach((ph, i) => {
-    const f = 1 - p;
+    const { transform, frame } = pose(ph, i, p);
     const el = photoEls[i];
-    el.style.transform = `translate3d(${ph.dx * f}px, ${ph.dy * f}px, 0) scale(${lerp(ph.s, 1, p)}) rotate(${ph.rot * f}deg)`;
-    // drives the white frame and drop shadow, which fade out as the photo lands
-    el.style.setProperty('--f', f.toFixed(3));
+    el.style.transform = transform;
+    // drives the white frame and drop shadow
+    el.style.setProperty('--f', frame.toFixed(3));
   });
 }
+
+/* On a phone the page scrolls on the compositor, ahead of any script, so photos moved from
+   requestAnimationFrame trail the finger and step against the page: smooth in DevTools, juddery on
+   a real Android phone. There the same flight is a scroll-driven animation, which the compositor runs
+   in step with the scroll. It follows pose() through keyframes sampled from it. Touch scrolling
+   already glides, so it needs no spring. */
+const FLIGHT_SAMPLES = 32;
+let flights = [];
+function dropFlights() { flights.forEach(a => a.cancel()); flights = []; }
+function flyOnScroll() {
+  dropFlights();
+  if (!L?.scrollLinked || focusInBento) return;
+  const range = { timeline: new ScrollTimeline({ source: document.documentElement }), rangeStart: '0px', rangeEnd: `${L.run}px`, fill: 'both' };
+  L.photos.forEach((ph, i) => {
+    const el = photoEls[i];
+    const poses = Array.from({ length: FLIGHT_SAMPLES + 1 }, (_, k) => pose(ph, i, k / FLIGHT_SAMPLES));
+    flights.push(
+      el.animate(poses.map(({ transform }) => ({ transform })), range),
+      // the white frame and drop shadow
+      ...['::before', '::after'].map(pseudoElement => el.animate(poses.map(({ frame }) => ({ opacity: frame })), { ...range, pseudoElement })),
+    );
+  });
+}
+
+
+// the photos fly across the bento's buttons on their way in. When the keyboard focuses one, scroll on
+// to where they've landed and keep them there while focus stays in the bento, so a focused button is
+// never hidden (WCAG 2.2, 2.4.11 Focus Not Obscured)
+let focusInBento = false;
+gridLayer?.addEventListener('focusin', e => {
+  if (!L || !e.target.matches(':focus-visible')) return;
+  focusInBento = true;
+  dropFlights();
+  if (scrollY < L.run) scrollTo({ top: L.run, behavior: 'instant' });
+  const r = e.target.getBoundingClientRect();
+  if (r.bottom > innerHeight) e.target.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+});
+gridLayer?.addEventListener('focusout', e => {
+  if (gridLayer.contains(e.relatedTarget)) return;
+  focusInBento = false;
+  flyOnScroll();
+});
 
 
 /* ─── JOIN: photos drift at different speeds as the section passes ─── */
@@ -173,8 +238,8 @@ function frame(ts) {
   if (!reduceMotion.matches && !compactView.matches) renderJoin();
   renderSnake(dt);
 
-  if (L) {
-    const target = clamp(scrollY / L.run, 0, 1);
+  if (L && !L.scrollLinked) {
+    const target = focusInBento ? 1 : clamp(scrollY / L.run, 0, 1);
     if (pos === null) pos = target;
     // small fixed substeps keep the spring stable when a frame runs long
     for (let t = dt; t > 0; t -= 1 / 240) {
@@ -191,7 +256,8 @@ function frame(ts) {
 
 function relayout() {
   measureHero();
-  if (L) { L.last = null; renderHero(clamp(pos ?? 0, 0, 1)); }
+  if (L?.scrollLinked) flyOnScroll();
+  else if (L) { L.last = null; renderHero(clamp(pos ?? 0, 0, 1)); }
 }
 
 // phones fire resize whenever the address bar slides in or out; only re-measure when the width changes
@@ -203,6 +269,7 @@ addEventListener('resize', () => {
 });
 reduceMotion.addEventListener('change', relayout);
 compactView.addEventListener('change', relayout);
+touchScreen.addEventListener('change', relayout);
 // images and fonts shift the layout as they load, which moves the cells. Outfit often arrives after
 // 'load' on phones: the taller headline pushes the bento down, and photos measured before that start
 // lower and fly straight through the title. So re-measure when the fonts are in, and whenever the
