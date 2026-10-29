@@ -123,6 +123,7 @@ Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. 
 ## Updating the team, logos and links
 
 - **Team:** `src/_data/volunteerTeams.json` (see above). Team photos go in `src/assets/team/`.
+- **Past volunteers:** the names in the "With thanks" list on `/volunteer` are in `src/_data/pastVolunteers.json`, alphabetical. Ask before adding someone.
 - **Ways to volunteer:** the role cards on `/volunteer` come from `src/_data/volunteerRoles.json`; every card opens `site.volunteerForm`.
 - **Speaker company and sponsor logos:** add the file to `src/assets/logos/` (transparent background, any colour; the site draws it navy) and an entry to `SPEAKER_COMPANIES` or `SPONSORS` in `src/script.js`: `{ name, file, r, url }`, where `r` is the logo's width divided by its height and `url` the company's site. Add `text` only when the file is a bare symbol that needs the name beside it.
 - **Links and numbers:** WhatsApp, Telegram, the volunteer form, GitHub Sponsors and the hand-set stats (speakers, members) are all in `src/_data/site.js`.
@@ -135,6 +136,7 @@ Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. 
 | `src/blog/posts/` | Blog recaps. Posts from the last two years sit on the year shelves; older ones move to the archive list on their own (collections in `eleventy.config.js`) |
 | `lib/shortcodes.js` | The designed blocks used in Markdown pages |
 | `src/_data/site.js` | Shared links and the hand-set stats |
+| `src/_data/pastVolunteers.json` | The thank-you names on `/volunteer` |
 | `src/_data/volunteerRoles.json`, `src/_data/volunteerTeams.json` | The ways to volunteer, the core team (name, role, photo) and the volunteer teams on `/volunteer` |
 | `src/_data/channels.js` | The Community channel tiles |
 | `src/assets/icons/` | Favicon, app icons and `og-default.jpg`, the 1200×630 card shown when a page is shared (blog posts use their `cover` instead) |

@@ -28,7 +28,8 @@ actions:
 - **It's accessible to everyone.** Readable slides and clear audio, following our [accessibility guidelines]({{ site.accessibilityGuidelines }}). Content matters more than polish or perfect English.
 {% endchecklist %}
 {% buttons %}
-{% button "How we review proposals", site.reviewingGuidelines, "arrow-up-right", "line" %}
+{% button "How we review proposals", site.reviewingGuidelines, "arrow-up-right" %}
+{% button "Previously accepted talks", "https://github.com/pydelhi/talks/issues?q=is%3Aissue+state%3Aclosed+label%3Aaccepted", "arrow-up-right", "line" %}
 {% endbuttons %}
 {% endsection %}
 

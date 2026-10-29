@@ -39,6 +39,10 @@ Take on one part of the next meetup, from the poster to the venue to the recap.
 {% include "volunteer-teams.njk" %}
 {% endsection %}
 
+{% section "With thanks." %}
+{% include "past-volunteers.njk" %}
+{% endsection %}
+
 {% section %}
 {% panel "blue", "Got a Saturday to spare?", "Fill the volunteer form and we'll get in touch before the next meetup. Not sure yet? Ask us anything on WhatsApp first." %}
 {% buttons %}

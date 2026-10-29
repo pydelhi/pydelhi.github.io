@@ -1,0 +1,8 @@
+{#- Volunteer page: a quiet thank-you to earlier organisers, from _data/pastVolunteers.json.
+    No blank lines: Markdown includes this -#}
+<dl class="credits credits-names">
+  <div data-reveal>
+    <dt>Past organisers and volunteers<span>Thank you for the Saturdays you gave.</span></dt>
+    <dd>{% for person in pastVolunteers %}<span>{{ person }}</span>{% endfor %}</dd>
+  </div>
+</dl>
