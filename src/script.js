@@ -591,7 +591,7 @@ function makeSnake(svg, shape) {
   svg.innerHTML = `<path class="snake-body" fill="none" stroke="${SNAKE_GREEN}" stroke-linecap="round" stroke-linejoin="round"/>
     <g class="snake-head"><g transform="translate(105.5 -199) scale(-1 1)" fill="${SNAKE_GREEN}">
       <path class="snake-tongue" d="${SNAKE_TONGUE}"/><path d="${SNAKE_HEAD}"/>
-      <circle cx="46.3" cy="190.6" r="4.4" fill="#1b1b1b"/>
+      <circle class="snake-eye" cx="46.3" cy="190.6" r="4.4" fill="#1b1b1b"/>
     </g></g>`;
   // tail: how much of the body's start is already gone, for a snake that slides on along its path
   const s = { svg, shape, body: svg.firstElementChild, head: svg.lastElementChild, p: 0, shown: -1, tail: 0, ext: 0 };
@@ -988,3 +988,75 @@ document.querySelectorAll('.shelf-snake').forEach(svg => {
     growSnake(snake, 1100);
   }, { threshold: .6 }).observe(svg);
 });
+
+/* ─── LOST PAGE (404): the snake curled into the 0 ───
+   One lap of an oval, clockwise from just left of the top and on past it, so the neck lies over the tail
+   and the head rests on its own coil, heading right. It turns its head toward the pointer (a little, never
+   upside down) and says something when poked. The traceback shows the address that wasn't found. */
+const lostRing = document.getElementById('lost-ring');
+if (lostRing) {
+  const lostSnake = makeSnake(lostRing, W => {
+    // sketched 210 units wide; the svg is sized in em beside the 4s, so scale to its pixels
+    const k = W / 210, t = 30 * k, cx = 92 * k, cy = 140 * k, rx = 64 * k, ry = 75 * k;
+    const pts = [];
+    for (let a = -100; a <= 288; a += 4) {
+      const r = a * Math.PI / 180;
+      pts.push(`${(cx + rx * Math.cos(r)).toFixed(1)} ${(cy + ry * Math.sin(r)).toFixed(1)}`);
+    }
+    return { d: `M${pts.join('L')}`, h: cy + ry + t / 2, t };
+  });
+
+  // the head's resting pose, and how far it's turned from it
+  let tip = null, rest = 0, tilt = 0, aim = 0, wobbleAt = -1e9, spinning = false;
+  const poseHead = () => {
+    if (!tip) return;
+    lostSnake.head.setAttribute('transform', `translate(${tip.x} ${tip.y}) rotate(${rest + tilt}) scale(${lostSnake.scale})`);
+  };
+  lostSnake.onDraw = (len, at) => {
+    const body = lostSnake.body;
+    const a = body.getPointAtLength(Math.max(0, len - 1)), b = body.getPointAtLength(Math.min(lostSnake.total, len + 1));
+    tip = at;
+    rest = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
+    poseHead();
+  };
+  const turn = now => {
+    const wobble = now - wobbleAt < 500 ? 14 * Math.sin((now - wobbleAt) / 40) * (1 - (now - wobbleAt) / 500) : 0;
+    tilt += (aim + wobble - tilt) * .18;
+    poseHead();
+    if (Math.abs(aim - tilt) > .1 || wobble) requestAnimationFrame(turn);
+    else spinning = false;
+  };
+  const spin = () => { if (!spinning) { spinning = true; requestAnimationFrame(turn); } };
+
+  if (!reduceMotion.matches) addEventListener('pointermove', e => {
+    if (lostSnake.p < 1 || !tip) return;
+    const r = lostRing.getBoundingClientRect(), k = r.width / lostRing.clientWidth;
+    const deg = Math.atan2(e.clientY - (r.top + tip.y * k), e.clientX - (r.left + tip.x * k)) * 180 / Math.PI;
+    aim = clamp(((deg - rest + 540) % 360) - 180, -35, 35);
+    spin();
+  }, { passive: true });
+
+  const LINES = [
+    'Ssssorry, it isn’t here.',
+    'I checked every chair. Twice.',
+    'Not in this namespace.',
+    'I’d help, but I have no hands.',
+    'Maybe it’s at the next meetup?',
+    'import home, perhaps?',
+    'Sssstill not here.',
+  ];
+  const poke = document.getElementById('lost-snake'), bubble = document.getElementById('lost-bubble');
+  let line = 0, hideBubble;
+  poke.addEventListener('click', () => {
+    bubble.textContent = LINES[line++ % LINES.length];
+    bubble.classList.add('show');
+    clearTimeout(hideBubble);
+    hideBubble = setTimeout(() => bubble.classList.remove('show'), 2400);
+    if (!reduceMotion.matches) { wobbleAt = performance.now(); spin(); }
+  });
+
+  try { document.getElementById('lost-path').textContent = decodeURI(location.pathname); } catch {}
+
+  pageSnakes.push(lostSnake);
+  growSnake(lostSnake, 1400, 250);
+}

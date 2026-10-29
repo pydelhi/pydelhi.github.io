@@ -1,0 +1,36 @@
+---
+# GitHub Pages serves /404.html, with a 404 status, for every address that has no page
+layout: layouts/base.njk
+permalink: /404.html
+eleventyExcludeFromCollections: true
+noindex: true
+title: Page not found | PyDelhi
+description: This page isn't on pydelhi.org.
+---
+<main class="lost">
+  <div class="wrap">
+    {#- the snake curled into the 0; script.js draws it (LOST PAGE), follows the pointer and talks when tapped #}
+    <div class="lost-digits">
+      <span class="lost-four" aria-hidden="true">4</span>
+      <button type="button" class="lost-snake" id="lost-snake" aria-label="Poke the snake">
+        <svg class="snake lost-ring" id="lost-ring" aria-hidden="true"></svg>
+        <span class="lost-bubble" id="lost-bubble" role="status"></span>
+      </button>
+      <span class="lost-four" aria-hidden="true">4</span>
+      <span class="sr-only">404</span>
+    </div>
+    <h1 class="lost-title">This page <em>slithered off.</em></h1>
+
+    {#- a Python-style traceback with the address they asked for (filled in by script.js) -#}
+    <div class="lost-trace">
+      <p class="lost-trace-head">Traceback (most recent visit last):</p>
+      <p class="lost-trace-line">You asked for <strong id="lost-path">this page</strong></p>
+      <p class="lost-trace-error"><strong>PageNotFoundError:</strong> the link might be old, or the page was never here.</p>
+    </div>
+
+    <div class="lost-actions">
+      <a href="/" class="btn-navy">Back to home <i class="ph ph-arrow-right"></i></a>
+      <a href="{{ site.commudle }}" class="btn-line" target="_blank" rel="noopener">Next meetup on Commudle <i class="ph ph-arrow-up-right"></i></a>
+    </div>
+  </div>
+</main>
