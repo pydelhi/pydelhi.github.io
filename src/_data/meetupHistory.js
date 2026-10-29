@@ -2,26 +2,26 @@
 // From 2025 on it is filled from Commudle; the years before that are kept here by hand.
 import { getEvents } from '../../lib/commudle.js';
 
-// TODO: placeholder history. One string per year, one character per month (Jan..Dec): x = met, . = no meetup
+// Pre-2025 months are approximate, not a record. One string per year, one character per month (Jan..Dec): x = met, . = no meetup
 const BEFORE_COMMUDLE = {
-  2011: '.......x..x.',
-  2012: 'x..x.x..x.xx',
-  2013: '....x.x.xx.x',
-  2014: 'x.xx.xx.xx.x',
-  2015: 'xx.xxx.xx.xx',
-  2016: 'xxxx.xxxx.xx',
-  2017: 'xx.xxxx.xxxx',
-  2018: 'xxxxxx.xxxxx',
-  2019: 'xxxxxx.xxxxx',
-  2020: 'xxx..x..x..x',
-  2021: '..x..x..x.xx',
-  2022: 'x.xx.xx.xxxx',
-  2023: 'xxxxx.xxxxxx',
-  2024: 'xxxxxxxxx.xx',
+  2011: '.........xxx',
+  2012: '..xxx.xxxx..',
+  2013: '.xxx...xxxxx',
+  2014: 'xx..xxxxx.xx',
+  2015: 'xx..xxxxxxxx',
+  2016: 'x.xxxxxxxxxx',
+  2017: '.xxxxxxxxxxx',
+  2018: 'xxxxxxxx.xxx',
+  2019: 'x.xxxxxxxxxx',
+  2020: 'xxx.xx....xx',
+  2021: 'xxxx..x.x.xx',
+  2022: '.xxxxx.xxxxx',
+  2023: 'xxxxxxxxxx.x',
+  2024: 'xxxx.xxxxxxx',
 };
 const FIRST_COMMUDLE_YEAR = 2025;
-// TODO confirm: meetups held before 2025. The headline adds every Commudle event to this.
-const MEETUPS_BEFORE_COMMUDLE = 122;
+// Meetups held before 2025, counted from the grid above. The headline adds every Commudle event to this.
+const MEETUPS_BEFORE_COMMUDLE = Object.values(BEFORE_COMMUDLE).join('').replace(/\./g, '').length;
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -39,5 +39,5 @@ export default async function () {
       cells.push({ cls: future ? 'future' : on ? 'met' : '', label: `${MONTHS[m]} ${year}: ${future ? 'coming up' : on ? 'meetup' : 'no meetup'}` });
     }
   }
-  return { cells, total: MEETUPS_BEFORE_COMMUDLE + past.length };
+  return { cells, total: Math.floor((MEETUPS_BEFORE_COMMUDLE + past.length) / 10) * 10 };
 }

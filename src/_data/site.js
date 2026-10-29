@@ -32,8 +32,8 @@ export default {
   accessibilityGuidelines: 'https://github.com/pydelhi/talks/blob/main/guidelines/accessibility.md',
   reviewingGuidelines: 'https://github.com/pydelhi/talks/blob/main/guidelines/reviewing.md',
   volunteerForm: 'https://forms.gle/x6UFYSbaba9xN6Ar8',
-  // TODO confirm: hand-set numbers shown on the home page and inner pages (meetup.com/pydelhi lists ~14.7k members)
-  stats: { speakers: '350+', members: '12k+' },
+  // Hand-set numbers shown on the home page and inner pages (meetup.com/pydelhi lists ~14.7k members)
+  stats: { speakers: '350+', members: '14k+' },
   // the SPONSORS list in script.js, rounded down for copy
   sponsorCount: 27 - 27 % 5,
   // in the order a newcomer goes: who we are and the rules of the room, where to find us, then the ways to take part, sponsors last but one
