@@ -109,13 +109,14 @@ function measureHero() {
 
   // where the bento's top edge is when the photos finish landing. Measured off portrait.so, that
   // happens early, about a quarter of the way down the screen, even if the bento's bottom is still below the fold.
-  // Phones land a little later, just under the nav, so the flight is spread over more of the scroll
+  // Touch screens land a little later, just under the nav, so their flight is spread over more of the scroll
   const gr = gridLayer.getBoundingClientRect();
-  const landTop = vh * (compact ? .12 : .26);
+  const scrollLinked = touchScreen.matches && 'ScrollTimeline' in window;
+  const landTop = vh * (compact ? (scrollLinked ? .12 : .22) : .26);
 
   L = {
     // on touch screens the compositor flies the photos (see flyOnScroll); a mouse wheel gets the spring
-    scrollLinked: touchScreen.matches && 'ScrollTimeline' in window,
+    scrollLinked,
     // scroll distance over which the photos travel
     run: Math.max(1, gr.top + scrollY - landTop),
     photos: PHOTOS.map((p, i) => {
@@ -135,7 +136,7 @@ function measureHero() {
   };
 }
 
-/* Each photo's pose at hero progress p (0 scattered, 1 landed). So they don't move as one block,
+/* Touch screens: each photo's pose at hero progress p (0 scattered, 1 landed). So they don't move as one block,
    every photo gets its own slice of the scroll (they set off and land one after another), eases out
    of its spot and into its cell, and lets its tilt trail the move, swinging a touch past level before
    it settles. The white frame and shadow stay on until the last part of the flight, so the photos read
@@ -154,13 +155,14 @@ function pose(ph, i, p) {
   };
 }
 
+// mouse and trackpad: one straight flight for every photo, which the spring in frame() smooths
 function renderHero(p) {
   L.photos.forEach((ph, i) => {
-    const { transform, frame } = pose(ph, i, p);
+    const f = 1 - p;
     const el = photoEls[i];
-    el.style.transform = transform;
-    // drives the white frame and drop shadow
-    el.style.setProperty('--f', frame.toFixed(3));
+    el.style.transform = `translate3d(${ph.dx * f}px, ${ph.dy * f}px, 0) scale(${lerp(ph.s, 1, p)}) rotate(${ph.rot * f}deg)`;
+    // drives the white frame and drop shadow, which fade out as the photo lands
+    el.style.setProperty('--f', f.toFixed(3));
   });
 }
 
