@@ -1,0 +1,21 @@
+name: Idea for the site
+description: A new section, page or change to how the site works
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for the idea. For anything visual, have a look at STYLE_GUIDE.md first, so the idea fits the site's look.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's missing or could be better
+      description: Who is it for, and what are they trying to do?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: Sketches, screenshots or links to sites that do it well are welcome.
+    validations:
+      required: true

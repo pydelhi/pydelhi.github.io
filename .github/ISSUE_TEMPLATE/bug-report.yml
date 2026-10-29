@@ -1,0 +1,34 @@
+name: Something looks or works wrong
+description: A layout that breaks, a page that won't load, an accessibility problem
+labels: [bug]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The address where it happens.
+      placeholder: https://pydelhi.org/speak/
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead. Screenshots help a lot.
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser
+      placeholder: iPhone 13, Safari / Windows laptop, Chrome
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to make it happen again
+      description: Only if it doesn't happen straight away when the page opens.
+      placeholder: |
+        1. Open the home page on a phone
+        2. Swipe the photo strip to the end

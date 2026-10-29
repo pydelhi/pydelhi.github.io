@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Propose a talk, workshop or lightning talk
+    url: https://github.com/pydelhi/talks/issues/new?template=talk-proposal.yaml
+    about: Talk proposals live in pydelhi/talks, not here.
+  - name: Ask a question or share an idea
+    url: https://github.com/orgs/pydelhi/discussions
+    about: For questions about PyDelhi and ideas for the community.
+  - name: Take down a photo of yourself, or report a Code of Conduct problem
+    url: mailto:contact@pydelhi.org
+    about: Email the organisers privately. No need for a public issue.

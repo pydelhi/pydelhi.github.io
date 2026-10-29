@@ -2,7 +2,7 @@
 
 The site for [PyDelhi](https://pydelhi.org), Delhi NCR's Python community. Built with [Eleventy](https://www.11ty.dev/) and published to GitHub Pages.
 
-Read `STYLE_GUIDE.md` before changing the design.
+Read `STYLE_GUIDE.md` before changing the design. To send a fix or an idea, see `CONTRIBUTING.md`.
 
 ## Run it locally
 

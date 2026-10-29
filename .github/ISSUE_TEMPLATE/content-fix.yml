@@ -1,0 +1,23 @@
+name: Wrong or outdated information
+description: A typo, a broken link, an old date or a detail that has changed
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      placeholder: https://pydelhi.org/about/
+    validations:
+      required: true
+  - type: textarea
+    id: now
+    attributes:
+      label: What it says now
+    validations:
+      required: true
+  - type: textarea
+    id: should
+    attributes:
+      label: What it should say
+      description: Add a link to the source if you have one, like the Commudle event or a talk issue.
+    validations:
+      required: true
