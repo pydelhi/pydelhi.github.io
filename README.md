@@ -139,7 +139,7 @@ Icons are [Phosphor](https://phosphoricons.com) names without the `ph-` prefix. 
 | `src/_data/pastVolunteers.json` | The thank-you names on `/volunteer` |
 | `src/_data/volunteerRoles.json`, `src/_data/volunteerTeams.json` | The ways to volunteer, the core team (name, role, photo) and the volunteer teams on `/volunteer` |
 | `src/_data/channels.js` | The Community channel tiles |
-| `src/assets/icons/` | Favicon, app icons and `og-default.jpg`, the 1200×630 card shown when a page is shared (blog posts use their `cover` instead) |
+| `src/assets/icons/` | Favicon, app icons and `og-default.jpg`, the 2400×1260 (2× of 1200×630) card shown when a page is shared (blog posts use their `cover` instead) |
 | `src/sitemap.njk`, `src/robots.njk`, `src/site.webmanifest.njk` | Generated `/sitemap.xml`, `/robots.txt` and `/site.webmanifest` |
 | `lib/image.js` | The photo resizing used by `{% photo %}` |
 | `src/_includes/` | Layout, ticket and event card |
